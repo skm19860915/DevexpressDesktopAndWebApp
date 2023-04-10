@@ -1,0 +1,1082 @@
+﻿HotelRateStagingID,RateType,HotelStagingID,Price,RoomType
+1,AI,1,"$2,187.56",Double Room Ocean View
+2,AI,24,"$3,249.50",Family Selection Junior Suite
+3,AI,24,"$3,405.02",Family Selection Loft Suite
+4,AI,24,"$4,375.40",Junior Suite
+5,AI,24,"$5,175.44",Family Selection Junior Suite
+6,AI,24,"$5,486.54",Family Selection Loft Suite
+7,AI,23,"$2,868.90",Paradisus Junior Suite Lagoon View
+8,AI,23,"$3,206.67",Premium One Bedroom Suite
+9,AI,23,"$3,589.50",The Reserve Luxury Junior Suite Lagoon View
+10,AI,23,"$3,640.15",The Reserve Paradisus Junior Suite Ocean View
+11,AI,23,"$3,782.78",The Reserve One Bedroom Suite Lagoon view
+12,AI,23,"$3,808.10",The Reserve Luxury Junior Suite Ocean View
+13,AI,23,"$3,011.46",Premium Paradisus Junior Suite
+14,AI,23,"$3,019.36",Paradisus Junior Suite Ocean View
+15,AI,23,"$3,109.23",Luxury Junior Suite Ocean View
+16,AI,23,"$3,351.21",Premium One Bedroom Master Suite
+17,AI,23,"$3,351.21",The Reserve Paradisus Junior Suite Lagoon View
+18,AI,22,"$2,902.16",Junior Suite
+19,AI,22,"$3,033.86",Junior Suite Ocean Front
+20,AI,22,"$4,541.18",Junior Suite Swim Up Premium Level
+21,AI,21,"$2,903.12",Deluxe Junior Suite
+22,AI,21,"$3,347.54",Golden Junior Suite
+23,AI,21,"$3,569.78",Golden Superior Junior Suite
+24,AI,21,"$3,629.06",Privilege Deluxe Junior Suite
+25,AI,21,"$3,866.06",Golden Swim-Up Junior Suite
+26,AI,21,"$4,073.48",Privilege Golden Junior Suite
+27,AI,21,"$4,295.72",Privilege Golden Superior Junior Suite
+28,AI,21,"$4,310.54",Emerald Junior Suite
+29,AI,21,"$4,592.00",Privilege Golden Swim-Up Junior Suite
+30,AI,21,"$5,036.42",Privilege Emerald Junior Suite
+31,AI,24,"$2,849.48",Junior Suite
+32,AI,24,"$3,405.02",Family Selection Loft Suite
+33,AI,24,"$3,249.50",Family Selection Junior Suite
+34,AI,24,"$2,849.48",Junior Suite
+35,EP,25,"$2,809.84",Partial Ocean View Queen
+36,EP,25,"$2,911.51",Ocean View King
+37,EP,25,"$2,911.51",Ocean View Queen
+38,EP,25,"$3,013.20",Ocean Front Queen
+39,EP,25,"$3,216.65",Club King Room
+40,EP,25,"$3,420.01",Partial Ocean View Club Room - 1 King Bed
+41,EP,25,"$3,420.01",Partial Ocean View Club Room - 2 Queen Beds
+42,EP,25,"$3,555.56",Club View King
+43,EP,25,"$3,555.56",Club View Queen
+44,EP,25,"$3,555.56",Swim Up Queen
+45,EP,25,"$3,555.56",Swim Up Room King
+46,EP,25,"$4,165.69",Hyatt Suite King
+47,EP,25,"$4,301.28",Plunge Pool Suite
+48,EP,25,"$5,250.45",Executive Suite King
+49,AI,21,"$5,051.24",Diamond Suite
+50,EP,25,"$3,746.37",Hyatt Room King
+51,EP,25,"$3,868.38",Partial Ocean View Queen
+52,EP,25,"$3,959.91",Ocean View King
+53,EP,25,"$3,959.91",Ocean View Queen
+54,EP,25,"$4,051.38",Ocean Front Queen
+55,EP,25,"$4,234.47",Club King Room
+56,EP,25,"$4,417.51",Partial Ocean View Club Room - 1 King Bed
+57,EP,25,"$4,417.51",Partial Ocean View Club Room - 2 Queen Beds
+58,EP,25,"$4,539.53",Club View King
+59,EP,25,"$4,539.53",Club View Queen
+60,EP,25,"$4,539.53",Swim Up Queen
+61,EP,25,"$4,539.53",Swim Up Room King
+62,EP,25,"$5,088.67",Hyatt Suite King
+63,EP,25,"$5,210.69",Plunge Pool Suite
+64,EP,25,"$6,064.96",Executive Suite King
+65,EP,25,"$3,868.38",Partial Ocean View King
+66,AI,21,"$5,866.10",Imperial Suite
+67,AI,20,"$2,912.28",Junior Suite Garden View
+68,AI,20,"$3,015.96",Junior Suite Partial Ocean View
+69,AI,19,"$3,337.24",Xhale Club Junior Suite Swimout Tropical View Double
+70,AI,19,"$3,337.24",Xhale Club Junior Suite Swimout Tropical View King
+71,AI,19,"$3,412.18",Xhale Club Junior Suite Ocean Front King
+72,AI,19,"$4,063.72",Xhale Club Master Suite Ocean View King
+73,AI,19,"$4,138.60",Xhale Club Master Suite Ocean Front King
+74,AI,19,"$3,764.89",Xcelerate Junior Suite Ocean Front Double Beds
+75,AI,19,$0.00,&nbsp;
+76,AI,19,$0.00,&nbsp;
+77,AI,18,"$2,964.31",Junior Suite Partial Ocean View (2 Doubles)
+78,AI,18,"$3,045.56",Junior Suite Ocean View
+79,AI,18,"$3,111.06",Preferred Club Junior Suite Swim Out King
+80,AI,18,"$3,126.81",Junior Suite Swim Out
+81,AI,18,"$3,182.56",Preferred Club Ocean Front
+82,AI,18,"$3,301.81",Preferred Club Junior Suite Ocean View (1 King)
+83,AI,19,"$3,254.86",Xhale Club Junior Suite Ocean View King
+84,AI,18,"$3,721.56",Preferred Club Master Suite Ocean Front
+85,AI,18,"$5,008.56",Preferred Club Master Suite Peony
+86,AI,18,"$3,288.06",Junior Suite Partial Ocean View (2 Doubles)
+87,AI,17,"$3,072.80",Luxury
+88,AI,17,"$3,099.50",Luxury Royal View
+89,AI,17,"$3,155.78",Luxury Relax Pool
+90,AI,17,"$3,550.58",Luxury Sunrise
+91,AI,17,"$3,709.88",Suite Ocean View
+92,AI,30,"$3,102.36",Suite
+93,AI,30,"$3,195.60",Superior Suite
+94,AI,30,"$3,604.32",Ocean Front Suite
+95,AI,30,"$4,106.28",Superior Ocean Front Suite
+96,AI,30,"$4,328.58",Superior Ocean Front Corner Suite
+97,AI,30,$0.00,&nbsp;
+98,AI,16,"$3,139.04",Deluxe Gold - Family Section - 1 King Bed
+99,AI,18,"$4,739.06",Preferred Club Master Suite Orchid
+100,EP,25,"$2,809.84",Partial Ocean View King
+101,AI,19,"$3,204.58",Xcelerate Junior Suite Ocean Front King Bed
+102,AI,19,"$3,174.94",Xcelerate Junior Suite Swimout Tropical View King
+103,AI,20,"$3,119.64",Romance Junior Suite Partial Ocean View
+104,AI,20,"$3,154.20",Junior Suite Swim-Out Garden View
+105,AI,20,"$3,257.88",Junior Suite Swim-Out Partial Ocean View
+106,AI,20,"$3,361.56",Romance Junior Suite Swim-Out Partial Ocean View
+107,AI,20,"$3,522.84",Serenity Club Junior Suite Ocean Front
+108,AI,20,"$3,626.52",Serenity Club Romance Junior Suite Ocean Front
+109,AI,20,"$3,764.76",Serenity Club Junior Suite Swim-Out Ocean Front
+110,AI,20,"$3,868.44",Serenity Club Romance Junior Suite Swim-Out Ocean Front
+111,AI,20,"$4,075.80",Serenity Club 1 Bedroom Master Suite Ocean Front
+112,AI,20,"$2,912.28",Junior Suite Garden View
+113,AI,20,"$3,015.96",Junior Suite Partial Ocean View
+114,AI,20,"$3,119.64",Romance Junior Suite Partial Ocean View
+115,AI,20,"$3,154.20",Junior Suite Swim-Out Garden View
+116,AI,20,"$3,257.88",Junior Suite Swim-Out Partial Ocean View
+117,AI,19,"$3,204.58",Xcelerate Junior Suite Ocean Front Double Beds
+118,AI,20,"$3,361.56",Romance Junior Suite Swim-Out Partial Ocean View
+119,AI,20,"$3,626.52",Serenity Club Romance Junior Suite Ocean Front
+120,AI,20,"$3,764.76",Serenity Club Junior Suite Swim-Out Ocean Front
+121,AI,20,"$3,868.44",Serenity Club Romance Junior Suite Swim-Out Ocean Front
+122,AI,20,"$4,075.80",Serenity Club 1 Bedroom Master Suite Ocean Front
+123,AI,19,"$2,923.12",Allure Junior Suite Ocean View Double
+124,AI,19,"$2,923.12",Allure Junior Suite Ocean View King
+125,AI,19,"$2,997.16",Xcelerate Junior Suite Tropical View Double Beds
+126,AI,19,"$3,026.80",Allure Junior Suite Swimout Tropical View Double
+127,AI,19,"$3,026.80",Allure Junior Suite Swimout Tropical View King
+128,AI,19,"$3,086.08",Xcelerate Junior Suite Ocean View Double Beds
+129,AI,19,"$3,086.08",Xcelerate Junior Suite Ocean View King Bed
+130,AI,19,"$3,145.36",Allure Junior Suite Ocean Front Double
+131,AI,19,"$3,145.36",Allure Junior Suite Ocean Front King
+132,AI,19,"$3,174.94",Xcelerate Junior Suite Swimout Tropical View Double
+133,AI,20,"$3,522.84",Serenity Club Junior Suite Ocean Front
+134,AI,16,"$3,194.18",Deluxe Gold Double
+135,AI,26,"$4,549.58","Honeymoon Suite, 1 King Bed"
+136,AI,26,"$3,270.04",Premium Ocean Front - King Bed
+137,EP,102,"$4,543.55",Beach Area Room - 1 King Bed
+138,EP,102,"$4,543.55",Beach Area Room - 2 Double Beds
+139,EP,102,"$4,949.92",Beach Front Room - 2 Double Beds
+140,EP,102,"$5,124.04",Accessible Andaz Suite - 1 King Bed
+141,EP,102,"$5,704.54",Lagoon View Suite - 1 King Bed
+142,EP,102,"$5,994.82",Beach Area Suite - 1 King Bed
+143,EP,102,"$6,285.04",Ocean Front Studio - 1 King Bed
+144,EP,102,"$6,865.54",Beach Front Studio - 1 King Bed
+145,AI,101,"$2,676.41",Preferred Club Ocean View &amp; Pool Front - Double
+146,AI,101,"$2,676.41",Preferred Club Ocean View &amp; Pool Front - King
+147,AI,101,"$2,685.06",Premium Deluxe Tropical and Garden View-Double Bed
+148,AI,101,"$2,685.06",Premium Deluxe Tropical and Garden View-King Bed
+149,AI,101,"$2,715.91",Premium Deluxe Ocean View - Double Bed
+150,AI,101,"$2,715.91",Premium Deluxe Ocean View King Bed
+151,AI,101,"$2,783.81",Premium Deluxe with Plunge Pool - Double Bed
+152,AI,101,"$2,783.81",Premium Deluxe with Plunge Pool King Bed
+153,AI,101,"$2,837.21",Preferred Club Ocean View-Double Bed
+154,AI,101,"$3,024.06",Preferred Club w/Plunge Pool-Double Bed
+155,AI,101,"$3,274.06",Preferred Club Ocean Front Honeymoon Suite - King Bed
+156,AI,101,"$3,405.11",Preferred Club Ocean Front Master Suite - King Bed
+157,AI,100,"$2,676.81",Deluxe Junior Suite Tropical View Double
+158,AI,100,"$2,676.81",Deluxe Junior Suite Tropical View King
+159,AI,100,"$2,825.86",Preferred Club Junior Suite Tropical View Double
+160,AI,100,"$2,825.86",Preferred Club Junior Suite Tropical View King
+161,AI,100,"$4,076.81",Family Junior Suite Tropical View
+162,AI,100,"$4,375.71",Preferred Club Family Junior Suite Tropical View
+163,AI,100,"$4,780.51",Preferred Club Master Suite Ocean Front King
+164,AI,100,"$2,943.06",Deluxe Junior Suite Tropical View Double
+165,AI,100,"$2,943.06",Deluxe Junior Suite Tropical View King
+166,EP,102,"$4,253.31",Lagoon View Room - 2 Double Beds
+167,EP,102,"$4,253.31",Lagoon View Room - 1 King Bed
+168,EP,102,"$3,963.04",Andaz Room - 2 Double Beds
+169,EP,102,"$3,963.04",Andaz Room - 1 King Bed
+170,AI,104,"$3,214.36",Preferred Club Junior Suite Tropical View 2 Double Beds
+171,AI,104,"$3,214.36",Preferred Club Junior Suite Tropical View King Bed
+172,AI,103,"$2,645.78",Luxury Junior Suite Sunset View
+173,AI,103,"$2,759.12",Luxury Junior Suite Ocean Front
+174,AI,103,"$2,759.12",Luxury Suite Sunset View
+175,AI,103,"$2,834.66",Luxury Junior Suite Diamond Club Sunset View
+176,AI,103,"$2,834.66",Luxury Suite Ocean Front
+177,AI,103,"$2,910.20",Luxury Junior Suite Ocean Front Diamond Club
+178,AI,103,"$2,910.20",Luxury Presidential One Bedroom Suite Sunset View
+179,AI,103,"$2,985.80",Luxury Presidential One Bedroom Suite Ocean Front
+180,AI,103,"$2,723.54",Luxury Junior Suite Sunset View
+181,AI,103,"$2,843.54",Luxury Junior Suite Ocean Front
+182,AI,103,"$2,843.54",Luxury Suite Sunset View
+183,AI,103,"$2,923.58",Luxury Junior Suite Diamond Club Sunset View
+184,AI,100,"$3,121.92",Preferred Club Junior Suite Tropical View Double
+185,AI,103,"$2,923.58",Luxury Suite Ocean Front
+186,AI,103,"$3,003.56",Luxury Presidential One Bedroom Suite Sunset View
+187,AI,103,"$3,083.54",Luxury Presidential One Bedroom Suite Ocean Front
+188,EP,102,"$2,656.95",Andaz Room - 1 King Bed
+189,EP,102,"$2,656.95",Andaz Room - 2 Double Beds
+190,EP,102,"$2,947.17",Lagoon View Room - 1 King Bed
+191,EP,102,"$2,947.17",Lagoon View Room - 2 Double Beds
+192,EP,102,"$3,237.45",Beach Area Room - 1 King Bed
+193,EP,102,"$3,237.45",Beach Area Room - 2 Double Beds
+194,EP,102,"$3,643.77",Beach Front Room - 2 Double Beds
+195,EP,102,"$3,817.96",Accessible Andaz Suite - 1 King Bed
+196,EP,102,"$4,398.45",Lagoon View Suite - 1 King Bed
+197,EP,102,"$4,688.67",Beach Area Suite - 1 King Bed
+198,EP,102,"$4,978.95",Ocean Front Studio - 1 King Bed
+199,EP,102,"$5,559.45",Beach Front Studio - 1 King Bed
+200,AI,103,"$3,003.56",Luxury Junior Suite Ocean Front Diamond Club
+201,AI,100,"$3,121.92",Preferred Club Junior Suite Tropical View King
+202,AI,100,"$4,623.06",Family Junior Suite Tropical View
+203,AI,100,"$4,981.74",Preferred Club Family Junior Suite Tropical View
+204,AI,29,"$3,217.70",The Reserve Junior Suite
+205,AI,29,"$3,268.40",1-Bedroom Master Suite
+206,AI,29,"$3,701.84",The Reserve 1-Bedroom Suite
+207,AI,29,"$3,763.76",The Reserve 1-Bedroom Master Suite
+208,AI,29,"$4,197.26",The Reserve Paradisus Junior Suite Swim Up
+209,AI,29,"$4,439.36",The Reserve 1-Bedroom Suite Swim Up
+210,AI,29,"$4,613.84",The Reserve 1-Bedroom Master Suite Swim Up
+211,AI,28,"$2,786.01",Deluxe Garden View King
+212,AI,28,"$2,827.51",Deluxe Garden View Adults with King Bed
+213,AI,28,"$2,827.51",Deluxe Garden View Double Adults
+214,AI,28,"$2,827.51",Deluxe Junior Garden View
+215,AI,28,"$2,845.26",Junior Suite Garden View Double
+216,AI,28,"$2,845.26",Junior Suite Garden View King
+217,AI,28,"$2,898.61",Preferred Club Junior Suite Garden View Double
+218,AI,29,"$3,183.92",1-Bedroom Suite
+219,AI,28,"$2,898.61",Preferred Club Junior Suite Garden View King
+220,AI,27,"$2,805.02",Junior Suite Double
+221,AI,27,"$2,805.02",Junior Suite Ocean View Double
+222,AI,27,"$2,805.02",Junior Suite Ocean View King
+223,AI,27,"$3,412.46",Junior Suite Swim Out Double
+224,AI,27,"$3,412.46",Junior Suite Swim Out King
+225,AI,27,"$3,916.16",Roof Top Suite
+226,AI,27,"$3,338.36",Junior Suite Double
+227,AI,27,"$3,338.36",Junior Suite Ocean View Double
+228,AI,27,"$3,338.36",Junior Suite Ocean View King
+229,AI,26,"$2,808.92",Premium Garden View - Double Bed
+230,AI,26,"$2,912.60",Premium Lagoon View - Double Bed
+231,AI,26,"$3,085.55",Premium Ocean View - Double Bed
+232,AI,26,"$3,085.55",Premium Ocean View - King Bed
+233,AI,26,"$3,270.04",Premium Ocean Front - Double Bed
+234,AI,28,"$3,981.86",Hacienda Preferred Club Suite
+235,AI,26,"$4,319.08",Premium Master Suite
+236,AI,29,"$2,756.06",Paradisus Junior Suite
+237,AI,31,"$3,150.92",Junior Suite Pool View Premium Level
+238,AI,100,"$5,467.50",Preferred Club Master Suite Ocean Front King
+239,AI,99,"$2,705.96",Standard
+240,AI,99,"$2,970.92",Ocean View Standard
+241,AI,99,"$3,017.00",Deluxe
+242,AI,99,"$3,281.96",Ocean View Deluxe
+243,AI,99,"$3,316.52",Family Room
+244,AI,99,"$3,477.80",Swim-Up Junior Suite
+245,AI,98,"$2,745.80",Junior Suite Ocean Front
+246,AI,98,"$2,888.00",Junior Suite Ocean Front Superior
+247,AI,98,"$3,101.36",Junior Suite Ocean Front Corner
+248,AI,98,$0.00,&nbsp;
+249,AI,65,"$2,745.80",Junior Suite Ocean View Double
+250,AI,65,"$2,745.80",Junior Suite Ocean View King
+251,AI,65,"$2,967.98",Junior Suite Ocean View Double
+252,AI,31,"$3,326.54",Junior Suite Ocean Front Premium Level
+253,AI,65,"$2,967.98",Junior Suite Ocean View King
+254,AI,65,"$3,353.18",Junior Suite Swim-out King
+255,AI,65,"$3,753.20",INSPIRA
+256,AI,65,"$3,753.20",INSPIRA
+257,AI,65,"$3,753.20",INSPIRA Terrace Junior Suite Double
+258,AI,65,"$3,753.20",INSPIRA Terrace Junior Suite King
+259,AI,65,"$3,856.88",Rooftop Suite
+260,AI,65,"$3,886.52",INSPIRA Baby Suite
+261,AI,64,"$2,751.24",Luxury Junior Suite
+262,AI,64,"$2,811.54",Luxury Suite with Terrace Jacuzzi
+263,AI,64,"$2,972.16",Luxury Junior Suite Diamond Club
+264,AI,63,"$2,751.56",Junior Suite
+265,AI,63,"$2,891.84",Suite
+266,AI,63,$0.00,&nbsp;
+267,AI,31,"$2,755.82",Junior Suite Deluxe
+268,AI,65,"$3,353.18",Junior Suite Swim-out Double
+269,AI,16,"$3,234.13",Deluxe Gold Pure Double - Family Section
+270,AI,16,"$3,242.10",Deluxe Diamond King
+271,AI,16,"$3,290.09",Deluxe Platinum Grand Sky Terrace 1-Bedroom - Family Section
+272,AI,60,"$3,774.29",Ocean Front Junior Suite King
+273,AI,60,"$3,774.29",Ocean View Junior Suite Double
+274,AI,60,"$3,557.42",Junior Suite Double
+275,AI,60,"$3,774.29",Ocean View Junior Suite Double
+276,AI,60,"$3,774.29",Ocean View Junior Suite King
+277,AI,60,"$3,904.43",Ocean Front Junior Suite King
+278,AI,59,"$3,648.62",Ocean Front 1-Bedroom Suite
+279,AI,59,"$3,752.30",Ocean Front 1-Bedroom Swim-Up Suite
+280,AI,59,"$8,154.02",Ocean Front 3-Bedroom Swim-Up Suite
+281,AI,58,"$3,677.78",Alcoba Ocean View Double
+282,AI,58,"$3,677.78",Alcoba Ocean View King
+283,AI,58,"$4,165.58",Alcoba Ocean Front King
+284,AI,58,"$4,214.30",Estancia Suite Tropical View - One Bedroom
+285,AI,57,"$3,686.46",Junior Suite Tropical View King
+286,AI,57,"$7,150.46",Romance Master Suite Ocean Front King
+287,AI,56,"$3,713.26",Junior Suite Tropical View King Bed
+288,AI,56,"$3,805.81",Junior Suite Partial Ocean View Double Beds
+289,AI,56,"$3,805.81",Junior Suite Partial Ocean View King Bed
+290,AI,56,"$3,849.06",Junior Suite Ocean View Double Beds
+291,AI,56,"$3,849.06",Junior Suite Ocean View King Bed
+292,AI,56,"$3,947.81",Junior Suite Swim-Out
+293,AI,56,"$4,207.26",Preferred Club Junior Suite Ocean View Double Beds
+294,AI,55,"$3,733.56",Superior Deluxe - Lagoon View
+295,AI,55,"$4,094.81",Superior Deluxe - Ocean View
+296,AI,55,"$4,504.81",Honeymoon
+297,AI,55,"$6,626.06",Family Deluxe
+298,AI,55,"$3,733.56",Superior Deluxe - Ocean View
+299,AI,54,"$3,755.56",Superior Deluxe - Partial Ocean View
+300,AI,54,"$3,994.31",Superior Deluxe - Ocean View
+301,AI,60,"$3,600.77",Ocean View Junior Suite King
+302,AI,60,"$3,557.42",Junior Suite Double
+303,AI,61,"$3,550.52",Casita Suite
+304,AI,33,"$6,115.88",Finest Club Imperial Suite with Private Pool
+305,AI,15,"$3,821.94",Premium Aqua Club Oceanfront - King
+306,AI,15,"$5,129.11",Viento Suite
+307,AI,15,$0.00,&nbsp;
+308,AI,32,"$3,446.36",Ocean Front Junior Suite
+309,AI,32,"$3,522.86",Oceanfront Dome Suite
+310,AI,32,"$4,058.36",Ocean Front Swim-Up Junior Suite
+311,AI,47,"$3,456.92",Junior Suite - Golf Course
+312,AI,47,"$3,456.92",Superior Deluxe - Garden View
+313,AI,47,"$3,671.72",Superior Deluxe - Ocean View
+314,AI,47,"$4,138.40",Swim Up Suite
+315,AI,47,"$5,375.42",Governor Suite
+316,AI,47,"$6,019.88",Family Deluxe
+317,AI,47,"$3,456.92",Superior Deluxe - Ocean View
+318,AI,33,"$3,546.92",Junior Suite Spa or Pool View
+319,AI,54,"$5,548.06",Governor Suite
+320,AI,33,"$3,834.92",Excellence Club Junior Suite Pool View
+321,AI,33,"$3,915.56",Finest Club Junior Suite Pool View
+322,AI,33,"$3,973.16",Finest Club Junior Swim-up Suite
+323,AI,33,"$3,984.68",Excellence Club Junior Suite Ocean View
+324,AI,33,"$3,984.68",Junior Swim-up Suite
+325,AI,33,"$4,053.80",Finest Club Junior Suite Ocean View
+326,AI,33,"$4,134.44",Excellence Club Junior Swim-up Suite
+327,AI,33,"$4,134.44",Family Suite
+328,AI,33,"$4,134.44",Finest Club Two-Story Rooftop Terrace Suite with Plunge Pool
+329,AI,33,"$4,203.56",Two-Story Rooftop Terrace Suite with Plunge Pool
+330,AI,33,"$4,503.08",Finest Club Family Suite
+331,AI,33,"$4,503.08",Pool Family Suite
+332,AI,33,"$6,115.88",Excellence Club Imperial Suite Two-Story Rooftop Terrace with Plunge
+333,AI,33,"$6,115.88",Excellence Club Imperial Suite with Private Pool
+334,AI,33,"$6,115.88",Finest Club Imperial Suite Two-Story Rooftop Terrace Suite with Plunge
+335,AI,33,"$3,869.48",Junior Suite with Private Pool
+336,AI,53,"$3,801.68",Junior Suite
+337,AI,53,"$3,870.44",Honeymoon Suite
+338,AI,53,"$4,076.66",Mi Hotelito Beachfront Suite
+339,AI,44,"$5,343.07",Royale Deluxe Lagoon View
+340,AI,44,"$5,744.27",Royale Deluxe Partial Ocean View
+341,AI,44,"$5,946.73",Royale Honeymoon Ocean Front
+342,AI,44,"$5,343.07",Royale Deluxe Partial Ocean View
+343,EP,43,"$6,102.92",Bliss Pool Villa
+344,EP,43,"$6,887.30",Serenity Pool Villa with Living Room
+345,EP,43,"$7,671.71",Spa Pool Villa with Massage Porch
+346,EP,43,"$10,809.26",Three-Bedroom Family Residence
+347,EP,43,"$13,015.37",Spa Pool Villa with Massage Porch
+348,EP,43,"$14,878.28",Lagoon and Beachside 2-Bedroom Pool Villa
+349,EP,43,"$28,065.86",Beachfront Three-Bedroom Pool Villa
+350,EP,43,"$6,691.22",Bliss Pool Villa
+351,EP,43,"$7,475.60",Serenity Pool Villa with Living Room
+352,EP,43,"$8,260.01",Spa Pool Villa with Massage Porch
+353,AI,45,"$7,490.00",Junior Suite Adultos (Adults-Only)
+354,EP,43,"$12,574.16",Three-Bedroom Family Residence
+355,EP,43,"$16,054.88",Lagoon and Beachside 2-Bedroom Pool Villa
+356,EP,43,"$29,830.73",Beachfront Three-Bedroom Pool Villa
+357,AI,42,"$8,075.30",Ambassador Suite Ocean View
+358,AI,42,"$8,485.10",Ambassador Pool Suite Ocean Front View
+359,AI,42,"$8,872.88",Grand Class Suite Ocean Front
+360,AI,42,"$12,289.94",2-Bedroom Ambassador Family Suite Ocean View
+361,&nbsp;,41,$0.00,&nbsp;
+362,&nbsp;,40,$0.00,&nbsp;
+363,&nbsp;,39,$0.00,&nbsp;
+364,&nbsp;,38,$0.00,&nbsp;
+365,&nbsp;,37,$0.00,&nbsp;
+366,&nbsp;,36,$0.00,&nbsp;
+367,&nbsp;,35,$0.00,&nbsp;
+368,&nbsp;,34,$0.00,&nbsp;
+369,EP,43,"$14,191.94",Spa Pool Villa with Massage Porch
+370,AI,15,"$3,821.94",Premium Aqua Club Oceanfront - Double
+371,AI,45,"$7,045.58",Junior Suite Spa
+372,AI,45,"$5,712.20",Suite Ocean Front
+373,AI,53,"$4,489.10",Private Pool Suite
+374,AI,53,"$7,569.80",Royal Suite
+375,AI,52,"$3,834.92",Junior Suite Spa/Pool View
+376,AI,52,"$4,019.24",Junior Suite Swim-Up Spa/Pool View
+377,AI,52,"$4,157.48",Excellence Club Junior Suite Pool View
+378,AI,52,"$4,307.24",Terrace Suite with Plunge Pool
+379,AI,52,"$4,376.36",Two-Story Rooftop Terrace Suite Spa or Pool View
+380,AI,52,"$4,445.48",Excellence Club Junior Suite Ocean View
+381,AI,52,"$4,445.48",Excellence Club Junior Swim-Up Suite Pool View
+382,AI,52,"$5,056.04",Excellence Club Two-Story Rooftop Terrace Suite Front Ocean View
+383,AI,52,"$5,850.92",Excellence Club Honeymoon Suite with Private Pool
+384,AI,52,"$5,920.04",Excellence Club Honeymoon Two-Story Rooftop Terrace Suite w/PlungePool
+385,AI,52,"$6,346.28",Imperial Suite Two-Story Rooftop Terrace with Plunge Pool
+386,AI,52,"$6,346.28",Imperial Suite with Pool
+387,AI,45,"$7,045.58",Junior Suite
+388,AI,51,"$3,978.11",Romance Ocean Front One Bedroom Suite with Private Plunge Pool-KingBed
+389,AI,51,$0.00,&nbsp;
+390,AI,50,"$4,009.56",Deluxe - Resort View
+391,AI,49,"$4,253.56",Superior Deluxe - Ocean View
+392,AI,49,"$4,694.81",Junior Suite Ocean View
+393,AI,49,"$5,188.56",Honeymoon
+394,AI,49,"$5,188.56",Honeymoon
+395,AI,62,"$4,345.76",Grand Deluxe Garden View
+396,AI,62,"$7,975.40",Grand Family Deluxe
+397,AI,62,"$24,508.76",Grand Presidential Suite
+398,AI,48,"$4,536.30",Deluxe Garden View
+399,AI,46,"$4,699.56",Jr. Suite Ocean Front - 2 Double Beds
+400,AI,45,"$5,090.00",Suite River Spa (Adults-Only)
+401,AI,45,"$5,267.78",Suite River Adultos (Adults-Only)
+402,AI,45,"$5,534.42",Swim Up Garden
+403,AI,51,"$7,701.11",Butler Ocean Front Master Suite 2-Bedroom with Plunge Pool
+404,AI,15,"$3,676.62",Premium Oceanfront with Terrace - Double
+405,AI,15,"$3,545.78",Premium Oceanfront - King
+406,AI,15,"$3,545.78",Premium Oceanfront - Double
+407,AI,13,"$3,813.76",Preferred Club Jr Suite Ocean View - Double
+408,AI,13,"$3,813.76",Preferred Club Jr Suite Ocean View - King
+409,AI,13,"$4,387.96",Preferred Club Jr Ste OF w/ Private Pool - Double
+410,AI,13,"$4,793.61",Preferred Club Master Suite Ocean View - King
+411,AI,13,"$4,793.61",Preferred Club Master Suite Ocean View Double
+412,AI,13,"$5,199.31",Preferred Club Master Suite Swim Out Ocean View - King
+413,AI,13,"$6,016.91",Preferred Club Two Bedroom Villa
+414,AI,13,"$6,428.81",Preferred Club Master Suite Ocean Front with Private Pool
+415,AI,12,"$3,268.36",Junior Suite Spa/Pool View
+416,AI,12,"$3,452.68",Junior Suite Swim-Up Spa/Pool View
+417,AI,12,"$3,613.96",Excellence Club Junior Suite Oceanfront
+418,AI,12,"$3,648.52",Junior Suite Ocean View
+419,AI,12,"$3,683.08",Excellence Club Junior Suite Pool View
+420,AI,12,"$3,752.20",Two-Story Rooftop Terrace Suite Spa/Pool view
+421,AI,13,"$3,521.11",Jr Suite Ocean View - King
+422,AI,12,"$3,971.08",Excellence Club Junior Swim-Up Suite Ocean View
+423,AI,12,"$4,547.08",Excellence Club 2-Story Rooftop Terrace Suite Oceanfront
+424,AI,12,"$5,192.20",Excellence Club Honeymoon Suite w/Rooftop Terrace
+425,AI,12,"$5,318.92",Imperial Suite
+426,AI,11,"$3,268.66",Deluxe Ocean View Double
+427,AI,11,"$3,268.66",Deluxe Ocean View King
+428,AI,11,"$3,566.36",Preferred Junior Suite Ocean View
+429,AI,11,"$4,500.41",Master Suite Ocean View King
+430,AI,11,"$3,467.48",Deluxe Ocean View Double
+431,AI,11,"$3,467.48",Deluxe Ocean View King
+432,AI,11,"$3,794.90",Preferred Junior Suite Ocean View
+433,AI,11,"$4,821.14",Master Suite Ocean View King
+434,AI,10,"$3,285.68",Luxury Junior Suite
+435,AI,10,"$3,427.16",Beachfront Junior Suite
+436,AI,10,"$3,568.58",Swim-up Junior Suite
+437,AI,12,"$4,293.64",Excellence Club Honeymoon Suite Ocean Front
+438,AI,10,"$3,710.12",Beachfront Honeymoon Suite
+439,AI,13,"$3,521.11",Jr Suite Ocean View - Double
+440,AI,13,"$3,403.81",Jr Suite Pool View - King
+441,AI,16,"$3,625.50",Rock Royalty Level - Deluxe Platinum - Family Section
+442,AI,16,"$4,823.88",Deluxe Family (2 Connecting Rooms) - Family Section
+443,AI,16,"$5,063.42",Deluxe Platinum Grand Sky Terrace (2 Connecting Rooms)-Family Section
+444,AI,16,"$6,501.49",Rock Suite Platinum (2 Bedroom) w/Personal Assistant-Family Section
+445,AI,16,"$6,980.76",Rock Suite Platinum RoofTop Lounge (2 Bedroom) - Family Section
+446,AI,16,"$3,558.08",Deluxe Gold - Family Section - 1 King Bed
+447,AI,16,"$3,626.13",Deluxe Gold Double
+448,AI,16,"$3,675.53",Deluxe Gold Pure Double - Family Section
+449,AI,16,"$3,685.41",Deluxe Diamond King
+450,AI,16,"$3,744.69",Deluxe Platinum Grand Sky Terrace 1-Bedroom - Family Section
+451,AI,16,"$4,159.47",Rock Royalty Level - Deluxe Platinum - Family Section
+452,AI,16,"$5,640.86",Deluxe Family (2 Connecting Rooms) - Family Section
+453,AI,16,"$5,937.19",Deluxe Platinum Grand Sky Terrace (2 Connecting Rooms)-Family Section
+454,AI,16,"$7,714.84",Rock Suite Platinum (2 Bedroom) w/Personal Assistant-Family Section
+455,AI,13,"$3,447.01",Jr Suite Partial Ocean View - King
+456,AI,16,"$8,307.38",Rock Suite Platinum RoofTop Lounge (2 Bedroom) - Family Section
+457,AI,14,"$3,405.02",Loft Suite
+458,AI,14,$0.00,&nbsp;
+459,AI,13,"$3,264.32",Jr Suite Garden View - Double
+460,AI,13,"$3,264.32",Jr Suite Garden View - King
+461,AI,13,"$3,323.54",Jr Suite Pool View - Double
+462,AI,13,"$3,323.54",Jr Suite Pool View - King
+463,AI,13,"$3,360.62",Jr Suite Partial Ocean View - King
+464,AI,13,"$3,442.10",Jr Suite Ocean View - Double
+465,AI,13,"$3,442.10",Jr Suite Ocean View - King
+466,AI,13,"$3,720.14",Preferred Club Jr Suite Ocean View - Double
+467,AI,13,"$3,720.14",Preferred Club Jr Suite Ocean View - King
+468,AI,13,"$3,342.06",Jr Suite Garden View - Double
+469,AI,13,"$3,342.06",Jr Suite Garden View - King
+470,AI,13,"$3,403.81",Jr Suite Pool View - Double
+471,AI,14,"$3,249.50",Junior Suite
+472,AI,104,"$3,139.16",Preferred Club Deluxe Ocean View King Bed
+473,AI,10,"$5,840.24",Royal Suite
+474,AI,9,$0.00,&nbsp;
+475,AI,5,"$3,351.08",Luxury Suite
+476,AI,5,"$3,500.84",Family Suite
+477,AI,5,"$4,042.28",Club Suite
+478,AI,5,"$4,042.28",Sunset Suite
+479,AI,5,"$4,284.20",Ocean Front Suite
+480,AI,4,"$3,358.02",Junior Suite Ocean Front - Double Bed
+481,AI,4,"$3,358.02",Junior Suite Ocean Front - King Bed
+482,AI,4,"$3,790.77",Junior Suite Grand Club Double
+483,AI,4,"$3,790.77",Junior Suite Grand Club King
+484,AI,4,"$4,132.40",Master Suite - King Bed
+485,AI,4,"$4,360.15",Master Suite Grand Club King
+486,AI,4,"$5,407.71",Junior Suite Ocean View Double
+487,AI,4,"$6,262.58",Junior Suite Ocean View King
+488,AI,3,"$3,367.80",Paradise Room
+489,AI,6,"$7,223.28",Rock Suite Platinum Two Bedroom
+490,AI,3,"$3,574.02",Paradise Junior Suite
+491,AI,3,"$3,780.24",Paradise Suite
+492,AI,3,"$3,992.16",Swim Up Paradise Suite
+493,AI,3,"$7,908.54",Royal Paradise Suite
+494,AI,3,"$8,456.70",Royal Swim Up Pararadise Suite
+495,AI,3,"$9,256.68",Presidential Chill Out Suite
+496,AI,2,"$3,379.11",Junior Suite Garden View Double
+497,AI,2,"$3,379.11",Junior Suite Garden View King Bed
+498,AI,2,"$3,496.41",Junior Suite Swim Out Double Beds
+499,AI,2,"$3,496.41",Junior Suite Swim Out King Bed
+500,AI,2,"$3,539.61",Junior Suite Ocean View King Bed
+501,AI,2,"$3,612.44",Junior Suite Garden View Double
+502,AI,2,"$3,612.44",Junior Suite Garden View King Bed
+503,AI,2,"$3,790.22",Junior Suite Ocean View King Bed
+504,AI,15,"$3,397.64",Premium Ocean View - King
+505,AI,3,"$3,677.10",Swim Up Paradise Junior Suite
+506,AI,9,"$3,312.56",Suite
+507,AI,6,"$5,524.72",Rock Suite Platinum One Bedroom
+508,AI,6,"$3,826.12",Rock Royalty Level Deluxe Platinum King
+509,AI,8,"$3,319.45",Junior Suite - 2 Double Beds
+510,AI,8,"$3,319.45",Junior Suite - King Bed
+511,AI,8,"$3,401.65",Junior Suite Garden View - 2 Double Beds
+512,AI,8,"$3,401.65",Junior Suite Garden View - King Bed
+513,AI,8,"$3,442.78",Junior Suite Pool View - 2 Double Beds
+514,AI,8,"$3,566.05",Junior Suite Ocean View - King Bed
+515,AI,8,"$3,319.45",Junior Suite - 2 Double Beds
+516,AI,8,"$3,319.45",Junior Suite - King Bed
+517,AI,8,"$3,319.45",Junior Suite Garden View - 2 Double Beds
+518,AI,8,"$3,319.45",Junior Suite Garden View - King Bed
+519,AI,8,"$3,442.78",Junior Suite Pool View - 2 Double Beds
+520,AI,8,"$3,566.05",Junior Suite Ocean View - King Bed
+521,AI,7,"$3,337.16",Resort View Double
+522,AI,7,"$3,337.16",Resort View King
+523,AI,6,"$5,314.45",Deluxe Family Double
+524,AI,7,"$3,460.34",Ocean Front Double
+525,AI,7,"$3,542.54",Club Ocean Front Double
+526,AI,7,"$3,542.54",Club Ocean Front King
+527,AI,7,"$3,645.26",Dolphin View Master Double
+528,AI,7,"$3,645.26",Dolphin View Master King
+529,AI,7,"$3,871.28",Turquoize Ocean Front Master King - For ages 18+
+530,AI,7,"$3,912.32",Turquoize Sky Ocean Front Master King - For ages 18+
+531,AI,7,"$4,425.98",Ocean Front Pyramid Suite
+532,AI,7,"$4,631.54",Club Ocean Front Corner Suite
+533,AI,6,"$3,340.80",Deluxe Gold Double
+534,AI,6,"$3,340.80",Deluxe Gold King
+535,AI,6,"$3,437.92",Deluxe Gold Pure Wellness King
+536,AI,6,"$3,437.92",Deluxe Platinum Double
+537,AI,6,"$3,437.92",Deluxe Platinum King
+538,AI,6,"$3,486.40",Deluxe Diamond King
+539,AI,7,"$3,460.34",Ocean Front King
+540,&nbsp;,127,$0.00,&nbsp;
+541,AI,104,"$2,978.66",Preferred Club Deluxe Tropical View 2 Double Beds
+542,AI,104,"$2,626.84",Preferred Club Deluxe Ocean View King Bed
+543,EP,76,"$2,350.89","2 Double Beds, Sitting Area, Ocean View, Sitting area, Wireless High Speed Internet"
+544,EP,76,"$2,478.25","1 King Bed, Ocean View, Private Balcony"
+545,EP,76,"$2,504.75","Premium Ocean View Room, Sitting area, Wireless High Speed Internet"
+546,EP,76,"$2,566.61","1 King Bed, Ocean View, Private Balcony"
+547,EP,76,"$2,593.11","Premium Ocean View Room, Sitting area, Wireless High Speed Internet"
+548,EP,76,"$2,610.87","JW Luxury Suite, 1 King Bed, Sofa Bed, Ocean View"
+549,EP,76,"$2,699.14","JW Luxury Suite, 1 King Bed, Sofa Bed, Ocean View"
+550,EP,76,"$2,699.14","1 King Bed, Sitting area, Ocean View"
+551,EP,76,"$4,454.76","1 King Bed, Ocean View, Private Balcony"
+552,EP,76,"$4,522.76","2 Double Beds, Sitting Area, Ocean View, Sitting area, Wireless High Speed Internet"
+553,EP,76,"$4,658.76","1 King Bed, Ocean View, Private Balcony"
+554,EP,76,"$4,726.76","Premium Ocean View Room, Sitting area, Wireless High Speed Internet"
+555,AI,75,"$2,291.24",Double Room Ocean View
+556,AI,75,"$2,429.48",Junior Suite Ocean View
+557,AI,74,"$2,291.24",Double Standard Room
+558,AI,74,"$2,291.24",Double Standard Room Accessible
+559,AI,74,"$2,360.36",Double Room Partial Ocean View
+560,AI,74,"$2,394.92",Double Room Ocean View
+561,AI,74,"$2,394.92",Two Bedroom Family Suite
+562,AI,74,"$2,441.00",Double Room Ocean Front
+563,AI,74,"$2,648.36",Suite
+564,AI,73,"$2,298.06",Junior Suite Tropical View Double
+565,AI,73,"$2,711.94",Preferred Club Suite Ocean Front King
+566,AI,73,"$2,868.06",Family Suite
+567,AI,73,"$2,439.31",Junior Suite Tropical View Double
+568,AI,73,"$2,914.36",Preferred Club Suite Ocean Front King
+569,AI,73,"$3,101.81",Family Suite
+570,AI,73,"$5,725.62",Preferred Club Governor Suite Ocean Front
+571,AI,72,"$2,304.31",Deluxe Garden View Double
+572,EP,76,"$2,325.99","1 King Bed, Ocean View, Private Balcony"
+573,EP,76,"$2,297.96","2 Double Beds, Sitting Area, Ocean View, Sitting area, Wireless High Speed Internet"
+574,EP,76,"$2,272.26","1 King Bed, Ocean View, Private Balcony"
+575,AI,77,"$2,526.42",Ocean Front Junior Suite
+576,AI,81,"$2,751.38",Suite Ocean Front Premium Level
+577,AI,81,"$3,769.10",Family Ocean Front Premium Level
+578,AI,81,"$2,383.06",Double Room Sea Front View
+579,AI,81,"$2,445.72",Double Sea View Premium Level
+580,AI,94,"$2,229.56",Double Room
+581,AI,94,"$2,229.56",Double Room Accessible
+582,AI,94,"$2,632.76",Junior Suite
+583,AI,80,"$2,240.64",Double
+584,AI,80,"$2,294.16",Double Near Pool
+585,AI,80,"$2,355.36",JuniorSte
+586,AI,80,"$2,554.26",Junior Suite Ocean Front
+587,AI,80,"$2,615.46",Junior Suite Ocean Front Beach Access
+588,AI,80,"$2,574.06",Double
+589,AI,80,"$2,647.56",Double Near Pool
+590,AI,72,"$2,304.31",Deluxe Garden View King
+591,AI,80,"$2,731.56",JuniorSte
+592,AI,80,"$3,088.56",Junior Suite Ocean Front Beach Access
+593,AI,78,"$2,249.08",Standard
+594,AI,78,"$2,391.28",Junior Suite
+595,AI,78,"$2,462.38",Junior Suite Ocean View
+596,AI,78,"$2,557.18",Junior Suite Ocean Front
+597,AI,78,"$2,604.52",Family Junior Suite Ocean Front
+598,AI,78,"$2,249.08",Junior Suite
+599,AI,78,"$2,249.08",Standard
+600,AI,78,"$2,391.28",Junior Suite Ocean View
+601,AI,78,"$2,557.18",Junior Suite Ocean Front
+602,AI,78,"$2,604.52",Family Junior Suite Ocean Front
+603,AI,77,"$2,253.90",Double Room
+604,AI,77,"$2,344.74",Double Near Pool
+605,AI,77,"$2,393.64",Junior Suite
+606,AI,80,"$3,004.56",Junior Suite Ocean Front
+607,AI,72,"$2,355.61",Deluxe Laguna View Double
+608,AI,72,"$2,374.86",Deluxe Laguna View Balcony King
+609,AI,72,"$2,394.06",Deluxe Partial Ocean View Double
+610,AI,67,"$2,473.16",Family Suite Deluxe Garden View
+611,AI,67,"$2,606.06",Deluxe King Ocean View
+612,AI,67,"$2,625.06",Family Suite Deluxe Ocean View
+613,AI,67,"$2,767.66",Preferred Dolphin View Double
+614,AI,67,"$2,767.66",Preferred Dolphin View King
+615,AI,67,"$2,844.16",Preferred Club Ocean View Double
+616,AI,67,"$2,844.16",Preferred Club Ocean View King
+617,AI,67,"$2,856.91",Preferred Club Family Suite Ocean View
+618,AI,66,"$2,353.46",Double Ocean Side View
+619,AI,66,"$2,363.54",Villa Garden View
+620,AI,66,"$2,399.12",Double Ocean View
+621,AI,66,"$2,451.26",Double Ocean View Superior
+622,AI,66,"$2,692.46",Suite Ocean View
+623,AI,79,"$2,382.00",Junior Suite
+624,AI,67,"$2,454.16",Family Suite Deluxe Pool View
+625,AI,79,"$2,538.42",Pool View Junior Suite
+626,AI,95,"$2,386.06",Deluxe Partial Ocean View Double
+627,AI,95,"$2,386.06",Deluxe Partial Ocean View King
+628,AI,95,"$2,411.06",Deluxe Partial Ocean View King with Balcony
+629,AI,95,"$2,423.56",Deluxe Ocean Front Double
+630,AI,95,"$2,423.56",Deluxe Ocean Front King
+631,AI,95,"$2,442.31",Deluxe Ocean Front King with Balcony
+632,AI,95,"$2,564.41",Preferred Club Ocean Front Double
+633,AI,95,"$2,564.41",Preferred Club Ocean Front King
+634,AI,95,"$2,589.76",Preferred Club Ocean Front King with Balcony
+635,AI,95,"$3,159.51",Preferred Club Ocean Front Corner Suite
+636,AI,95,"$3,210.16",Preferred Club Honeymoon Suite
+637,AI,95,"$3,873.56",Preferred Club Family Suite
+638,AI,96,"$2,397.14",Deluxe
+639,AI,96,"$2,436.20",1-Bedroom Resort Residence
+640,AI,79,"$2,544.96",Superior Junior Suite
+641,AI,81,"$2,219.78",Double
+642,AI,67,"$2,403.51",Deluxe Dolphin View King
+643,AI,67,"$2,384.56",Deluxe Pool View King
+644,AI,72,"$2,394.06",Deluxe Partial Ocean View King
+645,AI,72,"$2,445.36",Deluxe Ocean Front View Double
+646,AI,72,"$2,445.36",Deluxe Ocean Front View King
+647,AI,72,"$2,477.41",Deluxe Ocean Front Balcony King
+648,AI,72,"$3,353.21",Preferred Club Honeymoon Suite
+649,AI,71,"$2,315.76",Double Room
+650,AI,71,"$2,359.86",Double Near Pool
+651,AI,71,"$2,411.34",Double Pool View Room
+652,AI,71,"$2,462.76",Junior Suite
+653,AI,71,"$2,573.04",Superior Junior Suite
+654,AI,71,$0.00,&nbsp;
+655,AI,70,"$2,333.24",Double Room
+656,AI,70,"$2,333.24",Double Room Accessible
+657,AI,69,"$2,333.24",Double Room
+658,AI,67,"$2,403.51",Deluxe Dolphin View Double
+659,AI,69,"$2,333.24",Double Room Accessible
+660,AI,68,"$2,345.58",Luxury Room
+661,AI,68,"$2,437.86",Junior Suite
+662,AI,68,"$2,484.00",Family Room
+663,AI,68,"$2,653.26",Junior Suite With Jacuzzi
+664,AI,68,"$2,684.04",Studio with Jacuzzi
+665,AI,68,"$2,976.30",One Bedroom Suite
+666,AI,68,"$4,068.66",Two Bedroom Suite
+667,AI,68,"$5,145.54",Three Bedroom Suite
+668,AI,68,"$2,760.96",Junior Suite Platinum
+669,AI,68,"$3,376.32",One Bedroom Suite Platinum
+670,AI,68,"$4,745.58",Two Bedroom Suite Platinum
+671,AI,68,"$6,099.42",Three Bedroom Suite Platinum
+672,AI,67,"$2,352.91",Deluxe Garden View
+673,AI,67,"$2,384.56",Deluxe Pool View Double
+674,AI,69,"$2,805.56",Suite
+675,AI,96,"$2,595.56",1-Bedroom Penthouse Resort Residence
+676,AI,82,"$3,418.12",Eden Master Suite Rooftop
+677,AI,82,"$3,268.36",Privilege Master Suite
+678,EP,92,"$2,801.06",Master Suite One Bedroom Ocean View
+679,EP,92,"$2,681.06",Master Suite One Bedroom Garden View
+680,EP,92,"$2,343.56",Deluxe Studio Ocean View
+681,EP,92,"$2,163.56",Deluxe Studio Garden View
+682,AI,91,"$2,183.48",Family Room
+683,AI,91,"$2,114.36",Double Room Accessible
+684,AI,91,"$2,114.36",Double Room
+685,AI,90,"$2,845.16",Privilege Romance Suite
+686,AI,90,"$2,557.16",Privilege Honeymoon Junior Suite
+687,AI,90,"$2,476.52",Privilege Honeymoon Maya Deluxe
+688,AI,90,"$2,441.96",Privilege Junior Suite
+689,AI,90,"$2,257.64",Mayan Deluxe Ocean View
+690,AI,90,"$2,107.88",Mayan Deluxe
+691,AI,89,"$3,937.56",Privilege Master Suite Ocean Front
+692,AI,89,"$2,992.92",Privilege Honeymoon Sutie Ocean Front
+693,AI,89,"$2,900.76",Privilege Royal Master Suite Ocean Front
+694,AI,89,"$2,624.28",Junior Suite Privilege Ocean View
+695,AI,89,"$2,451.48",Privilege Junior Suite Garden View
+696,AI,89,"$2,290.20",Junior Suite El Beso Ocean View
+697,AI,89,"$2,290.20",Junior Suite Daisy Ocean View
+698,AI,89,"$2,255.64",Junior Suite Ocean View
+699,AI,89,"$2,128.92",Junior Suite El Beso Garden View
+700,AI,89,"$2,128.92",Junior Suite Daisy Garden View
+701,AI,89,"$2,094.36",Junior Suite Garden View
+702,EP,88,"$4,998.76","2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+703,EP,88,"$4,794.76","2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+704,EP,88,"$4,250.76","Ocean View, 1 King Bed, Coffee Maker, Tea Maker"
+705,EP,88,"$4,046.76","Resort View, 1 King Bed, Coffee Maker, Tea Maker"
+706,EP,88,"$2,530.46","Premium Ocean View Room, 2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+707,EP,92,"$3,941.06",Family Master Suite Two Bedroom Ocean View
+708,EP,92,"$5,868.56",Royal Family Master Suite Loft
+709,EP,92,"$5,868.56",Royal Family Master Suite Two Bedroom Ocean Front
+710,EP,92,"$6,333.56",Royal Family Master Suite Three Bedroom Ocean Front
+711,AI,1,"$2,325.80",Junior Suite Ocean View
+712,AI,1,"$2,429.48",Junior Suite Ocean Front
+713,AI,93,"$2,625.32",Golden Room Ocean View
+714,AI,93,"$2,533.16",Club Ocean View
+715,AI,93,"$2,429.48",Club Lagoon Sunset View
+716,AI,93,"$2,314.28",Deluxe Ocean View
+717,AI,93,"$2,176.04",Deluxe Lagoon Sunset View
+718,AI,92,"$13,586.06",Royal Master Suite Three Bedroom Residential Loft
+719,AI,92,"$9,363.56",Imperial Master Suite Two Bedroom Penthouse
+720,AI,92,"$8,163.56",Royal Master Suite Three Bedroom Residential Loft
+721,AI,92,"$8,163.56",Royal Family Master Suite Three Bedroom Ocean Front
+722,AI,92,"$7,608.56",Royal Family Master Suite Two Bedroom Ocean Front
+723,AI,92,"$7,608.56",Royal Family Master Suite Loft
+724,AI,92,"$5,321.06",Family Master Suite Two Bedroom Ocean View
+725,EP,88,"$2,499.46","1 King or 2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+726,AI,92,"$3,956.06",Master Suite One Bedroom Ocean View
+727,AI,92,"$3,416.06",Deluxe Studio Ocean View
+728,AI,92,"$3,206.06",Deluxe Studio Garden View
+729,EP,92,"$10,556.06",Royal Master Suite Three Bedroom Residential Loft
+730,EP,92,"$10,106.06",Imperial Master Suite Two Bedroom Penthouse
+731,EP,92,"$9,641.06",Royal Family Master Suite Three Bedroom Ocean Front
+732,EP,92,"$8,283.56",Royal Family Master Suite Loft
+733,EP,92,"$7,953.56",Royal Family Master Suite Two Bedroom Ocean Front
+734,EP,92,"$4,338.56",Family Master Suite Two Bedroom Ocean View
+735,EP,92,"$3,078.56",Master Suite One Bedroom Ocean View
+736,EP,92,"$2,996.06",Master Suite One Bedroom Garden View
+737,EP,92,"$2,643.56",Deluxe Studio Ocean View
+738,EP,92,"$2,523.56",Deluxe Studio Garden View
+739,EP,92,"$7,346.06",Imperial Master Suite Two Bedroom Penthouse
+740,EP,92,"$6,333.56",Royal Master Suite Three Bedroom Residential Loft
+741,AI,92,"$3,821.06",Master Suite One Bedroom Garden View
+742,EP,88,"$2,478.66","2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+743,EP,88,"$2,447.67","1 King or 2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+744,EP,88,"$2,426.88","Premium Ocean View Room, 2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+745,Standard,86,"$2,033.18","1KB, Superior, Courtyard View"
+746,EP,85,"$1,788.36","2 Double Beds, Refrigerator"
+747,EP,85,"$1,788.36","1 King Bed, 1 King Bed, Refrigerator, Wireless High Speed Internet"
+748,EP,85,"$1,749.85","2 Double Beds, Refrigerator"
+749,EP,85,"$1,749.85","1 King Bed, 1 King Bed, Refrigerator, Wireless High Speed Internet"
+750,EP,84,"$1,824.62",Junior Suite King
+751,EP,84,"$1,598.18",Superior King
+752,EP,84,"$1,598.18",Superior Double
+753,AI,83,"$2,188.82",Deluxe Lagoon View
+754,AI,83,"$2,292.32",Deluxe Ocean View
+755,AI,83,"$4,376.42",Family Villa
+756,AI,82,"$2,197.00",Junior Suite
+757,AI,82,"$2,243.08",Daisy Junior Suite Garden View
+758,AI,82,"$2,243.08",Junior Suite Pool View
+759,Standard,86,"$2,099.29","Junior Suite, 1 King Bed with Sofa Bed"
+760,AI,82,"$2,277.64",Daisy Junior Suite Pool View
+761,AI,82,"$2,277.64",El Beso Junior Suite
+762,AI,82,"$2,312.20",Eden Junior Suite Pool View
+763,AI,82,"$2,346.76",Eden Junior Suite with Jacuzzi
+764,AI,82,"$2,427.40",Eden Junior Suite Ocean View
+765,AI,82,"$2,508.04",Eden Junior Suite Swim Up
+766,AI,82,"$2,519.56",El Beso Junior Suite Swim Up
+767,AI,82,"$2,554.12",Privilege Junior Suite Garden View
+768,AI,82,"$2,600.20",Privilege Junior Suite Pool View
+769,AI,82,"$2,738.44",Eden Junior Suite Rooftop
+770,AI,82,"$2,749.96",El Beso Junior Suite Rooftop
+771,AI,82,"$2,796.04",Privilege Junior Suite Swim Up
+772,AI,82,"$2,899.72",Eden Junior Suite Rooftop Ocean View
+773,AI,82,"$2,980.36",Eden Master Suite
+774,AI,82,"$3,026.44",Privilege Junior Suite Rooftop
+775,AI,82,"$2,277.64",Eden Junior Suite Garden View
+776,AI,82,"$3,337.48",Privilege Master Suite Swim Up
+777,Standard,86,"$2,231.51","1 Bedroom Suite with Terrace, 1KB, Living-Dining Area"
+778,Standard,86,"$2,363.73","One Bedroom Suite, 1KB, Partial Ocean View, Terrace, Whirlpool"
+779,EP,88,"$2,395.88","1 King or 2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+780,EP,88,"$2,375.09","2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+781,EP,88,"$2,344.00","Ocean View, 1 King Bed, Coffee Maker, Tea Maker"
+782,EP,88,"$2,292.36","2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+783,EP,88,"$2,265.17","Ocean View, 1 King Bed, Coffee Maker, Tea Maker"
+784,EP,88,"$2,136.95","2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+785,EP,88,"$2,105.85","Resort View, 1 King Bed, Coffee Maker, Tea Maker"
+786,EP,88,"$2,074.76","2 Double Beds, Wireless High Speed Internet, Coffee Maker"
+787,EP,88,"$2,040.76","Resort View, 1 King Bed, Coffee Maker, Tea Maker"
+788,Standard,87,"$3,767.67","1 King Bed, 1 King Bed, Sofa Bed"
+789,Standard,87,"$3,478.90","1 King Bed, 1 King Bed, Sofa Bed"
+790,Standard,87,"$2,818.69","1 King Bed, Sofa Bed, Wireless High Speed Internet"
+791,Standard,87,"$2,593.18","1 King Bed, Sofa Bed, Wireless High Speed Internet"
+792,Standard,87,"$2,411.98","2 Double Beds, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+793,Standard,86,"$2,363.73","One Bedroom Suite, 1KB, Partial Ocean View, Terrace, High Floor"
+794,Standard,87,"$2,411.98","1 King Bed, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+795,Standard,87,"$2,344.19","1 King Bed, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+796,Standard,87,"$2,087.95","2 Double Beds, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+797,Standard,87,"$2,087.95","1 King Bed, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+798,Standard,87,"$2,033.72","2 Double Beds, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+799,Standard,87,"$2,033.72","1 King Bed, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+800,Standard,86,"$2,985.18","Two Bedroom Suite, 1KB, 2 Queen Beds, 2 Bathrooms"
+801,Standard,86,"$2,654.62","1 Bedroom, Loft Residence - 2 Levels, 1 King Bed with Sofa Bed"
+802,Standard,86,"$2,456.29","One Bedroom Suite, 1KB, Partial Ocean View, Terrace, Whirlpool"
+803,Standard,86,"$2,456.29","One Bedroom Suite, 1KB, Partial Ocean View, Terrace, High Floor"
+804,Standard,86,"$2,324.07","1 Bedroom Suite with Terrace, 1KB, Living-Dining Area"
+805,Standard,86,"$2,191.84","Junior Suite, 1 King Bed with Sofa Bed"
+806,Standard,86,"$2,125.73","1KB, Superior, Courtyard View"
+807,Standard,86,"$2,892.62","Two Bedroom Suite, 1KB, 2 Queen Beds, 2 Bathrooms"
+808,Standard,86,"$2,562.07","1 Bedroom, Loft Residence - 2 Levels, 1 King Bed with Sofa Bed"
+809,Standard,87,"$2,344.19","2 Double Beds, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+810,AI,96,"$3,502.28",2-Bedroom Resort Residence
+811,AI,96,"$3,615.14",2-Bedroom Penthouse Resort Residence
+812,AI,96,"$4,565.42",3-Bedroom Resort Residence
+813,EP,114,"$2,886.47","1 King Bed, Sofa Bed, Kitchen"
+814,EP,114,"$3,903.24","1 King Bed, 1 Queen Bed"
+815,AI,113,"$2,567.72",Junior Suite Garden View
+816,AI,113,"$2,567.72",Junior Suite Garden View Accessible
+817,AI,113,"$2,636.84",Junior Suite Partial Ocean View
+818,AI,113,"$2,705.96",Junior Suite Ocean View
+819,AI,113,"$2,705.96",Junior Suite Ocean View Grande
+820,AI,113,"$2,775.08",Junior Suite Ocean Front
+821,AI,113,"$2,855.72",Swim Out Junior Suite
+822,AI,113,"$2,993.96",Suite Ocean Front
+823,Standard,112,"$2,568.62",Deluxe
+824,Standard,112,"$2,685.56",Junior Suite
+825,Standard,112,"$2,810.90",Romance Villa Suite
+826,Standard,112,$0.00,&nbsp;
+827,Standard,111,"$2,568.62",Deluxe
+828,Standard,111,"$2,685.56",Junior Suite
+829,Standard,111,$0.00,&nbsp;
+830,AI,110,"$2,579.12",Luxury Junior Suite - Palms Section
+831,AI,110,"$2,626.88",Beach Front Junior Suite - Palms Section
+832,AI,110,"$2,674.70",Premium Junior Suite - Palms Section
+833,AI,110,"$5,647.04",Royal Suite - Palms Section
+834,AI,110,"$5,943.32",Swim Up Junior Suite - Palms Section
+835,AI,110,"$6,239.66",Royal Infinity Suite - Infinity Section
+836,AI,110,"$16,965.56",Infinity Studio Presidential
+837,AI,110,"$18,224.84",One Bedroom Presidential Suite - Palms Section
+838,AI,109,"$2,583.16",Deluxe Ocean View Double
+839,AI,109,"$2,583.16",Deluxe Ocean View King
+840,AI,109,"$2,793.11",Preferred Club Deluxe Ocean View Double
+841,AI,109,"$2,793.11",Preferred Club Deluxe Ocean View King
+842,EP,114,"$2,547.55","1 Queen Bed, Sofa Bed, Kitchenette, Microwave"
+843,AI,115,"$2,745.86",Junior Suite
+844,AI,115,"$2,656.22",Deluxe Concierge
+845,AI,115,"$2,543.66",Deluxe
+846,AI,119,"$3,040.56",Family Room Platinum
+847,AI,119,"$3,610.56",One Bedroom Suite Platinum
+848,AI,119,"$3,985.56",One Bedroom Suite With Jacuzzi Platinum
+849,AI,119,"$5,155.56",Two Bedroom Suite Platinum
+850,AI,119,"$6,685.56",Three Bedroom Suite Platinum
+851,Standard,118,"$2,524.03",City View Room - 1 Queen Bed
+852,Standard,118,"$2,670.99",City View Room - 1 King Bed
+853,Standard,118,"$2,744.45",City View Room - 2 Queen Beds
+854,Standard,118,"$2,817.92",Deluxe Room - 1 King Bed
+855,Standard,118,"$2,964.91",Deluxe Room - 2 Queen Beds
+856,AI,117,"$2,530.38",Double
+857,AI,117,"$2,648.88",Double Near Pool
+858,AI,117,"$2,712.66",Junior Suite
+859,AI,117,"$2,885.82",Junior Suite Ocean Front
+860,AI,109,"$2,984.31",Preferred Club Honeymoon Suite Ocean View
+861,AI,117,"$2,949.60",Junior Suite Ocean Front Beach Access
+862,AI,117,"$2,648.88",Double Near Pool
+863,AI,117,"$2,712.66",Junior Suite
+864,AI,117,"$2,885.82",Junior Suite Ocean Front
+865,AI,117,"$2,949.60",Junior Suite Ocean Front Beach Access
+866,AI,116,"$2,533.16",Elegance Club Junior Suite
+867,AI,116,"$2,533.16",Junior Suite
+868,AI,116,"$2,993.96",Elegance Club Majestic Junior Suite
+869,AI,116,"$2,993.96",One Bedroom Suite
+870,AI,116,"$3,143.72",Elegance Club One Bedroom Suite
+871,AI,116,"$3,143.72",Swim Up Suite
+872,AI,116,"$3,293.48",Elegance Club Swim Up Suite
+873,AI,116,"$3,293.48",Sky View Suite
+874,AI,116,"$3,443.24",Elegance Club Plunge Pool Suite
+875,AI,116,"$3,443.24",Junior Suite Ocean Front
+876,AI,117,"$2,530.38",Double
+877,AI,109,"$4,031.16",Deluxe Family Suite Ocean View
+878,EP,108,"$2,603.12","Ocean View, 1 King Bed, Coffee Maker, Tea Maker"
+879,EP,108,"$2,603.12","2 Double Beds, Coffee Maker, Tea Maker"
+880,AI,105,"$2,980.74",Luxury Junior Suite Ocean View Diamond Club
+881,AI,105,"$3,017.10",Luxury Suite Ocean View with Terrace Jacuzzi Diamond Club
+882,AI,105,"$3,089.76",Luxury Junior Suite Swim Out Diamond Club
+883,AI,105,"$3,089.76",Luxury Presidential One Bedroom Suite Ocean View
+884,AI,105,"$3,162.42",Luxury Family Suite Ocean View Diamond Club
+885,AI,105,"$3,162.42",Luxury Presidential One Bedroom Suite Diamond Club
+886,AI,105,"$3,307.80",Luxury Presidential One Bedroom Suite Ocean View Diamond Club
+887,AI,105,"$3,416.82",Luxury Presidential One Bedroom Suite Swim Out Diamond club
+888,AI,105,"$4,034.52",Luxury Presidential Two Bedroom Suite Ocean View
+889,AI,105,"$4,288.92",Luxury Presidential Two Bedroom Suite Ocean View Diamond Club
+890,AI,105,"$4,397.94",Luxury Presidential Two Bedroom Suite Swim Out Diamond Club
+891,AI,105,"$4,688.64",Luxury Chairman's Two Bedroom Suite Ocean Front Diamond Club
+892,AI,105,"$2,692.20",Luxury Junior Suite
+893,AI,105,"$2,730.66",Luxury Suite with Terrace Jacuzzi
+894,AI,105,"$2,944.44",Luxury Family Suite Ocean View
+895,AI,105,"$2,807.64",Luxury Junior Suite Ocean View
+896,AI,105,"$2,923.02",Luxury Junior Suite Swim Out
+897,AI,105,"$3,038.46",Luxury Family Suite Ocean View
+898,AI,105,"$3,076.92",Luxury Junior Suite Ocean View Diamond Club
+899,AI,105,"$3,115.44",Luxury Suite Ocean View with Terrace Jacuzzi Diamond Club
+900,AI,105,"$3,192.36",Luxury Junior Suite Swim Out Diamond Club
+901,AI,105,"$3,192.36",Luxury Presidential One Bedroom Suite Ocean View
+902,AI,105,"$3,269.34",Luxury Family Suite Ocean View Diamond Club
+903,AI,105,"$3,269.34",Luxury Presidential One Bedroom Suite Diamond Club
+904,AI,105,"$3,423.24",Luxury Presidential One Bedroom Suite Ocean View Diamond Club
+905,AI,105,"$3,538.62",Luxury Presidential One Bedroom Suite Swim Out Diamond club
+906,AI,105,"$4,192.74",Luxury Presidential Two Bedroom Suite Ocean View
+907,AI,105,"$4,462.02",Luxury Presidential Two Bedroom Suite Ocean View Diamond Club
+908,AI,105,"$4,577.46",Luxury Presidential Two Bedroom Suite Swim Out Diamond Club
+909,AI,105,"$4,885.26",Luxury Chairman's Two Bedroom Suite Ocean Front Diamond Club
+910,AI,105,"$2,884.56",Luxury Suite Ocean View with Terrace Jacuzzi
+911,AI,119,"$2,875.56",Junior Suite Platinum
+912,AI,105,"$2,835.36",Luxury Junior Suite Swim Out
+913,AI,105,"$2,726.40",Luxury Junior Suite Ocean View
+914,EP,108,"$2,741.96","Oceanfront, 1 King Bed, Coffee Maker, Tea Maker"
+915,EP,108,"$2,741.96","2 Double Beds, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+916,EP,108,"$3,033.55","1 King Bed, Living/sitting area, Sitting Area"
+917,EP,108,"$3,172.39","Oceanfront Suite, 1 King Bed, Living/sitting area, Sitting Area, Separate living area"
+918,EP,108,"$4,015.26","1 King Bed, Coffee Maker"
+919,EP,108,"$4,015.26","2 Double Beds, Wireless High Speed Internet"
+920,EP,108,"$4,279.71","1 King Bed, Wireless High Speed Internet, Coffee Maker"
+921,EP,108,"$4,279.71","2 Double Beds, Wireless High Speed Internet"
+922,EP,108,"$4,817.41","Ocean View, 1 King Bed, Coffee Maker, Tea Maker"
+923,EP,108,"$4,817.41","2 Double Beds, Coffee Maker, Tea Maker"
+924,EP,108,"$5,170.00","Oceanfront, 1 King Bed, Coffee Maker, Tea Maker"
+925,EP,108,"$5,170.00","2 Double Beds, Wireless High Speed Internet, Coffee Maker, Tea Maker"
+926,EP,108,"$5,910.45","1 King Bed, Living/sitting area, Sitting Area"
+927,EP,108,"$6,038.26","1 King Bed, Coffee Maker"
+928,AI,105,"$2,799.06",Luxury Suite Ocean View with Terrace Jacuzzi
+929,EP,108,"$6,263.04","Oceanfront Suite, 1 King Bed, Living/sitting area, Sitting Area, Separate living area"
+930,EP,108,"$6,950.60","1 King Bed, Living/sitting area, Sitting Area"
+931,EP,108,"$7,215.04","1 King Bed, Living/sitting area, Sitting Area, Separate living area"
+932,EP,108,"$8,537.26","1 King Bed, Living/sitting area, Sitting Area, Living/sitting area"
+933,AI,107,"$2,609.72",Junior Suite
+934,AI,107,"$2,609.72",Junior Suite Accessible
+935,AI,107,"$2,713.40",Junior Suite Superior
+936,AI,107,"$3,035.96",Suite
+937,AI,107,"$3,254.84",Suite Jacuzzi
+938,AI,106,"$2,609.72",Junior Suite
+939,AI,106,"$2,609.72",Junior Suite
+940,AI,106,"$2,609.72",Junior Suite Accessible
+941,AI,106,"$2,701.88",Junior Suite Superior
+942,AI,105,"$2,617.32",Luxury Junior Suite
+943,AI,105,"$2,653.74",Luxury Suite with Terrace Jacuzzi
+944,EP,108,"$6,434.93","1 King Bed, Wireless High Speed Internet, Coffee Maker"
+945,AI,119,"$2,755.56",Luxury Room Platinum
+946,AI,119,"$2,560.56",Family Room
+947,AI,119,"$2,515.56",Junior Suite
+948,AI,125,"$3,887.70",Junior Suite Beachfront Walk Out
+949,AI,125,"$4,006.15",Master One Bedroom Suite
+950,AI,125,"$4,302.37",Junior Suite Beachfront Infinity Swim Up
+951,AI,125,"$4,480.09",Master One Bedroom Suite Ocean View
+952,AI,125,"$4,657.81",Master One Bedroom Suite Ocean Front
+953,AI,125,"$5,842.63",Presidential Suite Ocean View
+954,AI,125,"$2,702.88",Standard
+955,AI,125,"$2,821.37",Junior Suite
+956,AI,125,"$3,058.33",Family Junior Suite
+957,AI,125,"$3,058.33",Junior Suite Ocean View
+958,AI,125,"$3,236.05",Junior Suite Oceanfront
+959,AI,125,"$3,354.53",Premium Junior Suite Lagoon View
+960,AI,125,"$3,472.99",Premium Junior Suite Ocean View
+961,AI,125,"$3,887.70",Junior Suite Beachfront Walk Out
+962,AI,125,"$3,472.99",Premium Junior Suite Ocean View
+963,AI,125,"$4,006.15",Master One Bedroom Suite
+964,AI,125,"$4,480.09",Master One Bedroom Suite Ocean View
+965,AI,125,"$4,657.81",Master One Bedroom Suite Ocean Front
+966,AI,125,"$5,842.63",Presidential Suite Ocean View
+967,AI,125,"$2,702.88",Standard
+968,AI,125,"$2,821.37",Junior Suite
+969,AI,125,"$3,058.33",Family Junior Suite
+970,AI,125,"$3,058.33",Junior Suite Ocean View
+971,AI,125,"$3,236.05",Junior Suite Oceanfront
+972,AI,125,"$3,354.53",Premium Junior Suite Lagoon View
+973,AI,125,"$3,472.99",Premium Junior Suite Ocean View
+974,AI,125,"$3,887.70",Junior Suite Beachfront Walk Out
+975,AI,125,"$4,006.15",Master One Bedroom Suite
+976,AI,125,"$4,302.37",Junior Suite Beachfront Infinity Swim Up
+977,AI,125,"$4,480.09",Master One Bedroom Suite Ocean View
+978,AI,125,"$4,302.37",Junior Suite Beachfront Infinity Swim Up
+979,AI,125,"$4,657.81",Master One Bedroom Suite Ocean Front
+980,AI,125,"$3,354.53",Premium Junior Suite Lagoon View
+981,AI,125,"$3,058.33",Junior Suite Ocean View
+982,AI,96,"$4,678.22",3-Bedroom Penthouse Resort Residence
+983,AI,97,"$2,402.36",Superior
+984,AI,97,"$2,771.00",Junior Suite Ocean Front Premium Level (Tropical or Colonial section)
+985,AI,97,"$3,059.00",Junior Suite Ocean Front Premium Level (Beach or Caribe section)
+986,AI,97,"$3,105.08",Two Connecting Superior Rooms
+987,AI,97,"$3,876.92",Family Room (Beach section)
+988,AI,97,"$3,876.92",Family Room (Tropical or Colonial section)
+989,AI,97,"$3,946.04",Junior Suite Swim-Up Premium Level (Caribe section)
+990,AI,97,"$4,176.44",Suite Ocean Front Premium Level (Tropical or Colonial section)
+991,AI,97,"$5,132.60",Suite Ocean Front Premium Level (Beach or Caribe section)
+992,AI,97,"$5,432.12",Suite Swim-Up Premium Level (Caribe section)
+993,AI,126,"$2,421.06",Junior Suite Superior
+994,AI,126,"$2,545.86",Junior Suite Deluxe Adults-Only
+995,AI,126,"$2,587.44",Junior Suite Superior Ocean Front
+996,AI,125,"$3,236.05",Junior Suite Oceanfront
+997,AI,125,"$2,427.02",Standard
+998,AI,125,"$2,711.37",Family Junior Suite
+999,AI,125,"$2,711.37",Junior Suite Ocean View
+1000,AI,125,"$2,853.56",Junior Suite Oceanfront
+1001,AI,125,"$2,948.36",Premium Junior Suite Lagoon View
+1002,AI,125,"$3,043.11",Premium Junior Suite Ocean View
+1003,AI,125,"$3,374.89",Junior Suite Beachfront Walk Out
+1004,AI,125,"$3,469.65",Master One Bedroom Suite
+1005,AI,125,"$3,706.64",Junior Suite Beachfront Infinity Swim Up
+1006,AI,125,"$3,848.79",Master One Bedroom Suite Ocean View
+1007,AI,125,"$3,990.98",Master One Bedroom Suite Ocean Front
+1008,AI,125,"$4,938.81",Presidential Suite Ocean View
+1009,AI,125,"$2,702.88",Standard
+1010,AI,125,"$2,821.37",Junior Suite
+1011,AI,125,"$3,058.33",Family Junior Suite
+1012,AI,125,"$2,521.82",Junior Suite
+1013,AI,104,"$2,978.66",Preferred Club Deluxe Tropical View - King Bed
+1014,AI,125,"$5,842.63",Presidential Suite Ocean View
+1015,AI,125,"$2,821.37",Junior Suite
+1016,EP,121,"$3,745.52",Signature Casita Suite King
+1017,EP,121,"$4,215.68",Signature Casita Suite Queen Queen
+1018,EP,121,"$5,730.80",Beach Front Casita Queen Queen
+1019,EP,121,"$3,724.64",Fairmont Room Queen Queen
+1020,EP,121,"$3,750.80",Fairmont View Room King
+1021,EP,121,"$3,750.80",Fairmont View Room Queen Queen
+1022,EP,121,"$3,785.60",Deluxe Casita King
+1023,EP,121,"$3,898.82",Deluxe Casita Queen Queen
+1024,EP,121,"$3,898.82",Signature Casita King
+1025,EP,121,"$4,003.28",Signature Casita Queen Queen
+1026,EP,121,"$5,283.26",Beach Area Casita Queen Queen
+1027,EP,121,"$4,020.68",Fairmont View Room King
+1028,EP,121,"$4,151.30",Fairmont Room Queen Queen
+1029,EP,121,"$4,151.30",Fairmont View Room Queen Queen
+1030,EP,121,"$3,344.96",Beach Area Casita Queen Queen
+1031,EP,121,"$4,212.26",Deluxe Casita King
+1032,EP,121,"$4,342.88",Signature Casita King
+1033,EP,121,"$4,473.50",Signature Casita Queen Queen
+1034,EP,121,"$5,979.86",Beach Area Casita Queen Queen
+1035,EP,121,$0.00,&nbsp;
+1036,AI,120,"$2,512.20",Luxury Suite
+1037,AI,120,"$2,683.68",Family Suite
+1038,AI,120,"$2,774.16",Premium Suite
+1039,AI,120,"$2,945.58",Swim Up Junior Suite
+1040,AI,120,"$3,374.16",Honeymoon Ocean Front Suite
+1041,AI,120,"$4,126.50",Connecting Luxury Ocean View Suite
+1042,AI,120,"$5,375.16",Royal Suite
+1043,AI,120,"$5,790.00",Royal Swim Up Suite
+1044,AI,120,"$9,004.80",Presidential Studio
+1045,AI,120,"$10,352.94",One Bedroom Presidential Suite
+1046,EP,121,"$4,342.88",Deluxe Casita Queen Queen
+1047,AI,125,"$2,702.88",Standard
+1048,EP,121,"$2,779.92",Signature Casita Queen Queen
+1049,EP,121,"$2,617.10",Deluxe Casita Queen Queen
+1050,AI,125,"$3,058.33",Family Junior Suite
+1051,AI,125,"$3,058.33",Junior Suite Ocean View
+1052,AI,125,"$3,236.05",Junior Suite Oceanfront
+1053,AI,125,"$3,354.53",Premium Junior Suite Lagoon View
+1054,AI,125,"$3,472.99",Premium Junior Suite Ocean View
+1055,AI,125,"$3,887.70",Junior Suite Beachfront Walk Out
+1056,AI,125,"$4,006.15",Master One Bedroom Suite
+1057,AI,125,"$4,302.37",Junior Suite Beachfront Infinity Swim Up
+1058,AI,125,"$4,480.09",Master One Bedroom Suite Ocean View
+1059,AI,125,"$4,657.81",Master One Bedroom Suite Ocean Front
+1060,AI,125,"$5,842.63",Presidential Suite Ocean View
+1061,AI,124,"$2,441.00",Junior Suite
+1062,AI,124,"$2,544.68",Junior Suite Ocean View
+1063,AI,124,"$2,544.68",Junior Suite Ocean View Accessible
+1064,EP,121,"$2,675.43",Signature Casita King
+1065,AI,124,"$2,844.20",Suite Ocean View
+1066,AI,123,"$2,441.00",Junior Suite Accessible
+1067,AI,123,"$2,498.60",Junior Suite Ocean View
+1068,AI,123,"$2,498.60",Villa Junior Suite Jacuzzi
+1069,AI,123,"$2,567.72",Junior Suite Superior Ocean View
+1070,AI,123,"$2,636.84",Villa Junior Suite Jacuzzi Ocean View
+1071,AI,122,"$2,457.06",Double Room
+1072,AI,122,"$2,515.56",Double Near Pool
+1073,AI,122,"$2,593.56",Junior Suite
+1074,AI,122,"$2,730.06",Junior Suite Beach Access
+1075,AI,122,$0.00,&nbsp;
+1076,EP,121,"$2,463.84",Fairmont View Room King
+1077,EP,121,"$2,491.64",Fairmont Room Queen Queen
+1078,EP,121,"$2,512.58",Deluxe Casita King
+1079,EP,121,"$2,596.16",Fairmont View Room Queen Queen
+1080,AI,123,"$2,441.00",Junior Suite
+1081,&nbsp;,128,$0.00,&nbsp;

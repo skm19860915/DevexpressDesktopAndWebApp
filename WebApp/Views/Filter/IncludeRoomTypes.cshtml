@@ -1,0 +1,62 @@
+﻿@model UISKUFilter
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+@if (@Model == null)
+{
+    <div>Error : Invalid Quote</div>
+}
+else
+{
+}
+
+@using (Html.BeginForm()) { 
+    @Html.HiddenFor(m => m.FilterId)
+    <div>
+        <div class="BlitzList">
+            <div>Accomomodations </div>
+            <div class="row">
+                <div class="checkbox checkboxlist col-6">
+                    <table>
+                        @{
+                            var lResortName = "";
+                            for (int i = 0; i < Model.SKUs.Count(); i++)
+                            {
+                                if (lResortName != Model.SKUs[i].Provider)
+                                {
+                                    <tr><td style="font-size:24px">@Model.SKUs[i].Provider</td></tr>
+                                }
+                                <tr>
+                                    <td>
+                                        <span style="padding-right:8px;padding-left:35px;">     <input asp-for="@Model.SKUs[i].Checked" type="checkbox" /></span>
+                                        <span asp-for="@Model.SKUs[i].Id">@Model.SKUs[i].Name</span>
+                                        <input asp-for="@Model.SKUs[i].Id" type="hidden" />
+                                        <input asp-for="@Model.SKUs[i].ProviderId" type="hidden" />
+                                    </td>
+                                </tr>
+                                lResortName = Model.SKUs[i].Provider;
+                            }
+                        }
+                    </table>
+                </div>
+                <div class="col-4">
+                    <table style="padding-bottom:20px;">
+                        <tr>
+                        </tr>
+                    </table>
+                    <div class="form-group" style="padding-top:20px;">
+                        <div class="row CenterButton">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                                <input id="Submit" type="submit" value="Save" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

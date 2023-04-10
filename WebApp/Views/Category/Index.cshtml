@@ -1,0 +1,38 @@
+﻿@model List<UITrip>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<div class="col-8 offset-2">
+    <h2>Categories</h2>
+
+    @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.UITrip>()
+        .DataSource(Model)
+        .RemoteOperations(false)
+        .Selection(s => s.Mode(SelectionMode.Single))
+        .HoverStateEnabled(true)
+        .ShowColumnLines(false)
+
+        .Columns(columns =>
+        {
+            columns.AddFor(m => m.Name);
+            columns.AddFor(m => m.Stage);
+            columns.AddFor(m => m.Status);
+            columns.AddFor(m => m.OutBoundDate);
+            columns.AddFor(m => m.InBoundDate);
+            columns.AddFor(m => m.GrossCommission);
+            columns.AddFor(m => m.ICCommission);
+        })
+        .Paging(p => p.PageSize(10))
+        .OnSelectionChanged("SelectionChanged")
+    )
+</div>
+<script>
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Trip/Details/" + lId;
+    }
+</script>

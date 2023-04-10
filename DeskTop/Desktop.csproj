@@ -1,0 +1,213 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>P:\Blitzer\AdminApp\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\EzeCloud\Public\Blitzer\AdminApp\</InstallUrl>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7EDE674D25DAF6FA8A3375A1758CA85D10FF5CAA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Desktop_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="ModuleDetail\ContactEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ModuleDetail\NewOpportunity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ModuleDetail\NewTrip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ModuleDetail\EditOpportunity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Modules\Countries.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Modules\Opportunities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Modules\ResortPages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BaseControls\BusinessModuleBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BaseControls\ModuleBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BaseControls\ModDetailBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ModuleDetail\ContactDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Modules\Contact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Modules\DashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Modules\Trips.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ucGalleryPic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ucTilePic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ucWebPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <None Include="Desktop_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\BlitzerCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Charts" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Charts.Core" Version="21.2.3" />
+    <PackageReference Include="DevExpress.CodeParser" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Data" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Data.Desktop" Version="21.2.3" />
+    <PackageReference Include="DevExpress.DataAccess" Version="21.2.3" />
+    <PackageReference Include="DevExpress.DataAccess.UI" Version="21.2.3" />
+    <PackageReference Include="DevExpress.DataVisualization.Core" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Images" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Office.Core" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Pdf.Core" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Pdf.Drawing" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Printing.Core" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Reporting.Core" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Sparkline.Core" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Utils" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Win.Charts" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Win.Design.es" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Win.Grid" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Win.Navigation" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Win.Printing" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Win.RichEdit" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Win.TreeList" Version="21.2.3" />
+    <PackageReference Include="DevExpress.Xpo" Version="21.2.3" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.8.1" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.246501">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="5.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Azure.KeyVault.Core" Version="3.0.5" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.1" />
+    <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="5.0.11" />
+    <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.11" />
+    <PackageReference Include="Microsoft.Extensions.WebEncoders" Version="5.0.11" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.36.2" />
+    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="2.19.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.13.1" />
+    <PackageReference Include="Microsoft.Net.Http.Headers" Version="2.2.8" />
+    <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.23" />
+    <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure" Version="3.3.19" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="System.Text.Json" Version="5.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="AppLogic\ExcelContactLoader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v21.2.Core">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.Charts.v21.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v21.2">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.Data.Desktop.v21.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v21.2">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.Data.v21.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v21.2">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.DataAccess.v21.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Office.v21.2">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.ExpressApp.Office.v21.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Office.Win.v21.2">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.ExpressApp.Office.Win.v21.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Reports.Win.v21.2">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.ExpressApp.Reports.Win.v21.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v21.2">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.Images.v21.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v21.2.Core">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.Office.v21.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v21.2">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 21.2\Components\Bin\Framework\DevExpress.Utils.v21.2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

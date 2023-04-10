@@ -1,0 +1,101 @@
+﻿@model BlitzerCore.Models.UI.UISearch
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "/Views/Shared/_AppLayout.cshtml";
+}
+
+<form asp-action="Search">
+    <h1 style="text-align:center">Search Results</h1>
+    <div class="row">
+        <div class="title-header col-6 offset-3" style="text-align:right;font-size:36px">Search</div>
+        <div style="vertical-align:bottom;margin-top:30px;text-align:right">
+            <input asp-for="SearchText" placeholder="Search..." class="form-control" />
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 offset-xl-2 offset-lg-0 offset-sm-0">
+                <div>Contacts</div>
+                @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.UIContact>()
+                .DataSource(Model.Contacts)
+                .RemoteOperations(false)
+                .Selection(s => s.Mode(SelectionMode.Single))
+                .HoverStateEnabled(true)
+                .ShowColumnLines(false)
+
+                .Columns(columns =>
+                {
+                    columns.AddFor(m => m.Name);
+                    columns.AddFor(m => m.PrimaryEmail);
+                    columns.AddFor(m => m.PrimaryPhone);
+                })
+                .Paging(p => p.PageSize(25))
+                .OnSelectionChanged("ContactChanged")
+            )
+            </div>
+            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 offset-xl-2 offset-lg-0 offset-sm-0" style="margin-top:30px">
+                <div>Opportunities</div>
+                @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.UIOpportunity>()
+                .DataSource(Model.Opportunities)
+                .RemoteOperations(false)
+                .Selection(s => s.Mode(SelectionMode.Single))
+                .HoverStateEnabled(true)
+                .ShowColumnLines(false)
+
+                .Columns(columns =>
+                {
+                    columns.AddFor(m => m.Name);
+                    columns.AddFor(m => m.OutBoundDate);
+                    columns.AddFor(m => m.InBoundDate);
+                    columns.AddFor(m => m.OutBoundAirport);
+                    columns.AddFor(m => m.InBoundAirPort);
+                    columns.AddFor(m => m.StageStr);
+                })
+                .Paging(p => p.PageSize(25))
+                .OnSelectionChanged("OppChanged")
+            )
+            </div>
+            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 offset-xl-2 offset-lg-0 offset-sm-0" style="margin-top:30px">
+                <div>Trips</div>
+                @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.UITrip>()
+                .DataSource(Model.Trips)
+                .RemoteOperations(false)
+                .Selection(s => s.Mode(SelectionMode.Single))
+                .HoverStateEnabled(true)
+                .ShowColumnLines(false)
+
+                .Columns(columns =>
+                {
+                    columns.AddFor(m => m.Name);
+                    columns.AddFor(m => m.OutBoundDate);
+                    columns.AddFor(m => m.InBoundDate);
+                    columns.AddFor(m => m.OutBoundAirport);
+                    columns.AddFor(m => m.InBoundAirPort);
+                    columns.AddFor(m => m.TripStageStr);
+                })
+                .Paging(p => p.PageSize(25))
+                .OnSelectionChanged("TripChanged")
+            )
+            </div>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    function ContactChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Contacts/Details/" + lId;
+    }
+    function OppChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Opportunity/View/" + lId;
+    }
+    function TripChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Trip/Details/" + lId;
+    }
+</script>

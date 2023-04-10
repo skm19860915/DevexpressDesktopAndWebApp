@@ -1,0 +1,358 @@
+@import url('//cdn.switchfly.com/assets/2569b23/client_assets/imagesw/aavacations/ResAgtSite/css/search-form.css');
+@import url('//cdn.switchfly.com/assets/2569b23/client_assets/imagesw/aavacations/ResAgtSite/css/arc_process.css');
+
+.page_v1 .page_v1_c1 {
+    height: 100%;
+}
+
+#modifySearchContainer {
+    background: #FFF;
+    border: 5px solid #003D7E;
+    width: 250px;
+}
+
+#modifySearch .search-form-container {
+    width: 207px;
+    height: 384px;
+}
+
+#modifySearch .search-form {
+    width: 197px;
+}
+
+#modifySearch .search-form .autoCompleteDisplayInput {
+    width: 85px !important;
+}
+
+#modifySearch .search-form .autoCompleteLabeledInput {
+    width: 89px !important;
+}
+
+#searchCalendar {
+    width: 390px;
+}
+
+.search-form-container {
+    background: #FFF;
+}
+
+#hotelFilterPriceContainer {
+    height: 70px;
+}
+
+#hotel_filters .filterHeader {
+    height: auto;
+    overflow: visible;
+}
+
+.roomShopping .arcProcessHotelItineraryDetailsComponent {
+    margin-bottom: 8px;
+}
+
+.arcProcessHotelItineraryDetailsComponent .hotel-itinerary-details {
+    border: 1px solid #013A8A;
+}
+
+.arcProcessHotelItineraryDetailsComponent .hotel-itinerary-header {
+    color: #fff;
+    background: url("/images_w/aavacations/nav/default/aa-bkg-nav-global-gradient.gif") repeat-x scroll 0 50% #173279;
+    border-radius: 4px 4px 0 0;
+    display: block;
+    font-size: 150%;
+    padding: 7px !important;
+}
+
+.packageShopping #itineraryComponents {
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #013A8A;
+}
+
+.packageShopping .arcProcessHotelItineraryDetailsComponent .hotel-itinerary-header {
+    background: #EEE;
+    border-bottom: 1px solid #999;
+    border-top: 1px solid #999;
+    font-size: 14px;
+    color: #333;
+    border-radius: 0;
+}
+
+.packageShopping.hotelShopping .arcProcessHotelItineraryDetailsComponent .hotel-itinerary-details {
+    border: 0;
+}
+
+#itineraryComponents .avail_details .avail_sub_header {
+    border-top: 0;
+    padding: 7px;
+}
+
+.card_link .hotel-change-room-component {
+    overflow: inherit;
+}
+
+.card_link .room-types {
+    margin: 0 5px;
+}
+
+.card_link .summary-header .room-type-name {
+    width: 100%;
+}
+
+.card_link .hotelRoomSelection {
+    margin-top: 15px;
+}
+
+.card_link .change-room {
+    display: none;
+}
+
+.option .footer {
+    padding-bottom: 8px;
+}
+
+#hotel-selection-form .add-to-booking {
+    text-decoration: none;
+}
+
+.airOption .pointsTotalPrice,
+.hotelOption .pointsTotalPrice,
+.carOption .pointsTotalPrice {
+    display: none;
+}
+
+.airOption .cashAvgPrice .redemption-or,
+.airOption .cashAvgPrice .points-price {
+    display: none;
+}
+
+.airOption .cashAvgPrice .price {
+    display: block;
+    text-align: center;
+}
+
+.airOption .cashAvgPrice .price .pricePerUnit {
+    float: none;
+}
+
+.airOption .cashTotalPrice {
+    margin-top: 3px;
+}
+
+.airOption .cashTotalPrice .priceValue {
+    text-align: center;
+}
+
+
+.hotelOption .price .priceLabel {
+    font-size: 11px;
+}
+
+.hotelOption .priceContainer {
+    margin-bottom: 60px;
+}
+
+.hotelOption .priceContainer .cashAvgPrice {
+    overflow: hidden;
+}
+
+#flightNumberSearch {
+    overflow: visible !important;
+    height: 30px;
+}
+
+#select .hotelMiniMap .mapAddressSearchContainer,
+.hotelMiniMap .mapAddressSearchContainer .searchContainer {
+    height: 55px;
+}
+
+.mapAddressSearchContainer label.nearbyAddress {
+    height: 35px;
+    width: 165px;
+}
+
+#select .progress {
+    background-position: -6px -50px;
+}
+
+.carOption .aa-btn {
+    padding: 2px 7px 4px !important;
+}
+
+#optionsSorting div {
+    padding-right: 11px;
+}
+
+#optionsSorting .sortFlight {
+    margin-right: 207px;
+}
+
+#optionsSorting .sortDepart {
+    margin-right: 7px;
+}
+
+#optionsSorting .sortArrive {
+    margin-right: 8px;
+}
+
+#optionsSorting .sortDuration {
+    margin-right: 63px;
+}
+
+#city_filter_form .locationFilterRadiusLabeledInput label {
+    left: -40px;
+}
+
+.hotel-card-component .ez-tooltip {
+    background: none;
+    padding-left: 0;
+}
+
+#city_filter_form h2,
+#neighborhood_filter_form h2,
+#amenities_filter_form h2 {
+    color: #000000;
+    font-size: 12px;
+    font-family: "Arial", sans-serif;
+}
+
+#amenities_filter_form .amenities_filter_list {
+    overflow: hidden;
+}
+
+.car-select-link {
+    color: #17337A;
+}
+
+.selectedCarOption a .car-select-link,
+.car-selected-link {
+    display: none;
+}
+
+.selectedCarOption .car-selected-link,
+.car-select-link .icon-check-empty {
+    display: block;
+    margin-top: 8px;
+}
+
+.selectedCarOption .car-selected-link,
+.selectedCarOption .selectedText {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.car-selected-link .icon-check {
+    color: #FFFFFF;
+    margin-top: 2px;
+    margin-bottom: -1px;
+}
+
+.carOption .select-icon {
+    display: block;
+    font-size: 18px;
+}
+
+.city_filter .locationFilterRadiusLabeledInput label {
+    left: -52px;
+}
+
+h2.malibu_choose_hotel_header {
+    font: normal 27px/36px "American Light Webfont", Calibri, Helvetica, Arial, sans-serif;
+}
+
+.filterSlider {
+    left: 0;
+}
+
+.hotelOption .hotel-card-component .tripAdvisor {
+    width: 150px;
+}
+
+.hotel-details-section .tripAdvisor .tripAdvisorRating {
+    margin-top: 0;
+}
+
+#select.carShopping #C2 #itineraryComponents .avail_details .avail_sub_header,
+#select.carShopping #C2 .sub_section_header_room {
+    background: #eee;
+    color: #000 !important;
+    font-size: 14px;
+    padding: 0 0 0 10px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#select.carShopping #C2 .avail_header,
+#select.carShopping #C2 .itin .itin_header,
+#select .avail_details .arcProcessCarSegmentDetailsComponent h2 {
+    background: none;
+    border-bottom: 1px solid #ccc;
+    border-top: none;
+    color: #9da6ab !important;
+    font: normal normal normal 18px/18px "American Regular Webfont", Calibri, Helvetica, Arial, sans-serif;
+}
+
+#select .avail_details .arcProcessCarSegmentDetailsComponent h2 {
+    border-top: 0;
+}
+
+#select.carShopping #C2 #itineraryComponents,
+#select.carShopping #C2 .packagedComponentsRoom {
+    position: relative;
+}
+
+#select.carShopping #C2 .automation-chooseDifferentFlight {
+    position: absolute;
+    top: 80px;
+    right: 0;
+}
+
+#select.page_v1 #C2 .automation-chooseDifferentFlight {
+    position: static;
+}
+
+#select.carShopping #C2 #itineraryComponents .air_details {
+    width: 630px;
+}
+
+#select.page_v1 #C2 #itineraryComponents .air_details {
+    width: 100%;
+}
+
+#select.carShopping #C2 .room-change-link {
+    display: block;
+}
+
+#select.carShopping #C2 .chooseDifferentHotel .aa-btn-secondary {
+    width: 143px;
+}
+
+#select.carShopping #C2 .hotelButtons {
+    position: absolute;
+    top: 55px;
+    right: 0;
+}
+
+.airFareTypeSelectedWarning p,
+.airFareTypeSelectedWarning h4,
+.airFareTypeSelectedWarning {
+    color: #f47920;
+    font-family: "American Regular Webfont", Arial, sans-serif;
+}
+
+.airFareTypeSelectedWarning p {
+    font-size: 14px;
+}
+.airFareTypeSelectedWarning h4 {
+    font-size: 24px;
+}
+
+.cabin-name {
+    display: none;
+}
+
+span.malibu_special_notices {
+    display: block;
+}

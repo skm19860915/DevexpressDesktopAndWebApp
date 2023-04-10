@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Add Class Property</Title>
+			<Shortcut>acp</Shortcut>
+			<Author>Myself</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>PropName</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[public int $end$$PropName$Id { get; set; }
+			        [ForeignKey("$PropName$ID")]
+					public virtual $PropName$ $PropName$ { get; set; }]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,82 @@
+@model IEnumerable<Media>
+@using DevExtreme.AspNet.Mvc
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<div class="col-8 offset-2">
+    <h2 class="TableTitle col-8">Media Items</h2>
+    @(Html.DevExtreme().DataGrid<Media>()
+    .ID("grid-container")
+    .Selection(s => s.Mode(SelectionMode.Single))
+    .RemoteOperations(false)
+    .FilterRow(filterRow => filterRow
+        .Visible(true)
+        .ApplyFilter(GridApplyFilterMode.Auto)
+    )
+    .SearchPanel(searchPanel => searchPanel
+        .Visible(true)
+        .Width(240)
+        .Placeholder("Search...")
+    )
+    .DataSource(d => d.WebApi()
+        .Controller("Media")
+        .LoadAction("Get")
+        .InsertAction("Post")
+        .UpdateAction("Put")
+        .DeleteAction("Delete")
+        .Key("Id")
+    )
+    .ShowColumnLines(false)
+    .ShowRowLines(true)
+    .HoverStateEnabled(true)
+    .RowAlternationEnabled(true)
+    .ShowBorders(true)
+    .Editing(editing =>
+    {
+        editing.Mode(GridEditMode.Form);
+        editing.AllowUpdating(true);
+        editing.AllowAdding(true);
+        editing.AllowDeleting(false);
+    })
+    .Columns(columns => {
+        columns.AddFor(m => m.ThumbNail.Location)
+            .AllowFiltering(false)
+            .AllowSorting(false)
+            .CellTemplate(@<text>
+                <div>
+                    <img height="100" width="100" src="<%- value %>" alt=""/>
+                </div>
+            </text>);
+        columns.AddFor(m => m.Id)
+            .AllowEditing(false);
+        columns.AddFor(m => m.Title);
+        columns.AddFor(m => m.PageID)
+            .Caption("Resort")
+            .Lookup(lookup => lookup
+                .DataSource(d => d.Mvc().Controller("ResortPages").LoadAction("Get").Key("Id"))
+                .DisplayExpr("Title")
+                .ValueExpr("Id")
+            );
+        columns.AddFor(m => m.CategoryID)
+            .Caption("Category")
+            .Lookup(lookup => lookup
+                .DataSource(d => d.Mvc().Controller("Category").LoadAction("Get").Key("Id"))
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+            );
+        columns.AddFor(m => m.Size1920x1080.Location).Visible(false).Width(125);
+        columns.AddFor(m => m.Size1600x1200.Location).Visible(false).Width(125);
+        columns.AddFor(m => m.Size1024x640.Location).Visible(false).Width(125);
+        columns.AddFor(m => m.Size560x460.Location).Visible(false).Width(125);
+        columns.AddFor(m => m.MPeg.Location).Visible(false).Width(125);
+
+    })
+    .Paging(p => p.PageSize(5))
+)
+</div>
+
+
+

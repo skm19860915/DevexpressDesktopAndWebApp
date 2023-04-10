@@ -1,0 +1,234 @@
+.page_v2_c1 {
+    font-size: 11px;
+}
+
+.options-checkboxes {
+   	background: #ECEFFE;
+   	border-left: 1px solid #0D3F7A;
+   	border-right: 1px solid #0D3F7A;
+    margin: 0 auto;
+    width: 230px;
+}
+
+.optionbox_header_red {
+	color: #c30019;
+}
+
+.options-checkboxes table div {
+    clear: none;
+    float: left;
+    margin: 0 5px;
+}
+
+.page_v2_c1 .labelText {
+    font-weight: normal;
+}
+
+.search-form-container {
+    border: none;
+    margin-top: 0;
+}
+
+.search-form-container h3.title {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#activeAgent {
+    position: static!important;
+}
+
+.search-form .fields .origin-destination > div {
+    clear: none;
+    float: left;
+}
+
+.search-form .fields .origin-destination input {
+    width: 120px!important;
+}
+
+#search .yui-skin-sam {
+    width: auto;
+}
+
+.search-form .fields .date-time .date1,
+.search-form .fields .date-time .date2 {
+    width: 43px;
+}
+
+.search-form .fields .date-time .time1LabeledInput,
+.search-form .fields .date-time .time2LabeledInput {
+    clear: none;
+    float: left;
+}
+
+.search-form .fields .partial-room-stay-container .partialRoomStayLabeledInput {
+    padding: 3px 0;
+}
+
+.search-form .fields .partial-room-stay-container .partial_room_stay {
+    float: right;
+    margin-right: 25px;
+}
+
+.search-form .occupancies-container {
+    clear: none;
+}
+
+.search-form .fields .numRoomsLabeledInput,
+.search-form .fields .dynamic-children-container,
+.search-form .fields .seniorsLabeledInput,
+.search-form .fields .adultsLabeledInput {
+    float: left;
+    clear: none;
+}
+
+#infantText {
+    clear: both;
+    padding: 0 5px;
+}
+
+.search-form .fields .others {
+    margin-top: 10px;
+}
+
+.search-form .fields .others > div{
+    clear: none;
+    float: left;
+}
+
+.search-form .submit-button {
+    background-color: #0078d2;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4DB4FA', endColorstr='#FF0078D2');
+    background: linear-gradient(#4db4fa, #0078d2);
+    border: none;
+    border-radius: 0;
+    color: white;
+    display: inline-block;
+    font-family: "American Regular Webfont", Arial, sans-serif;
+    font-size: 13px!important;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: .2em 0;
+    margin-bottom: 15px;
+    margin-left: 175px;
+    outline: 0;
+    padding: .2em .6em;
+    text-align: center;
+    text-shadow: 0 1px 0 #00467f;
+    vertical-align: middle;
+    -webkit-box-align: center;
+    width: auto;
+    text-decoration: none;
+}
+
+.search-form .submit-button:hover {
+    background-color: #4db4fa;
+    color: white;
+    background: linear-gradient(#0078d2, #4db4fa);
+    text-decoration: none;
+}
+
+/* initial homepage search box */
+
+.page_v2_c1 {
+	background: #d5deed;
+    clear: both;
+	margin-top: 10px;
+	width: 260px;
+}
+.be_v2 {
+	border: 0;
+	background: #B9C8FF;
+	width: 240px;
+	padding-bottom: 10px;
+	margin: 0 auto;
+}
+.be_v2_header {
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	border-bottom: 1px solid #ccc;
+	background: #003D7E;
+	width: 234px!important;
+	padding: 3px 3px;
+}
+.be_v2_info {
+	width: 230px;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0 auto;
+}
+.be_v2_optionbox {
+	width: 236px;
+	background: #ECEFFE;
+	border-left: 1px solid #0D3F7A;
+	border-right: 1px solid #0D3F7A;
+}
+.be_v2_red {
+	color: #c30019;
+}
+.be_row {
+	clear: both;
+	float: none;
+	margin-left: 0 !important;
+	overflow: hidden;
+}
+
+#search .be_v2_form input, #search .be_v2_form option, #search .be_v2_form select, #search .be_v2_form textarea {
+	font-size: 10px;
+}
+.opt_bottom_left {
+	background-image: url('/images_w/aavacations/nav/default/zz_rounded.gif');
+	height: 5px;
+	font-size: 2px;
+    margin-left: 4px;
+	margin-right: 6px;
+	background-position: 0 -5px;
+}
+.opt_bottom_right {
+	background-image: url('/images_w/aavacations/nav/default/zz_rounded.gif');
+	height: 5px;
+	font-size: 2px;
+	margin-left: 6px;
+    margin-right: 4px;
+	margin-top: -5px;
+	background-position: 100% -5px;
+}
+.opt_top_left {
+	background-image: url('/images_w/aavacations/nav/default/zz_rounded.gif');
+	height: 5px;
+	font-size: 2px;
+    margin-left: 4px;
+	margin-right: 6px;
+}
+.opt_top_right {
+	background-image: url('/images_w/aavacations/nav/default/zz_rounded.gif');
+	height: 5px;
+	font-size: 2px;
+	margin-left: 6px;
+    margin-right: 4px;
+	margin-top: -5px;
+	background-position: 100% 0;
+}
+.optionbox_header {
+	text-align: center;
+	font-weight: bold;
+}
+.optionbox_agent_options {
+	float: left;
+	height: 50px;
+	width: 210px;
+}
+.optionbox_agent_options input {
+	margin-left: 4px;
+}
+.optionbox_options {
+	float: left;
+	width: 114px;
+}
+.search-form-container.be_v2_form {
+    background: #B9C8FF;
+    width: 240px!important;
+}
+/* end homepage search box */

@@ -1,0 +1,31 @@
+#modifySearchContainer {
+    background: #FFF;
+    border: 5px solid #003D7E;
+    width: 250px;
+}
+
+.search-form-container {
+    background: #FFF;
+}
+
+#hotel_filters_top .modify_search {
+    background: #fff;
+}
+
+.modify_search h3 {
+    margin: 5px 0 5px 5px;
+}
+
+.modify_search img {
+    display:block;
+    width: auto;
+    margin: auto auto 5px auto;
+}
+
+div.page_v1_top {
+    height: auto !important;
+}
+
+#menu {
+    z-index: 18 !important;
+}

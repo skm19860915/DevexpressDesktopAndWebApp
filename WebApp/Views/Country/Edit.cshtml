@@ -1,0 +1,103 @@
+﻿@model BlitzerCore.Models.UI.UICountry
+@using DevExtreme.AspNet.Mvc
+
+@{
+    ViewData["Title"] = "Resort Edit";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<div style="width:95%;padding-left:3% ">
+    <h1>Edit Country Page</h1>
+
+    <hr />
+    <form asp-action="Edit">
+        @Html.HiddenFor(m => m.ContentID)
+        @Html.HiddenFor(m => m.AuthorID)
+        @Html.HiddenFor(m => m.HeaderImageID)
+        @Html.HiddenFor(m => m.MainImageID)
+        @Html.HiddenFor(m => m.PageTypeId)
+        <div style="border-style:solid;background-color:white;min-height:220px">
+            <h3 style="text-align:center">Page Thumbnail Image</h3>
+
+            <div class="row">
+                <div class="row col-md-4 offset-4">
+                    <div style="margin-left:20px;vertical-align:middle">
+                        <a href="/Block/Edit/@Model.MainImage.Id">
+                            <div style="font-weight:bold;font-size:large">@Model.MainImage.BlockTitle</div>
+                        </a>
+                        <div class="col-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <div class="form-group">
+                                <label asp-for="Title" class="control-label"></label>
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="form-group">
+                                <label asp-for="PageTitle" class="control-label"></label>
+                                <input asp-for="PageTitle" class="form-control">
+                                <span asp-validation-for="PageTitle" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="form-group form-check">
+                                <label>Published</label>
+                                <input class="form-check-input" asp-for="Published" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div>
+            <div style="border-style:solid;background-color:white;border-color:red;border-width:1px;min-height:250px">
+                <a href="/Block/Edit/@Model.HeaderImage.Id">
+                    top Panel
+                </a>
+                <div class="row col-md-4 offset-4">
+                    <div>
+                        @if (Model.HeaderImage.Media.Size1600x1200 != null && Model.HeaderImage.Media.Size1600x1200.Location != null)
+                        {
+                        <a href="/Block/Edit/@Model.HeaderImage.Id">
+                            <img src="@Model.HeaderImage.Media.Size1600x1200.Location" style="width:auto;height:200px" />
+                        </a>
+                        }
+                        else
+                        {
+                        <div>Requires a 1600x1200 Image</div>
+                        }
+                    </div>
+                    <div style="margin-left:20px">
+                        <div>@Model.HeaderImage.Caption</div>
+                        <a href="/Block/Edit/@Model.HeaderImage.Id">
+                            <div style="font-weight:bold;font-size:large">@Model.HeaderImage.BlockTitle</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Left Panel -->
+            <div class="col-2">
+            </div>
+            <!-- Center Panel -->
+            @await Html.PartialAsync("_CenterContent_Edit")
+            <!-- Right Panel -->
+            <div class="col-lg-2 col-sm-12">
+            </div>
+        </div>
+
+        <div class="row" style="padding-top:50px;padding-bottom:50px">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div class="col-6">
+                <a class="btn btn-primary" href="/Country/Details/@Model.Id">View</a>
+            </div>
+        </div>
+    </form>
+</div>

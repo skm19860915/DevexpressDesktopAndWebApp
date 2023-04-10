@@ -1,0 +1,47 @@
+@model List<Country>
+@using DevExtreme.AspNet.Mvc
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<div class="row CountryWrapper">
+    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 offset-xl-2 offset-lg-0 offset-sm-0">
+        @(Html.DevExtreme().DataGrid<Country>()
+        .ID("CountryGrid")
+        .ShowBorders(true)
+        .Paging(paging=>paging.Enabled(false))
+        .DataSource( d=>d.Mvc()
+            .Controller("CountryLookup")
+            .LoadAction("Get")
+            .UpdateAction("Put")
+            .InsertAction("Post")
+            .Key("Id")
+        )
+        .Editing(editing=>
+        {
+            editing.Mode(GridEditMode.Row);
+            editing.AllowUpdating(true);
+            editing.AllowAdding(true);
+        })
+        .Columns(
+            columns=>
+            {
+                columns.AddFor(m => m.Name);
+                columns.AddFor(m => m.ImageLocation);
+                columns.AddFor(m => m.RegionId) 
+                    .Width(250)
+                    .Caption("Region")
+                    .Lookup(lookup => lookup
+                    .DataSource(d =>
+                    d.Mvc().Controller("Region").LoadAction("Get").Key("Id"))
+                    .DisplayExpr("Name")
+                    .ValueExpr("Id")
+                );
+            }
+        )
+
+        )
+    </div>
+</div>

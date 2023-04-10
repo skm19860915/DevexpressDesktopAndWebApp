@@ -1,0 +1,184 @@
+﻿@model BlitzerCore.Models.PortalData
+
+@{
+    ViewData["Title"] = "Index";
+    // ViewBag.IsAdmin = Model.IsAdmin;
+    Layout = "/Views/Shared/_AppLayout.cshtml";
+    string CSSBackGndCol = "";
+    string CSSLinkCol = "";
+}
+
+<form asp-action="Search">
+    <div class="row">
+        <h1 class="title-header col-6 offset-3">Dashboard</h1>
+        <div style="vertical-align:central;margin-top:20px;text-align:right">
+            <input asp-for="SearchText" placeholder="Search..."  class="form-control"/>
+        </div>
+    </div>
+</form>
+<hr class="title-hr mt-0" />
+<div class="content-container">
+    <div class="row">
+        <div class="LeadsTable col-6">
+            <div class="TableBox bans-3d Dash-box">
+                <div class="row">
+                    <h2 class="TableTitle col-10">@Model.NewBookings New and @Model.WonBookings Won Opportunities this week</h2>
+                    <div class="offset-1 opplink-new"><a href="/Opportunity/New">New</a></div>
+                </div>
+                <hr class="TableLine">
+                @(Html.DevExtreme().DataGrid<UIOpportunity>()
+                    .DataSource(Model.Opportunities)
+                    .RemoteOperations(false)
+                    .Selection(s => s.Mode(SelectionMode.Single))
+                    .HoverStateEnabled(true)
+                    .ShowColumnLines(false)
+
+                    .Columns(columns => {
+                        columns.AddFor(m => m.Name);
+                        columns.AddFor(m => m.Age);
+                        columns.AddFor(m => m.Owner).Caption("Owner");
+                        columns.AddFor(m => m.StageStr).Caption("Stage");
+                        columns.AddFor(m => m.OutBoundDate).Caption("Start");
+                        columns.AddFor(m => m.InBoundDate).Caption("End");
+                    })
+                    .Paging(p => p.PageSize(10))
+                    .OnSelectionChanged("OppSelectionChanged")
+                )
+            </div>
+        </div>
+
+        <div class="LeadsTable col-6">
+            <div class="TableBox bans-3d Dash-box">
+                <div class="row">
+                    <h2 class="TableTitle col-4">Tasks</h2>
+                    <div class="col-2 opplink-new" style="text-align:center"><a href="/Portal/ViewAll">All</a></div>
+                    <div class="col-2 opplink-new" style="text-align:center"><a href="/Portal">My Tasks</a></div>
+                    <div class="offset-2 opplink-new"><a href="/Task/Create">New</a></div>
+                </div>
+                <hr class="TableLine">
+
+                @(Html.DevExtreme().DataGrid<UITask>()
+                .DataSource(Model.Tasks)
+                .RemoteOperations(false)
+                .Selection(s => s.Mode(SelectionMode.Single))
+                .HoverStateEnabled(true)
+                .OnRowPrepared("onRowPrepared")
+                .OnCellPrepared("OnCellPrepared")
+                .ShowColumnLines(false)
+                .Columns(columns => {
+                    columns.Add()
+                        .DataField("Icon")
+                        .Caption("")
+                        .Width(30)
+                        .Fixed(false);
+                    //.CalculateDisplayValue(new JS("getCountryWithCapital"));
+                    columns.AddFor(m => m.Name).AllowEditing(false);
+                    columns.AddFor(m => m.Priority).Width(75).Alignment(DevExtreme.AspNet.Mvc.HorizontalAlignment.Center);
+                    columns.AddFor(m => m.OwnerName).Width(100);
+                    columns.AddFor(m => m.PriorityTypeStr).Caption("Group").Width(75);
+                    columns.AddFor(m => m.Age).Width(100);
+                    columns.AddFor(m => m.DeadlineStr).Caption("Dead Line").Width(150);
+                })
+                .Paging(p => p.PageSize(10))
+                .OnSelectionChanged("SelectionChanged")
+            )
+            </div>
+        </div>
+    </div>
+    <div id="Trips" class="LeadsTable">
+        <div id="TripsTable" class="TableBox bans-3d">
+            <div class="row">
+                <h2 class="TableTitle col-4">Active Trips</h2>
+            </div>
+            <hr class="TableLine" />
+            <div class="row TableHeader mx-0 table-ban-text table-ban-row">
+                <div class="col-4 col-xl-3">Name</div>
+                <div class="col-xl-2 d-xl-block d-none">Stage</div>
+                <div class="col-xl-1 d-xl-block d-none">Start</div>
+                <div class="col-xl-1 d-xl-block d-none">End</div>
+                <div class="col-1 col-xl-1" style="text-align:center">Days to Start</div>
+                <div class="col-2 col-xl-1 txt-ctr">Balance</div>
+                <div class="col-1 col-xl-2 txt-ctr">Final Payment</div>
+            </div>
+            <div class="TableData">
+                <div class="row mx-0 table-text">
+                    @foreach (var lTrip in Model.Trips)
+                    {
+                        CSSBackGndCol = "";
+                        CSSLinkCol = "";
+                        if (lTrip.FinalPaymentStatus == FinalPaymentStatus.Warning)
+                        {
+                            CSSBackGndCol = "FPWarning";
+                            CSSLinkCol = "FPWarningLink";
+                        }
+                        else if (lTrip.FinalPaymentStatus == FinalPaymentStatus.Critical)
+                        {
+                            CSSBackGndCol = "FPCritical";
+                            CSSLinkCol = "FPCritLink";
+                        }
+                        <div class="row col-12 @CSSBackGndCol">
+                            <div class="col-4 col-xl-3 @CSSLinkCol"><a href="/Trip/Details/@lTrip.Id">@lTrip.Name</a></div>
+                            <div class="col-xl-2  d-xl-block d-none">@lTrip.TripStage.GetDisplayName()</div>
+                            <div class="col-xl-1  d-xl-block d-none">@lTrip.OutBoundDate</div>
+                            <div class="col-xl-1  d-xl-block d-none">@lTrip.InBoundDate</div>
+                            <div class="col-1 col-xl-1 txt-ctr">@lTrip.DaysToStart</div>
+                            <div class="col-2 col-xl-1 txt-rght">@lTrip.Balance</div>
+                            <div class="col-1 col-xl-2 txt-ctr">@lTrip.FinalPayment</div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Task/Edit/" + lId;
+    }
+    function OppSelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Opportunity/View/" + lId;
+    }
+    function onRowPrepared(e) {
+        if (e.rowType == 'data' && e.data.Status == 3) {
+            e.rowElement.css("background-color", "Yellow");
+        }
+    }
+    function CustomizeIcon(cellInfo) {
+        return cellInfo.value + " &deg;C";
+    }
+
+    function OnCellPrepared(e) {
+        //var fieldData = options.value,
+        //    fieldHtml = "";
+        var lHtml = "";
+        if (e.rowType == "data" && e.column.dataField == "Icon") {
+            if (e.value == 1) {
+                lHtml = "<i class=\"fa fa-arrow-right\"></i>";
+            } else if (e.value == 0) {
+                lHtml = "<i class=\"fa fa-user\"></i>";
+            } else if (e.value == 3) {
+                lHtml = "<i class=\"fa fa-stop\"></i>";
+            } else if (e.value == 2) {
+                lHtml = "<i class=\"fa fa-eye\"></i>";
+            } else if (e.value == 5) {
+                lHtml = "<i class=\"fa fa-bug\"></i>";
+            } else if (e.value == 6) {
+                lHtml = "<i class=\"fa fa-phone\"></i>";
+            } else {
+                lHtml = "";
+            }
+
+            e.cellElement.html(lHtml);
+        } else {
+            e.cellElement.html(e.value);
+        }
+
+        //} else {
+        //    options.cellElement.html(fieldData);
+        //}
+    }
+</script>

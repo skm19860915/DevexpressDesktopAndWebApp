@@ -1,0 +1,271 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows7.0</TargetFramework>
+    <Platforms>AnyCPU;x86</Platforms>
+    <OutputType>WinExe</OutputType>
+    <UserSecretsId>a264d830-4df8-4353-b8d3-a78236a6348a</UserSecretsId>
+    <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <AllowUntrustedCertificate>True</AllowUntrustedCertificate>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Email\**" />
+    <Compile Remove="Views\Page3Col\**" />
+    <Content Remove="Views\Email\**" />
+    <Content Remove="Views\Page3Col\**" />
+    <EmbeddedResource Remove="Views\Email\**" />
+    <EmbeddedResource Remove="Views\Page3Col\**" />
+    <None Remove="Views\Email\**" />
+    <None Remove="Views\Page3Col\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20200404115626_QuoteRequest4.cs" />
+    <Compile Remove="Migrations\20200404115626_QuoteRequest4.Designer.cs" />
+    <Compile Remove="Migrations\20200404115823_QuoteRequest5.cs" />
+    <Compile Remove="Migrations\20200404115823_QuoteRequest5.Designer.cs" />
+    <Compile Remove="Migrations\20200404121344_QuoteRequest7.cs" />
+    <Compile Remove="Migrations\20200404121344_QuoteRequest7.Designer.cs" />
+    <Compile Remove="Migrations\20200404124030_QuoteRequest9.cs" />
+    <Compile Remove="Migrations\20200404124030_QuoteRequest9.Designer.cs" />
+    <Compile Remove="Migrations\20200404125514_QuoteRequest10.cs" />
+    <Compile Remove="Migrations\20200404125514_QuoteRequest10.Designer.cs" />
+    <Compile Remove="Migrations\20200404125718_QuoteRequest11.cs" />
+    <Compile Remove="Migrations\20200404125718_QuoteRequest11.Designer.cs" />
+    <Compile Remove="Migrations\20200404125849_QuoteRequest12.cs" />
+    <Compile Remove="Migrations\20200404125849_QuoteRequest12.Designer.cs" />
+    <Compile Remove="Migrations\20200408112248_DB7.cs" />
+    <Compile Remove="Migrations\20200408112248_DB7.Designer.cs" />
+    <Compile Remove="Migrations\20201003101933_20201003.v2.cs" />
+    <Compile Remove="Migrations\20201003101933_20201003.v2.Designer.cs" />
+    <Compile Remove="Migrations\20201003102105_20201003.v3.cs" />
+    <Compile Remove="Migrations\20201003102105_20201003.v3.Designer.cs" />
+    <Compile Remove="Migrations\20201003103346_20201003.v6.cs" />
+    <Compile Remove="Migrations\20201003103346_20201003.v6.Designer.cs" />
+    <Compile Remove="Migrations\20201003104256_20201003.v7.cs" />
+    <Compile Remove="Migrations\20201003104256_20201003.v7.Designer.cs" />
+    <Compile Remove="Migrations\20201005114108_20201005.v2.cs" />
+    <Compile Remove="Migrations\20201005114108_20201005.v2.Designer.cs" />
+    <Compile Remove="Migrations\20201011143540_20201011.v1.cs" />
+    <Compile Remove="Migrations\20201011143540_20201011.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201011144108_20201011.v2.cs" />
+    <Compile Remove="Migrations\20201011144108_20201011.v2.Designer.cs" />
+    <Compile Remove="Migrations\20201011162942_20201011.v3.cs" />
+    <Compile Remove="Migrations\20201011162942_20201011.v3.Designer.cs" />
+    <Compile Remove="Migrations\20201011171554_20201011.v4.cs" />
+    <Compile Remove="Migrations\20201011171554_20201011.v4.Designer.cs" />
+    <Compile Remove="Migrations\20201014193925_20201014.v1.cs" />
+    <Compile Remove="Migrations\20201014193925_20201014.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201014200954_20201014.v1.cs" />
+    <Compile Remove="Migrations\20201014200954_20201014.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201026121435_20201026.v1.cs" />
+    <Compile Remove="Migrations\20201026121435_20201026.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201026121819_20201026.v1.cs" />
+    <Compile Remove="Migrations\20201026121819_20201026.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201026122301_20201026.v1.cs" />
+    <Compile Remove="Migrations\20201026122301_20201026.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201026122457_20201026.v1.cs" />
+    <Compile Remove="Migrations\20201026122457_20201026.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201026130318_20201026.v1.cs" />
+    <Compile Remove="Migrations\20201026130318_20201026.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201026130608_20201026.v1.cs" />
+    <Compile Remove="Migrations\20201026130608_20201026.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201028120129_20201028.v1.cs" />
+    <Compile Remove="Migrations\20201028120129_20201028.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201028120933_20201028.v1.cs" />
+    <Compile Remove="Migrations\20201028120933_20201028.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201112195440_20201112.v4.cs" />
+    <Compile Remove="Migrations\20201112195440_20201112.v4.Designer.cs" />
+    <Compile Remove="Migrations\20201112195647_20201112.v4.cs" />
+    <Compile Remove="Migrations\20201112195647_20201112.v4.Designer.cs" />
+    <Compile Remove="Migrations\20201112195749_20201112.v4.cs" />
+    <Compile Remove="Migrations\20201112195749_20201112.v4.Designer.cs" />
+    <Compile Remove="Migrations\20201112195842_20201112.v4.cs" />
+    <Compile Remove="Migrations\20201112195842_20201112.v4.Designer.cs" />
+    <Compile Remove="Migrations\20201112200948_20201112.v4.cs" />
+    <Compile Remove="Migrations\20201112200948_20201112.v4.Designer.cs" />
+    <Compile Remove="Migrations\20201112202231_20201112.v4.cs" />
+    <Compile Remove="Migrations\20201112202231_20201112.v4.Designer.cs" />
+    <Compile Remove="Migrations\20201113172720_20201113.v1.cs" />
+    <Compile Remove="Migrations\20201113172720_20201113.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201113174806_20201113.v2.cs" />
+    <Compile Remove="Migrations\20201113174806_20201113.v2.Designer.cs" />
+    <Compile Remove="Migrations\20201117132409_20201117.v1.cs" />
+    <Compile Remove="Migrations\20201117132409_20201117.v1.Designer.cs" />
+    <Compile Remove="Migrations\20201117184228_20201117.v3.cs" />
+    <Compile Remove="Migrations\20201117184228_20201117.v3.Designer.cs" />
+    <Compile Remove="Migrations\20201123103722_v10.cs" />
+    <Compile Remove="Migrations\20201123103722_v10.Designer.cs" />
+    <Compile Remove="Migrations\20201203150447_v26.cs" />
+    <Compile Remove="Migrations\20201203150447_v26.Designer.cs" />
+    <Compile Remove="Migrations\20201203181340_v31.cs" />
+    <Compile Remove="Migrations\20201203181340_v31.Designer.cs" />
+    <Compile Remove="Migrations\20201203200843_v34.cs" />
+    <Compile Remove="Migrations\20201203200843_v34.Designer.cs" />
+    <Compile Remove="Migrations\20201212211859_v43.cs" />
+    <Compile Remove="Migrations\20201212211859_v43.Designer.cs" />
+    <Compile Remove="Migrations\20201212214724_v43.cs" />
+    <Compile Remove="Migrations\20201212214724_v43.Designer.cs" />
+    <Compile Remove="Migrations\20201212222431_v44.cs" />
+    <Compile Remove="Migrations\20201212222431_v44.Designer.cs" />
+    <Compile Remove="Migrations\20201215014422_v47.cs" />
+    <Compile Remove="Migrations\20201215014422_v47.Designer.cs" />
+    <Compile Remove="Migrations\20201215213547_v49.cs" />
+    <Compile Remove="Migrations\20201215213547_v49.Designer.cs" />
+    <Compile Remove="Migrations\20201222184332_v52.cs" />
+    <Compile Remove="Migrations\20201222184332_v52.Designer.cs" />
+    <Compile Remove="Migrations\20201222185156_v52.cs" />
+    <Compile Remove="Migrations\20201222185156_v52.Designer.cs" />
+    <Compile Remove="Migrations\20201222185831_v52.cs" />
+    <Compile Remove="Migrations\20201222185831_v52.Designer.cs" />
+    <Compile Remove="Migrations\20201222191251_v52.cs" />
+    <Compile Remove="Migrations\20201222191251_v52.Designer.cs" />
+    <Compile Remove="Migrations\20201222193408_v52.cs" />
+    <Compile Remove="Migrations\20201222193408_v52.Designer.cs" />
+    <Compile Remove="Migrations\20201227173552_v2.cs" />
+    <Compile Remove="Migrations\20201227173552_v2.Designer.cs" />
+    <Compile Remove="Migrations\20210108135536_v13.cs" />
+    <Compile Remove="Migrations\20210108135536_v13.Designer.cs" />
+    <Compile Remove="Migrations\20210112155146_v21.cs" />
+    <Compile Remove="Migrations\20210112155146_v21.Designer.cs" />
+    <Compile Remove="Migrations\20210115172612_v31.cs" />
+    <Compile Remove="Migrations\20210115172612_v31.Designer.cs" />
+    <Compile Remove="Migrations\20210115190927_v32.cs" />
+    <Compile Remove="Migrations\20210115190927_v32.Designer.cs" />
+    <Compile Remove="Migrations\20210115192405_v32.cs" />
+    <Compile Remove="Migrations\20210115192405_v32.Designer.cs" />
+    <Compile Remove="Migrations\20210116161448_v35.cs" />
+    <Compile Remove="Migrations\20210116161448_v35.Designer.cs" />
+    <Compile Remove="Migrations\20210119144818_v40.cs" />
+    <Compile Remove="Migrations\20210119144818_v40.Designer.cs" />
+    <Compile Remove="Migrations\20210119145400_v40.cs" />
+    <Compile Remove="Migrations\20210119145400_v40.Designer.cs" />
+    <Compile Remove="Migrations\20210119145607_v40.cs" />
+    <Compile Remove="Migrations\20210119145607_v40.Designer.cs" />
+    <Compile Remove="Migrations\20210121203633_v56.cs" />
+    <Compile Remove="Migrations\20210121203633_v56.Designer.cs" />
+    <Compile Remove="Migrations\20210123130456_v59.cs" />
+    <Compile Remove="Migrations\20210123130456_v59.Designer.cs" />
+    <Compile Remove="Migrations\20210207165240_a12.cs" />
+    <Compile Remove="Migrations\20210207165240_a12.Designer.cs" />
+    <Compile Remove="Migrations\20210207165526_a13.cs" />
+    <Compile Remove="Migrations\20210207165526_a13.Designer.cs" />
+    <Compile Remove="Migrations\20210214182733_a32.cs" />
+    <Compile Remove="Migrations\20210214182733_a32.Designer.cs" />
+    <Compile Remove="Migrations\20210214183726_a32.cs" />
+    <Compile Remove="Migrations\20210214183726_a32.Designer.cs" />
+    <Compile Remove="Migrations\20210215173839_a34.cs" />
+    <Compile Remove="Migrations\20210215173839_a34.Designer.cs" />
+    <Compile Remove="Migrations\20210224151555_v65.cs" />
+    <Compile Remove="Migrations\20210224151555_v65.Designer.cs" />
+    <Compile Remove="Migrations\20210413144645_cr1.cs" />
+    <Compile Remove="Migrations\20210413144645_cr1.Designer.cs" />
+    <Compile Remove="Migrations\20210822111839_RenamedSKUColumns2.cs" />
+    <Compile Remove="Migrations\20210822111839_RenamedSKUColumns2.Designer.cs" />
+    <Compile Remove="Migrations\20210822112136_RenamedSKUColumns3.cs" />
+    <Compile Remove="Migrations\20210822112136_RenamedSKUColumns3.Designer.cs" />
+    <Compile Remove="Migrations\20210822171837_AddCruiseLine.cs" />
+    <Compile Remove="Migrations\20210822171837_AddCruiseLine.Designer.cs" />
+    <Compile Remove="Migrations\20210827170309_AddChildPriceToStaging.cs" />
+    <Compile Remove="Migrations\20210827170309_AddChildPriceToStaging.Designer.cs" />
+    <Compile Remove="Migrations\20210828112636_AddQuoteTypes.cs" />
+    <Compile Remove="Migrations\20210828112636_AddQuoteTypes.Designer.cs" />
+    <Compile Remove="Migrations\20210903184005_AddTicketToQuoteGroup.cs" />
+    <Compile Remove="Migrations\20210903184005_AddTicketToQuoteGroup.Designer.cs" />
+    <Compile Remove="Migrations\20210903193154_AddTicketToLeg.cs" />
+    <Compile Remove="Migrations\20210903193154_AddTicketToLeg.Designer.cs" />
+    <Compile Remove="Migrations\20210907103336_FilerRI.cs" />
+    <Compile Remove="Migrations\20210907103336_FilerRI.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <_WebToolingArtifacts Remove="Properties\PublishProfiles\Production.pubxml" />
+    <_WebToolingArtifacts Remove="Properties\PublishProfiles\QA.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.1.2" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.8.2" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="21.2.3" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.37" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.2.3" />
+    <PackageReference Include="Microsoft.Azure.Storage.File" Version="11.2.3" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.11.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Exchange.WebServices.NETStandard" Version="1.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Quartz.Extensions.Hosting" Version="3.3.3" />
+    <PackageReference Include="RestSharp" Version="106.12.0" />
+    <PackageReference Include="Selenium.Support" Version="4.0.0" />
+    <PackageReference Include="ServiceStack.Text" Version="5.12.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.11" Condition="'$(Configuration)' == 'Debug'" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.246501">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="5.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\BlitzerCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Gurock.SmartInspect">
+      <HintPath>..\CommonDlls\Gurock.SmartInspect.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Pages\Contacts\ModifyMembers.razor">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Planner\Execute.razor">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Trip\ModifyUsers.razor">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Jobs\" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties DismissedDevExtremeVersion="" TemplateFeatures="NETCORE CS RESPONSIVE" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

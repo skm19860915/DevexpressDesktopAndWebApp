@@ -1,0 +1,59 @@
+﻿@model List<UICompany>
+
+@{
+    ViewData["Title"] = "Companies";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div>
+    <h1 class="title-header">Companies</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Company">Company</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+<div class="content-container">
+    <div class="TableBox bans-3d">
+        <a href="/Company/Create">New Company</a>
+        @(Html.DevExtreme().DataGrid<UICompany>()
+    .DataSource(Model)
+    .RemoteOperations(false)
+    .Selection(s => s.Mode(SelectionMode.Single))
+    .SearchPanel(searchPanel => searchPanel
+        .Visible(true)
+        .Width(540)
+        .Placeholder("Search...")
+    )
+    .ShowRowLines(true)
+    .HoverStateEnabled(true)
+    //.RowAlternationEnabled(true)
+    .ShowBorders(true)
+
+    .Columns(columns => {
+        columns.AddFor(m => m.Name).AllowEditing(false);
+        columns.AddFor(m => m.PrimaryEmail);
+        columns.AddFor(m => m.PrimaryPhone);
+    })
+    .Paging(p => p.PageSize(17))
+    .StateStoring(s => s.Enabled(true).Type(StateStoringType.LocalStorage).StorageKey("storage"))
+    .OnRowClick("SelectedRow")
+)
+    </div>
+</div>
+
+<script>
+    function SelectedRow(obj) {
+        var lId = obj.key.Id;
+        console.log(lId);
+        document.location.href = "/Task/Edit/" + lId;
+    }
+
+    function SelectionChanged(selectedItems) {
+        var lContact = selectedItems.selectedRowsData[0];
+        var lContactId = lContact.Id;
+        document.location.href = "/Company/Details/" + lContactId;
+    }
+</script>

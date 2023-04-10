@@ -1,0 +1,150 @@
+@model BlitzerCore.Models.UI.Tile
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+@if (Model != null)
+{
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <h1>Edit</h1>
+
+            <h4>Tile</h4>
+            <hr />
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlockTitle" class="control-label"></label>
+                    <input asp-for="BlockTitle" class="form-control" />
+                    <span asp-validation-for="BlockTitle" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Resort</label>
+                    @(Html.DevExtreme().SelectBox()
+        .DataSource(d => d.Mvc().Controller("ResortPages").LoadAction("Get").Key("Id"))
+        .DisplayExpr("Title")
+        .ValueExpr("Id")
+        .OnValueChanged("Resort_Changed")
+        .Value(Model.ResortID)
+                )
+                    <input type="hidden" asp-for="ResortID" id="ResortID" />
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Category</label>
+                    @(Html.DevExtreme().SelectBox()
+                        .DataSource(d => d.Mvc().Controller("Category").LoadAction("Get").Key("Id"))
+                        .DisplayExpr("Name")
+                        .ValueExpr("Id")
+                        .OnValueChanged("Category_Changed")
+                        .Value(Model.CategoryID)
+                    )
+                    <input type="hidden" asp-for="CategoryID" id="CategoryID" />
+                </div>
+
+
+                <div class="form-group">
+                    Picture
+                    <div>
+                        @if (Model.Media != null && Model.Media.ThumbNail.Location != null)
+                        {
+                            <img id="MediaThumb" src="@Model.Media.ThumbNail.Location" height="200" />
+                        }
+                        else
+                        {
+                            <div id="MediaSet">No Thumbnail available</div>
+                        }
+                    </div>
+                    <input type="hidden" asp-for="MediaID" id="MediaID" />
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+
+                <div class="form-group" id="MediaPanel">
+                    @(Html.DevExtreme().DataGrid<Media>()
+                        .ID("grid-container")
+                        .Selection(s => s.Mode(SelectionMode.Single))
+                        .RemoteOperations(false)
+                        .FilterRow(filterRow => filterRow
+                            .Visible(true)
+                            .ApplyFilter(GridApplyFilterMode.Auto)
+                        )
+                        .SearchPanel(searchPanel => searchPanel
+                            .Visible(true)
+                            .Width(240)
+                            .Placeholder("Search...")
+                        )
+                        .DataSource(d => d.WebApi()
+                            .Controller("Media")
+                            .LoadAction("Get")
+                            .Key("Id")
+                        )
+                        .ShowColumnLines(true)
+                        .ShowRowLines(true)
+                        .HoverStateEnabled(true)
+                        .RowAlternationEnabled(true)
+                        .ShowBorders(true)
+                        .Columns(columns =>
+                        {
+                            columns.AddFor(m => m.ThumbNail.Location)
+                                .AllowFiltering(false)
+                                .AllowSorting(false)
+                                .CellTemplate(@<text>
+                                    <div>
+                                        <img height="100" width="100" src="<%- value %>" alt=""/>
+                                    </div>
+                                </text>);
+                            columns.AddFor(m => m.Id);
+                            columns.AddFor(m => m.Title);
+                            columns.AddFor(m => m.PageID)
+                                .Caption("Resort")
+                                .Lookup(lookup => lookup
+                                .DataSource(d => d.Mvc().Controller("ResortPages").LoadAction("Get").Key("Id"))
+                                    .DisplayExpr("Title")
+                                    .ValueExpr("Id")
+                                );
+                            columns.AddFor(m => m.CategoryID)
+                                .Caption("Category")
+                                .Lookup(lookup => lookup
+                                .DataSource(d => d.Mvc().Controller("Category").LoadAction("Get").Key("Id"))
+                                .DisplayExpr("Name")
+                                .ValueExpr("Id")
+                            );
+                        })
+                        .Paging(p => p.PageSize(10))
+                        .OnSelectionChanged("Media_Changed")
+                    )
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+}
+<script>
+    function Resort_Changed(data) {
+        $('#ResortID').val(data.value);
+    }
+    function Category_Changed(data) {
+        $('#CategoryID').val(data.value);
+    }
+
+    function Media_Changed(selectedItems) {
+        var data = selectedItems.selectedRowsData[0];
+        if (data) {
+            $('#MediaID').val(data.Id);
+        }
+    }
+</script>

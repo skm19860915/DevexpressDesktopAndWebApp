@@ -1,0 +1,115 @@
+﻿911,Delta Airlines,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,CB3176DB-5271-4525-9BC8-7AF9D39225BF
+912,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,693A432E-6D0D-4C04-8828-AC7A19F49043
+913,NULL,"New York-La Guardia, NY (LGA) "," 11:20 AM","Atlanta, GA (ATL)"," 1:53 PM",Aircraft: Airbus A321,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,693A432E-6D0D-4C04-8828-AC7A19F49043
+914,NULL,"Detroit, MI (DTW) "," 8:05 AM","New York-La Guardia, NY (LGA)"," 9:54 AM",Aircraft: Airbus A321,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,693A432E-6D0D-4C04-8828-AC7A19F49043
+915,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,3A96CD8E-1053-4519-BC1F-B6940BE4EC75
+916,NULL,"Cancun, Mexico (CUN) "," 10:50 AM","Mexico City, Mexico (MEX)"," 12:20 PM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,3A96CD8E-1053-4519-BC1F-B6940BE4EC75
+917,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,3A96CD8E-1053-4519-BC1F-B6940BE4EC75
+918,NULL,"New York-La Guardia, NY (LGA) "," 11:20 AM","Atlanta, GA (ATL)"," 1:53 PM",Aircraft: Airbus A321,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,3A96CD8E-1053-4519-BC1F-B6940BE4EC75
+919,NULL,"Detroit, MI (DTW) "," 8:05 AM","New York-La Guardia, NY (LGA)"," 9:54 AM",Aircraft: Airbus A321,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,3A96CD8E-1053-4519-BC1F-B6940BE4EC75
+920,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,67144B35-6C76-45DE-95C9-A8EFBE1F6E92
+921,NULL,"Cancun, Mexico (CUN) "," 7:40 AM","Mexico City, Mexico (MEX)"," 9:10 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,67144B35-6C76-45DE-95C9-A8EFBE1F6E92
+922,NULL,"Detroit, MI (DTW) "," 10:15 AM","Cancun, Mexico (CUN)"," 1:47 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,67144B35-6C76-45DE-95C9-A8EFBE1F6E92
+923,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,C765DDD6-1098-4E5E-B0C0-54352C11DFFF
+924,NULL,"Cancun, Mexico (CUN) "," 10:50 AM","Mexico City, Mexico (MEX)"," 12:20 PM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,C765DDD6-1098-4E5E-B0C0-54352C11DFFF
+925,NULL,"Detroit, MI (DTW) "," 10:15 AM","Cancun, Mexico (CUN)"," 1:47 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,C765DDD6-1098-4E5E-B0C0-54352C11DFFF
+926,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,B7A81C72-DC19-4EA2-A04F-8ADED3C27101
+927,NULL,"Cancun, Mexico (CUN) "," 6:05 AM","Mexico City, Mexico (MEX)"," 7:40 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,B7A81C72-DC19-4EA2-A04F-8ADED3C27101
+928,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,B7A81C72-DC19-4EA2-A04F-8ADED3C27101
+929,NULL,"New York-JFK, NY (JFK) "," 12:59 PM","Atlanta, GA (ATL)"," 3:20 PM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,B7A81C72-DC19-4EA2-A04F-8ADED3C27101
+930,NULL,"Detroit, MI (DTW) "," 10:00 AM","New York-JFK, NY (JFK)"," 11:44 AM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,B7A81C72-DC19-4EA2-A04F-8ADED3C27101
+931,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,DF8C7747-F8A9-420F-877D-4B909147D984
+932,NULL,"Cancun, Mexico (CUN) "," 6:40 AM","Mexico City, Mexico (MEX)"," 8:15 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,DF8C7747-F8A9-420F-877D-4B909147D984
+933,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,DF8C7747-F8A9-420F-877D-4B909147D984
+934,NULL,"New York-JFK, NY (JFK) "," 12:59 PM","Atlanta, GA (ATL)"," 3:20 PM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,DF8C7747-F8A9-420F-877D-4B909147D984
+935,NULL,"Detroit, MI (DTW) "," 10:00 AM","New York-JFK, NY (JFK)"," 11:44 AM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,DF8C7747-F8A9-420F-877D-4B909147D984
+936,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,081D916B-2D7A-4697-8CDA-0CCA8909451F
+937,NULL,"Cancun, Mexico (CUN) "," 7:40 AM","Mexico City, Mexico (MEX)"," 9:10 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,693A432E-6D0D-4C04-8828-AC7A19F49043
+938,NULL,"Cancun, Mexico (CUN) "," 7:40 AM","Mexico City, Mexico (MEX)"," 9:10 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,081D916B-2D7A-4697-8CDA-0CCA8909451F
+939,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,693A432E-6D0D-4C04-8828-AC7A19F49043
+940,NULL,"New York-La Guardia, NY (LGA) "," 11:20 AM","Atlanta, GA (ATL)"," 1:53 PM",Aircraft: Airbus A321,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,F4930278-DB64-4773-BDE4-E60C7B5A4215
+941,NULL,"Cancun, Mexico (CUN) "," 1:53 PM","Detroit, MI (DTW)"," 5:33 PM",Aircraft: Boeing 737-900,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,59933CFD-306A-4AED-B828-F92810BEDA09
+942,NULL,"Detroit, MI (DTW) "," 8:35 AM","Cancun, Mexico (CUN)"," 12:07 PM",Aircraft: Boeing 737-900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,59933CFD-306A-4AED-B828-F92810BEDA09
+943,NULL,"Cancun, Mexico (CUN) "," 3:16 PM","Detroit, MI (DTW)"," 6:57 PM",Aircraft: Boeing 737-800,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,37A54A80-80F7-4819-9764-17817CB944E5
+944,NULL,"Detroit, MI (DTW) "," 8:35 AM","Cancun, Mexico (CUN)"," 12:07 PM",Aircraft: Boeing 737-900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,37A54A80-80F7-4819-9764-17817CB944E5
+945,NULL,"Cancun, Mexico (CUN) "," 1:53 PM","Detroit, MI (DTW)"," 5:33 PM",Aircraft: Boeing 737-900,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,04FBBD6B-79B5-437B-B6F9-7E90CB841532
+946,NULL,"Detroit, MI (DTW) "," 8:35 AM","Cancun, Mexico (CUN)"," 12:07 PM",Aircraft: Boeing 737-900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,04FBBD6B-79B5-437B-B6F9-7E90CB841532
+947,NULL,"Atlanta, GA (ATL) "," 3:41 PM","Detroit, MI (DTW)"," 5:30 PM",Aircraft: Airbus A321,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,C8A1B307-3CD1-492B-A023-0492CA6356C6
+948,NULL,"Cancun, Mexico (CUN) "," 9:30 AM","Atlanta, GA (ATL)"," 11:57 AM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,C8A1B307-3CD1-492B-A023-0492CA6356C6
+949,NULL,"Detroit, MI (DTW) "," 10:15 AM","Cancun, Mexico (CUN)"," 1:47 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,C8A1B307-3CD1-492B-A023-0492CA6356C6
+950,NULL,"Cancun, Mexico (CUN) "," 3:16 PM","Detroit, MI (DTW)"," 6:57 PM",Aircraft: Boeing 737-800,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,5B966A9C-8353-4B9B-8A3C-715DDD186379
+951,NULL,"Detroit, MI (DTW) "," 10:15 AM","Cancun, Mexico (CUN)"," 1:47 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,5B966A9C-8353-4B9B-8A3C-715DDD186379
+952,NULL,"Cancun, Mexico (CUN) "," 1:53 PM","Detroit, MI (DTW)"," 5:33 PM",Aircraft: Boeing 737-900,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,9CD8C998-1C0F-4228-A91E-9F6563DA6C13
+953,NULL,"Detroit, MI (DTW) "," 10:15 AM","Cancun, Mexico (CUN)"," 1:47 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,9CD8C998-1C0F-4228-A91E-9F6563DA6C13
+954,NULL,"Cancun, Mexico (CUN) "," 3:16 PM","Detroit, MI (DTW)"," 6:57 PM",Aircraft: Boeing 737-800,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,497B1E8D-9F51-483E-AFCE-41027B04EEF3
+955,NULL,"Detroit, MI (DTW) "," 10:15 AM","Cancun, Mexico (CUN)"," 1:47 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,497B1E8D-9F51-483E-AFCE-41027B04EEF3
+956,NULL,"Cancun, Mexico (CUN) "," 1:53 PM","Detroit, MI (DTW)"," 5:33 PM",Aircraft: Boeing 737-900,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,03590B26-590E-4A8F-8AD0-E09B1BF8B6E2
+957,NULL,"Detroit, MI (DTW) "," 10:15 AM","Cancun, Mexico (CUN)"," 1:47 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,03590B26-590E-4A8F-8AD0-E09B1BF8B6E2
+958,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,8D22AB20-1A17-4856-BC87-BDFB55AB37E4
+959,NULL,"Cancun, Mexico (CUN) "," 6:05 AM","Mexico City, Mexico (MEX)"," 7:40 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,8D22AB20-1A17-4856-BC87-BDFB55AB37E4
+960,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,8D22AB20-1A17-4856-BC87-BDFB55AB37E4
+961,NULL,"New York-La Guardia, NY (LGA) "," 11:20 AM","Atlanta, GA (ATL)"," 1:53 PM",Aircraft: Airbus A321,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,8D22AB20-1A17-4856-BC87-BDFB55AB37E4
+962,NULL,"Detroit, MI (DTW) "," 8:05 AM","New York-La Guardia, NY (LGA)"," 9:54 AM",Aircraft: Airbus A321,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,8D22AB20-1A17-4856-BC87-BDFB55AB37E4
+963,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,F4930278-DB64-4773-BDE4-E60C7B5A4215
+964,NULL,"Cancun, Mexico (CUN) "," 6:40 AM","Mexico City, Mexico (MEX)"," 8:15 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,F4930278-DB64-4773-BDE4-E60C7B5A4215
+965,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,F4930278-DB64-4773-BDE4-E60C7B5A4215
+966,NULL,"Detroit, MI (DTW) "," 8:05 AM","New York-La Guardia, NY (LGA)"," 9:54 AM",Aircraft: Airbus A321,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,F4930278-DB64-4773-BDE4-E60C7B5A4215
+967,NULL,"Detroit, MI (DTW) "," 8:35 AM","Cancun, Mexico (CUN)"," 12:07 PM",Aircraft: Boeing 737-900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,FE790585-2624-4784-A841-1D5D9DBED365
+968,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,081D916B-2D7A-4697-8CDA-0CCA8909451F
+969,NULL,"Detroit, MI (DTW) "," 10:00 AM","New York-JFK, NY (JFK)"," 11:44 AM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,081D916B-2D7A-4697-8CDA-0CCA8909451F
+970,NULL,"Detroit, MI (DTW) "," 9:25 AM","Atlanta, GA (ATL)"," 11:24 AM",Aircraft: Boeing 737-900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,C2C8E60C-17A2-4601-B4BD-9562E971428E
+971,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,4A092AE2-7A94-4576-967C-7E47E4AE6E04
+972,NULL,"Cancun, Mexico (CUN) "," 6:05 AM","Mexico City, Mexico (MEX)"," 7:40 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,4A092AE2-7A94-4576-967C-7E47E4AE6E04
+973,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,4A092AE2-7A94-4576-967C-7E47E4AE6E04
+974,NULL,"Cincinnati, OH (CVG) "," 12:55 PM","Atlanta, GA (ATL)"," 2:22 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,4A092AE2-7A94-4576-967C-7E47E4AE6E04
+975,NULL,"Detroit, MI (DTW) "," 9:00 AM","Cincinnati, OH (CVG)"," 10:08 AM",Aircraft: Canadair 900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,4A092AE2-7A94-4576-967C-7E47E4AE6E04
+976,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,49B7513E-EFD3-40CE-AB3A-2DC4A95BCDF7
+977,NULL,"Cancun, Mexico (CUN) "," 6:40 AM","Mexico City, Mexico (MEX)"," 8:15 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,49B7513E-EFD3-40CE-AB3A-2DC4A95BCDF7
+978,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,49B7513E-EFD3-40CE-AB3A-2DC4A95BCDF7
+979,NULL,"Cincinnati, OH (CVG) "," 12:55 PM","Atlanta, GA (ATL)"," 2:22 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,49B7513E-EFD3-40CE-AB3A-2DC4A95BCDF7
+980,NULL,"Detroit, MI (DTW) "," 9:00 AM","Cincinnati, OH (CVG)"," 10:08 AM",Aircraft: Canadair 900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,49B7513E-EFD3-40CE-AB3A-2DC4A95BCDF7
+981,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,F7D222C4-3F6E-4142-B72E-67E8FDE521C0
+982,NULL,"Cancun, Mexico (CUN) "," 7:40 AM","Mexico City, Mexico (MEX)"," 9:10 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,F7D222C4-3F6E-4142-B72E-67E8FDE521C0
+983,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,F7D222C4-3F6E-4142-B72E-67E8FDE521C0
+984,NULL,"Cincinnati, OH (CVG) "," 12:55 PM","Atlanta, GA (ATL)"," 2:22 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,F7D222C4-3F6E-4142-B72E-67E8FDE521C0
+985,NULL,"Detroit, MI (DTW) "," 9:00 AM","Cincinnati, OH (CVG)"," 10:08 AM",Aircraft: Canadair 900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,F7D222C4-3F6E-4142-B72E-67E8FDE521C0
+986,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,4CF6D8F7-2F11-4013-8C58-E78DD9378A53
+987,NULL,"Cancun, Mexico (CUN) "," 10:20 AM","Mexico City, Mexico (MEX)"," 11:40 AM",Aircraft: Embraer 190,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,4CF6D8F7-2F11-4013-8C58-E78DD9378A53
+988,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,4CF6D8F7-2F11-4013-8C58-E78DD9378A53
+989,NULL,"Cincinnati, OH (CVG) "," 12:55 PM","Atlanta, GA (ATL)"," 2:22 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,4CF6D8F7-2F11-4013-8C58-E78DD9378A53
+990,NULL,"Detroit, MI (DTW) "," 9:00 AM","Cincinnati, OH (CVG)"," 10:08 AM",Aircraft: Canadair 900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,4CF6D8F7-2F11-4013-8C58-E78DD9378A53
+991,Delta Airlines,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,CB3176DB-5271-4525-9BC8-7AF9D39225BF
+992,Delta Airlines,"Cancun, Mexico (CUN) "," 10:50 AM","Mexico City, Mexico (MEX)"," 12:20 PM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,CB3176DB-5271-4525-9BC8-7AF9D39225BF
+993,Delta Airlines,"Detroit, MI (DTW) "," 9:00 AM","Cincinnati, OH (CVG)"," 10:08 AM",Aircraft: Canadair 900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,CB3176DB-5271-4525-9BC8-7AF9D39225BF
+994,Delta Airlines,"Cincinnati, OH (CVG) "," 12:55 PM","Atlanta, GA (ATL)"," 2:22 PM",Aircraft: Boeing 737-800,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,CB3176DB-5271-4525-9BC8-7AF9D39225BF
+995,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,C2C8E60C-17A2-4601-B4BD-9562E971428E
+996,NULL,"New York-JFK, NY (JFK) "," 12:59 PM","Atlanta, GA (ATL)"," 3:20 PM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,081D916B-2D7A-4697-8CDA-0CCA8909451F
+997,NULL,"Cancun, Mexico (CUN) "," 10:50 AM","Mexico City, Mexico (MEX)"," 12:20 PM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,C2C8E60C-17A2-4601-B4BD-9562E971428E
+998,NULL,"Detroit, MI (DTW) "," 9:25 AM","Atlanta, GA (ATL)"," 11:24 AM",Aircraft: Boeing 737-900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,DE492BA2-4D52-49FD-ACED-A1819A0FE9B1
+999,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,DD8C7BC1-C767-43E9-A750-FA16D29751D0
+1000,NULL,"Cancun, Mexico (CUN) "," 10:20 AM","Mexico City, Mexico (MEX)"," 11:40 AM",Aircraft: Embraer 190,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,DD8C7BC1-C767-43E9-A750-FA16D29751D0
+1001,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,DD8C7BC1-C767-43E9-A750-FA16D29751D0
+1002,NULL,"New York-JFK, NY (JFK) "," 12:59 PM","Atlanta, GA (ATL)"," 3:20 PM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,DD8C7BC1-C767-43E9-A750-FA16D29751D0
+1003,NULL,"Detroit, MI (DTW) "," 10:00 AM","New York-JFK, NY (JFK)"," 11:44 AM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,DD8C7BC1-C767-43E9-A750-FA16D29751D0
+1004,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,499CB0BD-925C-4AE7-B6E1-C764A22C4D57
+1005,NULL,"Cancun, Mexico (CUN) "," 10:50 AM","Mexico City, Mexico (MEX)"," 12:20 PM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,499CB0BD-925C-4AE7-B6E1-C764A22C4D57
+1006,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,499CB0BD-925C-4AE7-B6E1-C764A22C4D57
+1007,NULL,"New York-JFK, NY (JFK) "," 12:59 PM","Atlanta, GA (ATL)"," 3:20 PM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,499CB0BD-925C-4AE7-B6E1-C764A22C4D57
+1008,NULL,"Detroit, MI (DTW) "," 10:00 AM","New York-JFK, NY (JFK)"," 11:44 AM",Aircraft: Airbus A320,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,499CB0BD-925C-4AE7-B6E1-C764A22C4D57
+1009,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,AD3E980E-22C2-4508-A3C6-13F950CBC0AD
+1010,NULL,"Cancun, Mexico (CUN) "," 6:05 AM","Mexico City, Mexico (MEX)"," 7:40 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,AD3E980E-22C2-4508-A3C6-13F950CBC0AD
+1011,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,AD3E980E-22C2-4508-A3C6-13F950CBC0AD
+1012,NULL,"Detroit, MI (DTW) "," 9:25 AM","Atlanta, GA (ATL)"," 11:24 AM",Aircraft: Boeing 737-900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,AD3E980E-22C2-4508-A3C6-13F950CBC0AD
+1013,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,0BC49901-6687-485F-B025-8FBDF6E4F77B
+1014,NULL,"Cancun, Mexico (CUN) "," 6:40 AM","Mexico City, Mexico (MEX)"," 8:15 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,0BC49901-6687-485F-B025-8FBDF6E4F77B
+1015,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,0BC49901-6687-485F-B025-8FBDF6E4F77B
+1016,NULL,"Detroit, MI (DTW) "," 9:25 AM","Atlanta, GA (ATL)"," 11:24 AM",Aircraft: Boeing 737-900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,0BC49901-6687-485F-B025-8FBDF6E4F77B
+1017,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,A679C865-2DE8-4897-B11A-C21D60310E3C
+1018,NULL,"Cancun, Mexico (CUN) "," 7:40 AM","Mexico City, Mexico (MEX)"," 9:10 AM",Aircraft: Boeing 737,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,A679C865-2DE8-4897-B11A-C21D60310E3C
+1019,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,A679C865-2DE8-4897-B11A-C21D60310E3C
+1020,NULL,"Detroit, MI (DTW) "," 9:25 AM","Atlanta, GA (ATL)"," 11:24 AM",Aircraft: Boeing 737-900,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,A679C865-2DE8-4897-B11A-C21D60310E3C
+1021,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,DE492BA2-4D52-49FD-ACED-A1819A0FE9B1
+1022,NULL,"Cancun, Mexico (CUN) "," 10:20 AM","Mexico City, Mexico (MEX)"," 11:40 AM",Aircraft: Embraer 190,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,DE492BA2-4D52-49FD-ACED-A1819A0FE9B1
+1023,NULL,"Atlanta, GA (ATL) "," 4:33 PM","Cancun, Mexico (CUN)"," 7:00 PM",Aircraft: Boeing 757,Stop: 0,66,0,1,Sun 11/01/2020,Sun 11/01/2020,DE492BA2-4D52-49FD-ACED-A1819A0FE9B1
+1024,NULL,"Mexico City, Mexico (MEX) "," 1:55 PM","Detroit, MI (DTW)"," 7:07 PM",Aircraft: Boeing 757,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,C2C8E60C-17A2-4601-B4BD-9562E971428E
+1025,NULL,"Cancun, Mexico (CUN) "," 3:16 PM","Detroit, MI (DTW)"," 6:57 PM",Aircraft: Boeing 737-800,Stop: 0,66,1,1,Sun 11/15/2020,Sun 11/15/2020,FE790585-2624-4784-A841-1D5D9DBED365

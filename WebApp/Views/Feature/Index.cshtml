@@ -1,0 +1,37 @@
+﻿@model List<UIFeature>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="col-8 offset-2">
+    <div class="row">
+        <h2 class="col-2">Features</h2>
+        <div class="offset-8 col-2"><a href="/Feature/Create">Create</a></div>
+    </div>
+
+    @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.UISprint>()
+        .DataSource(Model)
+        .RemoteOperations(false)
+        .Selection(s => s.Mode(SelectionMode.Single))
+        .HoverStateEnabled(true)
+        .ShowColumnLines(false)
+
+        .Columns(columns =>
+        {
+            columns.AddFor(m => m.Name);
+            columns.AddFor(m => m.Status);
+        })
+        .Paging(p => p.PageSize(15))
+   .Grouping(grouping => grouping.AutoExpandAll(true))
+         .OnSelectionChanged("SelectionChanged")
+    )
+</div>
+<script>
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Feature/Edit/" + lId;
+    }
+</script>

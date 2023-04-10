@@ -1,0 +1,118 @@
+﻿@model BlitzerCore.Models.UI.UIClientPortal
+
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<div class="offset-lg-1 offset-md-2 col-12 col-lg-10 col-md-8 DesktopDisplay" style="margin-bottom:0px;">
+    <h1>Your Client Portal</h1>
+    <hr />
+    <!-- Quote Requests -->
+    <div id="b_Related" style="padding-top:20px;padding-bottom:20px">
+        <div class="ClientHeader">Quote Requests</div>
+        @if (Model.Clients[0].QuoteRequests.Count() > 0)
+        {
+            foreach (var lQR in Model.Clients[0].QuoteRequests)
+            {
+                if (lQR.ActiveQuoteGroups != null && lQR.ActiveQuoteGroups.Count() > 0)
+                {
+                    <div style="margin-left:10px;"><a href="/Client/Quote/@lQR.ActiveQuoteGroups.First().Id">@lQR.Name</a></div>
+                }
+                else
+                {
+                    <div style="padding-left:30px">There are no quotes available at this time</div>
+                    <div style="padding-left:30px">You will receieve an email when your quotes is available.</div>
+                }
+            }
+            @if (Model.Clients[0].ProfileComplete == false)
+            {
+                <div style="padding-top:20px;color:red">Note: To book a trip, you will need to complete your profile</div>
+            }
+        }
+        else
+        {
+            <div style="padding-left:30px">There are no quotes available at this time</div>
+            <div style="padding-left:30px">You will receieve an email when your quotes is available.</div>
+        }
+        @if (Model.Clients[0].TripsActive.Count() > 0)
+        {
+            <hr />
+            <div class="row">
+                <div class="col-12 offset-0 col-lg-4 offset-lg-4" style="font-size:24px;text-align:center;font-weight:500;padding-bottom:20px">Active Trips</div>
+            </div>
+            <table>
+                <tr class="PaymentBackGround">
+                    <th style="width:300px">Name</th>
+                    <th style="width:150px">Start</th>
+                    <th style="width:150px">End</th>
+                    <th style="width:200px">Balance</th>
+                    <th style="width:200px">Status</th>
+                    <th style="width:200px">Pay</th>
+                </tr>
+                @foreach (var lTrip in Model.Clients[0].TripsActive)
+                {
+                    <tr>
+                        <td>@lTrip.Name</td>
+                        <td>@lTrip.OutBoundDate</td>
+                        <td>@lTrip.InBoundDate</td>
+                        <td><a href="/Invoice/Trip/@lTrip.Id">@lTrip.Balance</a></td>
+                        <td>@lTrip.TripStatusStr</td>
+                        <td><a href="/Invoice/Trip/@lTrip.Id">Now</a></td>
+                    </tr>
+                }
+            </table>
+        }
+
+        @if (Model.Clients[0].TripsInActive.Count() > 0)
+        {
+            <hr />
+            <div class="col-10" style="font-size:24px;text-align:center;font-weight:500;padding-bottom:20px">Trip History</div>
+            <table>
+                <tr class="PaymentBackGround">
+                    <th style="width:300px">Name</th>
+                    <th style="width:200px">Start</th>
+                    <th style="width:200px">End</th>
+                    <th style="width:200px">Balance</th>
+                    <th style="width:200px">Status</th>
+                </tr>
+                @foreach (var lTrip in Model.Clients[0].TripsInActive)
+                {
+                    <tr>
+                        <td>@lTrip.Name</td>
+                        <td>@lTrip.OutBoundDate</td>
+                        <td>@lTrip.InBoundDate</td>
+                        <td><a href="/Invoice/Trip/@lTrip.Id">@lTrip.Balance</a></td>
+                        <td>@lTrip.TripStatusStr</td>
+                    </tr>
+                }
+            </table>
+        }
+
+    </div>
+
+    <hr style="margin-top:20px"/>
+    <!-- Travel Profiles -->
+    <div class="row" >
+        <div class="col-6 ClientHeader">Traveler Profiles</div>
+        <div class="col-6 col-lg-3"><a href="/Client/AddProfile/@Model.UserId">Add Traveler</a></div>
+    </div>
+    <div style="margin-bottom:50px">
+        @foreach (var lClient in Model.Clients)
+        {
+            <div class="row">
+                <div class="col-6" style="padding-right:40px;"><div style="padding-left:30px"><a href="/Client/Profile/@lClient.Id">@lClient.Name</a></div></div>
+                @if (lClient.ProfileComplete == false)
+                {
+                    <div class="col-6">Incomplete<span style="color:red">*</span></div>
+                }
+                else
+                {
+                    <div class="col-6">Completed</div>
+                }
+            </div>
+        }
+    </div>
+
+</div>
+

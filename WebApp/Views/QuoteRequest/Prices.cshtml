@@ -1,0 +1,179 @@
+﻿@model BlitzerCore.Models.UI.QuoteRequestResults
+
+@{
+    ViewData["Title"] = "Detail";
+    bool lFirstFlight = true;
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+    UIContact lPrimary = Model.QuoteRequest.Contacts[0];
+}
+
+<Style>
+    #blitz_main {
+        background-color: white !important;
+    }
+</Style>
+
+<div id="ICQuote">
+    <form asp-controller="Trip" asp-action="Book">
+        @Html.HiddenFor(m => m.Id)
+        <div class="row">
+            <div class="col-6"><a href="">Filter</a></div>
+            <div class="col-6"><a href="/Quote/SendQuote?id=">Send Quote[Fixe]</a></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-3">
+                <div class="TopHeader">Travelers</div>
+                <div>
+                    <div>@lPrimary.Name </div>
+                    @if (lPrimary.Address1 != null &&
+lPrimary.Address1 != "")
+                    {
+                        <div>@lPrimary.Address1</div>
+                        <div>@lPrimary.City, @lPrimary.State @lPrimary.ZipCode</div>
+                    }
+                    <a href="@lPrimary.PrimaryEmail">@lPrimary.PrimaryEmail</a>
+                    @if (lPrimary.Cell != null && lPrimary.Cell != "")
+                    {
+                        <div>@lPrimary.Cell</div>
+                    }
+                </div>
+            </div>
+            <div id="AgentHeader" class="row col-3 offset-6">
+                <div>
+                    <div class="TopHeader">Agent</div>
+                    <div>@Model.QuoteRequest.Agent.Name</div>
+                    <div><a href="@Model.QuoteRequest.Agent.PrimaryEmail">@Model.QuoteRequest.Agent.PrimaryEmail</a></div>
+                    <div>@Model.QuoteRequest.AgentPhone</div>
+                </div>
+            </div>
+        </div>        <hr class="LineBreak" />
+
+        <div class="TripInfo">Quote for @Model.QuoteRequest.Name</div>
+
+        <div id="TripBody">
+            <div><span class="PopText">Start Date:</span> @Model.QuoteRequest.StartDate</div>
+            <div><span class="PopText">End Date:</span> @Model.QuoteRequest.EndDate</div>
+        </div>
+
+        <div class="FlightsLabel">Flight Options</div>
+        <div class="row col-12">
+            <div class="FlightResults col-12">
+                <div class="TableHeader row col-12">
+                    <div class="col-1">Date</div>
+                    <div class="col-1">Leg</div>
+                    <div class="col-1">Takeoff</div>
+                    <div class="col-2">Land</div>
+                    <div class="col-2">Connection</div>
+                    <div class="col-2">Layover</div>
+                    <div class="col-2">Arrive</div>
+                    <div class="col-1">Select</div>
+                </div>
+                @{ int lFlightIndex = 0; }
+                @foreach (var lTicket in Model.AirLineTickets)
+                {
+
+                    if (lFirstFlight == false)
+                    {
+                        <hr />
+                    }
+
+                    <div class="FlightInfo col-12">
+                        <div class="row">
+                            <div class="col-11">
+                                <div class="OutBoundDetails row">
+                                    <div class="col-1">@lTicket.OutBoundDepartDate</div>
+                                    <div class="col-1">Depart</div>
+                                    <div class="col-1">@lTicket.OutBoundDepartTime</div>
+                                    <div class="col-2">@lTicket.OutBoundConnectionArrivalTime</div>
+                                    <div class="col-2">@lTicket.OutBoundConnectionCity</div>
+                                    <div class="col-2">@lTicket.OutBoundLayOverDuration</div>
+                                    <div class="col-2">@lTicket.OutBoundArriveTime</div>
+                                </div>
+                                <div class="InBoundDetails row">
+                                    <div class="col-1">@lTicket.InBoundDepartDate</div>
+                                    <div class="col-1">Return</div>
+                                    <div class="col-1">@lTicket.InBoundDepartTime</div>
+                                    <div class="col-2">@lTicket.InBoundConnectionArrivalTime</div>
+                                    <div class="col-2">@lTicket.InBoundConnectionCity</div>
+                                    <div class="col-2">@lTicket.InBoundLayOverDuration</div>
+                                    <div class="col-2">@lTicket.InBoundArriveTime</div>
+                                </div>
+                            </div>
+                            <div class="col-1 CenterCheckbox">
+                                <div><input asp-for="@Model.AirLineTickets[lFlightIndex].Booked" /></div>
+                            </div>
+                        </div>
+                        @{
+                            lFirstFlight = false;
+                            lFlightIndex++;
+                        }
+                    </div>
+                }
+            </div> @* End of the Flight Data for one row*@
+        </div> @*End of Row*@
+
+
+        @*Start the Resorts Section*@
+
+        <div class="ResortsLabel">Resorts</div>
+        @{
+            int lHotelIndex = 0;
+            int lPriceIndex = 0;
+        }
+        @for (lHotelIndex = 0; lHotelIndex < Model.Hotels.Count; lHotelIndex++)
+        {
+            var lResort = Model.Hotels[lHotelIndex];
+            <hr class="ResortResultTopLine" />
+            <div class="ResortBody row">
+                <div>
+                    <img class="ResortImage" src="@lResort.AccommodiationPictureURL" />
+                </div>
+                <div class="ResortDetails">
+                    <div>
+                        <span>
+                            @{
+                                var lPath = "/images/" + @lResort.Stars + "Stars.png";
+                            }
+                            <img src="@lPath" />
+                        </span>
+                        <a href="@lResort.ResortURL">
+                            @lResort.Name
+                            @if (lResort.AdultsOnly)
+                            {
+                                <span style="color:red;">
+                                    - Adults Only
+                                </span>
+                            }
+                        </a>
+                    </div>
+                    <div><span class="ResortLocation">Hotel Location/Area</span> : @lResort.Area</div>
+                    <div class="TableHeader row">
+                        <div class="col-2">Meal Plan</div>
+                        <div class="col-4">Room Type</div>
+                        <div class="col-3">Added Values</div>
+                        <div class="col-2">Package Cost</div>
+                        <div class="col-1">Select</div>
+                    </div>
+                    @for (lPriceIndex = 0; lPriceIndex < lResort.RoomQuotes.Count; lPriceIndex++)
+                    {
+                        if (Model.Hotels[lHotelIndex].RoomQuotes[lPriceIndex].Exclude)
+                        {
+                            continue;
+                        }
+                        var lQuotePrice = lResort.RoomQuotes[lPriceIndex];
+                        <div class="row QuoteRow">
+                            <div class="col-2">@lQuotePrice.MealPlan</div>
+                            <div class="col-4"><a href="@lQuotePrice.RoomURL"> @lQuotePrice.RoomType</a></div>
+                            <div class="col-3"></div>
+                            <div class="col-2">@lQuotePrice.Price</div>
+                            <div class="col-1"><input asp-for="@Model.Hotels[lHotelIndex].RoomQuotes[lPriceIndex].Booked" /></div>
+                        </div>
+                        <hr class="ResortRowLine" />
+                    }
+                </div>
+            </div>
+        }
+        <input type="submit" value="Book" />
+    </form>
+</div>

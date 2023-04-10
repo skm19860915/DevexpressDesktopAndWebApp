@@ -1,0 +1,163 @@
+﻿@model BlitzerCore.Models.UI.UIBooking
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+
+<div class="content-container">
+    <a href="/Trip/Details/@Model.TripID"><h1>@Model.Trip.Name</h1></a>
+    <h4>Reconcile - Booking</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-9">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="BookingID" />
+                <input type="hidden" asp-for="TripID" />
+                @Html.HiddenFor(m => m.returnUrl)
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <div><a href="/Company/Edit/@Model.TourOperatorID">Tour Operator</a></div>
+                            <div>
+                                <select class="form-control" asp-for="@Model.TourOperatorID" asp-items="ViewBag.TourOperators">
+                                    <option>N/A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div><a href="/Company/Edit/@Model.SupplierId">Supplier</a></div>
+                            <div>
+                                <select class="form-control" asp-for="@Model.SupplierId" asp-items="ViewBag.Suppliers">
+                                    <option>N/A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BookingNumber" class="control-label"></label>
+                            <input asp-for="BookingNumber" class="form-control" />
+                            <span asp-validation-for="BookingNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Status" class="control-label"></label>
+                            <select class="form-control" asp-for="Status" asp-items="@Html.GetEnumSelectList<BookingStatus>()"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CreatedBy" class="control-label"></label>
+                            <div class="form-control" readonly="@(true)">@Model.CreatedBy @Model.CreatedOn</div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="UpdatedBy" class="control-label"></label>
+                            <div class="form-control" readonly="@(true)">@Model.UpdatedBy @Model.UpdatedOn</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Deposit" class="control-label"></label>
+                            <input asp-for="Deposit" class="form-control" />
+                            <span asp-validation-for="Deposit" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Deposit Due Date</label>
+                            <input asp-for="DepositDueDate" class="form-control" />
+                            <span asp-validation-for="DepositDueDate" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label asp-for="Amount" class="control-label"></label>
+                                <input asp-for="Amount" class="form-control" />
+                                <span asp-validation-for="Amount" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-6">
+                                <label asp-for="Paid" class="control-label"></label>
+                                <input asp-for="Paid" readonly="@(true)" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Final Payment Date</label>
+                            <input asp-for="FinalPayment" class="form-control" />
+                            <span asp-validation-for="FinalPayment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Expected Commission</label>
+                            <input asp-for="GrossCommission" class="form-control" />
+                            <span asp-validation-for="GrossCommission" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Balance" class="control-label"></label>
+                            <input asp-for="Balance" readonly="@(true)" class="form-control" />
+                            <span asp-validation-for="Balance" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 offset-2">
+                    <label asp-for="Memo" class="control-label"></label>
+                    <textarea asp-for="Memo" class="form-control" rows="5"></textarea>
+
+                </div>
+                <div class="btn-clearence">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        <div class="col-3">
+            <div class="TableBox bans-3d" id="">
+                <div class="">
+                    <div class="row col-12">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-9">Payments</div>
+                                <div class="col-3"><a href="/Payment/Create/@Model.BookingID">Add</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    @foreach (var lPayment in Model.Payments)
+                    {
+                        <div class="BoxDetail">
+                            <div class="row">
+                                <div class="col-md-5 offset-1" style="font-weight:700">@lPayment.PaymentDateStr</div>
+                                <div class="col-md-6 ">
+                                    <a href="/Payment/Edit/@lPayment.PaymentId">@lPayment.Amount</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="TableBox bans-3d" id="">
+                <div class="">
+                    <div class="row col-12">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-9">Credits</div>
+                                @if (Model.Payments.Any())
+                                {
+                                    <div class="col-3"><a href="/Credit/Create/@Model.BookingID">Add</a></div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    @if (Model.Credits != null)
+                    {
+                        <div class="BoxDetail">
+                            @foreach ( var lCredit in Model.Credits ) {
+                            <div class="row">
+                                <div class="col-md-5 offset-1" style="font-weight:700">@lCredit.Reference</div>
+                                <div class="col-md-6 ">
+                                    <a href="/Credit/Edit/@lCredit.Id">@lCredit.Amount</a>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

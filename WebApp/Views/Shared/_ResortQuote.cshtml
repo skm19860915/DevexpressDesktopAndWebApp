@@ -1,0 +1,12 @@
+﻿@model BlitzerCore.Models.UI.UIQuote
+
+<div style="background-color:white;margin: 30px 0px 30px 0px; ">
+    @Html.HiddenFor(m=>m.QuoteID)
+    <div>@Model.ResortName</div>
+    <div><input asp-for="ResortName" /></div>
+    <div>@Model.SKU</div>
+    <div>@Model.FlightPrice</div>
+    <div>@Model.ResortPrice</div>
+    <div>@Model.Total</div>
+    <div>@Html.CheckBoxFor(m=>m.Booked)</div>
+</div>

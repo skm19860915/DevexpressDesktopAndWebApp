@@ -1,0 +1,197 @@
+﻿@model BlitzerCore.Models.UI.UIQuoteRequest
+
+@{
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+
+    if (Model.Contacts.Count() > 0)
+        ViewData["Title"] = "Edit";
+    else
+        ViewData["Title"] = "New Quote Request";
+}
+
+@Html.ValidationSummary()
+
+<h1 class="title-header col-6 offset-3">Quote Request</h1>
+<div>
+    <div class="content-container row">
+        <div class="breadcrumbs col-6">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Opportunity/View/@Model.OpportunityID">Opportunity</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+@using (Html.BeginForm("Edit", "QuoteRequest", FormMethod.Post))
+{
+    <div class="">
+        <div class="Travelers" style="padding-bottom:30px !important;">
+            @Html.HiddenFor(m => m.AgentId)
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.OpportunityID)
+            <div class="row">
+                <div class="Traveler1">Relationship</div>
+                <div class="Traveler2">First</div>
+                <div class="Traveler3">Middle</div>
+                <div class="Traveler4">Last</div>
+                <div class="Traveler5">DOB</div>
+                <div class="Traveler6">Email</div>
+                <div class="Traveler7">Cell</div>
+            </div>
+            @for (int i = 0; i < Model.Contacts.Count; i++)
+            {
+                <div class="row">
+                    <span><select asp-for="@Model.Contacts[i].RelationshipID" asp-items="@Model.RelationShips" class="form-control"></select></span>
+                    <span>@Html.TextBox("Leads[" + @i + "].First", Model.Contacts[i].First)</span>
+                    <span>@Html.TextBox("Leads[" + @i + "].Middle", Model.Contacts[i].Middle)</span>
+                    <span>@Html.TextBox("Leads[" + @i + "].Last", Model.Contacts[i].Last)</span>
+                    <span>@Html.TextBox("Leads[" + @i + "].DOB", Model.Contacts[i].DOB, new { size = "10" })</span>
+                    <span>@Html.TextBox("Leads[" + @i + "].Email", Model.Contacts[i].PrimaryEmail)</span>
+                    <span>@Html.TextBox("Leads[" + @i + "].Cell", Model.Contacts[i].PrimaryPhone, new { size = "13" })</span>
+                    <span><a href="/Contacts/Edit/@Model.Contacts[i].Id">Edit</a></span>
+                </div>
+            }
+        </div>
+        <div class="Travelers row" style="padding-bottom:40px">
+            <div class="col-1">Quote Type </div>
+            <div class="col-2">
+                <select class="form-control" asp-for="QuoteType" asp-items="@ViewBag.QuoteTypes">
+                    <option selected>Not Assigned</option>
+                </select>
+            </div>
+            <div class="col-2">Number of Adults</div>
+            <div class="col-1">
+                <select class="form-control" asp-for="NumberOfAdults" asp-items="@ViewBag.NumberOfAdults">
+                    <option selected>Not Assigned</option>
+                </select>
+            </div>
+            <div class="col-1">Child 1</div>
+            <div class="col-1">
+                <select class="form-control" asp-for="Child1Age" asp-items="@ViewBag.KidsAges">
+                    <option selected>N/A</option>
+                </select>
+            </div>
+            <div class="col-1">Child 2</div>
+            <div class="col-1">
+                <select class="form-control" asp-for="Child2Age" asp-items="@ViewBag.KidsAges">
+                    <option selected>N/A</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="Travelers" style="display:block;padding-bottom:30px !important;">
+            <div>
+                <h3>Notes</h3>
+            </div>
+            <div class="" style="width:80%">
+                <textarea asp-for="Notes" style="width:100%" rows="5"></textarea>
+            </div>
+        </div>
+
+        <div class="Travelers" style="display:block;padding-bottom:30px !important;">
+            <div>
+                <h3>Client Notes</h3>
+            </div>
+            <div class="" style="width:80%">
+                <textarea asp-for="ClientNotes" style="width:100%" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="Locations col-10 ">
+            <div class="row offset-2">
+                <div class="col-2 ">Date</div>
+                <div class="col-4 offset-2">City</div>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-0" style="text-align:right">Departure </div><div class="col-2">@Html.TextBoxFor(m => m.StartDate, new { size = "10" })</div>
+                <div class="col-4">
+                    <select asp-for="@Model.DepartureCityCode" asp-items="@Model.AirPortCodes" class="form-control" style="width:300px"></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-0" style="text-align:right">Return </div><div class="col-2">@Html.TextBoxFor(m => m.EndDate, new { size = "10" })</div>
+                <div class="col-5">
+                    <select asp-for="@Model.DestinationCityCode" asp-items="@Model.AirPortCodes" class="form-control" style="width:300px"></select>
+                </div>
+            </div>
+
+
+            @foreach (var lQuoteGroup in Model.ActiveQuoteGroups)
+            {
+                var lSize = lQuoteGroup.Status == QuoteGroupStatus.Sent ? 10 : 40;
+                <div class="row" style="padding-top:40px;padding-bottom:10px">
+                    @if (lQuoteGroup.Status == QuoteGroupStatus.Open)
+                    {
+                        if (lQuoteGroup.NoData == false)
+                        {
+                            <div class="col-2"><input type="button" onclick="location.href='/Quote/New/@lQuoteGroup.Id'" value="Manual Quote" /></div>
+                            <div class="col-2"><input type="submit" asp-action="PullQuotes" value="Pull Quotes" /></div>
+                            <div class="col-2">
+                                <div><a class="col-2" href="/Filter/Edit/@lQuoteGroup.FilterId">Filter Resorts</a></div>
+                                <div><a href="/Filter/IncludeSubRoomTypes/@lQuoteGroup.Id">Filter Sub Room Types</a></div>
+                            </div>
+                            <div class="col-2">
+                                <a class="col-2" href="/QuoteRequest/SelectFlights/@lQuoteGroup.Id">Select Flights</a>
+                                <div><a href="/Filter/IncludeRoomTypes/@lQuoteGroup.Id">Filter All Room Types</a></div>
+                            </div>
+                            <a class="col-2" href="/Client/Quote/@lQuoteGroup.GUID">Client View</a>
+                            @if (Model.EnableSendQuoteBtn)
+                            {
+                                <a class="col-2" href="/QuoteGroup/SendQuote/@lQuoteGroup.Id">Send Quote</a>
+                            }
+                            else
+                            {
+                                <a class="col-2" style="font-weight:700;color:red">Quote Not Client Ready</a>
+                            }
+                        }
+                        else /* There is not data for the quotegroup*/
+                        {
+                            <div class="row col-12" style="padding-top:40px;padding-bottom:10px">
+                                <div class="col-3 offset-3 CenterButton"><input type="button" onclick="location.href='/Quote/New/@lQuoteGroup.Id'" value="Manual Quote" /></div>
+                                <div class="col-3 offset-3 CenterButton" ><input type="submit" asp-action="PullQuotes" value="Pull Quotes" /></div>
+                            </div>
+
+                        }
+                    }
+                    else
+                    {
+                        <div><a style="font-size: 20px;font-weight: 600" href="/Client/Quote/@lQuoteGroup.GUID"> Quote Sent on : @lQuoteGroup.SentDate</a></div>
+                    }
+                </div>
+                @(Html.DevExtreme().DataGrid<UIQuote>()
+                    .DataSource(lQuoteGroup.QuoteList)
+                    .RemoteOperations(false)
+                    .Selection(s => s.Mode(SelectionMode.Single))
+                    .ShowRowLines(true)
+                    .HoverStateEnabled(true)
+                    .RowAlternationEnabled(true)
+                    .ShowBorders(true)
+
+                    .Columns(columns =>
+                    {
+                        columns.AddFor(m => m.TourOperator).Width(200);
+                        columns.AddFor(m => m.SupplierName);
+                        columns.AddFor(m=>m.SupplerRank).Caption("Rank").Width(80);
+                        columns.AddFor(m => m.SKU);
+                        columns.AddFor(m => m.QuoteType).Width(120);
+                        columns.AddFor(m => m.Total).Width(120).Format("Currency");
+                        columns.AddFor(m => m.StatusDisplay).Width(120);
+                    })
+                    .Paging(p => p.PageSize(lSize))
+                    .OnSelectionChanged("SelectionChanged")
+                )
+            }
+
+            <div class="QButton CenterButton" style="padding-top:20px;">
+                <input type="submit" value="Save" asp-action="Edit" />
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    function SelectionChanged(selectedItems) {
+        var lQuote = selectedItems.selectedRowsData[0];
+        var lQuoteId = lQuote.QuoteID;
+        document.location.href = "/Quote/Edit/" + lQuoteId;
+    }
+</script>

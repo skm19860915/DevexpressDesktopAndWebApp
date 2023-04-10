@@ -1,0 +1,7 @@
+﻿@model UITrip
+@{ 
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+@(await Html.RenderComponentAsync<WebApp.Pages.Planner.Execute>(RenderMode.ServerPrerendered))
+
+<script src="~/_framework/blazor.server.js"></script>

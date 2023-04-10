@@ -1,0 +1,156 @@
+﻿@page "/Contacts/ModifyMembers/{ContactId}"
+
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using BlitzerCore.UIHelpers;
+ 
+@inject IBlazorService BlazorSrv
+@inject HttpClient Http
+
+@code {
+    [Parameter]
+    public string ContactId { get; set; }
+    public string lFName { get; set; }
+    public string lMName { get; set; }
+    public string lLName { get; set; }
+    private bool StateChanged { get; set; }
+
+    private List<UIContactCore> SearchResults { get; set; }
+    private List<UIContactCore> HouseHoldMembers { get; set; }
+    private HouseHold HouseHold { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        Logger.LogInfo($"ModifyUsers::OnInitializedAsync - Enter with {ContactId}");
+        HouseHold = BlazorSrv.GetHouseHold(ContactId);
+        HouseHoldMembers = ContactUIHelper.ConvertCore(HouseHold.Members.ToList());
+    }
+
+    private void AddMember(string aUserId)
+    {
+        Logger.LogInfo($"Calling AddMember with {HouseHold.Id}, {aUserId}");
+        HouseHoldMembers = BlazorSrv.AddHouseHoldMember(HouseHold.Id, aUserId);
+        var lTarget = SearchResults.FirstOrDefault(x => x.Id == aUserId);
+        SearchResults.Remove(lTarget);
+        HouseHold = BlazorSrv.GetHouseHold(ContactId);
+    }
+
+    private void RemoveMember(string aUserId)
+    {
+        Logger.LogInfo($"RemoveContact Called with {HouseHold.Id}, {aUserId}");
+        HouseHoldMembers = BlazorSrv.RemoveHouseHoldMember (HouseHold.Id, aUserId);
+    }
+
+    private async System.Threading.Tasks.Task FindContacts()
+    {
+        Logger.LogInfo($"ModifyUsers::FindContacts - Clicked");
+
+        if (lFName == null && lMName == null && lLName == null)
+            return;
+
+        if ((lFName == null || lFName.Length == 0 )
+            && (lMName == null || lMName.Length == 0)
+            && (lLName == null || lLName.Length == 0))
+            return;
+
+        var lQString = $"/api/ApiContact/FindContacts?aFName={lFName}&aMName={lMName}&aLName={lLName}";
+        Logger.LogInfo($"ModifyUsers::FindContacts - Query = " + lQString);
+        SearchResults = await Http.GetFromJsonAsync<List<UIContactCore>>(lQString);
+        lFName = "";
+        lMName = "";
+        lLName = "";
+        //StateHasChanged();
+    }
+
+}
+
+@if (HouseHoldMembers == null)
+{
+    <h1>Loading Household Members</h1>
+}
+else
+{
+    <div class="offset-2 col-8">
+        <h2>Modify @HouseHold.Name Household Members</h2>
+        <hr />
+        <div style="font-size:24px;font-weight:600">Find Non Members</div>
+        <div>
+            <div class="row">
+                <div class="Traveler1">First</div>
+                <div class="Traveler2">Middle</div>
+                <div class="Traveler3">Last</div>
+            </div>
+            <div class="row">
+                <input type="text" @bind="@lFName" id="fname" />
+                <input type="text" @bind="@lMName" id="mname" />
+                <input type="text" @bind="@lLName" id="lname" />
+                <button class="btn btn-primary" type="button" @onclick="FindContacts">Find Contacts</button>
+            </div>
+        </div>
+        <div style="font-size:24px;padding-top:20px">Search Results</div>
+        @if (SearchResults == null || SearchResults.Count() == 0)
+        {
+            <div>
+                There are no matching Contacts
+            </div>
+        }
+        else
+        {
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First</th>
+                            <th>Middle</th>
+                            <th>Last</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var lContact in SearchResults)
+                        {
+                            <tr class="TripAddRow">
+                                <td class="TripAddCell">@lContact.First</td>
+                                <td class="TripAddCell">@lContact.Middle</td>
+                                <td class="TripAddCell">@lContact.Last</td>
+                                <td><button class="btn" type="button" @onclick="() => AddMember(lContact.Id)"><i class="fa fa-plus"></i></button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        <div style="font-size:24px;padding-top:20px;padding-top:50px;">Current Travelers</div>
+        <div style="padding-bottom:100px">
+            <table>
+                <tbody>
+                    @if (HouseHoldMembers != null && HouseHoldMembers.Count > 0)
+                    {
+                        foreach (var lTraveler in HouseHoldMembers)
+                        {
+                            <tr class="TripRemoveRow">
+                                <td class="TripAddCell">@lTraveler.First</td>
+                                <td class="TripAddCell">@lTraveler.Middle</td>
+                                <td class="TripAddCell">@lTraveler.Last</td>
+                                <td><button class="btn" type="button" @onclick="() => RemoveMember(lTraveler.Id)"><i class="fa fa-minus"></i></button></td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>There are no travelers with this trip</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+
+

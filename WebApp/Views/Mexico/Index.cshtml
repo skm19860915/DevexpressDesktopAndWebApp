@@ -1,0 +1,89 @@
+﻿@model BlitzerCore.Models.UI.UICountry
+
+@{
+    ViewBag.Title = Model.PageTitle;
+    Layout = "/Views/Shared/_BaseLayout.cshtml";
+    var lHeaderPath = "";
+    if (Model.HeaderImage != null
+        && Model.HeaderImage.Media != null
+        && Model.HeaderImage.Media.Size1600x1200 != null)
+        lHeaderPath = Model.HeaderImage.Media.Size1600x1200.Location;
+}
+
+<div id="wrapper">
+    <ul>
+        <li><a href="/Home">Home</a></li>
+        <li><a href="/NorthAmerica">North America</a></li>
+        <li><a href="/Mexico">Mexico</a></li>
+    </ul>
+    <div id="page_caption" class="hasbg parallax notransparent" style="height:700px" data-image="@lHeaderPath" data-width="1600" data-height="1200">
+        <div class="page_title_wrapper">
+            <div class="tour_country_subheader">@Model.HeaderImage.Caption</div>
+            <br class="clear">
+            <h1>@Model.HeaderImage.BlockTitle</h1>
+        </div>
+        <div class="parallax_overlay_header"></div>
+    </div>
+
+    <!-- Begin content -->
+    <div id="page_content_wrapper" class="hasbg fullwidth fullscreen ">
+        <div class="inner DetailInnerWrapper">
+
+            <!-- Begin Main content -->
+            <div class="inner_wrapper">
+                <div class="sidebar_content full_width pt60">
+
+                    <div class="row offset-2 col-lg-8 col-md-8 col-sm-10">
+                        <!-- Center Panel -->
+                        <div>
+                            @await Html.PartialAsync("_CenterContent")
+                        </div>
+                        <div class="">
+                            @foreach (var lUIResort in Model.Resorts)
+                            {
+                            <div class="row" style="padding-bottom:30px;">
+                                <div class="col-3" style="padding-top:0px">
+                                    <a href="@lUIResort.MyUrl">
+                                        <img src="@lUIResort.MainImage.Media.MediaLocation" />
+                                    </a>
+                                </div>
+                                <div class="col-9">
+                                    <a href="@lUIResort.MyUrl"><h3>@lUIResort.PageTitle</h3></a>
+                                    <div>@lUIResort.CenterContent.Summary</div>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="ResortPromoBanner">
+                        <div id="portfolio_filter_wrapper" class="three_cols gallery tour_single fullwidth section content clearfix">
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/HotAirBallons.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/Adventures.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/Ecuador.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/Turtle.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End main content -->
+
+    </div>
+</div>
+

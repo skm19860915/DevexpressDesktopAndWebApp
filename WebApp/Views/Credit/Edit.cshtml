@@ -1,0 +1,48 @@
+﻿@model BlitzerCore.Models.UI.UICredit
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="content-container">
+    @if (Model.Id == 0)
+    {
+        <h1>Create</h1>
+    }
+    else
+    {
+        <h1>Edit</h1>
+    }
+    <h4>Credit</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @Html.HiddenFor(x => x.Id)
+                @Html.HiddenFor(x => x.OriginalBookingId)
+
+                <div class="form-group">
+                    <label asp-for="Reference" class="control-label"></label>
+                    <input asp-for="Reference" class="form-control" />
+                    <span asp-validation-for="Reference" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Amount" class="control-label"></label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="When" class="control-label"></label>
+                    <input asp-for="When" class="form-control" />
+                    <span asp-validation-for="When" class="text-danger"></span>
+                </div>
+                <div class="btn-clearence">
+                    <input type="submit" value="Save" class="btn btn-command" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

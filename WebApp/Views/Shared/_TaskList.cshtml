@@ -1,0 +1,27 @@
+﻿@model List<UITask>
+
+@(Html.DevExtreme().DataGrid<UITask>()
+    .DataSource(Model)
+    .RemoteOperations(false)
+    .Selection(s => s.Mode(SelectionMode.Single))
+    .ShowRowLines(true)
+    .HoverStateEnabled(true)
+    .RowAlternationEnabled(true)
+    .ShowBorders(true)
+
+    .Columns(columns => {
+        columns.AddFor(m => m.Name).AllowEditing(false);
+        columns.AddFor(m => m.Priority);
+    })
+    .Paging(p => p.PageSize(17))
+    .OnSelectionChanged("SelectionChanged")
+)
+
+<script>
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Tasks/Edit/" + lId;
+    }
+</script>
+

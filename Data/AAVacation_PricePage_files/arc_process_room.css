@@ -1,0 +1,15 @@
+@import url('//cdn.switchfly.com/assets/2569b23/client_assets/imagesw/aavacations/default/css/arc_process_room.css');
+
+#hotel_filters_top .modify_search {
+    background: #fff;
+}
+
+.modify_search h3 {
+    margin: 5px 0 5px 5px;
+}
+
+.modify_search img {
+    display:block;
+    width: auto;
+    margin: auto auto 5px auto;
+}

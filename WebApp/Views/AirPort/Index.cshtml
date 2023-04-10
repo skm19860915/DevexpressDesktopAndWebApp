@@ -1,0 +1,50 @@
+@model List<AirPort>
+@using DevExtreme.AspNet.Mvc
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<div class="row CountryWrapper">
+    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 offset-xl-2 offset-lg-0 offset-sm-0">
+        @(Html.DevExtreme().DataGrid<AirPort>()
+            .ID("AiportGrid")
+            .ShowBorders(true)
+            .Paging(paging=>paging.Enabled(false))
+            .FilterPanel(f=>f.Visible(true))
+            .HeaderFilter(h=>h.Visible(true))
+            .FilterRow(r=>r.Visible(true))
+            .Sorting(s=>s.Mode(GridSortingMode.Single	))
+            .DataSource( d=>d.Mvc()
+                .Controller("Airport")
+                .LoadAction("Get")
+                .UpdateAction("Put")
+                .InsertAction("Post")
+                .Key("AirPortID")
+            )
+            .Editing(editing=>
+            {
+                editing.Mode(GridEditMode.Row);
+                editing.AllowUpdating(true);
+                editing.AllowAdding(true);
+            })
+            .Columns(
+                columns=>
+                {
+                    columns.AddFor(m => m.Code).SortOrder(SortOrder.Asc);
+                    columns.AddFor(m => m.Name);
+                    columns.AddFor(m => m.City);
+                    columns.AddFor(m => m.CountryId)
+                        .Width(250)
+                        .Caption("Country")
+                        .Lookup(lookup => lookup
+                            .DataSource(d =>
+                                d.Mvc().Controller("CountryLookup").LoadAction("Get").Key("Id"))
+                            .DisplayExpr("Name")
+                            .ValueExpr("Id")
+                        );
+                }
+            ))
+    </div>
+</div>

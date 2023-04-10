@@ -1,0 +1,247 @@
+
+
+
+
+
+(function(App) {
+App.domload(function() {
+App.Profile.start('Client Script: search-form.js');
+try {
+/* begin client script */
+
+/* CUSTOM SEARCH FORM IMPLEMENTATION */
+(function() {
+
+    function selectElement(container, cssSelector) {
+        return container && cssSelector ? container.down(cssSelector) : null;
+    }
+
+    var query = window.location.href.toQueryParams();
+    if (query && query.tab === "act") {
+        query.tab = "p";
+        window.location.href = "/travel/arc.cfm?" + $H(query).toQueryString();
+    }
+
+    var sfc = App.use('searchFormComponent');
+    var hasLastSearch = Object.toQueryString(sfc.getOptions().lastSearch) !== "";
+    var $searchForm = $$(".search-form").first();
+    var $aaSearchForm = $$(".aa-form").first();
+
+    var $searchContextDefaultContainer = $$(".search-context-default").first();
+    var $searchContextDefaultRadioButtons = $searchContextDefaultContainer ? $searchContextDefaultContainer.select("input[type='radio']") : null;
+
+    var $airMaxOptionsSelect = selectElement($searchForm, ".airMaxOptionsLabeledInput select");
+    var $maxStopsSelect = selectElement($searchForm, ".maxStopsLabeledInput select");
+    var $autoCompleteDisplayInputs = $searchForm ? $searchForm.select(".autoCompleteLabeledInput .autoCompleteDisplayInput") : null;
+    var $dynamicChildrenSelect = selectElement($searchForm, ".dynamic_children");
+    var $infantText = selectElement($searchForm, "#infantText");
+    var $area1Input = selectElement($searchForm, "input[name='area1']");
+    var $area2Input = selectElement($searchForm, "input[name='area2']");
+    var $date1Input = selectElement($searchForm, "input[name='date1']");
+    var $date2Input = selectElement($searchForm, "input[name='date2']");
+    var $partialRoomStayCheckbox = selectElement($searchForm, "input[name='partial_room_stay']");
+    var sfcOptions = {
+        searchContextFields: {
+            air: [
+                "area1LabeledInput", "area2LabeledInput", "date1LabeledInput", "date2LabeledInput", "time1LabeledInput", "time2LabeledInput",
+                "adultsLabeledInput", "dynamicChildrenLabeledInput", "serviceclassLabeledInput", "airMaxOptionsLabeledInput", "maxStopsLabeledInput"
+            ],
+            room: [
+                "area1LabeledInput", "area2LabeledInput", "date1LabeledInput", "date2LabeledInput", "date3LabeledInput", "date4LabeledInput",
+                "time1LabeledInput", "time2LabeledInput", "time3LabeledInput", "time4LabeledInput", "numRoomsLabeledInput", "adultsLabeledInput",
+                "dynamicChildrenLabeledInput", "partialRoomStayLabeledInput"
+            ],
+            car: [
+                "area1LabeledInput", "area2LabeledInput", "date1LabeledInput", "date2LabeledInput", "time1LabeledInput", "time2LabeledInput",
+                "adultsLabeledInput", "dynamicChildrenLabeledInput", "carTypeLabeledInput"
+            ],
+            activity: [
+                "area1LabeledInput", "area2LabeledInput", "date1LabeledInput", "date2LabeledInput", "time1LabeledInput", "time2LabeledInput",
+                "adultsLabeledInput", "dynamicChildrenLabeledInput", "serviceclassLabeledInput", "airMaxOptionsLabeledInput", "maxStopsLabeledInput"
+            ],
+            air_room_car: [
+                "area1LabeledInput", "area2LabeledInput", "date1LabeledInput", "date2LabeledInput", "date3LabeledInput", "date4LabeledInput",
+                "time1LabeledInput", "time2LabeledInput", "time3LabeledInput", "time4LabeledInput", "numRoomsLabeledInput", "adultsLabeledInput",
+                "dynamicChildrenLabeledInput", "partialRoomStayLabeledInput", "serviceclassLabeledInput", "airMaxOptionsLabeledInput",
+                "maxStopsLabeledInput", "carTypeLabeledInput"
+            ],
+            air_room: [
+                "area1LabeledInput", "area2LabeledInput", "date1LabeledInput", "date2LabeledInput", "date3LabeledInput", "date4LabeledInput",
+                "time1LabeledInput", "time2LabeledInput", "time3LabeledInput", "time4LabeledInput", "numRoomsLabeledInput", "adultsLabeledInput",
+                "dynamicChildrenLabeledInput", "partialRoomStayLabeledInput", "serviceclassLabeledInput", "airMaxOptionsLabeledInput",
+                "maxStopsLabeledInput"
+            ],
+            air_car: [
+                "area1LabeledInput", "area2LabeledInput", "date1LabeledInput", "date2LabeledInput", "time1LabeledInput", "time2LabeledInput",
+                "adultsLabeledInput", "dynamicChildrenLabeledInput", "serviceclassLabeledInput", "airMaxOptionsLabeledInput", "maxStopsLabeledInput", "carTypeLabeledInput"
+            ],
+            room_car: [
+                "area1LabeledInput", "area2LabeledInput", "date1LabeledInput", "date2LabeledInput", "date3LabeledInput", "date4LabeledInput",
+                "time1LabeledInput", "time2LabeledInput", "time3LabeledInput", "time4LabeledInput", "numRoomsLabeledInput", "adultsLabeledInput",
+                "dynamicChildrenLabeledInput", "partialRoomStayLabeledInput", "carTypeLabeledInput"
+            ]
+        }
+    };
+
+    (function switchSearchContextUI() {
+        // hide default container from any user.
+        if ($searchContextDefaultContainer) {
+            $searchContextDefaultContainer.hide();
+        }
+        sfc.setOptions(sfcOptions);
+    }());
+
+    // hide car and activity inputs for FIT
+    (function() {
+        if ($searchContextDefaultContainer && EzRez.Application.Agent.type === "FIT") {
+            var carInput = $searchContextDefaultContainer.down(".airRoomCarRadioLabeledInput input[value='car']");
+            if (carInput) {
+                carInput.up("div").hide();
+            }
+
+            var activityLabeledInput = $searchContextDefaultContainer.down(".activity1LabeledInput");
+            if (activityLabeledInput) {
+                activityLabeledInput.hide();
+            }
+        }
+    }());
+
+    // change max stop labels
+    (function() {
+        if (!$maxStopsSelect) {
+            return;
+        }
+
+        $maxStopsSelect.insert({
+            top: new Element('option', {value: 9}).update("any")
+        });
+
+        var option = $maxStopsSelect.select("option[value='0']").first();
+        if (option) {
+            option.update("nonstop");
+            if (!hasLastSearch) {
+                option.selected = true;
+            }
+        }
+    }());
+
+    // select default value for max results
+    (function() {
+        if (!$airMaxOptionsSelect && EzRez.StringUtil.isEmpty($airMaxOptionsSelect.value)) {
+            return;
+        }
+
+        var option = $airMaxOptionsSelect.select("option[value='50']").first();
+        if (option && !hasLastSearch) {
+            option.selected = true;
+        }
+    }());
+
+    // set default display texts
+    (function() {
+        if ($autoCompleteDisplayInputs) {
+            $autoCompleteDisplayInputs.each(function(input) {
+                if (!hasLastSearch) {
+                    input.value = "enter city or airport";
+                }
+            });
+        }
+
+        if ($searchForm) {
+            $searchForm.select(".dateLabeledInput .datePickerInput").each(function(input) {
+                if (!hasLastSearch) {
+                    input.value = "mm/dd/yy";
+                }
+            });
+        }
+    }());
+
+    // unCheck partial room checkbox if needed
+    // #40833 v131 AA Changes to Booker - 5789
+    (function() {
+        if (query.uncheckPartialRoom && $partialRoomStayCheckbox && $partialRoomStayCheckbox.checked) {
+            // We need to simulate the click to trigger the event that hides the partialRoomContainer
+            EzRez.Util.Event.simulate($partialRoomStayCheckbox, 'click');
+        }
+    }());
+
+    function autoCompleteDisplayInputsListener(evt) {
+        var input = evt.target;
+        if (input && EzRez.StringUtil.isEmpty(input.value)) {
+            input.value = "enter city or airport";
+        }
+    }
+
+    function getLocationCode(locationString) {
+        if (!locationString) {
+            return "";
+        }
+        return locationString.substring(locationString.indexOf(":") + 1, locationString.length);
+    }
+
+    function getCurrentSearchContext() {
+        if (!$searchContextDefaultRadioButtons) {
+            return null;
+        }
+
+        var currentSearchContext = null;
+        $searchContextDefaultRadioButtons.each(function(radio) {
+            if (radio.checked) {
+                currentSearchContext = radio.value;
+                return null;
+            }
+        });
+        return currentSearchContext;
+    }
+
+    function submitFormListener(evt) {
+        // Only send searches to aa.com when air and non-agents
+        if (getCurrentSearchContext() === "air" && !App.WebContext.isAgent) {
+            Event.stop(evt);
+            if ($aaSearchForm && $area1Input && $area2Input && $date1Input && $date2Input) {
+                $aaSearchForm.origin.value = getLocationCode($area1Input.value);
+                $aaSearchForm.destination.value = getLocationCode($area2Input.value);
+                $aaSearchForm.departureMonth.value = $date1Input.value.substr(0, 2);
+                $aaSearchForm.departureDay.value = $date1Input.value.substr(3, 2);
+                $aaSearchForm.returnMonth.value = $date2Input.value.substr(0, 2);
+                $aaSearchForm.returnDay.value = $date2Input.value.substr(3, 2);
+                $aaSearchForm.submit();
+            }
+        }
+    }
+
+    function dynamicChildrenChangeListener(evt) {
+        if ($infantText && $dynamicChildrenSelect) {
+            $infantText.style.display = $dynamicChildrenSelect.value !== "0" ? "block" : "none";
+        }
+    }
+
+    function setListeners() {
+        if ($searchForm) {
+            $searchForm.observe("submit", submitFormListener);
+        }
+
+        if ($autoCompleteDisplayInputs) {
+            $autoCompleteDisplayInputs.each(function(input) {
+                input.observe("blur", autoCompleteDisplayInputsListener);
+            });
+        }
+
+        if ($dynamicChildrenSelect) {
+            $dynamicChildrenSelect.observe("change", dynamicChildrenChangeListener)
+        }
+
+    }
+
+    setListeners();
+})();
+
+/* end client script */
+} catch(e) {
+App.Debug.error('Client script error in search-form.js', e);
+throw new EzRez.Util.Exception({message: "Client JS error on search-form.js.", remoteLog: true}, e);
+}
+App.Profile.stop('Client Script: search-form.js');
+});
+})(EzRez.Application);
+

@@ -1,0 +1,61 @@
+﻿@using BlitzerCore.Business
+@model List<UITripList>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div>
+    <h1 class="title-header">Trips</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Trip">Trip</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+
+<div class="content-container">
+    <div class="TableBox bans-3d">
+        <div class="row">
+            <h2 class="col-9"></h2>
+            <a class="col-1 d-flex align-items-center" href="/Trip?aViewMode=0">Active</a>
+            <a class="col-1 d-flex align-items-center" href="/Trip?aViewMode=1">Closed</a>
+            <a class="col-1 d-flex align-items-center" href="/Trip?aViewMode=2">All</a>
+        </div>
+        @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.UITripList>()
+        .DataSource(Model)
+        .RemoteOperations(false)
+        .Selection(s => s.Mode(SelectionMode.Single))
+        .HoverStateEnabled(true)
+        .ShowColumnLines(false)
+        .FilterPanel(f=>f.Visible(true))
+        .HeaderFilter(h=>h.Visible(true))
+        .FilterRow(r=>r.Visible(true))
+        .Sorting(s=>s.Mode(GridSortingMode.Single   ))
+
+        .Columns(columns =>
+        {
+        columns.AddFor(m => m.Name);
+        columns.AddFor(m => m.Stage);
+        columns.AddFor(m => m.Status);
+        columns.AddFor(m => m.StartDate).DataType(GridColumnDataType.Date);
+        columns.AddFor(m => m.EndDate).DataType(GridColumnDataType.Date).SortOrder(SortOrder.Desc);
+        columns.AddFor(m => m.GrossCommission).DataType(GridColumnDataType.Number).Format(Format.Currency).Alignment(HorizontalAlignment.Right);
+        columns.AddFor(m => m.ICCommission).DataType(GridColumnDataType.Number).Format(Format.Currency).Alignment(HorizontalAlignment.Right);
+        })
+        .Paging(p => p.PageSize(30))
+        .StateStoring(s => s.Enabled(true).Type(StateStoringType.LocalStorage).StorageKey("storage"))
+        .OnRowClick("SelectionChanged")
+        )
+    </div>
+</div>
+
+<script>
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Trip/Details/" + lId;
+    }
+</script>

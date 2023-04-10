@@ -1,0 +1,86 @@
+﻿@model BlitzerCore.Models.UI.UIQuote
+
+@{
+    ViewData["Title"] = "New";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="content-container">
+    <h1>Edit Quote</h1>
+
+    <hr />
+    <div class="col-md-4 TableBox  bans-3d">
+        <form asp-action="Edit">
+            @Html.HiddenFor(m => m.QuoteID)
+            @Html.HiddenFor(m => m.QuoteRequestID)
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div>Tour Operator<span style="float:right"><a style="float:left" href="/Company/Create">Create</a></span></div>
+                <div>
+                    <select class="form-control" asp-for="@Model.TourOperatorID" asp-items="ViewBag.TourOperators">
+                        <option>N/A</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>Supplier<span style="float:right"><a style="float:left" href="/Company/Create">Create</a></span></div>
+                <div>
+                    <select class="form-control" asp-for="@Model.SupplierId" asp-items="ViewBag.Suppliers">
+                        <option>N/A</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>Room Type</div>
+                <div>
+                    <select class="form-control" asp-for="@Model.SKUID" asp-items="ViewBag.SKUs">
+                        <option>Select Room Type</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PackagePrice" class="control-label"></label>
+                <input asp-for="PackagePrice" class="form-control" />
+                <span asp-validation-for="PackagePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResortPrice" class="control-label"></label>
+                <input asp-for="ResortPrice" class="form-control" />
+                <span asp-validation-for="ResortPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightPrice" class="control-label"></label>
+                <input asp-for="FlightPrice" class="form-control" />
+                <span asp-validation-for="FlightPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adjustment" class="control-label"></label>
+                <input asp-for="Adjustment" class="form-control" />
+                <span asp-validation-for="Adjustment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Status</label>
+                <select asp-for="Status"
+                        class="form-control"
+                        asp-items="Html.GetEnumSelectList<QuoteStatus>()">
+                    <option>Select Status ...</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="Adjustment" class="control-label"></label>
+                    <input asp-for="Adjustment" class="form-control" />
+                    <span asp-validation-for="Adjustment" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

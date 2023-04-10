@@ -1,0 +1,8 @@
+﻿@model BlitzerCore.Models.UI.UIRanking
+
+@{
+    ViewBag.Title = Model.PageTitle;
+    Layout = "/Views/Shared/_BlitzerLayout.cshtml";
+}
+
+@await Html.PartialAsync("_ResortRanking")

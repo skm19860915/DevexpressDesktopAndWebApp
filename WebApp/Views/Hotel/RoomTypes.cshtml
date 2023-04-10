@@ -1,0 +1,44 @@
+﻿@model List<BlitzerCore.Models.RoomType>
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="content-container">
+    <h1>@ViewBag.ResortName Room Types</h1>
+
+    <p>
+        <a asp-action="CreateRoomType" asp-route-id="@ViewBag.ResortId">Create New</a>
+    </p>
+    <table class="DataTable bans-3d">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Sort Order
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody >
+            @foreach (var item in Model)
+            {
+            <tr style="margin-left:10px">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SortOrder)
+                </td>
+                <td>
+                    <a asp-action="EditRoomType" asp-route-id="@item.SKUID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SKUID">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

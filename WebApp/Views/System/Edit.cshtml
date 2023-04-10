@@ -1,0 +1,122 @@
+﻿@model BlitzerCore.Models.UI.UISystem
+
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="content-container">
+    <h1>Edit</h1>
+
+    <h4>System</h4>
+    <hr />
+    <!-- Tab links -->
+    <div class="col-6 offset-3">
+        <div class="bans-3d">
+            <div class="b_tab">
+                <button class="b_tablinks" onclick="b_openPanel(event, 'b_Primary')" id="defaultOpen">Detail</button>
+                <button class="b_tablinks" onclick="b_openPanel(event, 'b_Memo')">Memo</button>
+                <button class="b_tablinks" onclick="b_openPanel(event, 'b_Feature')">Features</button>
+            </div>
+            <form asp-action="Edit">
+                <div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    @Html.HiddenFor(m => m.returnUrl)
+                    <div class="">
+                        <div id="b_Primary" class="b_tabPanel" style="display:block">
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control col-12" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Owner</label>
+                                        <div><select class="form-control" asp-for="OwnerID" asp-items="@ViewBag.Agents"></select></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Status</label>
+                                        <div><select class="form-control" asp-for="Status" asp-items="@Html.GetEnumSelectList<SystemStatus>()"></select></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-label offset-2">Description</div>
+                            <div class="row">
+                                <div class="col-8 offset-2">
+                                    <textarea style="width:100%" asp-for="Description" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="b_Memo" class="b_tabPanel">
+                        </div>
+                        <div id="b_Feature" class="b_tabPanel">
+                            @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.UIFeature>()
+        .DataSource(Model.Features)
+        .RemoteOperations(false)
+        .Selection(s => s.Mode(SelectionMode.Single))
+        .HoverStateEnabled(true)
+        .ShowColumnLines(false)
+        .SearchPanel(searchPanel => searchPanel
+            .Visible(true)
+            .Width(540)
+            .Placeholder("Search...")
+        )
+        .Columns(columns =>
+        {
+            columns.AddFor(m => m.Name);
+            columns.AddFor(m => m.StatusStr).Caption("Status");
+        })
+        .Paging(p => p.PageSize(15))
+        .OnSelectionChanged("SelectionChanged")
+    )
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-clearence">
+                    <input type="submit" value="Save" class="btn btn-common" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    //document.getElementById("defaultOpen").click();
+
+    function b_openPanel(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("b_tabPanel");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("b_tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function AddFF() {
+        alert("Clicked Add FF");
+    }
+
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Feature/Edit/" + lId;
+    }
+
+</script>

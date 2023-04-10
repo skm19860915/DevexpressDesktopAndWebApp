@@ -1,0 +1,767 @@
+a {
+    text-decoration: none;
+}
+
+#C2 {
+    width: 985px;
+    background: url('/images_w/aavacations/nav/boombox/c2-boombox-bg.gif') repeat-y left top;
+}
+
+.carShopping #C2,
+.activityShopping #C2 {
+    width: 785px;
+    background: none;
+}
+
+.carShopping #modifySearch,
+.packageShopping #modifySearch {
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.carShopping #filtersTop,
+.carShopping #C2 #itineraryComponents {
+    display: block;
+}
+
+.carShopping .showAllResults {
+    display: inline;
+}
+
+.carShopping .filterContainer {
+    border: 1px solid #999;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: #fff;
+    position: relative;
+}
+
+.carShopping #optionsSorting a,
+.carShopping .showAllResults a {
+    text-decoration: underline;
+}
+
+#activeAgent {
+    position: relative;
+    right: 0;
+    height: auto;
+}
+
+.fareCell .labeledInput input,
+.selectFlightContainer,
+#filtersTop,
+.showAllResults,
+#filterAirlines,
+.flightTimesToggles,
+.filterSubHeader,
+.choose_flight_header,
+.searchSummaryPassengers .left,
+.airMixAndMatchContainer .searchSummaryCriteria .left,
+.priceAndSearchContainer,
+.searchSummaryContainer .searchSummaryPassengers,
+.searchSummaryContainer .searchSummaryCriteria,
+.airMixAndMatchContainer #modifySearchForm .searchSummary,
+#C2 #itineraryComponents {
+    display: none;
+}
+
+#aadvLogin {
+    float: right;
+}
+
+.airMixAndMatchContainer .left-col {
+    width: 207px;
+    padding: 15px;
+    float: left;
+    margin-right: 15px;
+    background-color: #e7eaea;
+}
+
+.left-col #modifySearch {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 20px;
+    padding: 0 0 10px 0;
+}
+
+.left-col #modifySearch .modifySearchToggle a {
+    color: #0078d2;
+    font-size: 16px;
+}
+
+.airMixAndMatchContainer .right-col {
+    float: left;
+    width: 730px;
+}
+
+#air-filter-container-component .filterContainer {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    margin-bottom: 25px;
+}
+
+.filterContainer .filterContainer,
+.filterLegTimes,
+#filterAirportsairJourney,
+#filterAirportsairJourney,
+#filterDurationItin,
+#filterDurationLayovers {
+    border: none;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.filterSlider {
+    background: url(/images_w/aavacations/nav/boombox/dual_thumb_bg.gif) left 3px no-repeat;
+}
+
+.filterSlider .highlight {
+    background: #0075d5 !important;
+    border-bottom: 1px solid #fff;
+    height: 7px;
+    top: 2px;
+}
+
+.filterValues {
+    margin-bottom: 10px;
+}
+
+#air-filter-container-component .filterSlider .thumbMin,
+#air-filter-container-component .filterSlider .thumbMax {
+    background: url(/images_w/aavacations/nav/boombox/r-thumb-round.gif) top center no-repeat;
+}
+
+#modifySearch,
+#searchSummary .searchSummaryTop .label,
+.flightChoice {
+    font-size: 16px;
+    font-family: "American Regular Webfont", Calibri, Helvetica, Arial, sans-serif;
+    overflow: auto;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.left-col .filterHeader {
+    font-size: 16px;
+    font-family: "American Regular Webfont", Calibri, Helvetica, Arial, sans-serif;
+    height: 25px;
+}
+
+.flightChoice {
+    overflow: visible;
+}
+
+.airMixAndMatchContainer #modifySearchContainer {
+    background-color: #e7eaea;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 0;
+    position: static !important;
+    width: 207px;
+}
+
+.airMixAndMatchContainer #modifySearchForm .yui-ac-input {
+    width: 84px;
+}
+
+.airMixAndMatchContainer .modifySearchRow img {
+    margin: 0 0 5px -23px;
+}
+
+.airMixAndMatchContainer .modifySearchRow .label,
+.airMixAndMatchContainer #modifySearch #date_label1,
+.airMixAndMatchContainer #modifySearch #date_label2 {
+    font-weight: normal;
+}
+
+.airMixAndMatchContainer .modifySearchRow #area1_display,
+.airMixAndMatchContainer .modifySearchRow #area2_display {
+    margin-bottom: 9px;
+}
+
+.airMixAndMatchContainer .modifySearchRow #date1,
+.airMixAndMatchContainer .modifySearchRow #date2 {
+    margin-bottom: 6px;
+    padding-right: 16px;
+}
+
+.airMixAndMatchContainer .modifySearchClose {
+    float: left;
+    margin: -17px 0 15px 16px;
+}
+
+.airMixAndMatchContainer .newSearch {
+    margin: 16px auto 6px auto;
+    text-align: center;
+}
+
+.airMixAndMatchContainer .submit_link .aa-btn-primary {
+    width: 197px;
+}
+
+.help-container .filterHeader {
+    margin-bottom: 10px;
+}
+
+#searchSummary .searchSummaryTop .label {
+    font-size: 20px;
+    margin: 0;
+}
+
+#select #MN {
+    padding: 0;
+}
+
+.airMixAndMatchContainer #searchSummary {
+    color: #323e48;
+    border: 0;
+}
+
+.airMixAndMatchContainer .searchSummaryContainer {
+    width: 100%;
+}
+
+.searchSummaryContainer #searchSummary {
+    padding: 0;
+    border-bottom: 1px solid #e7e6e6;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+#searchSummary .left {
+    width: auto;
+    text-align: left;
+    margin: 0;
+    float: none;
+}
+
+.searchSummaryContainer #searchSummary .right {
+    margin: 0;
+    float: none;
+    display: inline;
+    border: 0;
+}
+
+#searchSummary .right div {
+    display: inline;
+}
+
+.airMixAndMatchContainer .flightLegContainer,
+.selected.selectionGridComponent td {
+    border: none;
+}
+
+.flightChoice {
+    font-size: 20px;
+    margin: 20px 0 15px 0;
+    color: #333f49;
+}
+
+.flightChoice a {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.highlightOption:hover {
+    background: transparent;
+}
+
+.legSelectionGridContainer {
+    border-top: 1px solid #e7e6e6;
+}
+
+.legSelectionGridContainer .headerRow {
+    width: 100%;
+}
+
+.legSelectionGridContainer .legSelectionTable th {
+    border-top: none;
+    color: #0075d5;
+    font-size: 14px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: left;
+    font-weight: normal;
+    text-decoration: none;
+    width: 21.5%;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.legSelectionGridContainer .legSelectionTable th a.sort.ascending,
+.legSelectionGridContainer .legSelectionTable th a.sort.descending {
+    font-weight: normal;
+    color: #313d47;
+    padding-right: 20px;
+}
+
+.headerRow a.descending {
+    background: transparent url('/images_w/aavacations/nav/boombox/boombox-sprites.gif') right -25px no-repeat;
+}
+
+.headerRow a.ascending {
+    background: transparent url('/images_w/aavacations/nav/boombox/boombox-sprites.gif') right -12px no-repeat;
+}
+
+.legSelectionGridContainer .departHeader {
+    padding-left: 69px;
+}
+
+.headerRow .sort {
+    padding: 0;
+}
+
+.fareHeader {
+    padding-left: 10px;
+}
+
+.flight-leg,
+.flightSummary .selectionGridComponent {
+    margin-bottom: 20px;
+}
+
+.flight-leg {
+    border: 1px solid #e7e6e6;
+}
+
+.flightSummary .selectionGridComponent.summary .right {
+    width: 202px;
+    border: 0;
+}
+
+.flightSummary .selectionGridComponent {
+    overflow: hidden;
+    clear: both;
+    height: auto;
+}
+
+.selected_flight_image {
+    margin-top: 45px;
+    text-align: center;
+}
+
+.selected_flight_image p {
+    color: #1e85d6;
+    margin-top: 10px;
+}
+
+.flightSummary .summary {
+    border: 1px solid #1e85d6;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flightSummary.Leg0 {
+    height: 0;
+    overflow: hidden;
+}
+
+.flightSummary .summary .flight-leg-details {
+    border-right: 1px solid #1e85d6;
+}
+
+.selectionGridComponent .departureCell,
+.selectionGridComponent .arrivalCell,
+.selectionGridComponent .durationCell {
+    font-family: "American Regular Webfont", Calibri, Helvetica, Arial, sans-serif;
+}
+
+table.flight-leg .fareCell {
+    color: #1a3472;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px;
+}
+
+table.flight-leg .fareCell .seatsRemaining {
+    color: #d14904;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.selectionGridComponent .flightsNumber,
+.selectionGridComponent .departingSegmentAirport,
+.selectionGridComponent .arrivingSegmentAirport,
+.selectionGridComponent .stopsCell {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.selectionGridComponent {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.flight-leg-details .operated-by,
+.selectionGridComponent .section {
+    float: left;
+    clear: none;
+    float: left;
+    width: 83%;
+}
+
+.flight-leg-details .operated-by {
+    color: #636363;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.selectionGridComponent .section.openToggleContainer {
+    width: 525px;
+    font-size: 13px;
+}
+
+.selectionGridComponent .section .openToggleContent li {
+    margin-bottom: 15px;
+}
+
+.selectionGridComponent .section .openToggleContent .segmentAirlineCode {
+    display: block;
+}
+
+.selectionGridComponent .section {
+    margin-bottom: 0;
+}
+
+.selectionGridComponent .left {
+    float: left;
+    width: 524px;
+    border-right: 1px solid #e7e6e6;
+    min-height: 138px;
+}
+
+.selectionGridComponent .right {
+    float: right;
+    width: 24%;
+}
+
+.selectionGridComponent .sectionHeader,
+.selectionGridComponent .section .header {
+    border-bottom: 0;
+}
+
+.arrivalCell .redEye {
+    color: #000;
+    display: inline-block;
+}
+
+.dayDurationCell,
+.segmentConnectTime {
+    color: #d14904;
+}
+
+.section .segmentConnectTime {
+    background: url('/images_w/aavacations/nav/boombox/boombox-sprites.gif') no-repeat right 2px;
+    display: block;
+    width: 85%;
+    height: 15px;
+    margin-bottom: 40px;
+}
+
+.segmentConnectTimeHeader {
+    vertical-align: top;
+}
+
+.segmentConnectTimeContent {
+    display: inline-block;
+    width: 318px;
+}
+
+.flight-leg-details div {
+    display: inline-block;
+    padding: 2.5%;
+    width: 24%;
+}
+
+.flight-leg-details div.airline-logo {
+    width: 5%;
+}
+
+.legFareIdLabeledInput .labelText {
+    font-family: "American Regular Webfont", Calibri, Helvetica, Arial, sans-serif;
+    font-size: 26px;
+}
+
+.taxText {
+    color: #676e74;
+    font-weight: normal;
+}
+
+.stopsCell {
+    font-size: 13px;
+}
+
+.stopsCell .small {
+    font-size: 11px;
+}
+
+.segmentTimes .segmentPlaneChange {
+    background: url(/images_w/aavacations/nav/boombox/boombox-sprites.gif) no-repeat right 2px;
+    color: #d14904;
+    margin: 15px 0;
+}
+
+.legDetailsContainer .sectionHeader,
+.flight-leg-details .operated-by {
+    padding: 10px 0 10px 69px;
+}
+
+.legDetailsContainer .sectionHeader {
+    width: 455px;
+    border-right: 1px solid #e7e6e6;
+}
+
+.Leg1 .Leg0 .legDetailsContainer .sectionHeader {
+    border-right: 1px solid #1e85d6;
+}
+
+.headerToggle {
+    float: left;
+}
+
+.selectionButton {
+    background-color: #0078d2;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4DB4FA', endColorstr='#FF0078D2');
+    background: linear-gradient(#4db4fa, #0078d2);
+    color: #fff;
+    line-height: 2;
+    margin: 5px;
+    padding: 3px 10px;
+    text-decoration: none;
+    width: 80%;
+    display: block;
+    text-align: center;
+}
+
+.selectButton:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.legDetailsRow .section .header {
+    border-bottom: none;
+}
+
+.segmentDetailsList li {
+    display: block;
+}
+
+.segmentDetailsList li.segmentLogo {
+    display: inline;
+}
+
+.segmentDetailsList .label,
+.departSegmentTime.value,
+.arriveSegmentTime.value,
+.segmentConnectTimeHeader {
+    width: 90px;
+    display: inline-block;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.segmentDetailsList .label {
+    margin-bottom: 28px;
+}
+
+.departSegmentTime.label,
+.departSegmentTime.value,
+.arriveSegmentTime.label,
+.arriveSegmentTime.value {
+    margin-bottom: 0;
+}
+
+.segmentFlightNumber.label,
+.segmentConnectTimeHeader,
+.segmentTimes .departSegmentTime,
+.segmentTimes .arriveSegmentTime {
+    font-weight: bold;
+}
+
+.segmentTimes .departingSegmentAirport,
+.segmentTimes .arrivingSegmentAirport {
+    font-size: 13px;
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: 12px;
+    margin-left: 192px;
+}
+
+.segmentFlightNumber .label {
+    float: left;
+    font-weight: bold;
+    color: #000;
+    padding: 0 2px;
+    width: 94px;
+}
+
+.openToggleContent .segmentDetailsList .segmentFlightNumber {
+    display: block;
+    height: auto;
+    float: none;
+    margin-top: -27px;
+    margin-bottom: 10px;
+    font-weight: normal;
+    color: #636363;
+}
+
+.segmentDetailsList .segmentFlightNumber,
+.segmentAirline,
+.segmentConnectTime,
+.redEyeSegmentDates {
+    margin-bottom: 12px;
+    margin-left: 72px;
+}
+
+.redEyeSegmentDates span {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.segmentDetailsList .segmentFlightNumber,
+.segmentTimes {
+    margin-left: 70px;
+}
+
+.segmentDetailsList .segmentTimes .durationSegmentTime {
+    font-weight: normal;
+}
+
+.operated-by-label {
+    clear: left;
+}
+
+.operated-by div.operated-by-block {
+    width: 99%;
+    padding: 0 0 3px 0;
+}
+
+#hotel_filters .hotel_filters_results,
+#hotel_filters .amenities_filter {
+    height: auto;
+}
+
+.flight-leg-details .flightsNumber,
+#hotel_filters .filterHeader {
+    width: auto;
+}
+
+#hotel_pager_container {
+    padding: 4px 3px;
+}
+
+.malibu_hotel_avail_header {
+    margin: 0;
+    padding-bottom: 10px !important;
+}
+
+#hotels_list_view .option {
+    margin: 0 0 20px 0;
+}
+
+.page_v1_c2_wide {
+    position: relative;
+}
+
+.page_v1_c2_wide #hotel_avail_container {
+    border: 0;
+}
+
+#hotel_pager_container {
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    width: 777px;
+}
+
+.flightSummary .legSelectionTable td {
+    border: 0;
+    padding-top: 10px;
+    position: absolute;
+    font-size: 16px;
+    text-align: left;
+}
+
+.no_availability_message .showAllResults {
+    display: block;
+    margin-left: 0;
+}
+
+.itinerary-car-segment-details li.car-type {
+    margin-bottom: 5px;
+    float: none;
+}
+
+.sub_section_details_item {
+    position: relative;
+}
+
+.sub_section_details_item .num_stops {
+    position: absolute;
+    left: 55px;
+}
+
+.sub_section_details_item .itin_air_stops {
+    position: absolute;
+    left: 10px;
+}
+
+.flight-leg tr.not_available {
+    background: #fff;
+}
+
+.no_availability_message {
+    margin-bottom: 20px;
+}
+
+.flightsNumber {
+    margin-left: 55px;
+}
+
+.flight-leg-selected,
+.flightSummary.Leg0 {
+    background-color: #e5f4fe;
+    background-color: rgba(93, 193, 252, .15);
+}
+
+.flight-leg-selected .flight-leg-details,
+.flight-leg-selected .legDetailsContainer .sectionHeader {
+    border-right-color: #1e85d6;
+}
+
+.flight-leg-selected {
+    border-color: #1e85d6;
+}
+
+.flight-leg-selected .sectionBody.openToggleContent,
+.flightSummary.Leg0 .sectionBody.openToggleContent {
+    border-right: 1px solid #1e85d6;
+    background-color: transparent;
+}
+
+.view-seat-maps {
+    white-space: nowrap;
+}
+
+.airFareTypeWarningHeader {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.airFareTypeWarningHeader,
+.airFareTypeWarningMessage {
+    color: #f47920;
+    font-family: "American Regular Webfont", Arial, sans-serif;
+}
+
+.airFareTypeWarningMessage {
+    font-size: 14px;
+}
+
+.airFareTypeWarning {
+    padding: 0 0 20px;
+}

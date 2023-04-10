@@ -1,0 +1,64 @@
+﻿@model BlitzerCore.Models.UI.FinancialSnapShot
+
+@{
+    ViewData["Title"] = "New";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="content-container">
+    <h1>New</h1>
+
+    <h4>Quote</h4>
+    <hr />
+    <div class="row" style="padding-bottom:30px;">
+        <div class="col-4 TileBlock">
+            <div class="TileLabel"> YTD Sales</div>
+            <div class="TileValue">@Model.Sales_YTD</div>
+        </div>
+        <div class="col-4 TileBlock">
+            <div class="TileLabel"> YTD Realized Commission</div>
+            <div class="TileValue">@Model.Realized_YTD</div>
+        </div>
+        <div class="col-4 TileBlock">
+            <div class="TileLabel"> YTD UnRealized Commission </div>
+            <div class="TileValue">@Model.Unrealized_YTD</div>
+        </div>
+    </div>
+
+    <div style="padding-bottom:30px;">
+        @(Html.DevExtreme().DataGrid<UIBooking>()
+    .DataSource(Model.Bookings)
+    .RemoteOperations(false)
+    .Selection(s => s.Mode(SelectionMode.Single))
+    .SearchPanel(searchPanel => searchPanel
+        .Visible(true)
+        .Width(540)
+        .Placeholder("Search...")
+    )
+    .ShowRowLines(true)
+    .HoverStateEnabled(true)
+    .RowAlternationEnabled(true)
+    .ShowBorders(true)
+
+    .Columns(columns => {
+        columns.AddFor(m => m.TripName);
+        columns.AddFor(m => m.TourOperatorName).GroupIndex(0);
+        columns.AddFor(m => m.Amount).Caption("Sales");
+        columns.AddFor(m => m.GrossCommission);
+        columns.AddFor(m => m.ICCommission);
+        columns.AddFor(m => m.TargetPayment);
+    })
+    .Grouping(grouping => grouping.AutoExpandAll(true))
+    .GroupPanel(groupPanel => groupPanel.Visible(true))
+    .Paging(p => p.PageSize(20))
+    .OnSelectionChanged("SelectionChanged")
+)
+    </div>
+</div>
+<script>
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Trip/Details/" + lId;
+    }
+</script>

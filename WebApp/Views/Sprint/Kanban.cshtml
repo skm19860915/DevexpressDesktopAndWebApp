@@ -1,0 +1,41 @@
+﻿@model KanbanSprintModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div class="content-container">
+    <div class="row">
+        <h1 class="col-3">Sprint @Model.Sprint.Name </h1>
+        <div style="font-size:30px">@Model.TaskType</div>
+        <div class="offset-2">
+            <a href="/Sprint/KanbanAll/@Model.Sprint.Id" >View All</a>
+        </div>
+        <div class="offset-3">
+            <a href="/Task/Create" class="btn-option">Create</a>
+        </div>
+    </div>
+    <div id="kanban">
+        @(Html.DevExtreme().ScrollView()
+        .ElementAttr("class", "scrollable-board")
+        .Direction(ScrollDirection.Horizontal)
+        .ShowScrollbar(ShowScrollbarMode.Always)
+        .Content(
+            Html.DevExtreme().Sortable()
+                .ElementAttr("class", "sortable-lists")
+                .ItemOrientation(Orientation.Horizontal)
+                .MoveItemOnDrop(true)
+                .Handle(".list-title")
+                .Content(@<text>
+                    @foreach (var status in Model.Statuses) {
+                        var listModel = new KanbanSprintListModel() {
+                            Status = status,
+                            Tasks = Model.Tasks.Where(t => t.Status == status),
+                            Info = ""
+                        };
+                        @await Html.PartialAsync("_Kanban", listModel)
+                    }
+                </text>).ToString()
+        )
+    )
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@model BlitzerCore.Models.UI.Block
+
+<div class="row" style="padding-bottom:30px">
+    <div class="col-3" style="padding-top:0px;padding-right:20px;">
+        @if (Model.Media != null && Model.Media.ThumbNail != null)
+        {
+            if (Model.PageMap != null)
+            {
+                <a href="/Block/Edit/@Model.Id">
+                    <img src="@Model.Media.ThumbNail.Location" style="height:200px;width:260px"/>
+                </a>
+            }
+            else
+            {
+                <img src="@Model.Media.ThumbNail.Location" />
+            }
+        }
+    </div>
+    <div class="col-9">
+        <a href="/Block/Edit/@Model.Id"> @Model.BlockTitle</a>
+        @if (Model.Body != null && Model.Body.Count()  > 0 )
+        {
+        <div>@Model.Body</div>
+        }else if ( Model.PageMap != null && Model.PageMap.Page != null && Model.PageMap.Page.CenterContent != null)
+        {
+        <div>@Model.PageMap.Page.CenterContent.Summary</div>
+        }
+    </div>
+</div>
+

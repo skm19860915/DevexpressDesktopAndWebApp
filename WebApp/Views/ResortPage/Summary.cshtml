@@ -1,0 +1,22 @@
+﻿@model BlitzerCore.Models.UI.UIHotel
+@using DevExtreme.AspNet.Mvc
+
+@{
+    ViewData["Title"] = "Resort Edit";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<div style="width:95%;padding-left:3% ">
+    <h1>Edit Resort Summary Info</h1>
+
+    <hr />
+    <form asp-action="Edit">
+        @Html.HiddenFor(m => m.Id)
+        <div style="border-style:solid;background-color:white;min-height:220px">
+            <div class="row">
+                <div class="row col-md-4 offset-4">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

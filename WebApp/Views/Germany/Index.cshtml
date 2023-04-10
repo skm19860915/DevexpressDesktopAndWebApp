@@ -1,0 +1,105 @@
+﻿@model BlitzerCore.Models.UI.UICountry
+
+@{
+    ViewBag.Title = Model.PageTitle + " Resort";
+    Layout = "/Views/Shared/_BaseLayout.cshtml";
+    //int lCnt = 0;
+}
+
+<style type="text/css">
+    @@media (min-width: 560px) {
+        .ResortVideo {
+            width: 560px;
+            height: 460px;
+        }
+    }
+</style>
+
+<style type="text/css">
+    @@media (min-width: 768px) {
+        .ResortVideo {
+            width: 560px;
+            height: 460px;
+        }
+    }
+</style>
+
+<style type="text/css">
+    @@media (min-width: 1400px) {
+        .ResortLeftPanel {
+            display: inline;
+        }
+
+        .ResortVideo {
+            width: 960px;
+            height: 540px;
+        }
+        /*        .ResortRightPanel {
+            margin-bottom: 50px !important;
+            font-size: 20px;
+        }*/
+        .ResortPromoBanner {
+            display: inline;
+        }
+    }
+</style>
+
+<div id="wrapper">
+    <div id="page_caption" class="hasbg parallax notransparent" style="height:700px" data-image="@Model.HeaderImage.Media.Size1600x1200.Location" data-width="1600" data-height="1200">
+        <div class="page_title_wrapper">
+            <div class="tour_country_subheader">@Model.HeaderImage.Caption</div>
+            <br class="clear">
+            <h1>@Model.HeaderImage.BlockTitle</h1>
+        </div>
+        <div class="parallax_overlay_header"></div>
+    </div>
+
+    <!-- Begin content -->
+    <div id="page_content_wrapper" class="hasbg fullwidth fullscreen ">
+        <div class="inner DetailInnerWrapper">
+
+            <!-- Begin Main content -->
+            <div class="inner_wrapper">
+                <div class="sidebar_content full_width pt60">
+
+                    <div class="row">
+                        <!-- Left Panel -->
+                        <div class="col-2 ResortLeftPanel">
+                        </div>
+                        <!-- Center Panel -->
+                        @await Html.PartialAsync("_CenterContent")
+                        <!-- Right Panel -->
+                        <div class="col-lg-2 col-sm-12">
+                        </div>
+                    </div>
+                    <div class="ResortPromoBanner">
+                        <div id="portfolio_filter_wrapper" class="three_cols gallery tour_single fullwidth section content clearfix">
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/HotAirBallons.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/Adventures.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/Ecuador.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/Turtle.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End main content -->
+
+    </div>
+</div>

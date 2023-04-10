@@ -1,0 +1,182 @@
+﻿@model BlitzerCore.Models.UI.UIResortPage
+@using DevExtreme.AspNet.Mvc
+
+@{
+    ViewData["Title"] = "Resort Edit";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<div style="width:95%;padding-left:3% ">
+    <h1>Edit Resort Page</h1>
+
+    <hr />
+    <form asp-action="Edit">
+        @Html.HiddenFor(m => m.ContentID)
+        @Html.HiddenFor(m => m.AuthorID)
+        @Html.HiddenFor(m => m.HeaderImageID)
+        @Html.HiddenFor(m => m.MainImageID)
+        @Html.HiddenFor(m=>m.PageTypeId)
+        <div style="border-style:solid;background-color:white;min-height:220px">
+            <div class="row">
+                <div class="row col-md-4 offset-4">
+                    <div>
+                        @if (Model.MainImage != null && Model.MainImage.Media.MediaLocation != null)
+                        {
+                            <img src="@Model.MainImage.Media.MediaLocation" style="width:auto;height:200px" />
+                        }
+                        else
+                        {
+                            <div>Requires a Main Impage</div>
+                        }
+                    </div>
+                    <div style="margin-left:20px;vertical-align:middle">
+                        <a href="/Block/Edit/@Model.MainImage.Id">
+                            <div style="font-weight:bold;font-size:large">@Model.MainImage.BlockTitle</div>
+                        </a>
+                        <div class="col-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="LeftPanelID" />
+                            <input type="hidden" asp-for="RightPanelID" />
+                            <div class="form-group">
+                                <label asp-for="Title" class="control-label"></label>
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="form-group">
+                                <label asp-for="PageTitle" class="control-label"></label>
+                                <input asp-for="PageTitle" class="form-control">
+                                <span asp-validation-for="PageTitle" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="form-group form-check">
+                                <label>Published</label>
+                                <input class="form-check-input" asp-for="Published" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div>
+            <div style="border-style:solid;background-color:white;border-color:red;border-width:1px;min-height:250px">
+                top Panel
+                <div class="row col-md-4 offset-4">
+                    <div>
+                        @if (Model.HeaderImage != null &&  Model.HeaderImage.Media.Size1600x1200 != null && Model.HeaderImage.Media.Size1600x1200.Location != null)
+                        {
+                            <img src="@Model.HeaderImage.Media.Size1600x1200.Location" style="width:auto;height:200px" />
+                        }
+                        else
+                        {
+                            <div>Requires a 1600x1200 Image</div>
+                        }
+                    </div>
+                    <div style="margin-left:20px">
+                        <div>@Model.HeaderImage.Caption</div>
+                        <a href="/Block/Edit/@Model.HeaderImage.Id">
+                            <div style="font-weight:bold;font-size:large">@Model.HeaderImage.BlockTitle</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" style="border-style:solid;background-color:white;border-color:red;border-width:1px">
+                <div>Comparables</div>
+                @if (Model.LeftPanel != null)
+                {
+                    @foreach (var lComp in Model.LeftPanel.Comparables)
+                    {
+                        @if (lComp.CompPage != null && lComp.CompPage.MainImage != null && lComp.CompPage.MainImage.Media != null && lComp.CompPage.MainImage.Media.Size560x460.Location != null)
+                        {
+                            <div class="DesignResortRightPanel" style="background-image:url('@lComp.CompPage.MainImage.Media.Size560x460.Location')">
+                                <a href="/Comparable/Edit/@lComp.Id"><div>@lComp.CompPage.PageTitle</div></a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="DesignResortRightPanel">
+                                <a href="/Comparable/Edit/@lComp.Id"><div>@lComp.BlockTitle</div></a>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+            <div>
+                <div style="width:1000px">
+                    <div class="col-md-12" style="border-style:solid;background-color:white;border-color:red;border-width:1px;width:100%">
+                        <div>
+                            <div>Content</div>
+                            <a href="~/Content/Edit/@Model.CenterContent.Id"><div style="text-align:center;font-weight:bold;font-size:large">@Model.CenterContent.Header</div></a>
+                            <div style="text-align:center">@Model.CenterContent.Caption</div>
+                            <p style="text-align:center">@Model.CenterContent.Summary</p>
+                            @foreach (var lPar in Model.CenterContent.Paragraphs)
+                            {
+                                <p style="text-align:center">@lPar.Text</p>
+                            }
+                        </div>
+                        <div>Video</div>
+                        <div class="row col-md-4 offset-4">
+                            @if (Model.CenterContent.Video != null && Model.CenterContent.Video.Location != null)
+                            {
+                                <video min-width="200" height="150" controls>
+                                    <source src="@Model.CenterContent.Video.Location" type="video/mp4">
+                                </video>
+
+                            }
+                            else if (Model.CenterContent.Photo != null && Model.CenterContent.Photo.Location != null)
+                            {
+                                <img src="@Model.CenterContent.Photo.Location" style="width:auto;height:200px" />
+                            }
+                            else
+                            {
+                                <div>A Video or Image is required</div>
+                            }
+                        </div>
+
+                        <p>@Model.CenterContent.p1</p>
+                        <p>@Model.CenterContent.p2</p>
+                        <p>@Model.CenterContent.p3</p>
+                        <p>@Model.CenterContent.p4</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2" style="border-style:solid;background-color:white;border-color:red;border-width:1px;width:10%">
+                <div>Right Panel</div>
+                @if (Model.RightPanel != null)
+                {
+                    @foreach (var lTile in Model.RightPanel.Tiles)
+                    {
+                        @if (lTile.Media != null && lTile.Media.ThumbNail != null && lTile.Media.ThumbNail.Location != null)
+                        {
+                            <div class="DesignResortRightPanel" style="background-image:url('@lTile.Media.ThumbNail.Location')">
+                                <a href="/Tile/Edit/@lTile.Id"><div>@lTile.BlockTitle</div></a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="DesignResortRightPanel">
+                                <a href="/Tile/Edit/@lTile.Id"><div>@lTile.BlockTitle</div></a>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="row" style="padding-top:50px;padding-bottom:50px">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div class="col-6">
+                <a class="btn btn-primary" href="/Resort/Details/@Model.Id">View</a>
+            </div>
+        </div>
+    </form>
+</div>

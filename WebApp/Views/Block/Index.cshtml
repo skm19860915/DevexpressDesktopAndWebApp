@@ -1,0 +1,63 @@
+@model IEnumerable<BlitzerCore.Models.UI.Block>
+@using DevExtreme.AspNet.Mvc
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<div class="col-8 offset-2">
+    <h2 class="TableTitle col-8">List of Blocks</h2>
+    @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.Block>()
+    .ID("grid-container")
+    .Selection(s => s.Mode(SelectionMode.Single))
+    .RemoteOperations(false)
+        .FilterRow(filterRow => filterRow
+        .Visible(true)
+        .ApplyFilter(GridApplyFilterMode.Auto)
+    )
+    .SearchPanel(searchPanel => searchPanel
+        .Visible(true)
+        .Width(240)
+        .Placeholder("Search...")
+    )
+    .DataSource(d => d.WebApi()
+        .Controller("ApiBlock")
+        .LoadAction("Get")
+        .InsertAction("Post")
+        .UpdateAction("Put")
+        .Key("Id")
+    )
+    .ShowColumnLines(false)
+    .ShowRowLines(true)
+    .HoverStateEnabled(true)
+    .RowAlternationEnabled(true)
+    .ShowBorders(true)
+    .Editing(editing =>
+    {
+        editing.Mode(GridEditMode.Form);
+        editing.AllowUpdating(false);
+        editing.AllowAdding(true);
+    })
+
+    .Columns(columns => {
+        columns.AddFor(m => m.Id)
+                    .AllowEditing(false);
+        columns.AddFor(m => m.Title);
+        columns.AddFor(m => m.BlockTitle);
+        columns.AddFor(m => m.Description);
+    })
+    .Paging(p => p.PageSize(10))
+    .OnSelectionChanged("SelectionChanged")
+)
+</div>
+
+<script>
+    function SelectionChanged(selectedItems) {
+        var data = selectedItems.selectedRowsData[0];
+
+        if (data) {
+            document.location.href = "/Block/Edit/" + data.Id;
+        }
+    }
+</script>

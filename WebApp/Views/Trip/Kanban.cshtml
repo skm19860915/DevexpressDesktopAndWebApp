@@ -1,0 +1,60 @@
+﻿@using Microsoft.Exchange.WebServices.Data
+@model KanbanSprintModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+
+    string lSource = "";
+    @if (Model.Source == Kanban.Source.MyTasks && Model.ViewMode == Kanban.ViewMode.MyTasks)
+    {
+        lSource = "My Active Trip Tasks";
+    }
+    else if (Model.Source == Kanban.Source.MyTasks && Model.ViewMode == Kanban.ViewMode.HoldUntil)
+    {
+        lSource = "My Holding Trip Tasks";
+    }
+    else if (Model.Source == Kanban.Source.CompanyTasks && Model.ViewMode == Kanban.ViewMode.HoldUntil)
+    {
+        lSource = "Company's On Hold Trip Tasks";
+    }
+    else if (Model.Source == Kanban.Source.CompanyTasks && Model.ViewMode == Kanban.ViewMode.MyTasks)
+    {
+        lSource = "Company's Active Trip Tasks";
+    }
+
+}
+<div class="content-container">
+    <div class="row">
+        <h1 class="col-3">@lSource </h1>
+        @*<div class="offset-3">
+                <a href="" >View All</a>
+            </div>*@
+        <div class="offset-3">
+            <a href="/Task/Create" class="btn-option">Create</a>
+        </div>
+    </div>
+    <div id="kanban">
+        @(Html.DevExtreme().ScrollView()
+        .ElementAttr("class", "scrollable-board")
+        .Direction(ScrollDirection.Horizontal)
+        .ShowScrollbar(ShowScrollbarMode.Always)
+        .Content(
+            Html.DevExtreme().Sortable()
+                .ElementAttr("class", "sortable-lists")
+                .ItemOrientation(Orientation.Horizontal)
+                .MoveItemOnDrop(true)
+                .Handle(".list-title")
+                .Content(@<text>
+                    @foreach (var status in Model.Statuses) {
+                        var listModel = new KanbanSprintListModel() {
+                            Status = status,
+                            Tasks = Model.Tasks.Where(t => t.Status == status),
+                            Info = ""
+                        };
+                        @await Html.PartialAsync("_Kanban", listModel)
+                    }
+                </text>).ToString()
+        )
+    )
+    </div>
+</div>

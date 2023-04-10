@@ -1,0 +1,46 @@
+﻿@model List<UIBooking>
+    @using DevExtreme.AspNet.Mvc
+
+    @{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+    }
+
+    <h1 style="text-align:center;margin-bottom:25px;margin-top:15px">Traveler Credits</h1>
+    <div class="content-container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 offset-xl-2 offset-lg-0 offset-sm-0">
+                @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.UIBooking>
+                    ()
+                    .DataSource(Model)
+                    .RemoteOperations(false)
+                    .Selection(s => s.Mode(SelectionMode.Single))
+                    .HoverStateEnabled(true)
+                    .ShowColumnLines(false)
+
+                    .Columns(columns =>
+                    {
+                    columns.AddFor(m => m.Agent);
+                    columns.AddFor(m => m.TourOperatorName);
+                    columns.AddFor(m => m.BookingNumber);
+                    columns.AddFor(m => m.EndDate);
+                    columns.AddFor(m => m.GrossCommission).Alignment(DevExtreme.AspNet.Mvc.HorizontalAlignment.Right);
+                    columns.AddFor(m => m.SettlementAge);
+                    columns.AddFor(m => m.Received).Alignment(DevExtreme.AspNet.Mvc.HorizontalAlignment.Right);
+                    })
+                    .Paging(p => p.PageSize(25))
+                    .FilterPanel(f=>f.Visible(true))
+                    .HeaderFilter(h=>h.Visible(true))
+                    .FilterRow(r=>r.Visible(true))
+                    .OnSelectionChanged("SelectionChanged")
+                    )
+            </div>
+        </div>
+    </div>
+    <script>
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.BookingID;
+        document.location.href = "/Reconcile/Edit/" + lId;
+    }
+    </script>

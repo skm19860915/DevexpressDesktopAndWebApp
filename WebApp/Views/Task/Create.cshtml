@@ -1,0 +1,134 @@
+﻿@model BlitzerCore.Models.UI.UITask;
+
+
+@{
+
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+    string color = "";
+}
+<div>
+    <h1 class="title-header">Create New Task</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Task">Tasks</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+
+
+<div class="content-container">
+    <div class="content-head" style="@color">
+        <div class="row mx-0">
+            <div class="col-1"></div>
+            <div class="row col-10">
+                <div class="col-12 font-weight-bold f-26">New Task</div>
+                @if (Model.TargetCompanyId != null)
+                {
+                    <div class="text-danger pl-4 f-26">Target</div>
+                    <div class="pl-4 f-26"><a href="/Company/Details/@Model.TargetCompanyId">@Model.TargetCompanyName</a></div>
+                }
+            </div>
+        </div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TargetCompanyId" />
+            <input type="hidden" asp-for="TargetContactId" />
+            @Html.HiddenFor(m => m.returnUrl)
+
+            <div>
+                <div class="row col-10 offset-1 px-0">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Opportunity</label>
+                            <div>
+                                <select class="form-control" asp-for="OpportunityID" asp-items="@ViewBag.Opps">
+                                    <option selected>N/A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label asp-for="Deadline" class="control-label"></label>
+                                <input asp-for="Deadline" class="form-control" />
+                                <span asp-validation-for="Deadline" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-6">
+                                <label asp-for="HoldUntil" class="control-label"></label>
+                                <input asp-for="HoldUntil" class="form-control" />
+                                <span asp-validation-for="HoldUntil" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Type</label>
+                            <div><select class="form-control" asp-for="TaskType" asp-items="@Html.GetEnumSelectList<TaskTypes>()"></select></div>
+                        </div>
+                        @if (ViewBag.UserStories != null)
+                        {
+                            <div class="form-group">
+                                <label class="control-label">Requirement</label>
+                                <div>
+                                    <select class="form-control" asp-for="UserStoryId" asp-items="@ViewBag.UserStories">
+                                        <option selected>Not Assigned</option>
+                                    </select>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label class="control-label">Priority Type</label>
+                                <div><select class="form-control" asp-for="PriorityType" asp-items="@Html.GetEnumSelectList<TaskPriorityTypes>()"></select></div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label asp-for="Priority" class="control-label"></label>
+                                <input asp-for="Priority" class="form-control" />
+                                <span asp-validation-for="Priority" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Status</label>
+                            <div><select class="form-control" asp-for="Status" asp-items="@Html.GetEnumSelectList<TaskStatusTypes>()"></select></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Issuer</label>
+                            <div><select class="form-control" asp-for="IssuerID" asp-items="@ViewBag.Agents"></select></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Owner</label>
+                            <div><select class="form-control" asp-for="OwnerID" asp-items="@ViewBag.Agents"></select></div>
+                        </div>
+                        @if (ViewBag.Sprints != null)
+                        {
+                            <div class="form-group">
+                                <label class="control-label"><a href="/Sprint/Kanban/@Model.SprintId">Sprint</a></label>
+                                <div>
+                                    <select class="form-control" asp-for="SprintId" asp-items="@ViewBag.Sprints">
+                                        <option selected>Not Assigned</option>
+                                    </select>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 offset-1">
+                <div class="form-group">
+                    <label asp-for="Comment" class="control-label"></label>
+                    <textarea asp-for="Comment" class="form-control" rows="6"></textarea>
+                </div>
+            </div>
+            <div class="btn-clearence">
+                <input type="submit" value="Save" class="btn-command" />
+            </div>
+        </form>
+    </div>
+</div>
+

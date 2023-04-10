@@ -1,0 +1,125 @@
+﻿@model BlitzerCore.Models.UI.Content
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_CoreLayout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <h1>Edit Page Content</h1>
+
+        <h4>Content</h4>
+        <hr />
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <textarea id="P1Content" asp-for="p1" class="form-control" rows="5" style="display:none"></textarea>
+            <div class="form-group">
+                <label asp-for="Header" class="control-label"></label>
+                <input asp-for="Header" class="form-control" />
+                <span asp-validation-for="Header" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Caption" class="control-label"></label>
+                <input asp-for="Caption" class="form-control" />
+                <span asp-validation-for="Caption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary" class="control-label"></label>
+                <textarea asp-for="Summary" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Summary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Video Path</label>
+                <input asp-for="Video.Location" class="form-control" />
+                <span asp-validation-for="Video.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Photo Path</label>
+                <input asp-for="Photo.Location" class="form-control" />
+                <span asp-validation-for="Header" class="text-danger"></span>
+            </div>
+            @(Html.DevExtreme().HtmlEditor()
+            .ID("html-editor")
+            .Height(725)
+            .Content(@<text>
+                @Html.Raw(Model.p1)
+            </text>)
+             .OnValueChanged("valueChanged")
+             .Toolbar(toolbar => toolbar.Items(
+                items => {
+                    items.Add().Name(HtmlEditorToolbarItem.Undo);
+                    items.Add().Name(HtmlEditorToolbarItem.Redo);
+                    items.Add().Name(HtmlEditorToolbarItem.Separator);
+                    items.Add()
+                        .Name("size")
+                        .AcceptedValues(new[] { "8pt", "10pt", "12pt", "14pt", "18pt", "24pt", "36pt" });
+                    items.Add()
+                        .Name("font")
+                        .AcceptedValues(new[] { "Arial", "Courier New", "Georgia", "Impact", "Lucida Console", "Tahoma", "Times New Roman", "Verdana" });
+                    items.Add().Name(HtmlEditorToolbarItem.Separator);
+                    items.Add().Name(HtmlEditorToolbarItem.Bold);
+                    items.Add().Name(HtmlEditorToolbarItem.Italic);
+                    items.Add().Name(HtmlEditorToolbarItem.Strike);
+                    items.Add().Name(HtmlEditorToolbarItem.Underline);
+                    items.Add().Name(HtmlEditorToolbarItem.Separator);
+                    items.Add().Name(HtmlEditorToolbarItem.AlignLeft);
+                    items.Add().Name(HtmlEditorToolbarItem.AlignCenter);
+                    items.Add().Name(HtmlEditorToolbarItem.AlignRight);
+                    items.Add().Name(HtmlEditorToolbarItem.AlignJustify);
+                    items.Add().Name(HtmlEditorToolbarItem.Separator);
+                    items.Add().Name(HtmlEditorToolbarItem.OrderedList);
+                    items.Add().Name(HtmlEditorToolbarItem.BulletList);
+                    items.Add().Name(HtmlEditorToolbarItem.Separator);
+                    items.Add()
+                        .Name("header")
+                        .AcceptedValues(new JS("[false, 1, 2, 3, 4, 5]"));
+                    items.Add().Name(HtmlEditorToolbarItem.Separator);
+                    items.Add().Name(HtmlEditorToolbarItem.Color);
+                    items.Add().Name(HtmlEditorToolbarItem.Background);
+                    items.Add().Name(HtmlEditorToolbarItem.Separator);
+                    items.Add().Name(HtmlEditorToolbarItem.Link);
+                    items.Add().Name(HtmlEditorToolbarItem.Image);
+                    items.Add().Name(HtmlEditorToolbarItem.Separator);
+                    items.Add().Name(HtmlEditorToolbarItem.Clear);
+                    items.Add().Name(HtmlEditorToolbarItem.CodeBlock);
+                    items.Add().Name(HtmlEditorToolbarItem.Blockquote);
+                    items.Add().Name(HtmlEditorToolbarItem.Separator);
+                    items.Add().Name(HtmlEditorToolbarItem.InsertTable);
+                    items.Add().Name(HtmlEditorToolbarItem.DeleteTable);
+                    items.Add().Name(HtmlEditorToolbarItem.InsertRowAbove);
+                    items.Add().Name(HtmlEditorToolbarItem.InsertRowBelow);
+                    items.Add().Name(HtmlEditorToolbarItem.DeleteRow);
+                    items.Add().Name(HtmlEditorToolbarItem.InsertColumnLeft);
+                    items.Add().Name(HtmlEditorToolbarItem.InsertColumnRight);
+                    items.Add().Name(HtmlEditorToolbarItem.DeleteColumn);
+            }))
+        .MediaResizing(m => m.Enabled(true))
+        )
+            @*<div style="visibility:hidden">
+            <textarea id="P1Content" asp-for="p1" />
+        </div>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script>
+    function valueChanged(e) {
+        $("#P1Content").text(e.component.option("value"));
+    }
+
+    window.onload = function () {
+        
+    }
+</script>
+

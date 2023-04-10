@@ -1,0 +1,11 @@
+﻿@model UIContact
+@using System.Net.Http
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components.Web
+@{
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+@(await Html.RenderComponentAsync<WebApp.Pages.Contacts.ModifyMembers>(RenderMode.ServerPrerendered, new { ContactId = Model.Id}))
+<script src="~/_framework/blazor.server.js"></script>

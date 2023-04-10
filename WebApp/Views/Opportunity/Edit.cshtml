@@ -1,0 +1,98 @@
+﻿@model BlitzerCore.Models.UI.UIQuoteRequest
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+
+    if (Model.Contacts.Count() > 0)
+        ViewData["Title"] = "Edit";
+    else
+        ViewData["Title"] = "New Quote Request";
+}
+
+<div class="TableHeader">List of Travelers</div>
+@using (Html.BeginForm("Search", "QuoteRequest", FormMethod.Post))
+{
+    <div class="">
+        <div class="Travelers">
+            @Html.HiddenFor(m => m.AgentId)
+            <div class="row">
+                <div class="Traveler1">Relationship</div>
+                <div class="Traveler2">First</div>
+                <div class="Traveler3">Middle</div>
+                <div class="Traveler4">Last</div>
+                <div class="Traveler5">DOB</div>
+                <div class="Traveler6">Email</div>
+                <div class="Traveler7">Cell</div>
+            </div>
+            @for (int i = 0; i < Model.Contacts.Count; i++)
+            {
+                <div class="row">
+                    <span><select asp-for="@Model.Contacts[i].RelationshipID" asp-items="@Model.RelationShips"></select></span>
+                    <span>@Html.TextBox("Contacts[" + @i + "].First", Model.Contacts[i].First)</span>
+                    <span>@Html.TextBox("Contacts[" + @i + "].Middle", Model.Contacts[i].Middle)</span>
+                    <span>@Html.TextBox("Contacts[" + @i + "].Last", Model.Contacts[i].Last)</span>
+                    <span>@Html.TextBox("Contacts[" + @i + "].DOB", Model.Contacts[i].DOB, new { size = "10" })</span>
+                    <span>@Html.TextBox("Contacts[" + @i + "].Email", Model.Contacts[i].PrimaryEmail)</span>
+                    <span>@Html.TextBox("Contacts[" + @i + "].Cell", Model.Contacts[i].Cell, new { size = "13" })</span>
+                </div>
+            }
+        </div>
+        <div class="Locations col-8 ">
+            <div class="row offset-5">
+                <div class="QRDate">Date</div>
+                <div class="QRCities">City</div>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-3" style="text-align:right">Departure </div><div class="col-2">@Html.TextBoxFor(m => m.StartDate, new { size = "10" })</div>
+                <div class="col-5">
+                    @*<select asp-for="@Model.DepartureCityCode" asp-items="@Model.AirPortCodes"></select>*@
+                    @Html.TextBoxFor(m => m.DepartureCityCode, new { size = "3" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-3" style="text-align:right">Return </div><div class="col-2">@Html.TextBoxFor(m => m.EndDate, new { size = "10" })</div>
+                <div class="col-5">
+                    @*<select asp-for="@Model.DestinationCityCode" asp-items="@Model.AirPortCodes"></select>*@
+                    @Html.TextBoxFor(m => m.DestinationCityCode, new { size = "3" })
+                </div>
+            </div>
+            @if (Model.ErrorMsgs.Count() > 0)
+            {
+                <div class="ErrorMsg">
+                    @foreach (var lMsg in Model.ErrorMsgs)
+                    {
+                        if (lMsg != null)
+                        {
+                            <div><strong>@lMsg.Header</strong></div><div>@lMsg.Description</div>
+                        }
+                    }
+                </div>
+            }
+            @{
+                var SButtonClasses = "SButton";
+                var SDisabledFlag = "";
+                if (Model.QuoteButtonDisabled && false)
+                {
+                    SButtonClasses += " ButtonDisabled";
+                    SDisabledFlag = "disabled";
+                }
+            }
+            <div class="@SButtonClasses">
+                <input type="button" onclick="location.href='/Portal'" value="Save" @SDisabledFlag />
+            </div>
+            @{
+                var lButtonClasses = "QButton";
+                var lDisabledFlag = "";
+                if (Model.QuoteButtonDisabled)
+                {
+                    lButtonClasses += " ButtonDisabled";
+                    lDisabledFlag = "disabled";
+                }
+            }
+            <div class="@lButtonClasses">
+                <input type="submit" value="Quote" @lDisabledFlag />
+            </div>
+        </div>
+    </div>
+}

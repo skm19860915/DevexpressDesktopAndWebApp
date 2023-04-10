@@ -1,0 +1,282 @@
+﻿@model BlitzerCore.Models.UI.UIContact
+
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+    var lRequiredField = "background-color:lightsalmon";
+}
+
+<div class="row">
+    <div class="ClientProfile offset-0 offset-md-2 col-12 col-md-8">
+        <h1>Add Household Member</h1>
+
+        <h4>Update</h4>
+        <hr />
+        <!-- Tab links -->
+        <div class="b_tab">
+            <button class="b_tablinks" onclick="b_openPanel(event, 'b_Primary')" id="defaultOpen">Primary</button>
+            <button class="b_tablinks" onclick="b_openPanel(event, 'b_TravelInfo')">Travel Info</button>
+            <button class="b_tablinks" onclick="b_openPanel(event, 'Memberships')">Memberships</button>
+            <button class="b_tablinks" onclick="b_openPanel(event, 'b_Passport')">Passport</button>
+        </div>
+
+        <form asp-action="AddProfile">
+            <div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @Html.HiddenFor(m=>m.RootMemberId)
+                @Html.HiddenFor(m=>m.AgentId)
+                <div>
+                    <div id="b_Primary" class="b_tabPanel" style="display:block">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="RelationshipID" class="control-label"></label>
+                                    <select asp-for="RelationshipID" class="form-control" asp-items="@ViewBag.RelationShips"></select>
+                                </div>
+                                @{
+                                    var lFirstRequired = lRequiredField;
+                                    if (Model.First != null && Model.First.Length > 0)
+                                        lFirstRequired = "";
+                                }
+                                <div class="form-group">
+                                    <label asp-for="First" class="control-label"></label>
+                                    <input asp-for="First" class="form-control" style="@lFirstRequired" />
+                                    <span asp-validation-for="First" class="text-danger"></span>
+                                </div>
+                                @{
+                                    var lMiddleRequired = lRequiredField;
+                                    if (Model.Middle != null && Model.Middle.Length > 0)
+                                        lMiddleRequired = "";
+                                }
+                                <div class="form-group">
+                                    <label asp-for="Middle" class="control-label"></label>
+                                    <input asp-for="Middle" class="form-control" style="@lMiddleRequired" />
+                                    <span asp-validation-for="Middle" class="text-danger"></span>
+                                </div>
+                                @{
+                                    var lLastRequired = lRequiredField;
+                                    if (Model.Last != null && Model.Last.Length > 0)
+                                        lLastRequired = "";
+                                }
+                                <div class="form-group">
+                                    <label asp-for="Last" class="control-label"></label>
+                                    <input asp-for="Last" class="form-control" style="@lLastRequired" />
+                                    <span asp-validation-for="Last" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Suffix" class="control-label"></label>
+                                    <input asp-for="Suffix" class="form-control" />
+                                    <span asp-validation-for="Suffix" class="text-danger"></span>
+                                </div>
+                                @{
+                                    var lDOBRequired = lRequiredField;
+                                    if (Model.DOB != null && Model.DOB.Length > 0)
+                                        lDOBRequired = "";
+                                }
+                                <div class="form-group">
+                                    <label asp-for="DOB" class="control-label"></label>
+                                    <input asp-for="DOB" class="form-control" style="@lDOBRequired" />
+                                    <span asp-validation-for="DOB" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Gender" class="control-label"></label>
+                                    <select asp-for="Gender" class="form-control" asp-items="@Html.GetEnumSelectList<Gender>()"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="PrimaryPhone" class="control-label"></label>
+                                    <input asp-for="PrimaryPhone" class="form-control" />
+                                    <span asp-validation-for="PrimaryPhone" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PrimaryEmail" class="control-label"></label>
+                                    <input asp-for="PrimaryEmail" class="form-control" />
+                                    <span asp-validation-for="PrimaryEmail" class="text-danger"></span>
+                                </div>
+
+                                @{
+                                    var lAddrRequired = lRequiredField;
+                                    if (Model.Address1 != null && Model.Address1.Length > 0)
+                                        lAddrRequired = "";
+                                }
+                                <div class="form-group">
+                                    <label asp-for="Address1" class="control-label"></label>
+                                    <input asp-for="Address1" class="form-control" style="@lAddrRequired" />
+                                    <span asp-validation-for="Address1" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Address2" class="control-label"></label>
+                                    <input asp-for="Address2" class="form-control" />
+                                    <span asp-validation-for="Address2" class="text-danger"></span>
+                                </div>
+                                @{
+                                    var lCityRequired = lRequiredField;
+                                    if (Model.City != null && Model.City.Length > 0)
+                                        lCityRequired = "";
+                                }
+                                <div class="form-group">
+                                    <label asp-for="City" class="control-label"></label>
+                                    <input asp-for="City" class="form-control" style="@lCityRequired" />
+                                    <span asp-validation-for="City" class="text-danger"></span>
+                                </div>
+                                @{
+                                    var lStateRequired = lRequiredField;
+                                    if (Model.State != null && Model.State.Length > 0)
+                                        lStateRequired = "";
+                                }
+                                <div class="form-group">
+                                    <label asp-for="State" class="control-label"></label>
+                                    <input asp-for="State" class="form-control" style="@lStateRequired" />
+                                    <span asp-validation-for="State" class="text-danger"></span>
+                                </div>
+                                @{
+                                    var lZipRequired = lRequiredField;
+                                    if (Model.ZipCode != null && Model.ZipCode.Length > 0)
+                                        lZipRequired = "";
+                                }
+                                <div class="form-group">
+                                    <label asp-for="ZipCode" class="control-label"></label>
+                                    <input asp-for="ZipCode" class="form-control" style="@lZipRequired" />
+                                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Memberships" class="b_tabPanel">
+                        @{
+                            int lFFID = 1;
+                            //string FFNumber = "";
+                            //string HotelNumber = "";
+                            //string CarNumber = "";
+                        }
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div>Frequent Flyer</div>
+                                <div><select class="form-control" asp-for="@lFFID" asp-items="@ViewBag.FrequentFlyerMemberShips"></select></div>
+                                <input id="FFData" class="form-control" />
+                                <input type="button" onclick="AddFF()" value="Add" />
+                                <hr />
+                                @foreach (var lMembership in Model.MemberShips.Where(x => x.TypeOfMemberShip == MemberShipType.AirLine))
+                                {
+                                    <div class="row">
+                                        <div class="col-3">@lMembership.Company.Name</div>
+                                        <div class="col-9" style="text-align:right">@lMembership.Number</div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-md-4">
+                                <div>Hotel</div>
+                                <div><select class="form-control" asp-for="@lFFID" asp-items="@ViewBag.HotelMemberShips"></select></div>
+                                <input id="HotelData" class="form-control" />
+                            </div>
+                            <div class="col-md-4">
+                                <div>Car</div>
+                                <div><select class="form-control" asp-for="@lFFID" asp-items="@ViewBag.CarMemberShips"></select></div>
+                                <input id="CarData" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="b_TravelInfo" class="b_tabPanel">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="AAA_Member" class="control-label"></label>
+                                    <input asp-for="AAA_Member" class="form-control" />
+                                    <span asp-validation-for="AAA_Member" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="GlobalEntryNumber" class="control-label"></label>
+                                    <input asp-for="GlobalEntryNumber" class="form-control" />
+                                    <span asp-validation-for="GlobalEntryNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="TSANumber" class="control-label"></label>
+                                    <input asp-for="TSANumber" class="form-control" />
+                                    <span asp-validation-for="TSANumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SeatPreferences" class="control-label"></label>
+                                    <select asp-for="SeatPreferences" class="form-control"></select>
+                                    <span asp-validation-for="SeatPreferences" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="MealRequest" class="control-label"></label>
+                                    <select asp-for="MealRequest" class="form-control"></select>
+                                    <span asp-validation-for="MealRequest" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SpecialRequests" class="control-label"></label>
+                                    <input asp-for="SpecialRequests" class="form-control" />
+                                    <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="b_Passport" class="b_tabPanel">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="PassportNumber" class="control-label"></label>
+                                    <input asp-for="PassportNumber" class="form-control" />
+                                    <span asp-validation-for="PassportNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PassportCountry" class="control-label"></label>
+                                    <input asp-for="PassportCountry" class="form-control" />
+                                    <span asp-validation-for="PassportCountry" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PassportExpirationDate" class="control-label"></label>
+                                    <input asp-for="PassportExpirationDate" class="form-control" />
+                                    <span asp-validation-for="PassportExpirationDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PassportIssueDate" class="control-label"></label>
+                                    <input asp-for="PassportIssueDate" class="form-control" />
+                                    <span asp-validation-for="PassportIssueDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PassportIssueAgency" class="control-label"></label>
+                                    <input asp-for="PassportIssueAgency" class="form-control" />
+                                    <span asp-validation-for="PassportIssueAgency" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group btn-clearence">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    //document.getElementById("defaultOpen").click();
+
+    function b_openPanel(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("b_tabPanel");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("b_tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function AddFF() {
+        alert("Clicked Add FF");
+    }
+</script>

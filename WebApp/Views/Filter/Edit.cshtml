@@ -1,0 +1,81 @@
+﻿@model BlitzerCore.Models.UI.UIFilter
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+@if (@Model == null)
+{
+    <div>Error : Invalid Quote</div>
+}
+else
+{
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.QuoteRequestID)
+    @Html.HiddenFor(m => m.QuoteGroupID)
+    @Html.HiddenFor(m => m.FilterID)
+    <div>
+        <div class="BlitzList">
+            <div>Accomomodations </div>
+            <div class="row">
+                <div class="checkbox checkboxlist col-6">
+                    <table>
+                        @{
+                            for (int i = 0; i < Model.Accommondations.Count(); i++)
+                            {
+                                <tr>
+                                    <td style="padding-right:8px">     <input asp-for="@Model.Accommondations[i].Checked" type="checkbox" /></td>
+                                    <td><label asp-for="@Model.Accommondations[i].ID">@Model.Accommondations[i].Name</label></td>
+                                    <td><input asp-for="@Model.Accommondations[i].ID" type="hidden" /></td>
+                                </tr>
+                            }
+                        }
+                    </table>
+                </div>
+                <div class="col-4">
+                    <table style="padding-bottom:20px;">
+                        <tr>
+                            <td><input asp-for="@Model.AdultOnly" /></td>
+                            <td>Adults Only</td>
+                        </tr>
+                        @*<tr>
+                            <td><input asp-for="@Model.AdultsOnlySection" /></td>
+                            <td>Adults Only Section</td>
+                        </tr>*@
+                        <tr>
+                            <td><input asp-for="@Model.AllInclusive" /></td>
+                            <td>All Inclusive</td>
+                        </tr>
+                    </table>
+                    <div class="row" style="padding-top:20px;">
+                        <label class="col-3">Stars</label><select asp-for="@Model.SelectedStars" asp-items="@Model.Stars"></select>
+                    </div>
+                    <div class="row">
+                        <label class="col-3">Budget/Person</label>@Html.TextBoxFor(m => m.PerPersonBudget)
+                    </div>
+                    <div class="row">
+                        <label class="col-3">Min Budget</label>@Html.TextBoxFor(m => m.TripMinBudget)
+                    </div>
+                    <div class="row">
+                        <label class="col-3">Max Budget</label>@Html.TextBoxFor(m => m.TripBudget)
+                    </div>
+                    <div class="row">
+                        <label class="col-3">Location</label><select asp-for="@Model.SelectedLocation" asp-items="@Model.Locations"></select>
+                    </div>
+                    <div class="form-group" style="padding-top:20px;">
+                        <div class="row CenterButton">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                                <input id="Submit" type="submit" value="Save" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

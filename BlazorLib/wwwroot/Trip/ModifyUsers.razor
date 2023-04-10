@@ -1,0 +1,58 @@
+﻿@layout AppLayout2
+@page "/Trip/ModifyUsers/{TripId}"
+@using BlitzerCore.Models.UI;
+@using BlitzerCore.Utilities;
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web;
+@using System.Net.Http;
+@inject System.Net.Http.HttpClient Http
+
+@code {
+    private UITrip CurrentTrip { get; set; }
+    [Parameter]
+    public int TripId { get; set; }
+
+    protected override async System.Threading.Tasks.Task OnInitializedAsync()
+    {
+        Logger.LogInfo($"ModifyUsers::OnInitializedAsync - Enter with {TripId}");
+        CurrentTrip = await Http.GetFromJsonAsync<UITrip>("/api/ApiTrip/Get?id=" + TripId);
+    }
+}
+
+@if (CurrentTrip == null)
+{
+    <h1>Loading</h1>
+}
+else
+{
+    <div>GOT Lib</div>
+    <div class="offset-2 col-8">
+        <h3>Modify @CurrentTrip.Name Travelers</h3>
+        <hr />
+        <div style="font-size:24px;font-weight:600">Find Users</div>
+        <div>
+            <div class="row">
+                <div class="Traveler1">First</div>
+                <div class="Traveler2">Middle</div>
+                <div class="Traveler3">Last</div>
+            </div>
+            <div class="row">
+                <input type="text" id="fname" />
+                <input type="text" id="mname" />
+                <input type="text" id="lname" />
+                <input type="button" value="Find" />
+            </div>
+        </div>
+
+        <div style="padding-top:50px;">Current Travelers</div>
+        <div>
+            @*@foreach (var lTraveler in CurrentTrip.Travelers)
+                {
+                    <div><a href="~/Contacts/Details/@lTraveler.Id">@lTraveler.Name</a></div>
+                    <div>@lTraveler.Role</div>
+                }*@
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,247 @@
+.search-context-checkboxes {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#modifySearchContainer .search-context-checkboxes {
+    display: none!important;
+}
+
+.checkboxLabeledInput {
+    clear: none;
+    margin-left: 2px;
+}
+
+.checkboxLabeledInput label {
+    padding-left: 2px;
+}
+
+.search-form {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.search-form .row {
+    clear: both;
+}
+
+.search-form #infantText {
+    display: none;
+    clear: both;
+    padding-top: 5px;
+    margin-left: 0;
+    color: #c30019;
+}
+
+.search-form .calendar-image {
+    margin-top: 13px;
+    margin-right: 3px;
+    margin-left: -3px;
+}
+
+.search-form .roundtrip-options {
+    display: none;
+}
+
+.search-form .submit-button {
+    float: right;
+    background-color: #f0051e;
+    border: 1px solid #bc0719;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px #999;
+    font-size: 13px;
+    font-weight: bold !important;
+    margin: 20px 0 0 150px;
+    padding: 2px 10px 4px;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-shadow: 0 1px 1px rgba(0, 6, 2, 0.7);
+}
+
+.search-form .airModifiers .selectLabeledInput,
+.search-form .time1LabeledInput,
+.search-form .time2LabeledInput,
+.search-form .serviceclassLabeledInput,
+.search-form .maxStopsLabeledInput,
+.search-form .airMaxOptionsLabeledInput {
+    clear: none;
+}
+
+.search-form .labeledInput {
+    padding: 0 3px 0 0;
+}
+
+.search-form .dateLabeledInput input {
+    width: 50px;
+}
+
+.search-form .autoCompleteLabeledInput {
+    clear: none;
+    padding: 0;
+    width: 111px !important;
+}
+
+.autoCompleteResultsContainer {
+    width: 250px !important;
+}
+
+.search-form .autoCompleteDisplayInput {
+    width: 103px !important;
+}
+
+.search-form .occupancies-container {
+    clear: both;
+}
+
+.search-form .child-age-container {
+    clear: both;
+    width: 198px;
+}
+
+.search-form .search-form .dynamic-children-container {
+    clear: right;
+}
+
+.options table,
+.options-checkboxes table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.options-checkboxes .labeledInput,
+.search-form .room-count-label,
+.search-form .labeledInput,
+.search-form .child-infant-container,
+.search-form .dynamic-children-container {
+    float: left;
+}
+
+.search-form .room-count-label {
+    clear: both;
+}
+
+.search-form .options .labeledInput {
+    float: none;
+}
+
+.search-form .area2LabeledInput {
+    float: right;
+}
+
+.search-context-checkboxes .title {
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    border-bottom: 1px solid #ccc;
+    background: #003d7e;
+    width: 234px;
+    padding: 3px 3px;
+    margin: 0 -5px 3px -5px;
+}
+
+.search-form .title {
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    border-bottom: 1px solid #ccc;
+    background: #003d7e;
+    width: 234px;
+    padding: 3px 3px;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.page_v2_c1 {
+    background: #d5deed;
+    width: 260px;
+    margin-top: 10px;
+}
+
+.search-form-container {
+    border: 0;
+    background: #b9c8ff;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    width: 240px;
+}
+
+.search-form-container label {
+    font-weight: normal;
+    font-size: 11px;
+    font-family: arial;
+
+}
+
+.search-context-checkboxes .options-checkboxes,
+.search-form .options {
+    width: auto;
+    background: #eceffe;
+    border-left: 1px solid #0d3f7a;
+    border-right: 1px solid #0d3f7a;
+    margin: 0;
+}
+
+.optionbox_header_red {
+    color: #c30019;
+}
+
+.search-form input,
+.search-form option,
+.search-form select,
+.search-form textarea {
+    font-size: 10px;
+}
+
+.opt_bottom_left {
+    background-image: url('/images_w/aavacations/nav/default/zz_rounded.gif');
+    height: 5px;
+    font-size: 2px;
+    margin-right: 6px;
+    background-position: 0 -5px;
+}
+
+.opt_bottom_right {
+    background-image: url('/images_w/aavacations/nav/default/zz_rounded.gif');
+    height: 5px;
+    font-size: 2px;
+    margin-left: 6px;
+    margin-top: -5px;
+    background-position: 100% -5px;
+}
+
+.opt_top_left {
+    background-image: url('/images_w/aavacations/nav/default/zz_rounded.gif');
+    height: 5px;
+    font-size: 2px;
+    margin-right: 6px;
+}
+
+.opt_top_right {
+    background-image: url('/images_w/aavacations/nav/default/zz_rounded.gif');
+    height: 5px;
+    font-size: 2px;
+    margin-left: 6px;
+    margin-top: -5px;
+    background-position: 100% 0;
+}
+
+.optionbox_header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#modifySearchForm .searchSummary .left {
+    margin-right: 0;
+}
+
+#modifySearchForm .yui-ac-input {
+    width: 110px;
+}
+
+.search-form-container .maxStopsLabeledInput,
+.search-form-container .airMaxOptionsLabeledInput {
+    display: none;
+}

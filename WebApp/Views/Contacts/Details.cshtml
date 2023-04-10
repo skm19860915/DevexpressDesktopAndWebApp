@@ -1,0 +1,366 @@
+﻿@model BlitzerCore.Models.UI.UIContact
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div>
+    <h1 class="title-header">Contact Details</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Contacts">Contact</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+
+<div class="content-container">
+
+    <div class="text-right">
+        <input type="button" onclick="location.href='/Contacts/Portal/@Model.Id'" class="btn-option" value="Send Portal" />
+        <input type="button" onclick="location.href='/Opportunity/New/@Model.Id'" class="btn-option" value="New Opportunity" />
+    </div>
+    <form asp-action="Details">
+        @Html.HiddenFor(m => m.returnUrl)
+        @Html.HiddenFor(m => m.Id)
+        <div @*class="AppMainScreen"*@>
+            <div class="row mx-0 mt-3">
+                <div class="bans-3d col-md-12 px-0">
+                    <div class="">
+                        <div class="row mx-0 header-ban-text">
+                            <div class="col-6 d-flex align-items-center">Contact</div>
+                            <div class="col-6 d-flex align-items-center">Primary Phone</div>
+                        </div>
+                        <div class="row mx-0 header-ban-text-emphasized">
+                            <div class="col-6">@Html.DisplayFor(model => model.Name)</div>
+                            <div class="col-6">@Html.DisplayFor(model => model.PrimaryPhone)</div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class=" b_tab">
+                        <div class="row mx-0 text-center">
+                            <div class="col-4">Primary Email</div>
+                            <div class="col-4">DOB</div>
+                            <div class="col-4">Address</div>
+                        </div>
+                        <div class="row mx-0 text-blue text-center">
+                            <div class="col-4"><a style="font-size:18px" href="mailto:@Html.DisplayFor(model => model.PrimaryEmail)">@Html.DisplayFor(model => model.PrimaryEmail)</a></div>
+                            <div class="col-4">@Html.DisplayFor(model => model.DOB)</div>
+                            <div class="col-4">@Html.DisplayFor(model => model.AddressLine1)</div>
+                        </div>
+                        <div class="row mx-0 text-blue text-center">
+                            <div class="col-4"></div>
+                            <div class="col-4"></div>
+                            <div class="col-4">@Html.DisplayFor(model => model.AddressLine2)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-0 mt-4">
+                <div class="col-12 col-xl-8 px-0 bans-3d">
+                    <div class="b_tab">
+                        <button class="b_tablinks header-ban-text ban-btn active" type="button" onclick="b_openPanel(event, 'b_TravelInfo')">Travel Info</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'Memberships')">Memberships</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'CreditCards')">CreditCards</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'House1')">Household</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_Notes')">Memo</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_Related')">Related</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_AddNote')">Add Note</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_Tags')">Tags</button>
+                    </div>
+                    <div class="">
+                        <div id="b_TravelInfo" class="b_tabPanel" style="display:block">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.GlobalEntryNumber)</div>
+                                    <div>@Html.DisplayFor(model => model.GlobalEntryNumber)</div>
+                                    <hr />
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.TSANumber)</div>
+                                    <div>@Html.DisplayFor(model => model.TSANumber)</div>
+                                    <hr />
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.SeatPreferences)</div>
+                                    <div>@Html.DisplayFor(model => model.SeatPreferences)</div>
+                                    <hr />
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.MealRequest)</div>
+                                    <div>@Html.DisplayFor(model => model.MealRequest)</div>
+                                    <hr />
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.SpecialRequests)</div>
+                                    <div>@Html.DisplayFor(model => model.SpecialRequests)</div>
+                                    <hr />
+                                </div>
+                                <div class="col-6">
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.PassportNumber)</div>
+                                    <div>@Html.DisplayFor(model => model.PassportNumber)</div>
+                                    <hr />
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.PassportCountry)</div>
+                                    <div>@Html.DisplayFor(model => model.PassportCountry)</div>
+                                    <hr />
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.PassportExpirationDate)</div>
+                                    <div>@Html.DisplayFor(model => model.PassportExpirationDate)</div>
+                                    <hr />
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.PassportIssueDate)</div>
+                                    <div>@Html.DisplayFor(model => model.PassportIssueDate)</div>
+                                    <hr />
+                                    <div class="DetailLabel label-custom">@Html.DisplayNameFor(model => model.PassportIssueAgency)</div>
+                                    <div>@Html.DisplayFor(model => model.PassportIssueAgency)</div>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Memberships" class="b_tabPanel">
+                            <div class="col text-right">
+                                <a href="/Contacts/Memberships/@Model.Id">Add</a>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 pr-2">
+                                    <div>Frequent Flyers</div>
+                                    @foreach (var lMembership in Model.MemberShips.Where(x => x.TypeOfMemberShip == MemberShipType.AirLine))
+                                    {
+                                        <div class="row">
+                                            <div class="col-3 DetailLabel">@lMembership.Company.Name</div>
+                                            <div class="col-9 text-right">@lMembership.Number</div>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="col-md-4">
+                                    <div>Hotels</div>
+                                    @foreach (var lMembership in Model.MemberShips.Where(x => x.TypeOfMemberShip == MemberShipType.Hotel))
+                                    {
+                                        <div class="row">
+                                            <div class="col-3 DetailLabel">@lMembership.Company.Name</div>
+                                            <div class="col-9 text-right">@lMembership.Number</div>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="col-md-4">
+                                    <div>Cars</div>
+                                    @foreach (var lMembership in Model.MemberShips.Where(x => x.TypeOfMemberShip == MemberShipType.Car))
+                                    {
+                                        <div class="row">
+                                            <div class="col-3 DetailLabel">@lMembership.Company.Name</div>
+                                            <div class="col-9 text-right">@lMembership.Number</div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div id="CreditCards" class="b_tabPanel">
+                            <div class="row mx-0 bg-white">
+                                <div class="col-md-10 bg-white">
+                                    <div class="row bg-white">
+                                        <div class="col-10 cc-header">Cards</div>
+                                        <div class="text-right">
+                                            <a href="/FOP/Create/@Model.Id">Add</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row bg-white">
+                                        <div class="col-3">Card Type</div>
+                                        <div class="col-3 text-right">Number</div>
+                                        <div class="col-3 text-right">Expiration</div>
+                                        <div class="col-3 text-right">CVN</div>
+                                    </div>
+
+                                    @foreach (var lCard in Model.Cards)
+                                    {
+                                        <div class="row bg-white">
+                                            <div class="col-3 DetailLabel">@lCard.CardType</div>
+                                            <div class="col-3 text-right">@lCard.Number</div>
+                                            <div class="col-3 text-right">@lCard.Expiration</div>
+                                            <div class="col-3 text-right">@lCard.CVN</div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div id="House1" class="b_tabPanel bg-white m-2">
+                            <a href="/Contacts/ModifyMembers/@Model.Id">Update Members</a>
+                            @(Html.DevExtreme().DataGrid<UIContact>()
+                                .DataSource(Model.HouseHoldMembers)
+                                .RemoteOperations(false)
+                                .Selection(s => s.Mode(SelectionMode.Single))
+                                .ShowRowLines(true)
+                                .HoverStateEnabled(true)
+                                .RowAlternationEnabled(true)
+                                .ShowBorders(true)
+                                .Columns(columns => {
+                                    columns.AddFor(m => m.Name).AllowEditing(false);
+                                    columns.AddFor(m => m.DOB);
+                                    columns.AddFor(m => m.PrimaryEmail);
+                                    columns.AddFor(m => m.PrimaryPhone);
+                                })
+                                .Paging(p => p.PageSize(5))
+                                .OnSelectionChanged("SelectionChanged")
+                            )
+                        </div>
+                        <div id="b_Notes" class="b_tabPanel" style="">
+                            <div style="width:100%">
+                                <textarea readonly asp-for="Notes" style="width:100%" rows="14"></textarea>
+                            </div>
+                        </div>
+                        <div id="b_Related" class="b_tabPanel" style="">
+                            @if (Model.OpportunitiesActive.Count() > 0)
+                            {
+                                <div>Active Opportunities</div>
+                                @foreach (var lOpp in Model.OpportunitiesActive)
+                                {
+                                    <div style="margin-left:10px;"><a href="/Opportunity/View/@lOpp.Id">@lOpp.Name</a></div>
+                                }
+                            }
+                            @if (Model.OpportunitiesInActive.Count() > 0)
+                            {
+                                <div>InActive Opportunities</div>
+                                @foreach (var lOpp in Model.OpportunitiesInActive)
+                                {
+                                    <div style="margin-left:10px;"><a href="/Opportunity/View/@lOpp.Id">@lOpp.Name</a></div>
+                                }
+                            }
+                            @if (Model.TripsActive.Count() > 0)
+                            {
+                                <hr />
+                                <div>Trips</div>
+                                <table>
+                                    <thead>
+                                        <tr style="font-weight: 600">
+                                            <td></td>
+                                            <td>Final Balance</td>
+                                            <td>Cost</td>
+                                            <td>Balance</td>
+                                        </tr>
+                                    </thead>
+                                    @foreach (var lTrip in Model.TripsActive)
+                                    {
+                                        <tr>
+                                            <td style="margin-left: 10px; width: 350px"><a href="/Trip/Details/@lTrip.Id">@lTrip.Name</a></td>
+                                            <td style="width: 150px;">@lTrip.FinalPayment</td>
+                                            <td style="width: 150px;">@lTrip.Total</td>
+                                            <td style="width: 150px;">@lTrip.Balance</td>
+                                        </tr>
+                                    }
+                                </table>
+                            }
+                            @if (Model.TripsInActive.Count() > 0)
+                            {
+                                <hr />
+                                <div>InActive Trips</div>
+                                @foreach (var lTrip in Model.TripsInActive)
+                                {
+                                    <div class="row">
+                                        <div class="col-4" style="margin-left:10px;"><a href="/Trip/Details/@lTrip.Id">@lTrip.Name</a></div>
+                                        <div class="col-4"><a href="/Trip/Details/@lTrip.Id">@lTrip.CreditMemo</a></div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        <div id="b_AddNote" class="b_tabPanel">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="control-label">Who we talked with</label>
+                                    <input asp-for="Note_Who" class="form-control" />
+                                    <span asp-validation-for="Note_Who" class="text-danger"></span>
+                                </div>
+                                <div class="col-6">
+                                    <label class="control-label">Where are they</label>
+                                    <input asp-for="Note_Where" class="form-control" />
+                                    <span asp-validation-for="Note_Where" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="" style="width:100%;padding-top:30px">
+                                <textarea asp-for="Note_Text" style="width:100%" rows="14"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                        </div>
+                        <div id="b_Tags" class="b_tabPanel" style="">
+                            <div class="dx-fieldset">
+                                @if (Model.Categories != null)
+                                {
+                                    foreach (var category in Model.Categories)
+                                    {
+                                        <div class="dx-field">
+                                            <div class="dx-field-label">@category.Name</div>
+                                            <div class="dx-field-value">
+                                                @(Html.DevExtreme().TagBox()
+                                                    .Items(category.Tags.Select(x => x.Name))
+                                                )
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*Start the right panel*@
+                <div class="RelatedBox col-3 bans-3d offset-xl-1 px-0 mb-0 header-ban-text mt-4 mt-xl-0 border-0">
+                    <div class="RelatedHeader d-flex justify-content-center align-items-center b_tab">
+                        History
+                    </div>
+                    <div style="overflow-y:auto;overflow-x:hidden">
+                        @if (Model.NoteEntries != null)
+                        {
+                            foreach (var lNote in Model.NoteEntries)
+                            {
+                                <div class="NoteBubble">
+                                    <div class="row">
+                                        <div class="NoteWriter">@lNote.Writer</div>
+                                        <div class="NoteWhen">@lNote.When</div>
+                                        @if (lNote.Who != null && lNote.Who.Trim().Length > 0)
+                                        {
+                                            <div class="NoteWho">@lNote.Who</div>
+                                            @if (lNote.Where != null && lNote.Where.Trim().Length > 0)
+                                            {
+                                                <div class="NoteWhere"> @@ @lNote.Where</div>
+                                            }
+                                        }
+                                    </div>
+                                    <div class="NoteMemoBubble">
+                                        <div>@lNote.Memo</div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="btn-clearence">
+        <a class="btn-command" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    </div>
+</div>
+
+<script>
+    //document.getElementById("defaultOpen").click();
+
+    function b_openPanel(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("b_tabPanel");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("b_tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function SelectionChanged(selectedItems) {
+        var lContact = selectedItems.selectedRowsData[0];
+        var lContactId = lContact.Id;
+        document.location.href = "/Contacts/Details/" + lContactId;
+    }
+</script>

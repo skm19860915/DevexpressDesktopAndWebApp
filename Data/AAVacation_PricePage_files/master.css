@@ -1,0 +1,175 @@
+@import url('/images_w/aavacations/nav/default/master.css');
+
+@charset "utf-8";
+/* CSS Document */
+
+/* Global-Utility Navigation - Default*/
+
+#topmenu {
+	font-size:12px;
+	float:right;
+	position:relative;
+}
+#topmenu li {
+	float: left;
+	margin-right: 20px;
+	border-right: 1px solid #173279;
+	padding:0 8px;
+}
+#topmenu li a {
+	font-weight: normal;
+	display: block;
+	text-decoration: none;
+	color: #1877BC !important;
+	font-size:11px;
+}
+#topmenu li a:hover {
+	text-decoration: underline;
+ color:
+}
+#topmenu li.top a {
+	background: transparent url('/images_w/aavacations/nav/AADVburn/arrowDown.gif') center right no-repeat;
+	padding-right: 12px;
+}
+/* new menu by VT 04-01-11 */
+
+#menu {
+	position:relative;
+	top:0;
+	left:0;
+	height:25px;
+	background: url('/images_w/aavacations/nav/ResAgtSite/res-bkg-nav-global-gradient.png') 0 0 repeat-x;
+	margin:0;
+	padding:0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0, 6, 102, 0.7);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 6, 102, 0.7);
+	box-shadow: 0 1px 3px rgba(0, 6, 102, 0.7);
+	z-index:20;
+	margin-bottom:15px;
+}
+ul.sf-menu {
+	margin: 0 0 0 25px;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	top:0;
+	left:0;
+	z-index:10;
+	background-color:transparent;
+}
+ul.sf-menu li {
+	float: left;
+	display: inline-block;
+	position: relative;
+	margin:0px 10px;
+}
+ul.sf-menu li a {
+	display:block;
+	margin:0;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:12px;
+	color: rgb(255,255,255);
+	line-height:2;
+	padding: 0 12px 0 15px;
+	background-color:transparent;
+}
+ul.sf-menu li.current a:hover, ul.sf-menu li a:hover {
+	background-color:#fff !important;/*	border-top-left-radius: 6px !important;
+	border-top-right-radius: 6px !important;
+	-moz-border-radius-topleft: 6px !important;
+	-moz-border-radius-topright: 6px !important;
+	-webkit-border-top-left-radius: 6px !important;
+	-webkit-border-top-right-radius: 6px !important;
+	border-top-left-radius: 6px !important;
+	border-top-right-radius: 6px !important;*/
+}
+ul.sf-menu li a:hover, ul.sf-menu li.current a:hover {
+	color:#f0051e;
+}
+
+div#bookingStatus {
+    margin-top: -120px!important;
+    margin-left: -200px;
+    margin-bottom: 85px;
+}
+
+div.page_v1_top {
+    height: 150px;
+}
+
+#bookingStatus img {
+    width: auto;
+}
+
+
+#modifySearchContainer .options, #modifySearchContainer .maxStopsLabeledInput, #modifySearchContainer .airMaxOptionsLabeledInput, #modifySearchContainer .serviceclassLabeledInput {
+display: block;
+}
+
+
+.show_detail_pricing_matrix,
+.extraInformationTd .show_detail_pricing_matrix {
+    display: none;
+}
+
+#confirm .itin.itin_totals_v1 .extraInformationTd .show_detail_pricing_matrix {
+    display: inline;
+}
+
+
+
+/* Added 10/01/2020 by PN */
+.hotelId385874 .card_header, .hotelId385878 .card_header, .hotelId386256 .card_header, .hotelId386774 .card_header, .hotelId386780 .card_header, .hotelId386784 .card_header, .hotelId388033 .card_header, .hotelId388317 .card_header, .hotelId388320 .card_header, .hotelId388324 .card_header, .hotelId388326 .card_header, .hotelId388328 .card_header, .hotelId388328 .card_header, .hotelId388530 .card_header, .hotelId390196 .card_header, .hotelId390198 .card_header, .hotelId391358 .card_header, .hotelId392009 .card_header, .hotelId402510 .card_header, .hotelId410924 .card_header, .hotelId422026 .card_header, .hotelId424589 .card_header, .hotelId426215 .card_header, .hotelId431758 .card_header, .hotelId431934 .card_header, .hotelId438759 .card_header, .hotelId439485 .card_header, .hotelId441377 .card_header, .hotelId441807 .card_header, .hotelId442713 .card_header, .hotelId445754 .card_header, .hotelId449093 .card_header, .hotelId460454 .card_header, .hotelId460526 .card_header, .hotelId462264 .card_header, .hotelId465463 .card_header, .hotelId465665 .card_header, .hotelId472178 .card_header, .hotelId476480 .card_header, .hotelId476573 .card_header, .hotelId480379 .card_header, .hotelId485183 .card_header, .hotelId489726 .card_header, .hotelId489733 .card_header, .hotelId490806 .card_header, .hotelId508568 .card_header, .hotelId510140 .card_header, .hotelId510141 .card_header, .hotelId538393 .card_header, .hotelId539180 .card_header, .hotelId542334 .card_header, .hotelId672478 .card_header, .hotelId783661 .card_header, .hotelId888245 .card_header, .hotelId888253 .card_header, .hotelId385879 .card_header, .hotelId389310 .card_header, .hotelId408789 .card_header, .hotelId425516 .card_header, .hotelId431035 .card_header, .hotelId435640 .card_header, .hotelId439688 .card_header, .hotelId448700 .card_header, .hotelId459108 .card_header, .hotelId462187 .card_header, .hotelId466935 .card_header, .hotelId488458 .card_header, .hotelId505233 .card_header, .hotelId529630 .card_header, .hotelId532398 .card_header, .hotelId533779 .card_header, .hotelId45 .card_header, .hotelId384341 .card_header, .hotelId384346 .card_header, .hotelId384353 .card_header, .hotelId384354 .card_header, .hotelId384668 .card_header, .hotelId386089 .card_header, .hotelId386097 .card_header, .hotelId386767 .card_header, .hotelId386792 .card_header, .hotelId387102 .card_header, .hotelId387134 .card_header, .hotelId387604 .card_header, .hotelId387606 .card_header, .hotelId388250 .card_header, .hotelId388322 .card_header, .hotelId388326 .card_header, .hotelId388528 .card_header, .hotelId388543 .card_header, .hotelId388708 .card_header, .hotelId389282 .card_header, .hotelId390458 .card_header, .hotelId390480 .card_header, .hotelId391356 .card_header, .hotelId391358 .card_header, .hotelId391381 .card_header, .hotelId391975 .card_header, .hotelId391977 .card_header, .hotelId391983 .card_header, .hotelId391999 .card_header, .hotelId392002 .card_header, .hotelId392889 .card_header, .hotelId392891 .card_header, .hotelId392896 .card_header, .hotelId392916 .card_header, .hotelId395702 .card_header, .hotelId399840 .card_header, .hotelId403574 .card_header, .hotelId404713 .card_header, .hotelId406859 .card_header, .hotelId410318 .card_header, .hotelId410509 .card_header, .hotelId411001 .card_header, .hotelId418432 .card_header, .hotelId419586 .card_header, .hotelId421211 .card_header, .hotelId422419 .card_header, .hotelId424645 .card_header, .hotelId425005 .card_header, .hotelId429289 .card_header, .hotelId434654 .card_header, .hotelId441869 .card_header, .hotelId441882 .card_header, .hotelId441936 .card_header, .hotelId449093 .card_header, .hotelId457310 .card_header, .hotelId459933 .card_header, .hotelId464760 .card_header, .hotelId464852 .card_header, .hotelId468947 .card_header, .hotelId471723 .card_header, .hotelId473718 .card_header, .hotelId475636 .card_header, .hotelId476454 .card_header, .hotelId477874 .card_header, .hotelId478000 .card_header, .hotelId480379 .card_header, .hotelId482296 .card_header, .hotelId484396 .card_header, .hotelId484672 .card_header, .hotelId484673 .card_header, .hotelId484758 .card_header, .hotelId488463 .card_header, .hotelId490945 .card_header, .hotelId490946 .card_header, .hotelId490984 .card_header, .hotelId492937 .card_header, .hotelId504290 .card_header, .hotelId504413 .card_header, .hotelId504580 .card_header, .hotelId508240 .card_header, .hotelId508529 .card_header, .hotelId510191 .card_header, .hotelId510971 .card_header, .hotelId512412 .card_header, .hotelId522642 .card_header, .hotelId522659 .card_header, .hotelId524268 .card_header, .hotelId526898 .card_header, .hotelId532439 .card_header, .hotelId540098 .card_header, .hotelId584463 .card_header, .hotelId607687 .card_header, .hotelId610896 .card_header, .hotelId631865 .card_header {
+    background: #fff url("/images_w/aavacations/nav/default/5k-miles.jpg") no-repeat scroll 3px 3px;
+    border-color: #ccc #ccc -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    display: block;
+    height: 21px;
+    padding: 3px;
+}
+.hotelId396553 .card_header, .hotelId396554 .card_header, .hotelId397786 .card_header, .hotelId397787 .card_header, .hotelId398923 .card_header, .hotelId398924 .card_header, .hotelId410491 .card_header, .hotelId411364 .card_header, .hotelId411854 .card_header, .hotelId412914 .card_header, .hotelId418631 .card_header, .hotelId422105 .card_header, .hotelId423102 .card_header, .hotelId436908 .card_header, .hotelId441249 .card_header, .hotelId441250 .card_header, .hotelId441919 .card_header, .hotelId449066 .card_header, .hotelId457529 .card_header, .hotelId462604 .card_header, .hotelId466083 .card_header, .hotelId470709 .card_header, .hotelId471224 .card_header, .hotelId488667 .card_header, .hotelId491331 .card_header, .hotelId494193 .card_header, .hotelId494544 .card_header, .hotelId501084 .card_header, .hotelId523613 .card_header, .hotelId534105 .card_header, .hotelId543311 .card_header, .hotelId558178 .card_header, .hotelId639819 .card_header, .hotelId641526 .card_header, .hotelId651378 .card_header, .hotelId664891 .card_header, .hotelId666973 .card_header, .hotelId711831 .card_header, .hotelId712741 .card_header, .hotelId713163 .card_header, .hotelId722714 .card_header, .hotelId725861 .card_header, .hotelId725863 .card_header, .hotelId729074 .card_header, .hotelId729431 .card_header, .hotelId731551 .card_header, .hotelId732084 .card_header, .hotelId733637 .card_header, .hotelId749831 .card_header, .hotelId752458 .card_header, .hotelId753535 .card_header, .hotelId770891 .card_header, .hotelId780149 .card_header, .hotelId783313 .card_header, .hotelId783328 .card_header, .hotelId783336 .card_header, .hotelId783340 .card_header, .hotelId784273 .card_header, .hotelId786995 .card_header, .hotelId786996 .card_header, .hotelId791160 .card_header, .hotelId792890 .card_header, .hotelId794199 .card_header, .hotelId796812 .card_header, .hotelId796855 .card_header, .hotelId803638 .card_header, .hotelId806025 .card_header, .hotelId820292 .card_header, .hotelId822374 .card_header, .hotelId824695 .card_header, .hotelId826344 .card_header, .hotelId826359 .card_header, .hotelId826633 .card_header, .hotelId826831 .card_header, .hotelId832316 .card_header, .hotelId832695 .card_header, .hotelId838569 .card_header, .hotelId872852 .card_header, .hotelId893245 .card_header, .hotelId913192 .card_header, .hotelId913703 .card_header, .hotelId923379 .card_header, .hotelId924918 .card_header, .hotelId925447 .card_header, .hotelId946024 .card_header, .hotelId1003151 .card_header, .hotelId1005597 .card_header, .hotelId1006495 .card_header, .hotelId1009962 .card_header, .hotelId1011924 .card_header, .hotelId1022470 .card_header, .hotelId1026310 .card_header, .hotelId1048088 .card_header, .hotelId1059729 .card_header, .hotelId1062353 .card_header, .hotelId1070452 .card_header, .hotelId1095186 .card_header, .hotelId1109840 .card_header, .hotelId1113497 .card_header, .hotelId1113950 .card_header, .hotelId1113955 .card_header {
+    background: #fff url("/images_w/aavacations/nav/default/15k-miles.jpg") no-repeat scroll 3px 3px;
+    border-color: #ccc #ccc -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    display: block;
+    height: 21px;
+    padding: 3px;
+}
+.hotelId491761 .card_header, .hotelId453283 .card_header, .hotelId885307 .card_header, .hotelId448171 .card_header, .hotelId858704 .card_header, .hotelId453286 .card_header, .hotelId440911 .card_header {
+    background: #fff url("/images_w/aavacations/nav/default/25k-miles.jpg") no-repeat scroll 3px 3px;
+    border-color: #ccc #ccc -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    display: block;
+    height: 21px;
+    padding: 3px;
+}
+.hotelId433888 .card_header, .hotelId656745 .card_header, .hotelId553480 .card_header, .hotelId544491 .card_header, .hotelId449986 .card_header, .hotelId894139 .card_header, .hotelId441520 .card_header, .hotelId584613 .card_header, .hotelId441521 .card_header, .hotelId894042 .card_header {
+    background: #fff url("/images_w/aavacations/nav/default/30k-miles.jpg") no-repeat scroll 3px 3px;
+    border-color: #ccc #ccc -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    display: block;
+    height: 21px;
+    padding: 3px;
+}
+.hotelId10 .card_header, .hotelId457288 .card_header, .hotelId447977 .card_header, .hotelId893995 .card_header, .hotelId389904 .card_header, .hotelId396539 .card_header, .hotelId501084 .card_header, .hotelId893134 .card_header, .hotelId404106 .card_header, .hotelId512952 .card_header, .hotelId397785 .card_header, .hotelId396552 .card_header, .hotelId594996 .card_header, .hotelId475670 .card_header, .hotelId747111 .card_header, .hotelId478045 .card_header, .hotelId495282 .card_header, .hotelId436014 .card_header, .hotelId476949 .card_header, .hotelId887951 .card_header, .hotelId554225 .card_header, .hotelId439796 .card_header, .hotelId426893 .card_header, .hotelId494400 .card_header, .hotelId473956 .card_header, .hotelId731861 .card_header, .hotelId490896 .card_header, .hotelId468534 .card_header, .hotelId442881 .card_header, .hotelId467816 .card_header, .hotelId801699 .card_header, .hotelId653265 .card_header, .hotelId467822 .card_header, .hotelId443205 .card_header, .hotelId887950 .card_header, .hotelId490894 .card_header, .hotelId456736 .card_header, .hotelId449971 .card_header, .hotelId563387 .card_header, .hotelId446496 .card_header, .hotelId465658 .card_header, .hotelId466703 .card_header, .hotelId765758 .card_header, .hotelId522532 .card_header, .hotelId452155 .card_header, .hotelId960574 .card_header, .hotelId1035252 .card_header, .hotelId420600 .card_header, .hotelId39 .card_header, .hotelId842798 .card_header, .hotelId454823 .card_header, .hotelId485890 .card_header, .hotelId475535 .card_header, .hotelId449205 .card_header, .hotelId397769 .card_header, .hotelId398902 .card_header, .hotelId398905 .card_header, .hotelId405958 .card_header, .hotelId437087 .card_header, .hotelId446810 .card_header, .hotelId449266 .card_header, .hotelId449267 .card_header, .hotelId472864 .card_header, .hotelId487016 .card_header, .hotelId488492 .card_header, .hotelId513177 .card_header, .hotelId533303 .card_header, .hotelId663003 .card_header, .hotelId715610 .card_header, .hotelId721723 .card_header, .hotelId778822 .card_header, .hotelId466077 .card_header, .hotelId404045 .card_header, .hotelId416012 .card_header, .hotelId783359 .card_header, .hotelId466076 .card_header, .hotelId397767 .card_header, .hotelId798052 .card_header, .hotelId602431 .card_header, .hotelId439264 .card_header, .hotelId629347 .card_header, .hotelId398322 .card_header, .hotelId694587 .card_header, .hotelId416239 .card_header, .hotelId817843 .card_header, .hotelId785763 .card_header, .hotelId535029 .card_header, .hotelId516305 .card_header, .hotelId844359 .card_header, .hotelId431925 .card_header, .hotelId398325 .card_header, .hotelId633069 .card_header, .hotelId444631 .card_header, .hotelId552564 .card_header, .hotelId405951 .card_header, .hotelId415943 .card_header, .hotelId434359 .card_header, .hotelId479892 .card_header, .hotelId425130 .card_header, .hotelId444631 .card_header, .hotelId405962 .card_header, .hotelId501941 .card_header, .hotelId476857 .card_header, .hotelId892741 .card_header, .hotelId437087 .card_header, .hotelId501805 .card_header, .hotelId542671 .card_header, .hotelId492882 .card_header, .hotelId438393 .card_header, .hotelId663003 .card_header, .hotelId715610 .card_header, .hotelId468526 .card_header, .hotelId774953 .card_header, .hotelId706556 .card_header, .hotelId433952 .card_header, .hotelId722357 .card_header, .hotelId419902 .card_header, .hotelId479893 .card_header, .hotelId397769 .card_header, .hotelId485505 .card_header, .hotelId398902 .card_header, .hotelId398905 .card_header, .hotelId481782 .card_header, .hotelId457333 .card_header, .hotelId472864 .card_header, .hotelId398904 .card_header, .hotelId418070 .card_header, .hotelId420170 .card_header, .hotelId783351 .card_header, .hotelId484455 .card_header, .hotelId475669 .card_header {
+    background: #fff url("/images_w/aavacations/nav/default/5k-bonus-commission.jpg") no-repeat scroll 3px 3px;
+    border-color: #ccc #ccc -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    display: block;
+    height: 21px;
+    padding: 3px;
+}

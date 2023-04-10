@@ -1,0 +1,91 @@
+﻿@model BlitzerCore.Models.UI.Block
+@{
+    if (Model.Published == false)
+        return;
+
+    var lText = Html.Raw(Model.Body);
+    string lPictureLocation = "";
+    if (Model.Media != null)
+    {
+        if (Model.Media.ThumbNail != null && Model.Media.ThumbNail.Location != null)
+            lPictureLocation = Model.Media.ThumbNail.Location;
+        else if (Model.Media.Size560x460 != null && Model.Media.Size560x460.Location != null)
+            lPictureLocation = Model.Media.Size560x460.Location;
+    }
+    else
+    {
+        lPictureLocation = "";
+    }
+}
+@if (@Model.ListTitle != null && @Model.ListTitle.Length > 0)
+{
+    <div style="text-align:center;font-weight:500;font-size:30px;padding-bottom:20px">
+        @Model.ListTitle
+    </div>
+}
+
+<div class="row" style="padding-bottom:30px">
+    @if (Model.Media != null)
+    {
+        <div class="col-xl-3 col-md-12 col-sm-12" style="padding-top:0px">
+            @if (Model.Media != null)
+            {
+                if (Model.PageMap != null)
+                {
+                    <a href="@Model.PageMap.Page.MyUrl">
+                        <img class="bz_BlockPic" style="max-width:100%" src="@lPictureLocation" />
+                    </a>
+                }
+                else
+                {
+                    <img class="bz_BlockPic" src="@lPictureLocation" />
+                }
+            }
+        </div> @*End of Col 3*@
+        <div class="col-xl-9 col-md-12 col-sm-12">
+            @if (Model.PageMap != null)
+            {
+                <a href="@Model.PageMap.Page.MyUrl"><h3> @Model.BlockTitle</h3></a>
+
+                @if (Model.PageMap != null && Model.PageMap.Page != null && (Model.Body == null || Model.Body.Count() == 0))
+                {
+                    <div>@Model.PageMap.Page.CenterContent.Summary</div>
+                }
+                else
+                {
+                    <div>@lText</div>
+                }
+            }
+            else
+            {
+                <h3>@Model.BlockTitle</h3>
+                <div>@lText</div>
+            }
+        </div>
+    }
+    else
+    {
+        @if (Model.PageMap != null)
+        {
+            <a href="@Model.PageMap.Page.MyUrl"><h3> @Model.BlockTitle</h3></a>
+
+            @if (Model.PageMap != null && Model.PageMap.Page != null && (Model.Body == null || Model.Body.Count() == 0))
+            {
+                <div>@Model.PageMap.Page.CenterContent.Summary</div>
+            }
+            else
+            {
+                <div>@lText</div>
+            }
+        }
+        else
+        {
+            <div>
+                @*There is not Link to a page*@
+                <div><h3>@Model.BlockTitle</h3></div>
+                <div>@lText</div>
+            </div>
+        }
+    }
+</div>
+

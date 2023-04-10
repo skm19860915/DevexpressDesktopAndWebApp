@@ -1,0 +1,89 @@
+﻿@model BlitzerCore.Models.UI.UIQuoteGroup
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+    UIContact lPrimary = Model.Contacts[0];
+}
+
+<Style>
+    #blitz_main {
+        background-color: white !important;
+    }
+</Style>
+
+@{
+    var lPath = "/images/1600x1200/Empty.jpg";
+    if (Model.CountryData.HeaderImage != null && Model.CountryData.HeaderImage.Media != null
+        && Model.CountryData.HeaderImage.Media.Size1600x1200 != null)
+        lPath = Model.CountryData.HeaderImage.Media.Size1600x1200.Location;
+}
+<div id="page_caption" class="hasbg parallax notransparent" style="height:700px" data-image="@lPath" data-width="1600" data-height="1200">
+    <div class="page_title_wrapper">
+        <div class="tour_country_subheader">@Model.CountryData.HeaderImage.Caption</div>
+        <br class="clear">
+        <h1>@Model.CountryData.HeaderImage.BlockTitle</h1>
+    </div>
+    <div class="parallax_overlay_header"></div>
+</div>
+
+
+<div id="ICQuote" style="padding-top:700px">
+    @if (Model.WarningNoEmail)
+    {
+        <div style="font-size:30px;color:red">Client doesn't have email address</div>
+    }
+    <form asp-controller="Trip" asp-action="Book">
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.QuoteRequestID)
+
+        <div class="col-8 offset-2" style="padding-top:40px">
+            @foreach (var lSupplier in Model.Quotes.Keys)
+            {
+                var lResort = lSupplier;
+                <div class="row">
+                    <div class="col-3">
+                        @if (lResort.QuoteData.ResortImageURL != null)
+                        {
+                            <img width="300" height="300" src="@lResort.QuoteData.ResortImageURL" />
+                        }
+                    </div>
+                    <div class="col-9" style="padding-left:50px;padding-top:10px">
+                        <div>
+                            <div style="font-weight:600;font-size:30px;text-align:center;padding-bottom:10px;">@lSupplier.Name Price Quotes</div>
+                            <div>
+                                @lResort.QuoteData.Summary
+                            </div>
+                            <div class="offset-5" style="padding-top:50px">
+                                <table style="border:1px solid">
+                                    @foreach (var lQuote in Model.Quotes[lSupplier])
+                                    {
+                                        <tr style="border-bottom: 1px solid">
+                                            <td style="width:500px;">@lQuote.SKU</td>
+                                            <td>@lQuote.Total</td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div style="text-align:center;padding-top:50px;padding-bottom:30px">
+            @if (ViewBag.ErrorMsgs != null && ViewBag.ErrorMsgs.Count() > 0)
+            {
+                <div class="ErrorMsg">
+                    @foreach (var lMsg in ViewBag.ErrorMsgs)
+                    {
+                        if (lMsg != null)
+                        {
+                            <div><strong>@lMsg.Header</strong></div><div>@lMsg.Description</div>
+                        }
+                    }
+                </div>
+            }
+            <input type="button" value="Send Quote" onclick="location.href = '/QuoteGroup/SendQuote/@Model.Id'" />
+        </div>
+    </form>
+</div>

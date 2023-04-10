@@ -1,0 +1,189 @@
+﻿@model BlitzerCore.Models.UI.UIQuoteRequest
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+
+    if (Model.Contacts.Count() > 0)
+        ViewData["Title"] = "Edit";
+    else
+        ViewData["Title"] = "New Quote Request";
+}
+
+
+
+<div>
+    <h1 class="title-header">New Oppurtunirty</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Portal">Oppurtunirty</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0">
+
+<div class="content-container pt-3">
+    @if (Model.ErrorMsgs.Count() > 0)
+    {
+        <div style="font-weight:700">You must resolve the following errors</div>
+        <div class="ErrorMsg" style="padding-left:30px;padding-bottom:30px">
+            @foreach (var lMsg in Model.ErrorMsgs)
+            {
+                if (lMsg != null)
+                {
+                    <div><strong>@lMsg.Header</strong></div><div>@lMsg.Description</div>
+                }
+            }
+        </div>
+    }
+    <div class="row TableHeader mx-0 table-ban-text table-ban-row">List of Travelers</div>
+
+    <form asp-action="New" asp-controller="Opportunity">
+        <div class="">
+            <div class="Travelers w-100 pb-4">
+                @Html.HiddenFor(m => m.AgentId)
+                @Html.HiddenFor(m => m.OpportunityID)
+                <div class="row mx-0">
+                    <div class="d-none"></div>
+                    <div class="Traveler1 col-2 col-xl-1 px-0">Relationship</div>
+                    <div class="Traveler2 col-2 px-0">First</div>
+                    <div class="Traveler3 col-2 px-0">Middle</div>
+                    <div class="Traveler4 col-2 px-0">Last</div>
+                    <div class="Traveler5 col-xl-1 px-0 d-none d-xl-block">DOB</div>
+                    <div class="Traveler6 col-2 px-0">Email</div>
+                    <div class="Traveler7 col-2 px-0">Cell</div>
+                </div>
+                @for (int i = 0; i < Model.Contacts.Count; i++)
+                {
+                    <div class="row mx-0">
+                        <div class="d-none">@Html.TextBox("Contacts[" + @i + "].Id", Model.Contacts[i].Id)</div>
+                        <div class="col-2 col-xl-1 px-0"><span class="traveler-box"><select asp-for="@Model.Contacts[i].RelationshipID" asp-items="@Model.RelationShips" class="form-control"></select></span></div>
+                        <div class="col-2 px-0"><span class="traveler-box">@Html.TextBox("Contacts[" + @i + "].First", Model.Contacts[i].First, new { @class = "form-control h-100" })</span></div>
+                        <div class="col-2 px-0"><span class="traveler-box">@Html.TextBox("Contacts[" + @i + "].Middle", Model.Contacts[i].Middle, new { @class = "form-control h-100" })</span></div>
+                        <div class="col-2 px-0"><span class="traveler-box">@Html.TextBox("Contacts[" + @i + "].Last", Model.Contacts[i].Last, new { @class = "form-control h-100" })</span></div>
+                        <div class="col-xl-1 px-0 d-none d-xl-block"><span class="traveler-box">@Html.TextBox("Contacts[" + @i + "].DOB", Model.Contacts[i].DOB, new { @class = "form-control h-100", size = "10" })</span></div>
+                        <div class="col-2 px-0"><span class="traveler-box">@Html.TextBox("Contacts[" + @i + "].PrimaryEmail", Model.Contacts[i].PrimaryEmail, new { @class = "form-control h-100" })</span></div>
+                        <div class="col-2 px-0"><span class="traveler-box">@Html.TextBox("Contacts[" + @i + "].Cell", Model.Contacts[i].PrimaryPhone, new { @class = "form-control h-100", size = "13" })</span></div>
+                    </div>
+                }
+            </div>
+            <div class="row" style="padding-bottom:40px">
+                <div class="col-1">Quote Type </div>
+                <div class="col-2">
+                    <select class="form-control" asp-for="QuoteType" asp-items="@ViewBag.QuoteTypes">
+                        <option selected>Not Assigned</option>
+                    </select>
+                </div>
+                <div class="col-2">Number of Adults</div>
+                <div class="col-1">
+                    <select class="form-control" asp-for="NumberOfAdults" asp-items="@ViewBag.NumberOfAdults">
+                        <option selected>Not Assigned</option>
+                    </select>
+                </div>
+                <div class="col-1">Child 1</div>
+                <div class="col-1">
+                    <select class="form-control" asp-for="Child1Age" asp-items="@ViewBag.KidsAges">
+                        <option selected>N/A</option>
+                    </select>
+                </div>
+                <div class="col-1">Child 2</div>
+                <div class="col-1">
+                    <select class="form-control" asp-for="Child2Age" asp-items="@ViewBag.KidsAges">
+                        <option selected>N/A</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="Locations col-8 px-0 pb-4">
+                <div>
+                    <div>
+                        @* Depature Info *@
+                        <div class="row offset-2 mx-0">
+                            <div class="QRDate col-2 offset-2">Date</div>
+                            <div class="QRCities col-2">City</div>
+                        </div>
+                        <div class="row mx-0">
+                            <div class="col-2 text-right">Departure </div><div class="col-2 px-0">@Html.TextBoxFor(m => m.StartDate, new { @class = "form-control", size = "10" })</div>
+                            <div class="col-2" id="DepartCity">
+                                @Html.TextBoxFor(m => m.DepartureCityCode, new { size = "3", @class = "w-100 form-control" })
+                            </div>
+                            <div class="col-2 offset-1">Send Quote</div>
+                            <div class="col-1">
+                                <input asp-for="SendQuote" class="form-control" />
+                            </div>
+                            <div class="col-2 text-center">Referral</div>
+                        </div>
+                        <div class="row mx-0">
+                            <div class="col-2 text-right">Return </div><div class="col-2 px-0">@Html.TextBoxFor(m => m.EndDate, new { @class = "form-control", size = "10" })</div>
+                            <div class="col-2" id="DestCity">
+                                @Html.TextBoxFor(m => m.DestinationCityCode, new { size = "3", @class = "form-control" })
+                            </div>
+                            <div class="col-2 offset-1">Send Insurance</div>
+                            <div class="col-1">
+                                <input asp-for="SendInsurance" class="form-control" />
+                            </div>
+                            <div class="form-group col-2">
+                                <select class="form-control" asp-for="RefferalId" asp-items="@ViewBag.Refferals">
+                                    <option selected>Not Assigned</option>
+                                </select>
+                                <span asp-validation-for="RefferalId" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                @{
+                    var lButtonClasses = "QButton";
+                    //var lDisabledFlag = "";
+                    if (Model.QuoteButtonDisabled)
+                    {
+                        lButtonClasses += " ButtonDisabled";
+                        //lDisabledFlag = "disabled";
+                    }
+                }
+            </div>
+            <div class="Travelers w-100 pb-0 bans-3d">
+                <div class="b_tab">
+                    <button class="b_tablinks active header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_Notes')" id="defaultOpen">Notes</button>
+                    <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_Tasks')">Tasks</button>
+                </div>
+                <div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div>
+                        <div id="b_Notes active" class="b_tabPanel" style="display:block">
+
+                            <div class="w-100">
+                                <textarea class="form-control w-100" asp-for="Notes" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div id="b_Tasks" class="b_tabPanel">
+                            <a href="/Task/Create/@Model.Id">New Task</a>
+                            @(Html.DevExtreme().DataGrid<UITask>()
+                        .DataSource(new List<UITask>())
+                        .RemoteOperations(false)
+                        .Selection(s => s.Mode(SelectionMode.Single))
+                        .ShowRowLines(true)
+                        .HoverStateEnabled(true)
+                        .RowAlternationEnabled(true)
+                        .ShowBorders(true)
+
+                        .Columns(columns => {
+                            columns.AddFor(m => m.Name).AllowEditing(false);
+                            columns.AddFor(m => m.Priority);
+                        })
+                        .Paging(p => p.PageSize(10))
+                        .OnSelectionChanged("SelectionChanged")
+                    )
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-clearence">
+                <input class="btn-command" type="submit" value="Save" />
+            </div>
+
+        </div>
+    </form>
+</div>

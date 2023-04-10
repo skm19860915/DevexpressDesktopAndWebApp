@@ -1,0 +1,70 @@
+﻿@model List<UITask>
+
+@{
+    ViewData["Title"] = "Tasks";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div>
+    <h1 class="title-header">Tasks</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Contacts">Tasks</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+<div class="content-container">
+    <div class="TableBox bans-3d">
+        <div class="col-10 offset-1">
+            <div class="row">
+                <h2></h2>
+                <a class="offset-10" href="/Task/Create">Create</a>
+            </div>
+            @(Html.DevExtreme().DataGrid<BlitzerCore.Models.UI.UITask>()
+        .ID("taskGridContainer")
+        .DataSource(Model)
+        .RemoteOperations(false)
+        .Selection(s => s.Mode(SelectionMode.Single))
+        .HoverStateEnabled(true)
+        .AllowColumnReordering(true)
+        .ShowColumnLines(false)
+
+        .Columns(columns =>
+        {
+            columns.AddFor(m => m.Name).MinWidth(350);
+            columns.AddFor(m => m.PriorityTypeStr).Caption("Priority");
+            columns.AddFor(m => m.StatusStr).Caption("Status");
+            columns.AddFor(m => m.Deadline);
+            columns.AddFor(m => m.CompletedDate);
+            columns.AddFor(m => m.HoldUntil);
+            columns.AddFor(m=>m.IssuerID);
+            columns.AddFor(m => m.OwnerName);
+            columns.AddFor(m => m.ParentName).Caption("Opportunity");
+            columns.AddFor(m => m.Priority).DataType(GridColumnDataType.Number).SortOrder(SortOrder.Asc);
+        })
+        .Paging(p => p.PageSize(25))
+                .FilterPanel(f=>f.Visible(true))
+                .HeaderFilter(h=>h.Visible(true))
+                .FilterRow(r=>r.Visible(true))
+                .StateStoring(s => s.Enabled(true).Type(StateStoringType.LocalStorage).StorageKey("storage"))
+                .Sorting(s=>s.Mode(GridSortingMode.Single))
+                .OnRowClick("SelectedRow")
+    )
+        </div>
+    </div>
+</div>
+<script>
+    function SelectedRow(obj) {
+        var lId = obj.key.Id;
+        console.log(lId);
+        document.location.href = "/Task/Edit/" + lId;
+    }
+
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Task/Edit/" + lId;
+    }
+</script>

@@ -1,0 +1,79 @@
+﻿@model BlitzerCore.Models.UI.UIQuote
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<Style>
+    #blitz_main {
+        background-color: white !important;
+    }
+</Style>
+
+<div id="ICQuote">
+    <form asp-controller="Trip" asp-action="Book">
+        @Html.HiddenFor(m => m.QuoteID)
+        @Html.HiddenFor(m => m.QuoteRequestID)
+        <div class="row">
+            <div class="col-6"><a href="/Quote/SendQuote?id=@Model.QuoteID">Send Quote</a></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-3">
+                <div class="TopHeader">Travelers</div>
+                <div>
+                    <div>@Model.Primary.Name </div>
+                    @if (Model.Primary.Address1 != null && Model.Primary.Address1 != "")
+                    {
+                        <div>@Model.Primary.Address1</div>
+                        <div>@Model.Primary.City, @Model.Primary.State @Model.Primary.ZipCode</div>
+                    }
+                    <a href="@Model.Primary.PrimaryEmail">@Model.Primary.PrimaryEmail</a>
+                    @if (Model.Primary.Cell != null && Model.Primary.Cell != "")
+                    {
+                        <div>@Model.Primary.Cell</div>
+                    }
+                </div>
+            </div>
+            <div id="AgentHeader" class="row col-3 offset-6">
+                <div>
+                    <div class="TopHeader">Agent</div>
+                    <div>@Model.QuoteRequest.Agent.Name</div>
+                    <div><a href="@Model.QuoteRequest.Agent.PrimaryEmail">@Model.QuoteRequest.Agent.PrimaryEmail</a></div>
+                    <div>@Model.QuoteRequest.AgentPhone</div>
+                </div>
+            </div>
+        </div>        <hr class="LineBreak" />
+
+        <div class="TripInfo">Quote for @Model.ResortName</div>
+
+        <div id="TripBody">
+            <div><span class="PopText">Start Date:</span> @Model.QuoteRequest.StartDate</div>
+            <div><span class="PopText">End Date:</span> @Model.QuoteRequest.EndDate</div>
+        </div>
+
+        <div class="FlightsLabel">Flight Options</div>
+        <div class="row col-12">
+            <div class="FlightResults col-12">
+                <div class="TableHeader row col-12">
+                    <div class="col-1">Date</div>
+                    <div class="col-1">Leg</div>
+                    <div class="col-1">Takeoff</div>
+                    <div class="col-2">Land</div>
+                    <div class="col-2">Connection</div>
+                    <div class="col-2">Layover</div>
+                    <div class="col-2">Arrive</div>
+                    <div class="col-1">Select</div>
+                </div>
+            </div> @* End of the Flight Data for one row*@
+        </div> @*End of Row*@
+
+
+        @*Start the Resorts Section*@
+
+        <div class="ResortsLabel">Resorts</div>
+
+        <input type="submit" value="Book" />
+    </form>
+</div>

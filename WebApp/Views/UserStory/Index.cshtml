@@ -1,0 +1,46 @@
+﻿@model List<BlitzerCore.Models.UI.UISprint>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="col-8 offset-2">
+    <div class="row" style="padding-bottom:50px;">
+        <h2 class="col-4">Requirements</h2>
+        <div class="offset-6 col-2"><a href="/UserStory/Create">Create</a></div>
+    </div>
+    <div class="row" style="font-weight:600;font-size:15px;background-color:lightsalmon">
+        <div style="width:400px">Name</></div>
+        <div style="width:300px">Starte/Priority</div>
+        <div style="width:150px">Effort</div>
+        <div style="width:100px">Status</div>
+    </div>
+    @foreach (var lSprint in Model)
+    {
+<div class="row" style="font-weight:600;font-size:15px">
+    <div style="width:400px"><a href="/Sprint/Kanban/@lSprint.Id">@lSprint.Name</a></div>
+    <div style="width:300px">@lSprint.StartStr</div>
+    <div style="width:150px">@lSprint.UserStories.Where(x=>x.LOE != null).Sum(x=>x.LOE)</div>
+    <div style="width:100px">@lSprint.Status</div>
+</div>
+        @foreach (var lUserStory in lSprint.UserStories.OrderBy(x => x.Priority))
+        {
+            <table style="padding-bottom:130px">
+                <tr>
+                    <td style="padding-left:50px;width:400px"><a href="/UserStory/Edit/@lUserStory.Id">@lUserStory.Name</a></td>
+                    <td style="width:300px">@lUserStory.Priority</td>
+                    <td style="width:150px">@lUserStory.LOE</td>
+                    <td style="width:200px">@lUserStory.Status</td>
+                </tr>
+            </table>
+        }
+    }
+</div>
+<script>
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/UserStory/Edit/" + lId;
+    }
+</script>

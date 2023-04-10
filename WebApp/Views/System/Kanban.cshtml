@@ -1,0 +1,35 @@
+﻿@model KanbanSystemModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div class="row">
+    <h1 class="col-9">Blitzer Systems</h1>
+    <div class="">
+        <a href="/System/Create">Create</a>
+    </div>
+</div>
+<div id="kanban">
+    @(Html.DevExtreme().ScrollView()
+        .ElementAttr("class", "scrollable-board")
+        .Direction(ScrollDirection.Horizontal)
+        .ShowScrollbar(ShowScrollbarMode.Always)
+        .Content(
+            Html.DevExtreme().Sortable()
+                .ElementAttr("class", "sortable-lists")
+                .ItemOrientation(Orientation.Horizontal)
+                .MoveItemOnDrop(true)
+                .Handle(".list-title")
+                .Content(@<text>
+                    @foreach (var status in Model.Statuses) {
+                        var listModel = new KanbanSystemListModel() {
+                            Status = status,
+                            Systems = Model.Systems.Where(t => t.Status == status),
+                            Info = ""
+                        };
+                        @await Html.PartialAsync("_Kanban", listModel)
+                    }
+                </text>).ToString()
+        )
+    )
+</div>

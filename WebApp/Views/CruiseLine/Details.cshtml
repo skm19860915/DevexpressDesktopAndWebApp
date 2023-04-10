@@ -1,0 +1,156 @@
+﻿@model BlitzerCore.Models.UI.UICompany
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div>
+    <h1 class="title-header">Company Details</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Company">Company</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+
+<div class="content-container pt-3">
+    <div class="row mx-0 py-2">
+        <div class="offset-4 col-6 text-right px-0"><a href="/Opportunity/New/@Model.Id" class="btn-option d-inline-block">New Opportunity</a></div>
+        <div class="col-2 text-right px-0"><a href="/Task/NewCompanyTask/@Model.Id" class="btn-option d-inline-block">New Task</a></div>
+    </div>
+    <div @*class="AppMainScreen B3P_HeaderBox"*@>
+        <div class="row mx-0 bans-3d pb-3">
+            <div class="row col-md-12 mx-0 px-0">
+                <div class="row col-12 mx-0 header-ban-text px-0 py-3 b_tab">
+                    <div class="row col-12">
+                        <div class="col-6">Contact</div>
+                        <div class="col-3">Primary Phone</div>
+                    </div>
+                    <div class="row col-12 header-ban-text-emphasized">
+                        <div class="col-6">@Html.DisplayFor(model => model.Name)</div>
+                        <div class="col-6">@Html.DisplayFor(model => model.PrimaryPhone)</div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row col-12 mx-0 px-0" >
+                    <div class="row col-12 text-center">
+                        <div class="col-3">Business Type</div>
+                        <div class="col-3">Primary Email</div>
+                        <div class="col-3">WebSite</div>
+                        <div class="col-3">Address</div>
+                    </div>
+                    <div class="row col-12 mx-0 text-blue text-center">
+                        <div class="col-3">@Html.DisplayFor(model => model.BusinessType)</div>
+                        <div class="col-3">@Html.DisplayFor(model => model.PrimaryEmail)</div>
+                        <div class="col-3">@Html.DisplayFor(model => model.WebSite)</div>
+                        <div class="col-3">@Html.DisplayFor(model => model.Address1)</div>
+                    </div>
+                    <div class="row col-12 mx-0 text-blue">
+                        <div class="offset-9 col-3">@Html.DisplayFor(model => model.Address2)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="BusinessTypeID" />
+            @Html.HiddenFor(m => m.returnUrl)
+
+            <div class="row mx-0 mt-4">
+                <div class="col-12 col-xl-8 px-0 bans-3d">
+                    <div class="b_tab">
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_contacts')">Contacts</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_Notes')">Notes</button>
+                    </div>
+                    <div id="b_contacts" class="b_tabPanel bg-white p-0" style="display:block;">
+                        <div class="row mx-0">
+                            @(Html.DevExtreme().DataGrid<UIContact>()
+                            .DataSource(Model.Contacts)
+                            .RemoteOperations(false)
+                            .Selection(s => s.Mode(SelectionMode.Single))
+                            .ShowRowLines(true)
+                            .HoverStateEnabled(true)
+                            .RowAlternationEnabled(true)
+                            .ShowBorders(true)
+
+                            .Columns(columns => {
+                                columns.AddFor(m => m.Name).AllowEditing(false);
+                                columns.AddFor(m => m.Title);
+                                columns.AddFor(m => m.PrimaryEmail).Caption("Email");
+                                columns.AddFor(m => m.PrimaryPhone).Caption("Phone");
+                            })
+                            .Paging(p => p.PageSize(17))
+                            .OnSelectionChanged("SelectionChanged")
+                        )
+                        </div>
+                    </div>
+                    <div id="b_Notes" class="b_tabPanel p-0">
+                        <div class="row mx-0">
+                            <textarea class="form-control w-100" asp-for="Memo" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                @*Start the right panel*@
+                <div class="RelatedBox col-3 bans-3d offset-xl-1 px-0 mb-0 header-ban-text mt-4 mt-xl-0 border-0">
+                    <div class="RelatedHeader d-flex justify-content-center align-items-center b_tab">
+                        Related
+                    </div>
+                    <div>Bookings</div>
+                    @if (Model.Bookings != null)
+                    {
+                        @foreach (var lBooking in Model.Bookings)
+                        {
+                            <div class="ml-2"><a href="/Booking/Edit/@lBooking.BookingID">@lBooking.TripName</a></div>
+                        }
+                    }
+                    else
+                    {
+                        <div>There are bookings</div>
+                    }
+                </div>
+            </div>
+            <div class="btn-clearence">
+                <input type="submit" value="Save" class="btn-command" />
+            </div>
+
+        </form>
+    </div>
+    <div class="text-center">
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+<script>
+    //document.getElementById("defaultOpen").click();
+
+    function b_openPanel(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("b_tabPanel");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("b_tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function SelectionChanged(selectedItems) {
+        var lContact = selectedItems.selectedRowsData[0];
+        var lContactId = lContact.Id;
+        document.location.href = "/Contacts/Details/" + lContactId;
+    }
+</script>

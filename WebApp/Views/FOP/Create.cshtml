@@ -1,0 +1,52 @@
+﻿@model BlitzerCore.Models.UI.UIFOP;
+
+
+@{
+
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+    string color = "";
+}
+
+
+<div class="content-head" style="@color">
+    <div class="row">
+        <div class="col-sm-6" style="@color">
+            <h3>New Credit Card</h3>
+        </div>
+        <div class="col-sm-6 text-right">
+            <button class="btn btn-default" onclick="goBack('@ViewBag.Url')"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Close</button>
+            <button class="btn btn-primary" id="savebtn" onclick="saveWork()" type="button"><i class="fa fa-save"></i>&nbsp;&nbsp;Save & Close</button>
+        </div>
+    </div>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="UserID" />
+        <div>
+            <div class="row col-10">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Number" class="control-label"></label>
+                        <input asp-for="Number" class="form-control" />
+                        <span asp-validation-for="Number" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Expiration" class="control-label"></label>
+                        <input asp-for="Expiration" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="form-group">
+                <label asp-for="CVN" class="control-label"></label>
+                <input asp-for="CVN" class="form-control" />
+            </div>
+        </div>
+        <input type="submit" value="Save" />
+    </form>
+</div>
+
+

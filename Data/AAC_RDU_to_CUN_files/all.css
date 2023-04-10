@@ -1,0 +1,856 @@
+@font-face {
+    font-family: 'American Bold Webfont';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-bold-webfont.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-bold-webfont.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-bold-webfont.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-bold-webfont.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fontsamerican-bold-webfont.svg#american-bold-webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'American Bold Italic Webfont';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-bold_italic-webfont.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-bold_italic-webfont.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-bold_italic-webfont.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-bold_italic-webfont.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-bold_italic-webfont.svg#american-bold_italic-webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'American Icons V4 Webfont';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4-webfont.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4-webfont.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4-webfont.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4-webfont.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4-webfont.svg#american-icons-v4-webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'American Icons V4';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons-v4.svg#american-icons-v4') format('svg');
+}
+
+@font-face {
+    font-family: 'American Icons';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-icons.svg#american-icons') format('svg');
+}
+
+@font-face {
+    font-family: 'American Light Italic Webfont';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light_italic-webfont.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light_italic-webfont.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light_italic-webfont.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light_italic-webfonts.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light_italic-webfont.svg#american-light_italic-webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'American Light Webfont';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light-webfont.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light-webfont.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light-webfont.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light-webfonts.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-light-webfont.svg#american-light-webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'American Medium Italic Webfont';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium_italic-webfont.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium_italic-webfont.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium_italic-webfont.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium_italic-webfont.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium_italic-webfont.svg#american-medium_italic-webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'American Medium Webfont';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium-webfont.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium-webfont.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium-webfont.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium-webfont.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-medium-webfont.svg#american-medium-webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'American Regular Webfont';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regular-webfont.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regular-webfont.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regular-webfont.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regular-webfont.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regular-webfont.svg#american-regular-webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'American Regular Italic Webfont';
+    src: url("//:") format("no404");
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regularitalic-webfont.eot') format('eot');
+    src: url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regularitalic-webfont.eot?iefix') format('eot'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regularitalic-webfont.woff') format('woff'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regularitalic-webfont.ttf') format('truetype'),
+    url('//cdn.switchfly.com/assets/e35ed0d/client_assets/imagesw/aavacations/default/fonts/american-regularitalic-webfont.svg#american-regularitalic-webfont') format('svg');
+}
+
+#bookingStatus img {
+    width: auto !important;
+}
+
+/* CUSTOM MINI ITIN STYLES (on itinerary, checkout_form and get_payment) */
+
+.customItineraryContainer {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    font-size: 12px;
+    width: 168px;
+    margin-top: 25px;
+}
+
+.page_v1_c1 {
+    position: relative;
+    width: 180px;
+    display: block;
+    height: 10px;
+}
+
+.page_v1_c2,
+.page_v2_c2 {
+    width: 710px;
+}
+
+.itin.itin-price-container.itin_totals_v1 {
+    margin-top: 25px!important;
+}
+
+.page_v1_c2_wide .page_header {
+    margin-top: 25px!important;
+}
+
+.page_v1_c2_wide #activeAgent,
+.page_v2_c2 #activeAgent {
+    display: none;
+}
+
+.customItineraryContainer .title {
+    display: none;
+}
+
+.customItineraryContainer .innerTitle {
+    background: #dde3eb;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.itineraryComponentsList .segment {
+    border-top: 1px solid #dde3eb;
+    overflow: hidden;
+}
+
+.customItineraryContainer .air.segment .flightNumber {
+    margin-left: 0;
+    font-weight: bold;
+}
+
+.customItineraryContainer .air.segment .calendarDate {
+    float: none;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: auto;
+    color: #949393;
+    font-weight: bold;
+}
+
+.customItineraryContainer .air.segment .segmentRight {
+    width: 100%;
+}
+
+.customItineraryContainer .air.segment .station {
+    font-weight: bold;
+}
+
+.customItineraryContainer .air.segment .departure .station {
+    background: transparent url('/images_w/aavacations/nav/default/arrowRight.png') center right no-repeat;
+    padding-right: 23px;
+}
+
+.customItineraryContainer .segment .city {
+    margin-bottom: 10px;
+}
+
+.customItineraryContainer .segment .label {
+    font-weight: bold;
+}
+
+.customItineraryContainer .segment .segment-section,
+.customItineraryContainer .car.segment .subTitle {
+    margin-bottom: 5px;
+}
+
+.customItineraryContainer .segment .date-time {
+    color: #949393;
+    font-weight: bold;
+}
+
+.customItineraryContainer .priceSegment {
+    display: none;
+}
+
+.customItineraryContainer .price.segment {
+    background: #d5e6c4;
+    border-top: 1px solid #93c066;
+    margin: 0 -5px;
+    padding: 10px;
+}
+
+.customItineraryContainer .price.segment .labeledValue * {
+    font-weight: normal;
+}
+
+.customItineraryContainer .price.segment .totalPriceLabeledValue {
+    margin-top: 5px;
+}
+
+.customItineraryContainer .price.segment .totalPriceLabeledValue * {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.customItineraryContainer .room-change-link {
+    margin-right: 10px;
+}
+
+#aadvLogin {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    text-align: right;
+    color: #666;
+    z-index: 9;
+}
+
+.page_v2_top,
+.page_v1_top,
+#HD {
+    padding: 20px 0 10px;
+}
+
+#aadvLogin .welcome {
+    color: #053565;
+    font-weight: bold;
+    font-size: 14px;
+    /*	letter-spacing: -.25px;*/
+    line-height: 16px;
+}
+
+#aadvLogin .value {
+    font-weight: bold;
+    color: #333;
+    font-size: 12px;
+}
+
+#aadvLogin .buttons a {
+    text-indent: -9999px;
+}
+
+#aadvLogin .buttons a.loginAction {
+    background: transparent url('/images_w/aavacations/nav/AADVburn/AAdv-login.gif') top left no-repeat;
+    display: block;
+    width: 256px;
+    height: 40px;
+}
+
+#aadvLogin .buttons a.logoutAction {
+    background: transparent url('/images_w/aavacations/nav/AADVburn/AAdv-logout.png') top left no-repeat;
+    display: block;
+    width: 256px;
+    height: 44px;
+}
+
+#aadvLogin .members {
+    color: #053565;
+    font-size: 12px;
+    text-align: center;
+}
+
+.page_v2_top, .page_v1_top, #HD {
+    position: relative;
+}
+
+#topmenu {
+    position: absolute;
+    right: 250px;
+    top: 40px;
+}
+
+#choose_air_seats span {
+    margin-top: -55px;
+}
+
+.aa-logo img {
+    margin-top: -5px;
+    width: 231px;
+    height: 49px;
+}
+
+#choose_air_seats .submit_link {
+    margin: 0 3px 3px 0;
+    font: bold 12px Arial, Helvetica, Sans-serif;
+    text-decoration: none;
+    color: #013a8a;
+    background-color: #e0e1e1;
+    border: 2px #ccc outset;
+    padding: 4px 8px;
+    box-shadow: 2px 2px 4px -1px rgba(0, 6, 102, 0.695313);
+    border-radius: 6px;
+}
+
+#choose_air_seats .submit_link:hover {
+    color: black;
+    background-color: #bed8fb;
+    border-style: inset;
+}
+
+#itinerary .page_v1_top {
+    margin-top: 0;
+}
+
+.activity_description_long .aa-btn {
+    display: none;
+}
+
+#hotel_filters_top .modify_search {
+    background: #fff;
+}
+
+.modify_search h3 {
+    margin: 5px 0 5px 5px;
+}
+
+.modify_search img {
+    display: block;
+    width: auto;
+    margin: auto auto 5px auto;
+}
+
+.room-change-link {
+    float: right;
+    clear: both;
+}
+
+.page_v1_top {
+    height: 120px;
+}
+
+#bookingStatus {
+    display: none;
+}
+
+.progress {
+    height: 36px;
+    background: url('/images_w/aavacations/nav/default/progress.gif') no-repeat -6px top;
+}
+
+.defaultMX-cobrand .progress {
+    height: 36px;
+    background: url('/images_w/aavacations/nav/default/progress_sp.gif') no-repeat -6px top;
+}
+
+.AADVburnEN-cobrand #menu {
+    left: 160px;
+}
+
+[class*='AADVburn'] #modifySearch {
+    display: none;
+}
+
+[class*='AADVburn'] #hotel_filters_top  #modifySearch {
+    display: block;
+}
+
+#itinerary_buttons .modifySearchToggle {
+    background: #eee;
+    border: 1px solid #999;
+    padding: 5px;
+    margin-bottom: 5px;
+    overflow: visible;
+    height: 15px;
+    cursor: pointer;
+}
+
+
+.activity_error.errorMessage {
+    border: 1px solid #c92e2c;
+    background: #f2dede;
+    color: #d9534f;
+}
+
+#searchCalendar .link-close,
+#searchCalendar .title {
+    display: block !important;
+}
+
+.errorMessage.flashMessage.automation-errorMessage {
+    margin-top: 25px;
+}
+
+/* nav_top - show_hotel_details and landing_page_hotels header*/
+.container-top-header {
+    width: 100%;
+    max-width: 1010px;
+    margin: 0 auto;
+}
+
+.container-top-header a {
+    text-decoration: none;
+}
+
+.maxwidth1400 {
+    max-width: 1400px !important;
+}
+
+[class*="span"] {
+    float: left;
+    margin-left: 2.13178%;
+}
+
+.row, .row-noBreak, [class*="row-"] {
+    margin-left: auto;
+    position: relative;
+}
+
+.header-links a {
+    text-decoration: none;
+}
+
+.header-links a:hover {
+    text-decoration: underline;
+}
+
+.span12 {
+    width: 98.86822%;
+}
+
+.margin0 {
+    margin-left: 0 !important;
+}
+
+#utilityNav {
+    margin-right: -2% !important;
+}
+
+header .menu-utility {
+    float: right;
+}
+
+.menu-utility {
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    font-family: "AmericanSans Light";
+    font-size: 14px;
+    color: #627A88;
+    line-height: 2;
+    overflow: hidden;
+}
+
+[data-behavior~="dropdown"] {
+    position: relative;
+}
+
+[data-behavior~="dropdown-wrapper"] {
+    padding: 0 6px;
+    overflow: hidden;
+    z-index: 110;
+    position: relative;
+    white-space: nowrap;
+}
+
+.js-dropdown-wrapper {
+    text-align: right;
+}
+
+#myAccountDropdown {
+    box-shadow: none !important;
+    margin: 1px 0px;
+    min-width: 165px;
+}
+
+.menu-item-utility [data-behavior~="dropdown-trigger"] {
+    color: #9da6ab;
+}
+
+[data-behavior~="dropdown-trigger"].is-active {
+    background-color: white;
+    box-shadow: 0 0 6px 1px rgba(0,0,0,0.15);
+    color: #4db4fa;
+}
+
+[data-behavior~="dropdown-trigger"] {
+    background-image: none;
+    display: block;
+    padding: 0 9px 2px 9px;
+    position: relative;
+}
+
+#loginName {
+    color: #0078D2;
+    font-family: "AmericanSans";
+    font-size: 16px;
+}
+
+#loggedindropdown {
+    display: block;
+    width: 12px;
+    font-size: 12px !important;
+    color: #0047D2;
+    background-image: url(https://www.aavacations.com/images/icons/icon-up.png);
+    display: inline-block;
+    height: 7px;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}
+
+[data-behavior~="dropdown-panel"] {
+    display: none;
+    min-width: 252px;
+    background-color: white;
+    box-shadow: 0 0 6px 1px rgba(0,0,0,0.15);
+    left: 6px;
+    padding: 12px;
+    position: absolute;
+    z-index: 100;
+}
+
+.account-panel {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px rgb(166, 166, 166) !important;
+    color: #36495a;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+#loginInfo {
+    color: #36495A;
+    font-family: "AmericanSans";
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.left {
+    float: left!important;
+}
+
+.left a {
+    line-height: 23px;
+    font-size: 14px;
+    font-family: AmericanSans;
+}
+
+.call-to-action {
+    white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+    #loggedindropdown {
+        display: none;
+    }
+}
+
+.menu-item-utility {
+    display: block;
+    float: left;
+    margin-left: 3px;
+    font-size: 0.688em;
+    color: #36495A;
+}
+
+.menu-item-utility>a, .menu-item-utility>button.call-to-action {
+    margin-top: 2px;
+    padding: 2px 6px;
+    color: #627a88;
+    display: inline;
+}
+
+.util-nav-item-a {
+    font-family: "AmericanSans Light";
+    font-size: 14px;
+    color: #627a88;
+}
+
+.hidden-accessible {
+    border: 0 none;
+    clip: rect(0px,0px,0px,0px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.span3 {
+    width: 22.86822%;
+}
+
+.span9 {
+    width: 72.86822%;
+}
+
+.span2 {
+    width: 14.53488%;
+}
+
+.nav-item-a {
+    font-family: "American Regular Webfont";
+    font-size: 18px;
+    color: #36495A !important;
+}
+
+.align-with-img {
+    margin-top: 1%;
+}
+
+#loginButtonAdv {
+    background-color: #0078D2;
+    border-radius: 2px;
+    font-family: "American Regular Webfont", Arial Regulare, arial, sans-serif;
+    font-size: 14px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 0.4px;
+    float: right;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 1;
+    margin: -.5rem 0 1.25em;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    padding-top: 0.75em;
+    padding-right: 1.5em;
+    padding-bottom: 0.8125em;
+    padding-left: 1.5em;
+    font-size: 1em;
+    background-color: #0078d2;
+    border: 1px solid #005b9f;
+    color: #fff;
+}
+
+.visible-tablet {
+    display: none !important;
+}
+
+.span7 {
+    width: 56.20155%;
+}
+
+.is-hidden, .aa-display-none {
+    display: none;
+}
+
+#loginButtonAdvPhone {
+    font-size: 14px;
+}
+
+#aadvLogoutDiv {
+    font-size: 11px;
+    line-height: 1.2;
+    position: absolute;
+    right: 6.5em;
+    margin: 10px 0 25px;
+    margin-top: -14px !important;
+    top: 40%;
+}
+
+.hideAadvLogoutDiv {
+    display: none;
+}
+
+.pageslide-button[data-position*="right"] {
+    float: right;
+    margin-right: 0;
+}
+
+.pageslide-button {
+    float: left;
+    width: 40px;
+    padding: 8px 7px 3px;
+    margin-right: 10px;
+    background-color: white;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#navigation {
+    background-color: #0078D2;
+    z-index: 1;
+}
+
+#navigation hr {
+    border: 1px solid #d0dae0;
+    border-width: 1px 0 0 0;
+    height: 1px;
+    margin: 30px 0;
+}
+
+#navigation ul li a, #navigation ul li button.call-to-action {
+    padding: 5px 18px 18px;
+    position: absolute;
+    top: -49px;
+    font-size: 24px;
+    font-size: 1.5em;
+    font-family: Arial Regulare, arial, sans-serif,Helvetica,Arial,sans-serif;
+    line-height: 25px;
+}
+
+.menu-item-utility>a, .menu-item-utility>button.call-to-action {
+    margin-top: 2px;
+    padding: 2px 6px;
+    color: #627a88;
+    display: inline;
+}
+
+#navigation #menu {
+    position: relative;
+}
+
+#navigation ul li span {
+    line-height: 27px;
+    font-size: 1.2rem !important;
+    font-family: Arial Regulare, arial, sans-serif !important;
+    color: #FFFFFF;
+}
+
+#navigation ul li a#nav-four-expander, #navigation ul li button#nav-four-expander.call-to-action {
+    left: 74%;
+}
+
+#navigation ul li a#nav-one-expander, #navigation ul li button#nav-one-expander.call-to-action {
+    left: 32%;
+}
+
+#navigation #close {
+    clear: both;
+    cursor: pointer;
+    display: none;
+    font-family: monospace;
+    padding: 0 0 7px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#navigation #close>span {
+    display: block;
+    color: #627a88;
+    border-color: transparent transparent #627a88 transparent;
+    border-style: solid;
+    border-width: 7px;
+    height: 0;
+    margin: 5px auto 7px;
+    width: 0;
+}
+
+.row:after, .row-noBreak:after, [class*="row-"]:after {
+    clear: both;
+}
+
+.hrule {
+    background: rgba(0, 0, 0, 0) url(https://www.aavacations.com/img/shadow-down.png) no-repeat scroll 50% top / 100% 5px;
+    border-top: 1px dotted transparent;
+    padding-top: 5px;
+}
+
+.row:before, .row:after, .row-noBreak:before, .row-noBreak:after, [class*="row-"]:before, [class*="row-"]:after {
+    content: "";
+    display: table;
+}
+
+.row-noBreak:after {
+    clear: both;
+}
+
+.CorpDiscTen-cobrand .activity_policies_link .helpLinkPopup,
+.default-cobrand .activity_policies_link .helpLinkPopup,
+.TrvlAgtSite-cobrand .activity_policies_link .helpLinkPopup {
+    display: none;
+}
+
+@media only screen and (min-width: 58.75em) {
+    .row {
+        padding: 0 3px;
+    }
+}
+
+@media (min-width: 992px) {
+    #navigation {
+        display: none;
+    }
+}
+
+#header-message {
+    position: relative;
+    font-size: 12px;
+    border: 2px solid #0080c0;
+    background-color: #fff;
+    color: #fff;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+#header-message p a {
+    color: #90d7e7;
+}
+
+#header-message p {
+    display: block;
+    margin: auto;
+    padding: 5px;
+    position: relative;
+    color: #000;
+    width: 900px;
+}
+
+#header-message a.close {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    display: block;
+    height: 20px;
+    width: 20px;
+    font-weight: bold;
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+#booking div.page_v1_top {
+    padding-bottom: 20px;
+}
+
+
+
+/*----------*/

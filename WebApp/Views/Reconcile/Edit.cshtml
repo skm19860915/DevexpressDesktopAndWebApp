@@ -1,0 +1,93 @@
+﻿@model BlitzerCore.Models.UI.UIBooking
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+
+<div class="content-container">
+    <a href="/Trip/Details/@Model.TripID"><h1>@Model.Trip.Name</h1></a>
+    <h4>Edit - Booking</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="BookingID" />
+                <input type="hidden" asp-for="TripID" />
+                @Html.HiddenFor(m => m.returnUrl)
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <div><a href="/Company/Edit/@Model.TourOperatorID">Tour Operator</a></div>
+                            <div>
+                                <select class="form-control" asp-for="@Model.TourOperatorID" asp-items="ViewBag.TourOperators">
+                                    <option>N/A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div><a href="/Company/Edit/@Model.SupplierId">Supplier</a></div>
+                            <div>
+                                <select class="form-control" asp-for="@Model.SupplierId" asp-items="ViewBag.Suppliers">
+                                    <option>N/A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BookingNumber" class="control-label"></label>
+                            <input asp-for="BookingNumber" class="form-control" />
+                            <span asp-validation-for="BookingNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CreatedBy" class="control-label"></label>
+                            <div class="form-control" readonly="@(true)">@Model.CreatedBy @Model.CreatedOn</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label asp-for="GrossCommission" class="control-label"></label>
+                                <input asp-for="GrossCommission" class="form-control" />
+                                <span asp-validation-for="GrossCommission" readonly="@(true)" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-6">
+                                <label asp-for="Received" class="control-label"></label>
+                                <input asp-for="Received" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Amount" class="control-label"></label>
+                            <input asp-for="Amount" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Payment Date</label>
+                            <input asp-for="PaymentDate" class="form-control" />
+                            <span asp-validation-for="PaymentDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="UpdatedBy" class="control-label"></label>
+                            <div class="form-control" readonly="@(true)">@Model.UpdatedBy @Model.UpdatedOn</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 offset-2">
+                    <label asp-for="PaymentMemo" class="control-label"></label>
+                    <textarea asp-for="PaymentMemo" class="form-control" rows="5"></textarea>
+
+                </div>
+                <div class="col-8 offset-2">
+                    <label asp-for="Memo" class="control-label"></label>
+                    <textarea asp-for="Memo" class="form-control" rows="5"></textarea>
+
+                </div>
+                <div class="btn-clearence">
+                    <input type="submit" value="Save" class="btn btn-command" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

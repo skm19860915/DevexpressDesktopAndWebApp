@@ -1,0 +1,47 @@
+﻿@model UIRegister
+
+@{
+    ViewData["Title"] = "Activate";
+    Layout = "/Views/Shared/_BaseLayout.cshtml";
+
+}
+
+<div class="ActivateCl">
+    <div class="row" style="padding-top: 30px;padding-bottom:30px">
+        <div class="offset-2 offset-md-4 col-8 col-md-4">
+            <h1>Activate your account</h1>
+            <section>
+                <form asp-action="Activate">
+                    @Html.HiddenFor(x => x.Id)
+                    <h4>This gives you access to your portal</h4>
+                    <hr />
+                    @if (ViewBag.ErrorMsg != null && ViewBag.ErrorMsg != "")
+                    {
+                        <div class="ErrorMsgHdr">Error</div>
+                        <div class="ErrorMsgTxt">@ViewBag.ErrorMsg</div>
+                    }
+
+                    <div style="font-weight:600">Requirements:</div>
+                    <div class="ActivateTxt">8 Characters long</div>
+                    <div class="ActivateTxt">1 Special Character</div>
+                    <div class="ActivateTxt">1 Numberic Character</div>
+                    <div class="ActivateTxt">1 Uppercase Character</div>
+                    <br />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input asp-for="NewPassword" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Confirmation</label>
+                        <input asp-for="ConfirmationPassword" class="form-control" />
+                    </div>
+                    <div class="btn-clearence">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+

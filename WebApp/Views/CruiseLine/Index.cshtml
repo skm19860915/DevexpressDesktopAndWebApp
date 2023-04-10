@@ -1,0 +1,45 @@
+﻿@model List<BlitzerCore.Models.UI.UICruiseLine>
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="content-container">
+    <h1>Cruise Lines</h1>
+
+    <p>
+        <a asp-action="Create" asp-controller="Company">Create New</a>
+    </p>
+    <table class="DataTable bans-3d" >
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Stars
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Cruises" asp-route-id="@item.Id">Cruises</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

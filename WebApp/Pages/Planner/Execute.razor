@@ -1,0 +1,146 @@
+﻿@page "/Trip/ModifyUsers/{TripId}"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Mvc.Rendering;
+
+@inject IBlazorService BlazorSrv
+@inject HttpClient Http
+
+@code {
+    private List<UIUserStory> OpenReqs { get; set; }
+    private List<UIUserStory> UnderReview { get; set; }
+    private List<SelectListItem> Sprints { get; set; }
+    private List<UISprint> UISprints { get; set; }
+    private string lLastFeature { get; set; }
+    private string lLastSprint { get; set; }
+    protected override void OnInitialized()
+    {
+        Logger.LogInfo($"ModifyUsers::OnInitializedAsync");
+        OpenReqs = BlazorSrv.GetOpenRequirements();
+        UnderReview = BlazorSrv.GetUnderReViewRequirements();
+        Sprints = BlazorSrv.GetActiveSprintsList();
+        UISprints = BlazorSrv.GetActiveSprints();
+    }
+}
+
+<div class="row" style="padding-top:30px;padding-bottom:30px">
+    <div class="col-7 offset-1">
+        <div class="">
+            <div class="col-8 offset-2 PlannerHeader">Requirements Planner</div>
+            <table>
+                <tr>
+                    <th class="SprintNameCol">Sprint</th>
+                    <th class="ReqNameCol">Features</th>
+                    <th class="PriorityCol">Priority</th>
+                    <th class="DefectCol">Defects</th>
+                </tr>
+
+                @foreach (var lReq in OpenReqs)
+                {
+                    @if (lLastFeature != lReq.FeatatureName)
+                    {
+                        <tr>
+                            <td></td>
+                            <td class="FeatureName"><a href="/Feature/Edit/@lReq.FeatureId">@lReq.FeatatureName</a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    }
+                    <tr>
+                        <td class="SprintNameCol">
+                            <select class="form-control" @bind="lReq.SprintID">
+                                <option selected>Not Assigned</option>
+                                @foreach (var llSprint in UISprints)
+                                {
+                                    <option value="@llSprint.Id">@llSprint.Name</option>
+                                }
+                            </select>
+                        </td>
+                        <td class="ReqName"><a href="/UserStory/Edit/@lReq.Id">@lReq.Name</a></td>
+                        <td class="PriorityCol">@lReq.Priority</td>
+                        <td>@lReq.Defects</td>
+                    </tr>
+                    lLastFeature = lReq.FeatatureName;
+                }
+            </table>
+        </div>
+
+    </div>
+    <div class="col-4">
+        <h2>Sprints</h2>
+        <table>
+            <tr>
+                <th class="ReqNameCol">Name</th>
+                <th class="DefectCol">Dates</th>
+                <th>LOE</th>
+            </tr>
+
+            @foreach (var lSprint in UISprints)
+            {
+                @if (lLastSprint != lSprint.Name)
+                {
+                    <tr>
+                        <td class="SprintName">
+                            <span style="float:left">
+                                <a href="/Sprint/Edit/@lSprint.Id">@lSprint.Name [@lSprint.UserStories.Sum(x => x.LOE)]</a>
+                            </span>
+                            <span style="float:right">
+                                @lSprint.StartStr - @lSprint.EndStr
+                            </span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                }
+                @foreach (var lUserStory in lSprint.UserStories.Where(x=>x.Status != UserStoryStatus.ReadyForTest))
+                {
+                    <tr>
+                        <td class="ReqName"><a href="/UserStory/Edit/@lUserStory.Id">@lUserStory.Name</a></td>
+                        <td>@lUserStory.LOE</td>
+                        <td></td>
+                    </tr>
+                }
+            }
+        </table>
+        @{
+            lLastFeature = "";
+        }
+
+        <div class="PlannerHeader" style="padding-top:30px;">Pending Review</div>
+        <table>
+            <tr>
+                <th class="ReqNameCol">Feature</th>
+                <th class="PriorityCol">Priority</th>
+                <th class="DefectCol">Defects</th>
+            </tr>
+
+            @foreach (var lReq in UnderReview)
+            {
+                @if (lLastFeature != lReq.FeatatureName)
+                {
+                    <tr>
+                        <td class="FeatureName">
+                            <span style="float:left">
+                                <a href="/Feature/Edit/@lReq.FeatureId">@lReq.FeatatureName</a>
+                            </span>
+                            <span style="float:right">
+                                @lReq.Owner.Name
+                            </span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                }
+                <tr>
+                    <td class="ReqName"><a href="/UserStory/Edit/@lReq.Id">@lReq.Name</a></td>
+                    <td style="text-align:center">@lReq.Priority</td>
+                    <td style="text-align:center">@lReq.Defects</td>
+                </tr>
+                lLastFeature = lReq.FeatatureName;
+            }
+        </table>
+    </div>
+</div>

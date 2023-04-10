@@ -1,0 +1,36 @@
+﻿@model KanbanRequirementModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div class="row" style="padding-bottom:50px;">
+    <h1 class="col-9" ><a style="font-size:48px" href="/Feature/Kanban/@Model.Feature.SystemId">@Model.Feature.Name</a> Requirements</h1>
+    <div>
+        <a href="/UserStory/Create?aFeatureId=@Model.Feature.Id">Create</a>
+    </div>
+</div>
+<div id="kanban">
+    @(Html.DevExtreme().ScrollView()
+        .ElementAttr("class", "scrollable-board")
+        .Direction(ScrollDirection.Horizontal)
+        .ShowScrollbar(ShowScrollbarMode.Always)
+        .Content(
+            Html.DevExtreme().Sortable()
+                .ElementAttr("class", "sortable-lists")
+                .ItemOrientation(Orientation.Horizontal)
+                .MoveItemOnDrop(true)
+                .Handle(".list-title")
+                .Content(@<text>
+                    @foreach (var status in Model.Statuses) {
+                        var listModel = new KanbanRequirementListModel() {
+                            Feature = Model.Feature,
+                            Status = status,
+                            UserStories = Model.UserStories.Where(t => t.Status == status),
+                            Employees = Model.Employees
+                        };
+                        @await Html.PartialAsync("_Kanban", listModel)
+                    }
+                </text>).ToString()
+        )
+    )
+</div>

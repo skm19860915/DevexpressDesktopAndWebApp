@@ -1,0 +1,54 @@
+﻿@model List<UICountry>
+@using DevExtreme.AspNet.Mvc
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<h1 style="text-align:center">Let us show you the most amazing sights.</h1>
+<h3 style="text-align:center">Pick a Location!!</h3>
+<div class="WorldMap">
+    <a href="/Country/Details/21"><img id="Germany" class="BzMarker" /></a>
+    <a href="/Country/Details/18"><img id="Mexico" class="BzMarker"  /></a>
+    <a href="/Country/Details/23"><img id="Russia" class="BzMarker" /></a>
+    <a href="/Country/Details/25">
+        <img id="Croatia" class="BzMarker"  />
+    </a>
+    <a href="/Country/Details/30">
+        <img id="CostaRica" class="BzMarker" />
+    </a>
+    <a href="/Country/Details/31">
+        <img id="Belize" class="BzMarker" />
+    </a>
+    <a href="/Country/Details/35">
+        <img id="Peru" class="BzMarker" />
+    </a>
+    <a href="/Country/Details/36">
+        <img id="Chile" class="BzMarker"  />
+    </a>
+    <a href="/Country/Details/37">
+        <img id="Argentina" class="BzMarker" />
+    </a>
+</div>
+<div class="row CountryWrapper" >
+    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 offset-xl-2 offset-lg-0 offset-sm-0">
+        @foreach (var lUICountry in Model)
+        {
+            <div class="row" style="padding-bottom:30px;">
+                <div class="col-xl-3 col-sm-12" style="padding-top:0px;">
+                    <a href="@lUICountry.MyUrl">
+                        @if (lUICountry.HeaderImage.Media.Size1600x1200 != null)
+                        {
+                            <img src="@lUICountry.HeaderImage.Media.Size1600x1200.Location" class="CountryPicture" />
+                        }
+                    </a>
+                </div>
+                <div class="col-xl-9 col-sm-12">
+                    <a href="@lUICountry.MyUrl"><h3>@lUICountry.PageTitle</h3></a>
+                    <div>@lUICountry.CenterContent.Summary</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,156 @@
+﻿@model BlitzerCore.Models.UI.UIResortPage
+
+@{
+    ViewBag.Title = Model.PageTitle + " Resort";
+    Layout = "/Views/Shared/_BaseLayout.cshtml";
+    int lCnt = 0;
+}
+
+<style type="text/css">
+    @@media (min-width: 560px) {
+        .ResortVideo {
+            width: 560px;
+            height: 460px;
+        }
+    }
+</style>
+
+<style type="text/css">
+    @@media (min-width: 768px) {
+        .ResortVideo {
+            width: 560px;
+            height: 460px;
+        }
+    }
+</style>
+
+<style type="text/css">
+    @@media (min-width: 1400px) {
+        .ResortLeftPanel {
+            display: inline;
+        }
+
+        .ResortVideo {
+            width: 960px;
+            height: 540px;
+        }
+        /*        .ResortRightPanel {
+            margin-bottom: 50px !important;
+            font-size: 20px;
+        }*/
+        .ResortPromoBanner {
+            display: inline;
+        }
+    }
+</style>
+
+<div id="wrapper">
+    <div id="page_caption" class="hasbg parallax notransparent" style="height: 700px" data-image="@Model.HeaderImage.Media.Size1600x1200.Location" data-width="1600" data-height="1200">
+        <div class="page_title_wrapper">
+            <div class="tour_country_subheader">@Model.HeaderImage.Caption</div>
+            <br class="clear">
+            <h1>@Model.HeaderImage.BlockTitle</h1>
+        </div>
+        <div class="parallax_overlay_header"></div>
+    </div>
+
+    <!-- Begin content -->
+    <div id="" class="">
+        <div class="inner DetailInnerWrapper">
+
+            <!-- Begin Main content -->
+            <div class="inner_wrapper">
+                <div class="sidebar_content full_width pt60">
+
+                    <div class="row">
+                        <!-- Left Panel -->
+                        <div class="col-2 ResortLeftPanel">
+                            <h3 class="PanelHeaders">You May also like these</h3>
+                            @if (Model.LeftPanel != null)
+                            {
+                                @foreach (var lComp in Model.LeftPanel.Comparables)
+                                {
+                                    @if (lComp.CompPage != null && lComp.CompPage.MainImage != null && lComp.CompPage.MainImage.Media != null && lComp.CompPage.MainImage.Media.Size560x460.Location != null)
+                                    {
+                                        <div class="one_third gallery3 filterable " data-id="post-@lCnt" style="margin-bottom:50px;font-size:20px">
+                                            <a href="@lComp.CompPage.MyUrl">
+                                                <div class="fancy-gallery">
+                                                    <img src="@lComp.CompPage.MainImage.Media.Size560x460.Location" />
+                                                </div>
+                                                <div class="thumb_content" style="color:white">
+                                                    @lComp.CompPage.PageTitle
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                    lCnt++;
+                                }
+                            }
+                        </div>
+                        <!-- Center Panel -->
+                        <div class="col-lg-8 col-sm-10">
+                            @await Html.PartialAsync("_CenterContent")
+                        </div>
+                        <!-- Right Panel -->
+                        <div class="col-lg-2 col-sm-12">
+                            <h3 class="PanelHeaders">Galleries</h3>
+                            @if (Model.RightPanel != null)
+                            {
+                                int lIndex = 0;
+                                @foreach (var lTile in Model.RightPanel.Tiles)
+                                {
+                                    @if (lTile.Media != null && lTile.Media.ThumbNail != null && lTile.Media.ThumbNail.Location != null)
+                                    {
+                                        <div class="one_third gallery3 filterable " style="margin-bottom:50px;font-size:20px" data-id="post-@lCnt">
+
+                                            <a href="@lTile.TargetPageUrl">
+                                                <div class="fancy-gallery">
+                                                    <img src="@lTile.Media.ThumbNail.Location" />
+                                                </div>
+                                                <div class="thumb_content" style="color:white">
+                                                    <div>@Model.Categories[lIndex++].Name</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="ResortRightPanel">
+                                            <a href="@lTile.TargetPageUrl"><div>@Model.Categories[lIndex++].Name</div></a>
+                                        </div>
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="ResortPromoBanner">
+                        <div id="portfolio_filter_wrapper" class="three_cols gallery tour_single fullwidth section content clearfix">
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/HotAirBallons.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/Adventures.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/Ecuador.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="element portfolio3filter_wrapper">
+                                <div class="one_third gallery3 filterable gallery_type animated1">
+                                    <img src="/images/1600x1200/Turtle.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End main content -->
+
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿        h2
+        {
+        color : blue;
+        text-align : center;
+        }
+        h3
+        {
+        color : blue;
+        text-align : center;
+        }
+        .PipelineHeader {
+        color: darkblue;
+        font-size: 22px;
+        }
+
+        .PipelineTable
+        {
+        padding-bottom:20px;
+        margin:auto;
+        width:600px;
+        }
+
+        .OppHeader {
+        color: darkblue;
+        font-size: 18px;
+        padding-left:100px;
+        }
+
+        .OppLine {
+        color: darkblue;
+        font-size: 18px;
+        padding-left:150px;
+        }
+
+        .BlockHeader {
+        color: red;
+        text-align:center;
+        font-size: 25px;
+        }
+        .PipelineStage {
+        color: darkblue;
+        }
+
+        .PipelineDueDate {
+        color: red;
+        }

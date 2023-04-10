@@ -1,0 +1,107 @@
+﻿@model BlitzerCore.Models.UI.UIInvoice
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<style type="text/css">
+    @@media (min-width:300px) {
+        Body {
+            font-size: .90rem;
+        }
+    }
+</style>
+
+<div class="col-lg-8 offset-lg-2 col-12">
+    <div id="AgentHeader" class="col-lg-3 offset-lg-9 col-6 offset-6">
+        <div>@Model.Trip.Agent.Name</div>
+        <div><a href="@Model.Trip.Agent.PrimaryEmail">@Model.Trip.Agent.PrimaryEmail</a></div>
+        <div>@Model.Trip.Agent.PrimaryPhone</div>
+    </div>
+    <hr class="LineBreak" />
+    <div class="TopHeader">Invoice @Model.Id</div>
+    <div>
+        <div>@Model.Client.Name</div>
+        <div>@Model.Client.Address1</div>
+        @if (@Model.Client.City != null)
+        {
+        <div>@Model.Client.City, @Model.Client.State @Model.Client.ZipCode</div>
+        }
+        <a href="@Model.Client.PrimaryEmail">@Model.Client.PrimaryEmail</a>
+        <div>@Model.Client.PrimaryPhone</div>
+    </div>
+    <hr class="LineBreak" />
+
+    <div id="TripBody" style="padding-bottom:30px;">
+        <div style="font-size:24px;font-weight:600;padding-bottom:30px">Your Trip @Model.Trip.Name</div>
+        <div><span class="PopText">Start Date:</span> @Model.Trip.OutBoundDate</div>
+        <div><span class="PopText">End Date:</span> @Model.Trip.InBoundDate</div>
+    </div>
+
+    <div>
+        <div class="TopHeader" style="text-align:center" >Bookings</div>
+        <div>
+            <div class="row PaymentBackGround">
+                <div class="col-3">Tour Operator</div>
+                <div class="col-4">Supplier</div>
+                <div class="col-2 ">Date</div>
+                <div class="col-3 col-lg-2" style="text-align:center">Cost</div>
+            </div>
+
+            @foreach (var lBooking in Model.Trip.Bookings)
+            {
+                @if (lBooking.BookingNumber != Model.Trip.Bookings[0].BookingNumber)
+                {
+                    <hr class="InvoiceBreak" />
+                }
+                <div class="row" style="margin-bottom:30px;">
+                    <div class="col-3">@lBooking.TourOperatorName (@lBooking.BookingNumber)</div>
+                    <div class="col-4">@lBooking.Supplier</div>
+                    <div class="col-2">@lBooking.FinalPayment</div>
+                    <div class="col-3 col-lg-2" style="text-align:right">@lBooking.Amount</div>
+                    <div class="BalCol"></div>
+                </div>
+
+                if (lBooking.Payments.Any())
+                {
+                    <hr />
+                    <div class="row" id="PaymentLine">PAYMENTS applied toward booking @lBooking.BookingNumber</div>
+                }
+
+                <div class="row PaymentBackGround">
+                    <div class="col-4">Payer</div>
+                    <div class="col-2" style="text-align:right">Date</div>
+                    <div class="col-5 offset-1">Amount</div>
+                    <div class="col-0"></div>
+                </div>
+                foreach (var lPayment in lBooking.Payments)
+                {
+                    <div class="row">
+                        <div class="col-3">@lPayment.Payee</div>
+                        <div class="col-3" style="text-align:right">@lPayment.PaymentDateStr</div>
+                        <div class="col-5 offset-1" style="color:red">(@lPayment.Amount)</div>
+                        <div class="BalCol"></div>
+                    </div>
+                }
+
+                if (lBooking.Payments.Any())
+                {
+                    <hr />
+                    <hr />
+                    <div class="row">
+                        <div class="col-3">SubTotals</div>
+                        <div class="offset-lg-3 col-lg-2 offset-3 col-3" style="padding-right:0px;text-align:right;color:red">(@lBooking.Paid)</div>
+                        <div class="col-3" style="text-align:right">@lBooking.Amount</div>
+                    </div>
+                }
+                <div><a href="/Client/Pay/@lBooking.BookingID">Make Payment</a></div>
+            }
+            <hr class="TotalBreak" />
+            <div class="row" style="background-color:yellow;margin-bottom:30px">
+                <div class="col-5">BALANCE</div>
+                <div class="col-3 offset-4 BalCol">@Model.Trip.Balance</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@model BlitzerCore.Models.UI.UIBooking
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BookingID" />
+            @Html.HiddenFor(x => x.TripID)
+            @Html.HiddenFor(m => m.returnUrl)
+
+            <div class="form-group">
+                <div>Tour Operator<span style="float:right"><a style="float:left" href="/Company/Create">Create</a></span></div>
+                <div>
+                    <select class="form-control" asp-for="@Model.TourOperatorID" asp-items="ViewBag.TourOperators">
+                        <option>N/A</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>Supplier<span style="float:right"><a style="float:left" href="/Company/Create">Create</a></span></div>
+                <div>
+                    <select class="form-control" asp-for="@Model.SupplierId" asp-items="ViewBag.Suppliers">
+                        <option>N/A</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookingNumber" class="control-label"></label>
+                <input asp-for="BookingNumber" class="form-control" />
+                <span asp-validation-for="BookingNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalPayment" class="control-label"></label>
+                <input asp-for="FinalPayment" class="form-control" />
+                <span asp-validation-for="FinalPayment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

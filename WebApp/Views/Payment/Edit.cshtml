@@ -1,0 +1,104 @@
+﻿@model BlitzerCore.Models.UI.UIPayment
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="content-container">
+    <h1>Edit</h1>
+
+    <h4>Payment</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @Html.HiddenFor(m => m.PaymentId)
+                @Html.HiddenFor(m => m.BookingId)
+                <div class="row col-12">
+                    <div class="form-group col-8">
+                        <div class="col-4 offset-4" style="padding-bottom:30px">
+                            <label>Payee</label>
+                            <div class="">
+                                <select asp-for="@Model.PayeeId" asp-items="ViewBag.Travelers" class="form-control"></select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>ExistingCredit Card</label>
+                                    <div class="">
+                                        <select asp-for="@Model.CardID" asp-items="ViewBag.Cards" class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Amount" class="control-label"></label>
+                                    <input asp-for="Amount" class="form-control" />
+                                    <span asp-validation-for="Amount" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Confirmation" class="control-label"></label>
+                                    <input asp-for="Confirmation" class="form-control" />
+                                    <span asp-validation-for="Confirmation" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-6" style="background-color:pink">
+                                <div class="form-group">
+                                    <label class="control-label">New Credit Card</label>
+                                    <input asp-for="CreditCard" class="form-control" />
+                                    <span asp-validation-for="CreditCard" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Expiration" class="control-label"></label>
+                                    <input asp-for="Expiration" class="form-control" />
+                                    <span asp-validation-for="Expiration" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Code" class="control-label"></label>
+                                    <input asp-for="Code" class="form-control" />
+                                    <span asp-validation-for="Code" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label asp-for="PaymentDate" class="control-label"></label>
+                                <input asp-for="PaymentDate" class="form-control" />
+                                <span asp-validation-for="PaymentDate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-6">
+                                <label class="control-label">Status</label>
+                                <div><select class="form-control" asp-for="Status" asp-items="@Html.GetEnumSelectList<PaymentStatus>()"></select></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Memo" class="control-label"></label>
+                            <textarea asp-for="Memo" class="form-control" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group offset-3 col-3">
+                        <label asp-for="CreatedBy" class="control-label"></label>
+                        <div class="form-control" readonly="@(true)">@Model.CreatedBy @Model.CreatedOn</div>
+                    </div>
+                    <div class="form-group col-3">
+                        <label asp-for="UpdatedBy" class="control-label"></label>
+                        <div class="form-control" readonly="@(true)">@Model.UpdatedBy @Model.UpdatedOn</div>
+                    </div>
+                </div>
+                <div class="form-group offset-5">
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

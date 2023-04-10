@@ -1,0 +1,38 @@
+﻿@model BlitzerCore.Models.UI.Media
+
+<div class="row">
+    @if (Model != null)
+    {
+    <div class="col-10">
+        <div class="clear">
+            @if (Model.ThumbNail != null)
+            {
+                <img id="BlockImg" src="@Model.ThumbNail.Location" alt="" height="200">
+            }
+            else if (Model.Size560x460 != null)
+            {
+                <img id="BlockImg" src="@Model.Size560x460.Location" alt="" height="200">
+            }
+            else if (Model.Size1024x640 != null)
+            {
+                <img id="BlockImg" src="@Model.Size1024x640.Location" alt="" height="200">
+            }
+            else if (Model.Size1600x1200 != null)
+            {
+                <img id="BlockImg" src="@Model.Size1600x1200.Location" alt="" height="200">
+            }
+            else if (Model.Size1920x1080 != null)
+            {
+                <img id="BlockImg" src="@Model.Size1920x1080.Location" alt="" height="200">
+            }
+        </div>
+    </div>
+    <div>
+        @Model.Title
+    </div>
+    } else
+    {
+        <div>There is no Media!</div>
+    }
+</div>
+

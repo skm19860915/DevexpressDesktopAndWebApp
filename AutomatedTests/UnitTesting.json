@@ -1,0 +1,17 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+  },
+  "ConnectionString": {
+    "TEST": "server=.\\SQLEXPRESS;Initial Catalog=QA; Integrated Security=True;multipleactiveresultsets=True;",
+  },
+  "appSettings": {
+    "Email": "",
+    "Password": "",
+    "SmtpAddress": "",
+    "SmtpPort": "587",
+    "AppURL": "www.Eze2Travel.com",
+    "AppName": "Eze2Travel"
+  }
+}

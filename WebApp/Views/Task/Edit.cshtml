@@ -1,0 +1,249 @@
+﻿@model BlitzerCore.Models.UI.UITask;
+
+@{
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+    string Bug = "";
+    if (Model.TaskType == TaskTypes.ISSUE)
+    {
+        Bug = "<span style=\"color:Red\">BUG -</span>";
+    }
+    const string DISPLAYBLOCK = "display:block";
+    var lResultsActive = "";
+    var lResultsBlock = "";
+    var lCommentsActive = " active";
+    var lCommentsBlock = DISPLAYBLOCK;
+    if (Model.Status == TaskStatusTypes.REVIEW)
+    {
+        lResultsActive = "active";
+        lCommentsActive = "";
+        lResultsBlock = DISPLAYBLOCK;
+        lCommentsBlock = "";
+    }
+}
+<div>
+    @if ( Model.Id == 0 )
+    {
+    <h1 class="title-header">Create Task</h1>
+    } else {
+    <h1 class="title-header">Edit Task</h1>
+    }
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Task">Edit Task</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+
+
+
+<div class="content-container">
+    <div class="content-head">
+        <div class="TableBox bans-3d offset-1" style="margin-bottom:20px">
+            <div class="col-sm-12">
+                <div class="row cols-12 mx-0" >
+                    <div class="row mx-0 f-26 font-weight-bold">@Html.Raw(Bug)  @Model.Name</div>
+                    @if (Model.TargetCompanyId != null)
+                    {
+                        <div class="pl-4 f-26 font-weight-bold text-danger">Target</div>
+                        <div class="pl-4 f-26" ><a  class="f-26" href="/Company/Details/@Model.TargetCompanyId">@Model.TargetCompanyName</a></div>
+                    }
+                    else if (Model.OpportunityID != null)
+                    {
+                        <div class="pl-4 f-26 text-danger">Target</div>
+                        if (Model.IsTrip == false)
+                        {
+                            <div class="pl-3 f-26"><a  class="f-26" href="/Opportunity/View/@Model.OpportunityID">@Model.OpportunityName</a></div>
+                        }
+                        else
+                        {
+                            <div  class="pl-3 f-26"><a class="f-26" href="/Trip/Details/@Model.OpportunityID">@Model.OpportunityName</a></div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="TargetCompanyId" />
+            <input type="hidden" asp-for="TargetContactId" />
+            @Html.HiddenFor(m => m.returnUrl)
+
+            <div>
+                <div class="row col-10 offset-1 px-0">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @if (Model.IsTrip == null)
+                            {
+                                <a href="/Opportunity/Edit/@Model.OpportunityID"><label class="control-label">Opportunity/Trip</label></a>
+                            }
+                            else if (Model.IsTrip == true)
+                            {
+                                <a href="/Opportunity/Edit/@Model.OpportunityID">
+                                    <label class="control-label">Trip</label>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="/Opportunity/Edit/@Model.OpportunityID">
+                                    <label class="control-label">Opportunity</label>
+                                </a>
+                            }
+                            <div>
+                                <select class="form-control" asp-for="OpportunityID" asp-items="@ViewBag.Opps">
+                                    <option selected>N/A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label asp-for="Deadline" class="control-label"></label>
+                                <input asp-for="Deadline" class="form-control" />
+                                <span asp-validation-for="Deadline" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-6">
+                                <label asp-for="HoldUntil" class="control-label"></label>
+                                <input asp-for="HoldUntil" class="form-control" />
+                                <span asp-validation-for="HoldUntil" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Type</label>
+                            <div><select class="form-control" asp-for="TaskType" asp-items="@Html.GetEnumSelectList<TaskTypes>()"></select></div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label class="control-label">Created by</label>
+                                <div><input class="form-control" asp-for="CreatedById" /></div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label class="control-label">Created</label>
+                                <div><input class="form-control" asp-for="CreatedOn" /></div>
+                            </div>
+                        </div>
+                        @if ( Model.OpportunityID == null || Model.OpportunityID == 0 ) { 
+                        <div class="form-group">
+                            <label class="control-label"><a href="/UserStory/Edit/@Model.UserStoryId">Requirement</a></label>
+                            <div>
+                                <select class="form-control" asp-for="UserStoryId" asp-items="@ViewBag.UserStories">
+                                    <option selected>Not Assigned</option>
+                                </select>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label class="control-label">Priority Type</label>
+                                <div><select class="form-control" asp-for="PriorityType" asp-items="@Html.GetEnumSelectList<TaskPriorityTypes>()"></select></div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label asp-for="Priority" class="control-label"></label>
+                                <input asp-for="Priority" class="form-control" />
+                                <span asp-validation-for="Priority" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Status</label>
+                            <div><select class="form-control" asp-for="Status" asp-items="@ViewBag.Stati"></select></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Issuer</label>
+                            <div><select class="form-control" asp-for="IssuerID" asp-items="@ViewBag.Agents"></select></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Owner</label>
+                            <div><select class="form-control" asp-for="OwnerID" asp-items="@ViewBag.Agents"></select></div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label class="control-label">Updated by</label>
+                                <div><input class="form-control" asp-for="LastUpdatedBy" /></div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label class="control-label">Updated</label>
+                                <div><input class="form-control" asp-for="LastUpdatedOn" /></div>
+                            </div>
+                        </div>
+                        @if ( Model.OpportunityID == null || Model.OpportunityID == 0 ) {
+                        <div class="form-group">
+                            <label class="control-label"><a href="/Sprint/Kanban/@Model.SprintId">Sprint</a></label>
+                            <div>
+                                <select class="form-control" asp-for="SprintId" asp-items="@ViewBag.Sprints">
+                                    <option selected>Not Assigned</option>
+                                </select>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 offset-1 bans-3d px-0">
+
+                <div class="b_tab ">
+                    <button class="b_tablinks @lResultsActive" type="button" onclick="b_openPanel(event, 'b_Results')" id="defaultOpen">Results</button>
+                    <button class="b_tablinks @lCommentsActive" type="button" onclick="b_openPanel(event, 'b_Comments')">Comments</button>
+                    <button class="b_tablinks " type="button" onclick="b_openPanel(event, 'b_Description')">Description</button>
+                </div>
+                <div>
+                    <div class="">
+                        <div id="b_Results" class="b_tabPanel" style="@lResultsBlock">
+                            <div class="w-100">
+                                <textarea asp-for="Result" class="w-100" rows="14"></textarea>
+                            </div>
+                        </div>
+                        <div id="b_Comments" class="b_tabPanel border-0" style="@lCommentsBlock">
+                            <div class="w-100">
+                                <textarea asp-for="Comment" class="w-100" rows="14"></textarea>
+                            </div>
+                        </div>
+                        <div id="b_Description" class="b_tabPanel border-0" >
+                            <div class="w-100">
+                                <textarea asp-for="Description" class="w-100" rows="14"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn-clearence">
+                <input type="submit" value="Save" class="btn-command"/>
+            </div>
+        </form>
+
+    </div>
+</div>
+<script>
+    //document.getElementById("defaultOpen").click();
+
+    function b_openPanel(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("b_tabPanel");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("b_tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+

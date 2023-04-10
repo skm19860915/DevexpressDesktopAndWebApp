@@ -1,0 +1,72 @@
+﻿@model BlitzerCore.Models.ASP.ASPContact
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div>
+    <h1 class="title-header">Add Memberships</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Contacts/Details/@Model.Id">Contact</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+
+<div class="content-container">
+    <!-- Tab links -->
+    <form asp-action="Memberships">
+        <div class="bans-3d" style="width:90%">
+            <div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                @Html.HiddenFor(m => m.ActivationDate)
+
+                <div>
+                    <div id="Memberships" >
+                        @{
+                            int lFFID = 1;
+                            //string FFNumber = "";
+                            //string HotelNumber = "";
+                            //string CarNumber = "";
+                        }
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="label-custom">Frequent Flyer</div>
+                                <div><select class="form-control" asp-for="@lFFID" asp-items="@Model.FrequentFlyerMemberShips"></select></div>
+                                <input id="FFData" class="form-control" />
+                                <div class="text-center">
+                                    <input class="mt-3" type="button" onclick="AddFF()" value="Add" />
+                                </div>
+                                <hr />
+                                @foreach (var lMembership in Model.MemberShips.Where(x => x.TypeOfMemberShip == MemberShipType.AirLine))
+                                {
+                                    <div class="row">
+                                        <div class="col-3">@lMembership.Company.Name</div>
+                                        <div class="col-9 text-right">@lMembership.Number</div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-md-4">
+                                <div class="label-custom">Hotel</div>
+                                <div><select class="form-control" asp-for="@lFFID" asp-items="@Model.HotelMemberShips"></select></div>
+                                <input id="HotelData" class="form-control" />
+                            </div>
+                            <div class="col-md-4">
+                                <div class="label-custom">Car</div>
+                                <div><select class="form-control" asp-for="@lFFID" asp-items="@Model.CarMemberShips"></select></div>
+                                <input id="CarData" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-clearence">
+            <input type="submit" value="Save" class="btn-command" />
+        </div>
+    </form>
+</div>
+

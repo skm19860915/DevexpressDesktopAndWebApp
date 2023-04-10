@@ -1,0 +1,103 @@
+﻿@model BlitzerCore.Models.Client
+
+@{
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+<hr />
+<div class="row">
+    <div class="col-md-">
+        <form asp-action="Default">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="row">
+                <div class="col">
+                    <label asp-for="First" class="control-label"></label>
+                    <input asp-for="First" class="form-control" />
+                    <span asp-validation-for="First" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label asp-for="Middle" class="control-label"></label>
+                    <input asp-for="Middle" class="form-control" />
+                    <span asp-validation-for="Middle" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="Address1" class="control-label"></label>
+                    <input asp-for="Address1" class="form-control" />
+                    <span asp-validation-for="Address1" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label asp-for="Last" class="control-label"></label>
+                    <input asp-for="Last" class="form-control" />
+                    <span asp-validation-for="Last" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="Address2" class="control-label"></label>
+                    <input asp-for="Address2" class="form-control" />
+                    <span asp-validation-for="Address2" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label asp-for="NickName" class="control-label"></label>
+                    <input asp-for="NickName" class="form-control" />
+                    <span asp-validation-for="NickName" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label asp-for="DOB" class="control-label"></label>
+                    <input asp-for="DOB" class="form-control" />
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="State" class="control-label"></label>
+                    <input asp-for="State" class="form-control" />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label asp-for="Suffix" class="control-label"></label>
+                    <input asp-for="Suffix" class="form-control" />
+                    <span asp-validation-for="Suffix" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="ZipCode" class="control-label"></label>
+                    <input asp-for="ZipCode" class="form-control" />
+                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                @*<div class="col form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="EmailConfirmed" /> @Html.DisplayNameFor(model => model.EmailConfirmed)
+                        </label>
+                    </div>*@
+                <div class="col form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="AAA_Member" /> @Html.DisplayNameFor(model => model.AAA_Member)
+                    </label>
+                </div>
+            </div>
+            <div class="col">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

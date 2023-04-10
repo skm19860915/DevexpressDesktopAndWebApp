@@ -1,0 +1,35 @@
+﻿@model KanbanTasksByUSModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div class="row">
+    <h1 class="col-8">User Story <span class="font-italic">@Model.UserStory.Name</span> Tasks</h1>
+    <div class="">
+        <a href="/Task/CreateByUS/@Model.UserStory.Id">Create</a>
+    </div>
+</div>
+<div id="kanban">
+    @(Html.DevExtreme().ScrollView()
+        .ElementAttr("class", "scrollable-board")
+        .Direction(ScrollDirection.Horizontal)
+        .ShowScrollbar(ShowScrollbarMode.Always)
+        .Content(
+            Html.DevExtreme().Sortable()
+                .ElementAttr("class", "sortable-lists")
+                .ItemOrientation(Orientation.Horizontal)
+                .MoveItemOnDrop(true)
+                .Handle(".list-title")
+                .Content(@<text>
+                    @foreach (var status in Model.Statuses) {
+                        var listModel = new KanbanTasksByUSListModel() {
+                            Status = status,
+                            Tasks = Model.Tasks.Where(t => t.Status == status),
+                            Info = ""
+                        };
+                        @await Html.PartialAsync("_KanbanUSTasks", listModel)
+                    }
+                </text>).ToString()
+        )
+    )
+</div>

@@ -1,0 +1,343 @@
+﻿@model UIQuoteRequestWrapper
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+    var lQuotePaddingStyle = "";
+}
+
+<style type="text/css">
+    @@media (min-width: 250px) {
+        .MobileDisp {
+            display: none;
+            height: 0px !important;
+        }
+
+        .FlightImg {
+            width: 160px;
+        }
+
+        .CountryImg {
+            height: 0px !important;
+        }
+
+        .ResortImg {
+            width: 420px;
+            height: 320px;
+        }
+    }
+
+    @@media (min-width: 576px) {
+        .ResortImg {
+            width: 300px;
+            height: 300px;
+        }
+
+        .CountryImg {
+            height: 700px !important;
+        }
+
+        .FlightImg {
+            width: 250px;
+        }
+
+        .QuoteBlk {
+            padding-top: 700px !important;
+        }
+    }
+
+    @@media (min-width: 900px) {
+        .MobileDisp {
+            display: inline;
+            height: 700px;
+        }
+    }
+</style>
+
+<Style>
+    #blitz_main {
+        background-color: white !important;
+    }
+</Style>
+
+
+@{
+    int i = 0;
+    var lPath = "/images/1600x1200/Empty.jpg";
+    if (Model.BackgroundImage != null)
+        lPath = Model.BackgroundImage;
+
+    var lController = "Client";
+    var lAction = "Quote";
+
+    if (ViewBag.ExcludeRoomTypes != null)
+    {
+        lController = "Filter";
+        lAction = "ExcludeRoomTypes";
+    }
+}
+
+<div class="MobileDisp">
+    <div id="page_caption" class="hasbg parallax notransparent CountryImg" data-image="@lPath" data-width="1600" data-height="1200">
+        <div class="page_title_wrapper">
+            <div class="tour_country_subheader">@Model.BackgroundCaption</div>
+            <br class="clear">
+            <h1>@Model.BackgroundTitle</h1>
+        </div>
+        <div class="parallax_overlay_header"></div>
+    </div>
+</div>
+
+
+<div id="ICQuote" class="QuoteBlk">
+    <form asp-controller="@lController" asp-action="@lAction">
+        <div class="col-12 col-md-8 offset-md-2" style="padding-top:20px">
+
+        <div class="row col-12" style="font-size: 24px; font-weight: 600;text-align: center">
+            <div class="col-lg-4 col-sm-12">Starting on : @Model.Start</div>
+            <div class="col-lg-4 col-sm-12">Ending on : @Model.End</div>
+            <div class="col-lg-4 col-sm-12">Quote for @Model.People Person, @Model.Rooms Room</div>
+        </div>
+
+        @{
+            UIQuoteRequestEdit lFlightQuote = null;
+            foreach ( var lFQuote in Model.Quotes ) {
+                if ( lFQuote.Flight_Out_Duration != null && lFQuote.Flight_Out_Duration.Length > 0 )
+                {
+                    lFlightQuote = lFQuote;
+                    break;
+                }
+            }
+        }       <div class="row col-12">
+                <div class="col-12 col-lg-6" style="padding-bottom:50px">
+                    @if (lFlightQuote != null )
+                        {
+                    <div class="FlightsLabel col-12 DestinationLabel" style="text-align:center">Outbound Flights</div>
+                    <div class="FlightsLabel col-12 FlightDate" style="text-align:center">@lFlightQuote.Flight_Out_Date</div>
+                    <div class="OutgoingFlight col-12">
+                        <div class="row">
+                            <div class="LowestWrapper">
+                                <div class="LowestTag">Lowest Fare</div>
+                            </div>
+                            <div class="fareIconBorder" style="border-top-color: rgb(189,89,30);background-color: rgb(79,128,79);"></div>
+                            <div class="FastestWrapper">
+                                <div class="FastestTag">Fastest</div>
+                            </div>
+                            <div class="fareIconBorder" style="border-top-color:rgb(79,128,79);"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 FlightNumbers CT">@lFlightQuote.Flight_Out_Numbers</div>
+                            <div class="col-6"></div>
+                            <div class="col-3">@lFlightQuote.Flight_Out_Duration</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 FlightTimes CT">@lFlightQuote.Flight_Out_Depart</div>
+                            <div class="col-6" style="text-align:center"><img class="FlightImg" src="/images/AirplanePath_LTR.png" /></div>
+                            <div class="col-3 FlightTimes CT">@lFlightQuote.Flight_Out_Arrive</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 FlightCities">@lFlightQuote.QuoteRequest.DepartureCityCode</div>
+                            <div class="col-6 FlightLayover">@lFlightQuote.Flight_Out_Layover</div>
+                            <div class="col-3 FlightCities">@lFlightQuote.QuoteRequest.DestinationCityCode</div>
+                        </div>
+                    </div>
+                        }
+                </div>
+                <div class="col-12 col-lg-6">
+                    @if (lFlightQuote != null )
+                        {
+                    <div class="FlightsLabel col-12 DestinationLabel">Returning Flights</div>
+                    <div class="FlightsLabel col-12 FlightDate" style="text-align:center">@lFlightQuote.Flight_In_Date</div>
+                    <div class="OutgoingFlight col-12">
+                        <div class="row">
+                            <div class="LowestWrapper">
+                                <div class="LowestTag">Lowest Fare</div>
+                            </div>
+                            <div class="fareIconBorder" style="border-top-color: rgb(189,89,30);background-color: rgb(79,128,79);"></div>
+                            <div class="FastestWrapper">
+                                <div class="FastestTag">Fastest</div>
+                            </div>
+                            <div class="fareIconBorder" style="border-top-color:rgb(79,128,79);"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 FlightNumbers">@lFlightQuote.Flight_In_Numbers</div>
+                            <div class="col-6"></div>
+                            <div class="col-3">@lFlightQuote.Flight_In_Duration</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 FlightTimes CT">@lFlightQuote.Flight_In_Depart</div>
+                            <div class="col-6" style="text-align:center;"><img class="FlightImg" src="/images/AirplanePath_LTR.png" /></div>
+                            <div class="col-3 FlightTimes CT">@lFlightQuote.Flight_In_Arrive</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 FlightCities">@lFlightQuote.QuoteRequest.DestinationCityCode</div>
+                            <div class="col-6 FlightLayover">@lFlightQuote.Flight_In_Layover</div>
+                            <div class="col-3 FlightCities">@lFlightQuote.QuoteRequest.DepartureCityCode</div>
+                        </div>
+                    </div>
+                        }
+                </div>
+            </div>
+            @while (i < Model.Quotes.Count())
+            {
+                var lQuote = Model.Quotes[i];
+                if (lQuote != null && lQuote.Break)
+                {
+                    var lStyle = "font-weight:600;font-size:30px;text-align:center;padding-bottom:10px;background-color:antiquewhite";
+            @if (ViewBag.ExcludeRoomTypes == null && Model.isAgent )
+                    {
+            <!-- Display Agent View Header with Link-->
+            <div style="@lStyle"><a href="/Hotel/Edit/@lQuote.SupplierId" style="font-size: 24px">@lQuote.SupplierName Quotes</a></div>
+            } else if (ViewBag.ExcludeRoomTypes == null && Model.isAgent == false ) {
+ <!-- Display Agent View Header with Link-->
+            <div style="@lStyle ;font-size:24px">@lQuote.SupplierName Quotes</div>
+                    }
+                    else
+                    {
+            <div style="@lStyle"><a href="/ResortPage/Edit/@lQuote.SupplierPageId">@lQuote.SupplierName Quotes</a></div>
+                    }
+            <div class="row" style="padding-top:10px;padding-bottom:70px">
+                <div class="col-lg-3 col-12 offset-lg-0">
+                    @if (lQuote.Supplier != null && lQuote.Supplier.Page != null && lQuote.Supplier.Page.ImageURL != null)
+                    {
+                        <!-- Only Display Test Click if there is an imageURL that is not the default -->
+                    @if ( lQuote.Supplier.Page.MyUrl != null )
+                        {
+                    <a href="@lQuote.Supplier.Page.MyUrl">
+                        <img class="ResortImg" src="@lQuote.Supplier.Page.ImageURL" />
+                    </a>
+                    <div style="text-align:center;font-size:.75em;">Click image to goto hotel website</div>
+                        } else
+                        {
+ <!-- Display Just the Resort Image with No Ling-->
+                    <img class="ResortImg" src="@lQuote.Supplier.Page.ImageURL" alt="Main Resort Image" />
+                        }
+                    }
+                    else
+                    {
+                    <img class="ResortImg" src="" alt="Main Resort Image" />
+                    }
+                </div>
+                <div class="col-lg-9 col-12" style="padding-left:50px;">
+                    <div>
+                        @if (lQuote.Supplier != null)
+                        {
+                        <div class="MobileDisp">
+                            <div>
+                                @if ( lQuote.Supplier.Description != null && lQuote.Supplier.Description != "" )
+                                {
+                                <div style="padding-bottom:25px"> @lQuote.Supplier.Description</div>
+                                } else if ( lQuote.Supplier.Page.CenterContent != null && lQuote.Supplier.Page.CenterContent.Summary != "" )
+                                {
+                                <div style="padding-bottom:25px">@lQuote.Supplier.Page.CenterContent.Summary</div>
+                                }
+                            </div>
+                        </div>
+                        }
+                        <div class="offset-lg-0 col-lg-8 col-12" style="@lQuotePaddingStyle">
+                            @if (lQuote.Supplier != null)
+                        {
+                            <div style="padding-bottom: 20px">
+                                @if ( lQuote.Supplier.Rating > 1 ){
+                                <div>Rating : @lQuote.Supplier.Rating</div>
+                                }
+                                @if ( lQuote.Supplier.Location != null && lQuote.Supplier.Location != "" ) {
+                                <div>Location : @lQuote.Supplier.Location</div>
+                                }
+                                @if (lQuote.Supplier.AirportDistance > 0)
+                                {
+                                <div><span style="font-weight:700;">@lQuote.Supplier.AirportDistance</span> miles from airport(CUN)</div>
+                                }
+                                @if (@lQuote.Supplier.Promo != null && @lQuote.Supplier.Promo.Length == 0)
+                                {
+                                <br />
+                                <div>Promotional : @lQuote.Supplier.Promo</div>
+                                }
+                            </div>
+                        }
+                            <table style="border:1px solid">
+                                @for (int y = 0; y < lQuote.Count; y++)
+                                {
+                                <tr style="border-bottom: 1px solid">
+                                    @if (ViewBag.ExcludeRoomTypes != null)
+                                    {
+                                    <td>@Model.Quotes[i].TO_Initials - </td>
+                                    }
+                                    <td style="width:400px;">
+                                        <div>@Model.Quotes[i].RoomType</div>
+                                        <div class="IncludesText">Includes:</div>
+                                        <ul class="IncludesText" style="padding-left:50px;">
+                                            @if (Model.Quotes[i].IncludesAir)
+                                            {
+                                            <li>Roundtrip Flights</li>
+                                            }
+                                            @if (Model.Quotes[i].KingOrQueen != null && Model.Quotes[i].KingOrQueen != "" )
+                                            {
+                                            <li>@Model.Quotes[i].KingOrQueen<span style="color:red"> @Model.Quotes[i].WarningNotice</span></li>
+                                            }
+                                            <li>@Model.Quotes[i].HotelStay</li>
+                                            <li>@Model.Quotes[i].Transfer</li>
+                                            <li>@Model.Quotes[i].Insurance</li>
+                                        </ul>
+                                    </td>
+                                    <td style="padding-right:5px">@Model.Quotes[i].Total</td>
+                                    @if (ViewBag.ExcludeRoomTypes == null)
+                                    {
+                                    <td style="padding-right:5px"><input asp-for="@Model.Quotes[i].Booked" type="checkbox" /></td>
+                                    }
+                                    else
+                                    {
+                                    <td style="padding-right:5px"><input asp-for="@Model.Quotes[i].Exclude" type="checkbox" /></td>
+                                    }
+                                    <td><input asp-for="@Model.Quotes[i].Id" type="hidden" /></td>
+                                    <td><input asp-for="@Model.Quotes[i].QuoteRequestId" type="hidden" /></td>
+                                </tr>
+                                i++;
+                                }
+                            </table>
+                            <div style="padding-top:20px;font-weight:600"><em>This is the total package price for all guests. <span style="padding-top:16px;font-weight:600;color:red">All posted payments are non refundable</span></em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+            else
+            {
+            i++;
+            }
+            }
+            <div>
+                <br />
+                <div>Thank you,</div>
+                <div>Eze2Travel</div>
+                <br />
+                Any prices that may be displayed in this quote are for new bookings and are listed for the total party unless otherwise indicated. Prices including air, are not retroactive and are subject to change with or without notice until required deposit funds post.  Select hotels may impose a resort fee, which is not included in the above prices, and is payable directly to the hotel.
+            </div>
+        </div>
+
+        <div style="text-align:center;padding-top:50px;padding-bottom:30px">
+            @if (ViewBag.ErrorMsgs != null && ViewBag.ErrorMsgs.Count() > 0)
+            {
+            <div class="ErrorMsg">
+                @foreach (var lMsg in ViewBag.ErrorMsgs)
+                    {
+                        if (lMsg != null)
+                        {
+                <div><strong>@lMsg.Header</strong></div><div>@lMsg.Description</div>
+                        }
+                    }
+            </div>
+            }
+
+            @if (ViewBag.ExcludeRoomTypes == null)
+            {
+            <input type="Submit" value="Book" />
+            }
+            else
+            {
+            <input type="Submit" value="Exclude" />
+            }
+        </div>
+    </form>
+</div>
+

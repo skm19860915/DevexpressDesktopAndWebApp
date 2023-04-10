@@ -1,0 +1,307 @@
+﻿@model UIWarRoom
+@using System.Net.Http
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components.Web
+@{
+    Layout = "~/Views/Shared/_WarRoom.cshtml";
+}
+<div class="WarRoom">
+    <div class="WTitle">WarRoom<span class="WHome"><a href="/Portal">Home</a></span></div>
+
+    <div class="row">
+        <div class="WSummary">
+            <table>
+                <tr>
+                    <td class="TextCol">YTD Sales :</td>
+                    <td class="Gain">@Model.YTDSales</td>
+                </tr>
+                <tr>
+                    <td>YTD Commission :</td>
+                    <td class="Gain">@Model.YTDComm</td>
+                </tr>
+                <tr>
+                    <td>Monthly P&L : </td>
+                    <td class="@Model.PLCSS">@Model.MonthlyP_L</td>
+                </tr>
+            </table>
+            <div class="DeltaTitle">30 Day Booking Delta</div>
+            <table>
+                <tr>
+                    <td class="TextCol">Existing</td>
+                    <td class="@Model.ExistingCSS">@Model.Existing</td>
+                </tr>
+                <tr>
+                    <td>Word Of Mouth</td>
+                    <td class="@Model.FriendCSS">@Model.Friend</td>
+                </tr>
+                <tr>
+                    <td>Facebook</td>
+                    <td class="@Model.FacebookCSS">@Model.Facebook</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td class="@Model.GoogleCSS">@Model.Google</td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td class="@Model.InstagramCSS">@Model.Instagram</td>
+                </tr>
+                <tr>
+                    <td>Website</td>
+                    <td class="@Model.WebsiteCSS">@Model.Website</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-9" style="background-color:black !important;color:gray !important">
+            @(Html.DevExtreme().Chart()
+                .ID("chart")
+                .Palette(VizPalette.Vintage)
+                .CommonSeriesSettings(s => s
+                    .ArgumentField("Month")
+                    .Type(SeriesType.StackedBar)
+                )
+                .Series(s => {
+                    s.Add().ValueField("Existing").Name("Existing");
+                    s.Add().ValueField("Facebook").Name("Facebook");
+                    s.Add().ValueField("Instagram").Name("Instagram");
+                    s.Add().ValueField("Youtube").Name("Youtube");
+                    s.Add().ValueField("Website").Name("Website");
+                    s.Add().ValueField("Google").Name("Google");
+                    s.Add().ValueField("Friend").Name("Friend");
+                    s.Add().Axis("Commission").Type(SeriesType.Line).ValueField("Commission").Name("Commission").Color("#000088");
+                })
+                .ValueAxis(a => {
+                    a.Add().Grid(g => g.Visible(true));
+                    a.Add()
+                        .Name("Commission")
+                        .Position(Position.Right)
+                        .Grid(g => g.Visible(true))
+                        .Title(t => t.Text("Total Sales, Thousands"));
+                })
+                .Tooltip(t => t
+                    .Enabled(true)
+                    .Shared(true)
+                    .Format(f => f.Type(Format.LargeNumber).Precision(1))
+                    .CustomizeTooltip(@<text>
+                        function (arg) {
+                            var items = arg.valueText.split("\n"),
+                                color = arg.point.getColor();
+                            $.each(items, function(index, item) {
+                                if(item.indexOf(arg.seriesName) === 0) {
+                                    items[index] = $("<span>")
+                                                    .text(item)
+                                                    .addClass("active")
+                                                    .css("color", color)
+                                                    .prop("outerHTML");
+                                }
+                            });
+                            return { text: items.join("\n") };
+                        }
+                    </text>)
+                )
+                .Legend(l => l
+                    .VerticalAlignment(VerticalEdge.Bottom)
+                    .HorizontalAlignment(HorizontalAlignment.Center)
+                )
+                .Export(e => e.Enabled(true))
+                .Title(t => t.Text("Sales by Month"))
+                .DataSource(Model.Sales)
+            )
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="WTableBox" style="background-color:black !important;color:gray !important">
+                <div class="row">
+                    <h2 class="TableTitle col-8">Follow Ups</h2>
+                    <div class="offset-2"><a href="/Task/Create">New</a></div>
+                </div>
+
+                @(Html.DevExtreme().DataGrid<UITask>()
+                .DataSource(Model.FollowUps)
+                .RemoteOperations(false)
+                .Selection(s => s.Mode(SelectionMode.Single))
+                .HoverStateEnabled(true)
+                .OnRowPrepared("onRowPrepared")
+                .OnCellPrepared("OnCellPrepared")
+                .ShowColumnLines(false)
+                .Columns(columns => {
+                    columns.Add()
+                        .DataField("Icon")
+                        .Caption("")
+                        .Width(30)
+                        .Fixed(false);
+                     columns.AddFor(m => m.Name).Width(200).AllowEditing(false);
+                    columns.AddFor(m => m.Priority).Width(100).Alignment(DevExtreme.AspNet.Mvc.HorizontalAlignment.Center);
+                    columns.AddFor(m => m.OwnerName).Width(100);
+                    columns.AddFor(m => m.PriorityTypeStr).Caption("Group").Width(100);
+                    columns.AddFor(m => m.Age).Width(100);
+                    columns.AddFor(m => m.Deadline).Width(100);
+                })
+                .Paging(p => p.PageSize(10))
+                .OnSelectionChanged("SelectionChanged")
+            )
+            </div>
+
+        </div>
+        <div class="col-4">
+            <div class="WTableBox">
+                <div class="row">
+                    <h2 class="TableTitle col-8">My Tasks</h2>
+                    <div class="offset-2"><a href="/Task/Create">New</a></div>
+                </div>
+
+                @(Html.DevExtreme().DataGrid<UITask>()
+                .DataSource(Model.Tasks)
+                .RemoteOperations(false)
+                .Selection(s => s.Mode(SelectionMode.Single))
+                .HoverStateEnabled(true)
+                .OnRowPrepared("onRowPrepared")
+                .OnCellPrepared("OnCellPrepared")
+                .ShowColumnLines(false)
+                .Columns(columns => {
+                    columns.Add()
+                        .DataField("Icon")
+                        .Caption("")
+                        .Width(30)
+                        .Fixed(false);
+                        //.CalculateDisplayValue(new JS("getCountryWithCapital"));
+                    columns.AddFor(m => m.Name).Width(200).AllowEditing(false);
+                    columns.AddFor(m => m.Priority).Width(100).Alignment(DevExtreme.AspNet.Mvc.HorizontalAlignment.Center);
+                    columns.AddFor(m => m.OwnerName).Width(100);
+                    columns.AddFor(m => m.PriorityTypeStr).Caption("Group").Width(100);
+                    columns.AddFor(m => m.Age).Width(100);
+                    columns.AddFor(m => m.Deadline).Width(100);
+                })
+                .Paging(p => p.PageSize(10))
+                .OnSelectionChanged("SelectionChanged")
+            )
+            </div>
+
+
+        </div>
+        <div class="col-4">
+            <div class="WTableBox">
+                <div class="row">
+                    <h2 class="TableTitle col-8">Issues</h2>
+                    <div class="offset-2"><a href="/Task/Create">New</a></div>
+                </div>
+
+                @(Html.DevExtreme().DataGrid<UITask>()
+                .DataSource(Model.Issues)
+                .RemoteOperations(false)
+                .Selection(s => s.Mode(SelectionMode.Single))
+                .HoverStateEnabled(true)
+                .OnRowPrepared("onRowPrepared")
+                .OnCellPrepared("OnCellPrepared")
+                .ShowColumnLines(false)
+                .Columns(columns => {
+                    columns.Add()
+                        .DataField("Icon")
+                        .Caption("")
+                        .Width(30)
+                        .Fixed(false);
+                    columns.AddFor(m => m.Name).Width(200).AllowEditing(false);
+                    columns.AddFor(m => m.Priority).Width(100).Alignment(DevExtreme.AspNet.Mvc.HorizontalAlignment.Center);
+                    columns.AddFor(m => m.OwnerName).Width(100);
+                    columns.AddFor(m => m.PriorityTypeStr).Caption("Group").Width(100);
+                    columns.AddFor(m => m.Age).Width(100);
+                    columns.AddFor(m => m.Deadline).Width(100);
+                })
+                .Paging(p => p.PageSize(10))
+                .OnSelectionChanged("SelectionChanged")
+            )
+            </div>
+        </div>
+    </div>
+    <div class="WSubTitle">Activities</div>
+    <div class="col-8 offset-2 WActivity">
+        <div style="overflow-y:auto;overflow-x:hidden">
+            @if (Model.Notes != null)
+            {
+                foreach (var lNote in Model.Notes)
+                {
+                    <div class="NoteBubble">
+                        <div class="row">
+                            @if (lNote.OpportunityId != null && lNote.IsTrip == false)
+                            {
+                            <div class="WTarget"><a href="/Opportunity/View/@lNote.OpportunityId">@lNote.Opportunity</a> </div>
+                            }
+                            else if (lNote.OpportunityId != null && lNote.IsTrip == true)
+                            {
+                            <div class="WTarget"><a href="/Trip/Details/@lNote.OpportunityId">@lNote.Opportunity</a></div>
+                            }
+                            else if (lNote.ContactId != null )
+                            {
+                            <div class="WTarget"><a href="/Contacts/Details/@lNote.ContactId">@lNote.Contact</a></div>
+                            }
+                            <div class="NoteWriter">@lNote.Writer</div>
+                            <div class="NoteWhen">@lNote.When</div>
+                            @if (lNote.Who != null && lNote.Who.Trim().Length > 0)
+                            {
+                            <div class="NoteWho">Spoke with @lNote.Who</div>
+                            @if (lNote.Where != null && lNote.Where.Trim().Length > 0)
+                                {
+                            <div class="NoteWhere"> @@ @lNote.Where</div>
+                                }
+                            }
+                        </div>
+                        <div class="NoteMemoBubble">
+                            <div>@lNote.Memo</div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Task/Edit/" + lId;
+    }
+    function OppSelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Opportunity/View/" + lId;
+    }
+    function onRowPrepared(e) {
+        if (e.rowType == 'data' && e.data.Status == 3) {
+            e.rowElement.css("background-color", "Yellow");
+        }
+    }
+    function CustomizeIcon(cellInfo) {
+        return cellInfo.value + " &deg;C";
+    }
+
+    function OnCellPrepared(e) {
+        //var fieldData = options.value,
+        //    fieldHtml = "";
+        var lHtml = "";
+        if (e.rowType == "data" && e.column.dataField == "Icon") {
+            if (e.value == 1) {
+                lHtml = "<i class=\"fa fa-arrow-right\"></i>";
+            } else if (e.value == 0) {
+                lHtml = "<i class=\"fa fa-user\"></i>";
+            } else if (e.value == 3) {
+                lHtml = "<i class=\"fa fa-stop\"></i>";
+            } else if (e.value == 2) {
+                lHtml = "<i class=\"fa fa-eye\"></i>";
+            } else if (e.value == 5) {
+                lHtml = "<i class=\"fa fa-bug\"></i>";
+            } else if (e.value == 6) {
+                lHtml = "<i class=\"fa fa-phone\"></i>";
+            } else {
+                lHtml = "";
+            }
+
+            e.cellElement.html(lHtml);
+        } else {
+            e.cellElement.html(e.value);
+        }
+    }
+</script>

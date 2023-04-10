@@ -1,0 +1,71 @@
+﻿@model PhotoGallery
+
+@{
+    ViewBag.Title = "Gallary";
+    Layout = "/Views/Shared/_BaseLayout.cshtml";
+    int lResortID = Model.Photos.ElementAt(0).PageID.Value;
+    int lCategoryID = Model.Photos.ElementAt(0).CategoryID.Value;
+}
+
+<style type="text/css">
+    @@media (min-width: 990px) {
+        .LinkBanner {
+            display: flex !important;
+        }
+    }
+</style>
+
+<a href="@Model.Photos.ElementAt(0).Resort.MyUrl">
+    <h2 style="text-align:center;padding-top:100px">
+        @Model.Photos.ElementAt(0).Resort.PageTitle @Model.Photos.ElementAt(0).Category.Name Gallery
+    </h2>
+</a>
+<div class="row col-8 offset-2  LinkBanner" style="padding-top:20px; text-align:center">
+    <div class="col-2 offset-2">
+        <a href="ResortPicGallery?ResortID=@lResortID&CategoryID=1">
+            Pools
+        </a>
+    </div>
+    <div class="col-2">
+        <a href="ResortPicGallery?ResortID=@lResortID&CategoryID=2">
+            Beach
+        </a>
+    </div>
+    <div class="col-2">
+        <a href="ResortPicGallery?ResortID=@lResortID&CategoryID=3">
+            Gounds
+        </a>
+    </div>
+    <div class="col-2">
+        <a href="ResortPicGallery?ResortID=@lResortID&CategoryID=4">
+            Cuisine
+        </a>
+    </div>
+    @*<div class="col-2">
+        <a href="ResortPicGallery?ResortID=@Model.NextResortID &CategoryID=@lCategoryID">
+            Another Resort
+        </a>
+    </div>*@
+</div>
+
+<div id="portfolio_filter_wrapper" class="three_cols gallery fullwidth section content clearfix visible isotope">
+
+    @for (int i = 0; i < Model.Photos.Count(); i++)
+    {
+        <div class="element portfolio3filter_wrapper isotope-item">
+
+            <div class="one_third gallery3 filterable gallery_type animated1" data-id="post-@i">
+                @if (Model.Photos.ElementAt(i) != null && Model.Photos.ElementAt(i).Size560x460 != null)
+                {
+                    <img src="@Model.Photos.ElementAt(i).Size560x460.Location" alt="" class="">
+
+                    <div class="thumb_content">
+                        <h3>@Model.Photos.ElementAt(i).Title</h3>
+                    </div>
+                }
+            </div>
+
+        </div>
+    }
+
+</div>

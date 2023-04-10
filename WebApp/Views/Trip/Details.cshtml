@@ -1,0 +1,555 @@
+﻿@model BlitzerCore.Models.UI.UITrip
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div>
+    <h1 class="title-header">Trip Details</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Trip">Trip</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+
+<div class="content-container">
+    <div class="row">
+        <a class="offset-8 col-2 text-right" href="/Trip/FinalPayment/@Model.Id">Final Payment Notice</a>
+        <a class="col-2 text-right" href="/Task/NewTripTask/@Model.Id">New Task</a>
+    </div>
+    <form asp-action="Details">
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.AgentId)
+        @Html.HiddenFor(m => m.returnUrl)
+        <input type="hidden" asp-for="AgentId" />
+
+        <div class="row mx-0" id="TripDesc">
+            <div class="TableBox col-lg-12 p-0  bans-3d mt-0" id="TripHdr">
+                <div id="TripNameBlock">
+                    <div class="row col-md-12 mx-0 px-0 py-2 b_tab">
+                        <div class="col-md-6 PageTypeName d-flex align-items-center header-ban-text-emphasized"><a  id="TripDetailName"  href="/Trip/Edit/@Model.Id">@Html.DisplayFor(model => model.Name)</a></div>
+
+                        <div class="col-md-3 header-ban-text">
+                            <div>Start</div>
+                            <div>@Html.DisplayFor(model => model.OutBoundDate)</div>
+                        </div>
+                        <div class="col-md-3 header-ban-text">
+                            <div>End</div>
+                            @Html.DisplayFor(model => model.InBoundDate)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12" id="BookingHdr">
+                    <div class="row text-center">
+                        <div class="col-sm-2">Booking totals</div>
+                        <div class="col-sm-2">Balance</div>
+                        <div class="col-sm-2">Commission</div>
+                        <div class="col-sm-2">Stage</div>
+                        <div class="col-sm-2">Final Payment Date</div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-2">
+                            @Html.DisplayFor(model => model.Total)
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.DisplayFor(model => model.Balance)
+                        </div>
+                        <div class="col-md-2">
+                            @Html.DisplayFor(model => model.ICCommission)
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.DisplayFor(model => model.TripStageStr)
+                        </div>
+                        <div class="col-sm-2">
+                            <div>@Model.FinalPayment</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> @*End of the Header Block Row*@
+        <div class="row mx-0 d-flex justify-content-center mt-5" style="margin-top:5px !important;">
+            @{
+            var lUpdate = "ProcPointer";
+            var lBalance = "ProcPointer";
+            var lBookTransfer = "ProcPointer";
+            var lReady = "ProcPointer";
+            var lTraveled = "ProcPointer";
+            var lPrintDocs = "ProcPointer";
+            var lDocumentLabel = "Print Documents";
+            if ( Model.TripStage > TripStage.SendDocuments)
+            {
+                lDocumentLabel = "Documents Mailed";
+            }
+            if (Model.TripStage == TripStage.CompleteProfile)
+            {
+                lUpdate = "ActivePointer";
+            }
+            else if (Model.TripStage == TripStage.BalanceOutstanding)
+            {
+                lBalance = "ActivePointer";
+            }
+            else if (Model.TripStage == TripStage.BookTransfer)
+            {
+                lBookTransfer = "ActivePointer";
+            }
+            else if (Model.TripStage == TripStage.SendDocuments)
+            {
+                lPrintDocs = "ActivePointer";
+            }
+            else if (Model.TripStage == TripStage.ReadyForTravel)
+            {
+                lReady = "ActivePointer";
+            }
+            else if (Model.TripStage == TripStage.Traveled)
+            {
+                lTraveled = "ActivePointer";
+            }
+            if (Model.TripStatus != Trip.Statuses.Cancelled && Model.TripStage != TripStage.Cancelled)
+            {
+                <div class="@lUpdate">
+                    <div class="ProcLabel">Incomplete Profile</div>
+                </div>
+                <div class="@lBalance">
+                    <div class="ProcLabel">
+                        Balance Due
+                    </div>
+                </div>
+                if (Model.HasTransfer)
+                {
+                <div class="@lBookTransfer">
+                    <div class="ProcLabel">
+                        Book Transfer
+                    </div>
+                </div>
+                }
+                <div class="@lPrintDocs">
+                    <a href="/Trip/PrintedDocs/@Model.Id">
+                        <div class="ProcLabel" style="font-size:16px">
+                            @lDocumentLabel
+                        </div>
+                    </a>
+                </div>
+                @if ( Model.TripStage == TripStage.OpenTasks )
+                {
+                <div class="ActivePointer">
+                    <div class="ProcLabel">
+                        Open Tasks
+                    </div>
+                </div>
+                }
+                <div class="@lReady">
+                    <div class="ProcLabel">
+                        Ready to Travel
+                    </div>
+                </div>
+                <div class="@lTraveled">
+                    <div class="ProcLabel">
+                        Traveled
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="ActivePointer">
+                    <div class="ProcLabel">
+                        Cancelled
+                    </div>
+                </div>
+            }
+            }
+        </div>
+        <div class="row mx-0" id="TripDetails">
+            <div class="TableBox col-12 col-xl-8 p-0  bans-3d" id="TripDetailBox">
+                <div class="Travelers w-100 pb-3">
+                    <div class="b_tab">
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_Notes')" id="defaultOpen">Memo</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_Tasks')">Tasks</button>
+                        <button class="b_tablinks header-ban-text ban-btn  active" type="button" onclick="b_openPanel(event, 'b_History')">History</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_AddNote')">Note</button>
+                        <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_files')">Files</button>
+                    </div>
+                    <div>
+                        <div>
+                            <div id="b_Notes" class="b_tabPanel">
+
+                                <div class="w-100">
+                                    <textarea asp-for="Notes" class="w-100" rows="14"></textarea>
+                                </div>
+                            </div>
+                            <div id="b_Tasks" class="b_tabPanel">
+                                <a href="/Task/Create/@Model.Id">New Task</a>
+                                @(Html.DevExtreme().DataGrid<UITask>()
+                                    .DataSource(Model.Tasks)
+                                    .RemoteOperations(false)
+                                    .Selection(s => s.Mode(SelectionMode.Single))
+                                    .ShowRowLines(true)
+                                    .HoverStateEnabled(true)
+                                    .RowAlternationEnabled(true)
+                                    .ShowBorders(true)
+
+                                    .Columns(columns => {
+                                        columns.AddFor(m => m.Name).AllowEditing(false);
+                                        columns.AddFor(m => m.StatusStr);
+                                        columns.AddFor(m => m.OwnerName);
+                                        columns.AddFor(m => m.Priority);
+                                    })
+                                    .Paging(p => p.PageSize(20))
+                                    .OnSelectionChanged("SelectionChanged")
+                                )
+                            </div>
+                            <div id="b_History" class="b_tabPanel"  style="display:block">
+                                <div class="oy-auto">
+                                    @if (Model.NoteEntries != null)
+                                    {
+                                        foreach (var lNote in Model.NoteEntries)
+                                        {
+                                    <div class="NoteBubble">
+                                        <div class="row">
+                                            <div class="NoteWriter">@lNote.Writer</div>
+                                            <div class="NoteWhen">@lNote.When</div>
+                                            @if (lNote.Who != null && lNote.Who.Trim().Length > 0)
+                                                    {
+                                            <div class="NoteWho">Spoke with @lNote.Who</div>
+                                            @if (lNote.Where != null && lNote.Where.Trim().Length > 0)
+                                                        {
+                                            <div class="NoteWhere"> @@ @lNote.Where</div>
+                                                        }
+                                                    }
+                                        </div>
+                                        <div class="NoteMemoBubble">
+                                            <div>@lNote.Memo</div>
+                                        </div>
+                                    </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                            <div id="b_AddNote" class="b_tabPanel">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="control-label">Who we talked with</label>
+                                        <input asp-for="Note_Who" class="form-control" />
+                                        <span asp-validation-for="Note_Who" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="control-label">Where are they</label>
+                                        <input asp-for="Note_Where" class="form-control" />
+                                        <span asp-validation-for="Note_Where" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="w-100 pt-4">
+                                    <textarea asp-for="Note_Text" class="w-100" rows="14"></textarea>
+                                </div>
+                            </div>
+                                            <div id="b_files" class="b_tabPanel">
+                    @(Html.DevExtreme().Popup()
+                                .ID("file-detail-popup")
+                                .Width(500)
+                                .Height(480)
+                                //.Container(".dx-viewport")
+                                .ShowTitle(true)
+                                .Title("File Detail")
+                                .DragEnabled(false)
+                                .CloseOnOutsideClick(true)
+                                .ShowCloseButton(false)
+                                .ToolbarItems(barItems => {
+                                    barItems.Add()
+                                        .Toolbar(Toolbar.Bottom)
+                                        .Location(ToolbarItemLocation.Before)
+                                        .Widget(widget => widget.Button()
+                                            .Icon("email")
+                                            .Text("Save Detail")
+                                            .OnClick(@<text>
+                                                function SaveFileDetail(data) {
+                                                    $.ajax({
+                                                        type: "POST",
+                                                        url: "@Url.Action("SaveFileDetail")",
+                                                        data: {
+                                                            ID:$("#uFileID").val(), URI: filePath, Name: $("#uFileName").val(),
+                                                            Description: $("#uFileDescription").val(),
+                                                            OpportunityId:$("#Id").val(), FileTypeId: $("#uFileType").val(),
+                                                            BookingTypeId: $("#uFileBookingType").val(),
+                                                            AgentId : $("#AgentId").val(),
+
+                                                        },
+                                                        dataType: "text",
+                                                        success: function (msg) {
+                                                            const message = `File information has been saved successfully`;
+                                                            DevExpress.ui.notify({
+                                                                message: message,
+                                                                position: {
+                                                                    my: "center top",
+                                                                    at: "center top"
+                                                                }
+                                                            }, "success", 3000);
+
+                                                            $("#uFileID").val("");
+                                                            $("#uFileName").val("");
+                                                            $("#uFileType").val("");
+                                                            $("#uFileDescription").val("");
+                                                        },
+                                                        error: function (req, status, error) {
+                                                            console.log(error);
+                                                        }
+                                                    });
+                                                }
+                                            </text>)
+                                        );
+                                    barItems.Add()
+                                        .Toolbar(Toolbar.Bottom)
+                                        .Location(ToolbarItemLocation.After)
+                                        .Widget(widget => widget.Button()
+                                            .Text("Close")
+                                            .OnClick(@<text>
+                                                function hideInfo(data) {
+                                                    const popup = $("#file-detail-popup").dxPopup("instance");
+                                                    popup.hide();
+                                                }
+                                            </text>)
+                                        );
+                                })
+                            )
+                    <div class="row">
+                        @(Html.DevExtreme().FileUploader()
+                                    .ID("file-uploader")
+                                    .ChunkSize(200000)
+                                    .MaxFileSize(1048576)
+                                    .UploadChunk("uploadChunk")
+                                    .OnUploaded("onUploadSuccessfully")
+                                )
+                        <text>
+                            @*<div id="request-panel"></div>*@
+                            <script src="~/js/azure-file-system.js"></script>
+                            <script>
+                                        function GetTemplate() {
+                                            return `<div class="form">
+                                                        <input type="hidden" id="uFileID" value="">
+                                                        <div class="form-group">
+                                                            <label>Name:</label>
+                                                            <input type="text" id="uFileName" class="form-control" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>File Type:</label>
+                                                            <select id="uFileType" class="form-control">
+                                                                <option value="">Please select</option>
+                                                                <option value="1">Itinerary</option>
+                                                                <option value="2">Payment</option>
+                                                                <option value="3">Travel Docs</option>
+                                                                <option value="4">Agent Itinerary</option>
+                                                                <option value="5">Email</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Description:</label>
+                                                            <textarea type="text" id="uFileDescription" class="form-control" row="4"></textarea>
+                                                        </div>
+                                                    </div>`;
+                                        }
+                                        function OpenDocumentDetail(ID,Description,Name,FileTypeId) {
+                                            const popup = $("#file-detail-popup").dxPopup("instance");
+                                            popup.option({
+                                                contentTemplate: GetTemplate()
+                                            });
+                                            popup.show();
+
+                                            $("#uFileID").val($("#hFileID" + ID).val());
+                                            $("#uFileName").val($("#hFileName" + ID).val());
+                                            $("#uFileType").val($("#FileType" + ID).val());
+                                            $("#uFileDescription").text($("#hFileDescription" + ID).val());
+                                        }
+                                        function OpenDocumentFile(e) {
+                                            window.open(e.key.URI, '_blank');
+                                        }
+                                        var filePath = "";
+                                        function onUploadSuccessfully(e) {
+                                            const popup = $("#file-detail-popup").dxPopup("instance");
+                                            popup.option({
+                                                contentTemplate: GetTemplate()
+                                            });
+                                            popup.show();
+                                            //$("#exampleModal").modal("show");
+                                        }
+                                        function uploadChunk(file, uploadInfo) {
+                                            var deferred = null;
+
+                                            if(uploadInfo.chunkIndex === 0) {
+                                                deferred = gateway.getUploadAccessUrl(file.name).done(function(accessUrl) {
+                                                    uploadInfo.customData.accessUrl = accessUrl;
+                                                });
+                                            } else {
+                                                deferred = $.Deferred().resolve().promise();
+                                            }
+
+                                            deferred = deferred.then(function() {
+                                                return gateway.putBlock(uploadInfo.customData.accessUrl, uploadInfo.chunkIndex, uploadInfo.chunkBlob);
+                                            });
+
+                                            if(uploadInfo.chunkIndex === uploadInfo.chunkCount - 1) {
+                                                deferred = deferred.then(function() {
+                                                    return gateway.putBlockList(uploadInfo.customData.accessUrl, uploadInfo.chunkCount);
+                                                });
+                                            }
+
+                                            return deferred.promise();
+                                        }
+
+                                        function onRequestExecuted(e) {
+                                            filePath = e.urlPath;
+                                            //$("<div>").addClass("request-info").append(
+                                            //        createParameterInfoDiv("Method:", e.method),
+                                            //        createParameterInfoDiv("Url path:", e.urlPath),
+                                            //        createParameterInfoDiv("Query string:", e.queryString),
+                                            //        $("<br>")
+                                            //    )
+                                            //    .prependTo("#request-panel");
+                                        }
+
+                                        function createParameterInfoDiv(name, value) {
+                                            //return $("<div>").addClass("parameter-info").append(
+                                            //    $("<div>").addClass("parameter-name").text(name),
+                                            //    $("<div>").addClass("parameter-value dx-theme-accent-as-text-color").text(value).attr("title", value)
+                                            //);
+                                        }
+
+                                        var endpointUrl = '@Url.RouteUrl("FileUploaderAzureAccessApi")';
+                                        var gateway = new AzureGateway(endpointUrl, onRequestExecuted);
+                            </script>
+                        </text>
+                    </div>
+                    <div class="row" style="padding-left:10px;padding-right:10px">
+                        @(Html.DevExtreme().DataGrid()
+                                    .ID("gridContainer")
+                                    .ShowBorders(true)
+                                    .Selection(s => s.Mode(SelectionMode.Single))
+                                    .HoverStateEnabled(true)
+                                    .DataSource(Model.Files)
+                                    .OnRowClick("OpenDocumentFile")
+                                    .KeyExpr("ID")
+                                    .Columns(c => {
+                                        c.Add().DataField("FileType");
+                                        c.Add().DataField("Date");
+                                        c.Add().DataField("Version");
+                                        c.Add().DataField("Name");
+                                        c.Add().DataField("Description");
+                                        c.Add().Caption("Action")
+                                               .CellTemplate(@<text>
+                                                    <input type="hidden"  value="<%- data.ID %>" id="hFileID<%- data.ID %>"/>
+                                                    <input type="hidden"  value="<%- data.Description %>" id="hFileDescription<%- data.ID %>"/>
+                                                    <input type="hidden"  value="<%- data.Name %>" id="hFileName<%- data.ID %>"/>
+                                                    <input type="hidden"  value="<%- data.FileType %>" id="hFileTypeId<%- data.ID %>"/>
+                                                    <button class="link" onclick="OpenDocumentDetail(<%- data.ID %>)">Edit</button>
+                                                </text>)
+                                            .Width(100)
+                                            .AllowFiltering(false)
+                                            .AllowSorting(false);
+
+                                    })
+                                )
+                    </div>
+                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="TableBox col-3 p-0 offset-1 bg-transparent ml-0 ml-xl-auto" id="BookingBox">
+                <div class="InnerBox bg-white bans-3d header-ban-text">
+                    <div class="RelatedHeader d-flex align-items-center b_tab">
+                        <div class="col-9 text-left">Bookings</div><div class="col-3"><a href="/Booking/Create/@Model.Id"> Add</a></div>
+                    </div>
+                    <div>
+                        @foreach (var lBooking in Model.Bookings)
+                        {
+                        <div class="BoxDetail m-0">
+                            <div class="row mx-0">
+                                @if (lBooking.TourOperatorName != "" && lBooking.TourOperatorName != null)
+                                    {
+                                <div class="col-md-6 font-weight-bold">@lBooking.TourOperatorName</div>
+                                    }
+                                    else
+                                    {
+                                <div class="col-md-6 font-weight-bold">@lBooking.Supplier</div>
+                                    }
+                                <div class="col-md-6 ">
+                                    <a href="/Booking/Edit/@lBooking.BookingID">@lBooking.BookingNumber</a>
+                                </div>
+                            </div>
+                            <div class="row mx-0">
+                                <div class="col-md-4">Amount</div>
+                                <div class="col-md-4">Commision</div>
+                                <div class="col-md-4">Final Payment</div>
+                            </div>
+                            <div class="row mx-0">
+                                @if (lBooking.Status == BookingStatus.PendingCancellation || lBooking.Status == BookingStatus.Cancelled)
+                                    {
+                                <div class="col-md-4"><s>@lBooking.Amount</s></div>
+                                    }
+                                    else
+                                    {
+                                <div class="col-md-4">@lBooking.Amount</div>
+                                    }
+                                <div class="col-md-4">@lBooking.ICCommission</div>
+                                <div class="col-md-4">@lBooking.FinalPaymentStr</div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+                <div>
+                    <div class="InnerBox bg-white bans-3d" id="TravelersList">
+                        <div class=" px-3 RelatedHeader d-flex align-items-center header-ban-text b_tab"><a href="/Trip/ModifyUsers/@Model.Id">Travelers</a></div>
+                        @*<div class="BoxHeader"><a href="/Test/BuildTrip/@Model.Id">Travelers</a></div>*@
+                        @foreach (var lTraveler in Model.Travelers)
+                        {
+                        <div class="px-3"><a href="~/Contacts/Details/@lTraveler.Id">@lTraveler.Name</a></div>
+                        <div>@lTraveler.Role</div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-clearence">
+            <input type="submit" value="Save" class="btn-command" />
+        </div>
+
+    </form>
+</div>
+<script>
+    //document.getElementById("defaultOpen").click();
+
+    function b_openPanel(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("b_tabPanel");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("b_tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function SelectionChanged(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/Task/Edit/" + lId;
+    }
+    $(document).ready(() => {
+        $(".ProcPointer, .ActivePointer").map(function () {
+            $(this).css("clip-path", `polygon(${$(this).width() - 25}px 0, 100% 50%, ${$(this).width() - 25}px 100%, 0% 100%, 25px 50%, 0% 0%)`);
+        });
+    })
+</script>

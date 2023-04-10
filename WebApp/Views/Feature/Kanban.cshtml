@@ -1,0 +1,49 @@
+﻿@model KanbanFeatureModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+    var lSystemName = "Blitzer";
+    var lBackLink = "/System/Kanban";
+    if ( Model.System != null )
+    {
+        lSystemName = Model.System.Name;
+        lBackLink = "/System/Kanban/";
+    }
+}
+<div class="row">
+    <h1 class="col-9"><span class="font-italic"><a style="font-size:46px" href="@lBackLink">@lSystemName</a></span> Features</h1>
+    <div class="">
+        @if (Model.System != null)
+        {
+            <a href="/Feature/Create/@Model.System.Id">Create</a>
+        }
+        else
+        {
+            <a href="/Feature/Create">Create</a>
+        }
+    </div>
+</div>
+<div id="kanban">
+    @(Html.DevExtreme().ScrollView()
+        .ElementAttr("class", "scrollable-board")
+        .Direction(ScrollDirection.Horizontal)
+        .ShowScrollbar(ShowScrollbarMode.Always)
+        .Content(
+            Html.DevExtreme().Sortable()
+                .ElementAttr("class", "sortable-lists")
+                .ItemOrientation(Orientation.Horizontal)
+                .MoveItemOnDrop(true)
+                .Handle(".list-title")
+                .Content(@<text>
+                    @foreach (var status in Model.Statuses) {
+                        var listModel = new KanbanFeatureListModel() {
+                            Status = status,
+                            Features = Model.Features.Where(t => t.Status == status),
+                            Info = ""
+                        };
+                        @await Html.PartialAsync("_Kanban", listModel)
+                    }
+                </text>).ToString()
+        )
+    )
+</div>

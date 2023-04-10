@@ -1,0 +1,56 @@
+﻿@model BlitzerCore.Models.UI.UICountry
+
+<div class="col-lg-10 col-md-8 col-sm-10">
+    <div style="border:solid;border-color:red">
+        <div style="text-align:center">
+            <a href="~/Content/Edit/@Model.CenterContent.Id">
+                <h2 class="ppb_title">@Model.CenterContent.Header</h2>
+            </a>
+            <div class="page_caption_desc">@Model.CenterContent.Caption</div>
+        </div>
+        <a href="~/Content/Edit/@Model.CenterContent.Id">
+            <h2>Summary</h2>
+        </a>
+        <p class="ResortSummary">@Model.CenterContent.Summary</p>
+    </div>
+    <div style="border:solid;border-color:red;">
+        <h2>Video</h2>
+        @if (Model.CenterContent.Video != null && Model.CenterContent.Video.Location != null && Model.CenterContent.Video.Location.Length > 0)
+        {
+        <video class="ResortVideo" controls>
+            <source src="@Model.CenterContent.Video.Location" type="video/mp4">
+        </video>
+        }
+        else @if (@Model.CenterContent.Photo != null && @Model.CenterContent.Photo.Location != null)
+        {
+        <img width="960" height="540" src="@Model.CenterContent.Photo.Location" />
+        }
+    </div>
+
+
+    <div style="border: solid; border-color: red;">
+        <div class="row">
+            <h2 class="col-10">Blocks</h2>
+            <div class="col-2" style="text-align:right">
+                <a href="/Page/AddBlock/@Model.Id">Add Block</a>
+            </div>
+        </div>
+        @if ( Model.Blocks != null )
+         {
+        @foreach ( var lPToBMap in Model.Blocks )
+            {
+                await Html.RenderPartialAsync ("_Block_Edit", lPToBMap.Block);
+            }
+        }
+    </div>
+
+
+    <div style="border: solid; border-color: red;">
+        <a href="~/Content/Edit/@Model.CenterContent.Id">
+            <h2>Content</h2>
+        </a>
+        <p class="ResortDetail">@Html.Raw(Model.CenterContent.p1)</p>
+    </div>
+</div>
+
+

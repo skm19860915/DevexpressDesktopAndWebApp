@@ -1,0 +1,46 @@
+﻿@model List<BlitzerCore.Models.UI.UIHotel>
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="content-container">
+    <h1>Resorts</h1>
+
+    <p>
+        <a asp-action="Create" asp-controller="Company">Create New</a>
+    </p>
+    <table class="DataTable bans-3d" >
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Stars
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Edit" asp-controller="ResortPage" asp-route-id="@item.PageId">Resort page</a> |
+                        <a asp-action="RoomTypes" asp-route-id="@item.Id">Room Types</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

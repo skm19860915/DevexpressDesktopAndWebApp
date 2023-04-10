@@ -1,0 +1,676 @@
+﻿@model BlitzerCore.Models.UI.UIPublicQuoteRequest
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@*https://preview.themeforest.net/item/tour-travel-agency-altair-theme/full_screen_preview/9318575?_ga=2.82411222.1351797774.1604954944-425214547.1604935991*@
+
+
+<input type="hidden" id="pp_enable_reflection" name="pp_enable_reflection" value="">
+<input type="hidden" id="pp_enable_right_click" name="pp_enable_right_click" value="">
+<input type="hidden" id="pp_enable_dragging" name="pp_enable_dragging" value="">
+<input type="hidden" id="pp_gallery_auto_info" name="pp_gallery_auto_info" value="">
+<input type="hidden" id="pp_image_path" name="pp_image_path" value="images/">
+<input type="hidden" id="pp_homepage_url" name="pp_homepage_url" value="index.html">
+<input type="hidden" id="pp_blog_ajax_search" name="pp_blog_ajax_search" value="">
+<input type="hidden" id="pp_fixed_menu" name="pp_fixed_menu" value="">
+<input type="hidden" id="pp_topbar" name="pp_topbar" value="">
+
+<input type="hidden" id="pp_footer_style" name="pp_footer_style" value="4">
+
+<style type="text/css">
+    @@media (min-width: 1200px) {
+        .QuoteBtn {
+            margin-top:-20px;
+        }
+    }
+</style>
+
+<!-- End mobile menu -->
+<!-- Begin template wrapper -->
+<div id="wrapper">
+
+    <div class="page_slider menu_transparent">
+        <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-source="gallery" style="background:#000000;padding:0px;">
+            <!-- START REVOLUTION SLIDER 5.4.8.3 fullscreen mode -->
+            <div id="rev_slider_1_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8.3">
+                <ul>
+                    <!-- SLIDE  -->
+                    <li data-index="rs-1" data-transition="zoomout" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="upload/1600x1200-1-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="South America" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="~/images/1600x1200/HomePage1.jpg" alt="" title="1600&#215;1200-1" width="1600" height="1200" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina="">
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption pp_subheader   tp-resizeme" id="slide-1-layer-1" data-x="center" data-hoffset="" data-y="bottom" data-voffset="300" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1000,"speed":600,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"x:-50px;opacity:0;","ease":"nothing"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; color: #ffffff; font-family:Open Sans;font-style:italic;border-color:rgb(255,255,255);border-width:0px 0px 2px 0px;">South America</div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption pp_header   tp-resizeme" id="slide-1-layer-2" data-x="center" data-hoffset="" data-y="bottom" data-voffset="180" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1300,"speed":600,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"x:50px;opacity:0;","ease":"nothing"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; ">Patagonia</div>
+
+                        <!-- LAYER NR. 3 -->
+                        <div class="bz_CallOut bz_TextBox tp-caption pp_content   tp-resizeme" id="slide-1-layer-3" data-x="center" data-hoffset="" data-y="bottom" data-voffset="100" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1600,"speed":600,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; white-space: nowrap; ">
+                            Patagonia is the southernmost region of South America shared by both Chile and Argentina.
+                            <br />Majestic snowcapped mountain peaks of the Andes silhouetted against the brilliant blue sky,
+                            <br />deep blue-grey lakes, breathtaking glaciers and icefields and home to stunning national
+                            <br />parks with an array of wildlife, seemingly still untouched by the hands of man.
+                        </div>
+                    </li>
+                    <!-- SLIDE  -->
+                    <li data-index="rs-2" data-transition="zoomout" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="upload/1600x1200-2-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Zurich, Switzerland" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="~/images/1600x1200/Gate.jpg" alt="" title="1600&#215;1200-2" width="1600" height="1200" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina="">
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 4 -->
+                        <div class="tp-caption pp_subheader   tp-resizeme" id="slide-2-layer-4" data-x="center" data-hoffset="0" data-y="bottom" data-voffset="300" data-width="auto" data-height="auto" data-type="text" data-responsive_offset="on" data-frames='[{"from":"x:-50px;opacity:0;","speed":600,"to":"","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"to":"x:-50px;opacity:0;","ease":"nothing"}]' data-textalign="['','','','']" style="z-index: 8; white-space: nowrap; color: #ffffff;font-style:italic;border-color:rgb(255,255,255);">Europe</div>
+
+                        <!-- LAYER NR. 5 -->
+                        <div class="tp-caption pp_header   tp-resizeme" id="slide-2-layer-5" data-x="center" data-hoffset="0" data-y="bottom" data-voffset="180" data-width="auto" data-height="auto" data-type="text" data-responsive_offset="on" data-frames='[{"from":"x:50px;opacity:0;","speed":600,"to":"","delay":1300,"ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"to":"x:50px;opacity:0;","ease":"nothing"}]' data-textalign="['','','','']" style="z-index: 9; white-space: nowrap;">Germany</div>
+
+                        <!-- LAYER NR. 6 -->
+                        <div  class="bz_CallOut bz_TextBox thumb_content tp-caption pp_content   tp-resizeme" id="slide-2-layer-6" data-x="center" data-hoffset="0" data-y="bottom" data-voffset="100" data-width="auto" data-height="auto" data-type="text" data-responsive_offset="on" data-frames='[{"from":"y:50px;opacity:0;","speed":600,"to":"","delay":1600,"ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"to":"y:50px;opacity:0;","ease":"nothing"}]' data-textalign="['','','','']" style="z-index: 10; white-space: nowrap;">
+                            Germany is the heart of Europe, where history meets modernity. Vibrant cities,
+                            <br />picturesque towns along the banks of the Rhine and Danube, intriguing history,
+                            <br />fairytale castles, alpine skiing, romantic Christmas markets and delicious food,
+                            <br />beer and wine make it the perfect European vacation destination.
+                        </div>
+                    </li>
+                    <!-- SLIDE  -->
+                    <li data-index="rs-3" data-transition="zoomout" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="upload/1600x1200-4-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Paris, France" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="~/images/1600x1200/HomePage3.jpg" alt="" title="1600&#215;1200-4" width="1600" height="1200" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina="">
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 7 -->
+                        <div class="tp-caption pp_subheader   tp-resizeme" id="slide-3-layer-7" data-x="center" data-hoffset="0" data-y="bottom" data-voffset="300" data-width="auto" data-height="auto" data-type="text" data-responsive_offset="on" data-frames='[{"from":"x:-50px;opacity:0;","speed":600,"to":"","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"to":"x:-50px;opacity:0;","ease":"nothing"}]' data-textalign="['','','','']" style="z-index: 11; white-space: nowrap; color: #ffffff;font-style:italic;border-color:rgb(255,255,255);">The Americas</div>
+
+                        <!-- LAYER NR. 8 -->
+                        <div class="tp-caption pp_header   tp-resizeme" id="slide-3-layer-8" data-x="center" data-hoffset="0" data-y="bottom" data-voffset="180" data-width="auto" data-height="auto" data-type="text" data-responsive_offset="on" data-frames='[{"from":"x:50px;opacity:0;","speed":600,"to":"","delay":1300,"ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"to":"x:50px;opacity:0;","ease":"nothing"}]' data-textalign="['','','','']" style="z-index: 12; white-space: nowrap;">The Caribbean</div>
+
+                        <!-- LAYER NR. 9 -->
+                        <div class="bz_CallOut bz_TextBox tp-caption pp_content   tp-resizeme" id="slide-3-layer-9" data-x="center" data-hoffset="0" data-y="bottom" data-voffset="100" data-width="auto" data-height="auto" data-type="text" data-responsive_offset="on" data-frames='[{"from":"y:50px;opacity:0;","speed":600,"to":"","delay":1600,"ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"to":"y:50px;opacity:0;","ease":"nothing"}]' data-textalign="['','','','']" style="z-index: 13; white-space: nowrap;">
+                            The Caribbean takes our mind and imagination instantly to palm-tree-lined
+                            <br />beaches, dazzling sunshine and warm, calm, turquoise water. With an
+                            <br />abundance of islands to choose from the Caribbean is the perfect choice for a
+                            <br />quick tropical getaway or a romantic honeymoon
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+            </div>
+
+
+        </div>
+        <!-- END REVOLUTION SLIDER -->
+    </div>
+
+
+
+    <div class="ppb_wrapper  ">
+        <div class="one pp_tour_search">
+            <div class="page_content_wrapper">
+                @using (Html.BeginForm("QuoteRequest", "Home", FormMethod.Post))
+                {
+                    <div class="row">
+                        <div class="one_fourth">
+                            <label asp-for="Departure" class="control-label"></label>
+                            <input asp-for="Departure" class="form-control" />
+                            <span asp-validation-for="Departure" class="text-danger"></span>
+                        </div>
+                        <div class="one_fourth">
+                            <div>
+                                <label asp-for="StartDate" class="control-label"></label>
+                                <input asp-for="StartDate" type="date" class="form-control" />
+                                <span asp-validation-for="StartDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="one_fourth">
+                            <div>
+                                <label asp-for="EndDate" class="control-label"></label>
+                                <input asp-for="EndDate" type="date" class="form-control" />
+                                <span asp-validation-for="EndDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="one_fourth">
+                            <label asp-for="Destination" class="control-label"></label>
+                            <input asp-for="Destination" class="form-control" />
+                            <span asp-validation-for="Destination" class="text-danger"></span>
+                        </div>
+                        <div class="one_fourth">
+                            <label class="control-label">Number of Adults</label>
+                            <input asp-for="NumberOfAdults" class="form-control" />
+                            <span asp-validation-for="NumberOfAdults" class="text-danger"></span>
+                            <label class="control-label">Number of Kids</label>
+                            <input asp-for="NumberOfChildren" class="form-control" />
+                            <span asp-validation-for="NumberOfChildren" class="text-danger"></span>
+                        </div>
+                        <div class="one_fourth">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="one_fourth last QuoteBtn" >
+                            <input id="tour_search_btn" type="submit" value="Get A Quote Today!">
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="ppb_tour one withpadding " style="border-top:1px solid #e1e1e1;">
+            <div class="page_content_wrapper full_width" style="text-align:center">
+                <h2 class="ppb_title">Featured Mexico Resorts</h2>
+                <div class="page_caption_desc pb20">Top All Inclusive Resorts</div>
+                <div class="portfolio_filter_wrapper three_cols fullwidth shortcode gallery section content clearfix">
+                    <div class="element portfolio3filter_wrapper">
+                        <div class="one_third gallery3 filterable gallery_type animated1">
+                            <a href="~/ResortPage/View/2">
+                                <img src="~/images/560x460/Valentin.jpg" alt="">
+                            </a>
+                            <div class="tour_sale fullwidth">
+                                <div class="tour_sale_text">Top</div>
+                                Pick
+                            </div>
+                            <a href="~/ResortPage/View/2" class="portanchor">
+                                <div class="thumb_content fullwidth ">
+                                    <div class="thumb_title">
+                                        <div class="tour_country">
+                                            Mexico
+                                        </div>
+                                        <h3>Valentin Imperial Maya</h3>
+                                    </div>
+                                    <div class="thumb_meta">
+                                        <div class="tour_days">
+                                            5 Nights
+                                        </div>
+                                        <div class="tour_price">
+                                            $1800
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="element portfolio3filter_wrapper">
+                        <div class="one_third gallery3 filterable gallery_type animated2">
+                            <a href="~/ResortPage/View/3">
+                                <img src="~/images/560x460/Atelier.jpg" alt="">
+                            </a>
+                            <a href="~/ResortPage/View/3" class="portanchor">
+                                <div class="thumb_content fullwidth ">
+                                    <div class="thumb_title">
+                                        <div class="tour_country">
+                                            Mexico
+                                        </div>
+                                        <h3>ATELIER Playa Mujeres</h3>
+                                    </div>
+                                    <div class="thumb_meta">
+                                        <div class="tour_days">
+                                            5 Nights
+                                        </div>
+                                        <div class="tour_price">
+                                            $2000
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="element portfolio3filter_wrapper">
+                        <div class="one_third gallery3 filterable gallery_type animated3">
+                            <a href="~/ResortPage/View/4">
+                                <img src="~/images/560x460/Xcaret.jpg" alt="">
+                            </a>
+                            <div class="tour_sale fullwidth">
+                                <div class="tour_sale_text">Best</div>
+                                Value
+                            </div>
+                            <a href="~/ResortPage/View/4" class="portanchor">
+                                <div class="thumb_content fullwidth ">
+                                    <div class="thumb_title">
+                                        <div class="tour_country">
+                                            Mexico
+                                        </div>
+                                        <h3>Hotel Xcaret</h3>
+                                    </div>
+                                    <div class="thumb_meta">
+                                        <div class="tour_days">
+                                            5 Nights
+                                        </div>
+                                        <div class="tour_price">
+                                            $3000
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="element portfolio3filter_wrapper">
+                        <div class="one_third gallery3 filterable gallery_type animated4">
+                            <a href="~/ResortPage/View/5">
+                                <img src="~/images/560x460/UNICO.jpg" alt="">
+                            </a>
+                            <a href="~/ResortPage/View/5" class="portanchor">
+                                <div class="thumb_content fullwidth ">
+                                    <div class="thumb_title">
+                                        <div class="tour_country">
+                                            Mexico
+                                        </div>
+                                        <h3>UNICO 20 87 Riviera Maya</h3>
+                                    </div>
+                                    <div class="thumb_meta">
+                                        <div class="tour_days">
+                                            5 Nights
+                                        </div>
+                                        <div class="tour_price">
+                                            $2400
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="element portfolio3filter_wrapper">
+                        <div class="one_third gallery3 filterable gallery_type animated5">
+                            <a href="~/ResortPage/View/6">
+                                <img src="~/images/560x460/HyattZiva.jpg" alt="">
+                            </a>
+                            <a href="~/ResortPage/View/6" class="portanchor">
+                                <div class="thumb_content fullwidth ">
+                                    <div class="thumb_title">
+                                        <div class="tour_country">
+                                            Mexico
+                                        </div>
+                                        <h3>Hyatt Ziva Cancun</h3>
+                                    </div>
+                                    <div class="thumb_meta">
+                                        <div class="tour_days">
+                                            5 Nights
+                                        </div>
+                                        <div class="tour_price">
+                                            $2000
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="element portfolio3filter_wrapper">
+                        <div class="one_third gallery3 filterable gallery_type animated6">
+                            <a href="~/ResortPage/View/7">
+                                <img src="~/images/560x460/Haven.jpg" alt="">
+                            </a>
+                            <a href="~/ResortPage/View/7" class="portanchor">
+                                <div class="thumb_content fullwidth ">
+                                    <div class="thumb_title">
+                                        <div class="tour_country">
+                                            Mexico
+                                        </div>
+                                        <h3>Haven Riviera Cancun</h3>
+                                    </div>
+                                    <div class="thumb_meta">
+                                        <div class="tour_days">
+                                            5 Nights
+                                        </div>
+                                        <div class="tour_price">
+                                            $1900
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="element portfolio3filter_wrapper">
+                        <div class="one_third gallery3 filterable gallery_type animated1">
+                            <a href="~/ResortPage/View/8">
+                                <img src="~/images/560x460/Margaritaville.jpg" alt="">
+                            </a>
+                            <a href="~/ResortPage/View/8" class="portanchor">
+                                <div class="thumb_content fullwidth ">
+                                    <div class="thumb_title">
+                                        <div class="tour_country">
+                                            Mexico
+                                        </div>
+                                        <h3>Margaritaville Island Reserve</h3>
+                                    </div>
+                                    <div class="thumb_meta">
+                                        <div class="tour_days">
+                                            5 Nights
+                                        </div>
+                                        <div class="tour_price">
+                                            $1700
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="element portfolio3filter_wrapper">
+                        <div class="one_third gallery3 filterable gallery_type animated2">
+                            <a href="~/ResortPage/View/9">
+                                <img src="~/images/560x460/HiltonPlayaDelCarmen.jpg" alt="">
+                            </a>
+                            <a href="~/ResortPage/View/9" class="portanchor">
+                                <div class="thumb_content fullwidth ">
+                                    <div class="thumb_title">
+                                        <div class="tour_country">
+                                            Mexico
+                                        </div>
+                                        <h3>Hilton Playa del Carmen</h3>
+                                    </div>
+                                    <div class="thumb_meta">
+                                        <div class="tour_days">
+                                            5 Nights
+                                        </div>
+                                        <div class="tour_price">
+                                            $1700
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="one withsmallpadding ">
+            <div class="page_content_wrapper pt20" style="text-align:center">
+                <h2 class="ppb_title">What Customers Say</h2>
+                <br>
+                <div class="testimonial_slider_wrapper">
+                    <div class="flexslider" data-height="750">
+                        <ul class="slides">
+                            <li>
+                                <div class="testimonial_slider_wrapper">
+
+                                    "There’s no one I’d recommend more highly than Silke Eze. I rely on her for business and personal travel. I can’t count the number of times she’s helped me get where I needed to be when weather, cancellations, client changes, etc. wreaked havoc with my travel plans. And for personal travel, she always seems to find the perfect spot for us, often at a better deal or with extra perks than we would find on our own. I can tell she has great relationships with properties based on the way I’m treated when I stay at a place she recommends. All this, and she’s a delightful person too"
+                                    <div class="testimonial_slider_meta">
+                                        <h6>Karen A.</h6>
+                                        <div class="testimonial_slider_meta_company"><a href="#" target="_blank">New York, NY</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial_slider_wrapper">
+                                    "Silke did our Europe trip last year and it was awesome. She also took care of us when our flight into Paris was late and booked us on a connecting flight without us missing a beat..she is the best!""
+                                    <div class="testimonial_slider_meta">
+                                        <h6>Eva F.</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial_slider_wrapper">
+                                    "Silke did an amazing job handling our travel to the Valentin Imperial! She was flexible and attentive to our needs especially during the current pandemic. Thank you so much for ensuring we had a great experience from booking through the duration of our trip. We will definitely continue using her services going forward."
+                                    <div class="testimonial_slider_meta">
+                                        <h6>Marissa C.</h6>
+                                        <div class="testimonial_slider_meta_position">Charlotte, NC</div>-
+                                        @*<div class="testimonial_slider_meta_company"><a href="#" target="_blank">Red Inc.</a></div>*@
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="one withsmallpadding withbg fullwidth parallax" style="height:600px;" data-image="/images/1600x1200/Moscow.jpeg" data-width="1600" data-height="1200">
+            <div class="page_content_wrapper"></div>
+        </div>
+        <div class="one withsmallpadding pt80 pb80">
+            <div class="page_content_wrapper">
+                <div style="text-align:center">
+                    <h2 class="ppb_title">Treasures of Two Iconic Capitals</h2>
+                    <div class="page_caption_desc"></div>
+                </div>
+                <div class="two_third paragraphs">
+                    <p>
+                        Moscow, a city with palaces alongside business towers, royal gardens in view of shopping districts, and historical landmarks as public transportation hubs, Moscow is truly a city unlike any other.
+
+                        More than eight centuries of history have shaped this metropolis into the bustling, populous, vibrant destination it is today.
+                    </p>
+                    <p> St. Petersburg is the gem of Russia truly worth exploring while in the country. Founded by Tsar Peter the Great back in 1703, it is now called the City of Tsars because of its magnificent architecture and eventful history. Some also call it the Venice of the North, as the city is traversed by numerous canals and features 342 bridges!</p>
+                </div>
+                <div class="one_third last">
+                    <blockquote>
+                        <i>
+                            &#8220;<span style="font-weight:700">Wow!</span> This was a once in a lifetime trip. ... EVERY city and place we visited was as FASCINATING—and sometimes MORE fascinating—than we expected.  - Jim and Michelle W., Los Angeles&#8221;
+                        </i>
+                    </blockquote>
+                </div>
+                <p>
+                </p>
+            </div>
+        </div>
+        <div class="one withsmallpadding withbg parallax " data-image="Images/1600x1200/WhyChooseUs3.jpg" data-width="1600" data-height="1200">
+            <div class="page_content_wrapper pt40" style="text-align:center">
+                <h2 class="ppb_title">Why Choose Us</h2>
+                <div style="height:20px"></div>
+                <br>
+                <div class="service_content_wrapper ">
+                    <div class="one_third ">
+                        <div class="service_wrapper">
+                            <div class="service_icon"><i class="fa fa-star"></i></div>
+                            <div class="service_title">
+                                <h3>Experience & Knowledge</h3>
+                                <div class="service_content" style="min-height:250px">
+                                    We are so much more than travel agents! Our team has traveled the world and our experience and knowledge gives us the insight and tools to tailor the perfect vacation for our clients. We take your dreams and wishes and transform them into experiences of a lifetime. Some of our advisors have been in the industry for over 30+ years.                                     <br>
+                                    <br>
+                                    <a href="Home/ChooseYourPath">learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="one_third ">
+                        <div class="service_wrapper">
+                            <div class="service_icon"><i class="fa fa-globe"></i></div>
+                            <div class="service_title">
+                                <h3>Quality & Value</h3>
+                                <div class="service_content" style="min-height:250px">
+                                    At Eze2Travel we understand the meaning of “Time is Money”.
+                                    Working with one of our travel advisors is easy and seamless. Together we will create a personalized made-to-order journey. Travel is extremely therapeutic and enriching. You deserve to travel and no matter your budget you can still get a great vacation.
+                                    <br>
+                                    <br>
+                                    <a href="Home/ChooseYourPath">learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="one_third last">
+                        <div class="service_wrapper">
+                            <div class="service_icon"><i class="fa fa-thumbs-up"></i></div>
+                            <div class="service_title">
+                                <h3>Service & Amenities</h3>
+                                <div class="service_content" style="min-height:250px">
+                                    Founded in 1996 building longstanding partnerships with tour operators, airlines, and hotels throughout the world. These special relationships allow us to offer special perks and amenities to you, enhancing your overall travel experience. We pride ourselves in providing you personalized customer service that will surpass your expectations                                    <br>
+                                    <br>
+                                    <a href="Home/ChooseYourPath">learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br class="clear">
+                    <br>
+                </div>
+                <br class="clear">
+            </div>
+        </div>
+        <div class="one withsmallpadding " style="background:#f3f3f3;">
+            <div class="page_content_wrapper pt20">
+                <div class="one_fourth">
+                    <div class="animate_counter_wrapper">
+                        <i class="fa fa-smile-o"></i>
+                        <br>
+                        <div id="1584612796597484876" class="odometer" style="font-size:44px;line-height:44px;">0</div>
+                        <div class="count_separator"><span></span></div>
+                        <div class="counter_subject">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="one_fourth">
+                    <div class="animate_counter_wrapper">
+                        <i class="fa fa-bus"></i>
+                        <br>
+                        <div id="1584612796254376806" class="odometer" style="font-size:44px;line-height:44px;">0</div>
+                        <div class="count_separator"><span></span></div>
+                        <div class="counter_subject">Amazing Tours</div>
+                    </div>
+                </div>
+                <div class="one_fourth">
+                    <div class="animate_counter_wrapper">
+                        <i class="fa fa-briefcase"></i>
+                        <br>
+                        <div id="1584612796413307740" class="odometer" style="font-size:44px;line-height:44px;">0</div>
+                        <div class="count_separator"><span></span></div>
+                        <div class="counter_subject">Business Travelers</div>
+                    </div>
+                </div>
+                <div class="one_fourth last">
+                    <div class="animate_counter_wrapper">
+                        <i class="fa fa-comments-o"></i>
+                        <br>
+                        <div id="1584612796678726464" class="odometer" style="font-size:44px;line-height:44px;">0</div>
+                        <div class="count_separator"><span></span></div>
+                        <div class="counter_subject">Posts</div>
+                    </div>
+                </div>
+                <p>
+                </p>
+            </div>
+        </div>
+        <div class="one withsmallpadding withbg " style="background-image:url(Images/1600x1200/Ocean.jpg);background-size:cover;margin-top:-1px;">
+            <div class="page_content_wrapper fullwidth pt20" style="text-align:center">
+                <h2 class="ppb_title">Travel Styles</h2>
+                <div class="page_caption_desc">Trending Destinations</div>
+                <div id="blog_grid_wrapper" class="sidebar_content full_width ppb_blog_posts" style="text-align:left">
+                    <div class="post type-post hentry status-publish">
+                        <a href="/Home/ChooseYourPath">
+                            <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/HoneymoonRomance.jpeg');">
+                                <div class="parallax_overlay_header"></div>
+                                <div class="grid_wrapper">
+                                    <div class="post_header grid">
+                                        <a href="/Home/ChooseYourPath" title="Honeymoon & Romance Travel"><h6>Honeymoon & Romance Travel</h6></a>
+                                        <div class="post_detail">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="post type-post hentry status-publish">
+                        <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/FamilyVacation.jpg');">
+                            <div class="parallax_overlay_header"></div>
+                            <div class="grid_wrapper">
+                                <div class="post_header grid">
+                                    <a href="/Home/ChooseYourPath" title="Amazing Fullwidth Post"><h6>Family Vacations</h6></a>
+                                    <div class="post_detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post type-post hentry status-publish">
+                        <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/RiverCruise.jpg');">
+                            <div class="parallax_overlay_header"></div>
+                            <div class="grid_wrapper">
+                                <div class="post_header grid">
+                                    <a href="/Home/ChooseYourPath" title="Link Post"><h6>Ocean & River Cruises</h6></a>
+                                    <div class="post_detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post type-post hentry status-publish">
+                        <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/IndependentTravel.jpeg');">
+                            <div class="parallax_overlay_header"></div>
+                            <div class="grid_wrapper">
+                                <div class="post_header grid">
+                                    <a href="/Home/ChooseYourPath" title="Quote Post"><h6>Customized Travel</h6></a>
+                                    <div class="post_detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post type-post hentry status-publish">
+                        <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/GroupTravel.jpeg'); ">
+                            <div class="parallax_overlay_header"></div>
+                            <div class="grid_wrapper">
+                                <div class="post_header grid">
+                                    <a href="/Home/ChooseYourPath" title="Sidebar Post With Slideshow"><h6>Escorted Group Travel</h6></a>
+                                    <div class="post_detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post type-post hentry status-publish">
+                        <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/Caribbean.jpg');
+    ">
+                            <div class="parallax_overlay_header"></div>
+                            <div class="grid_wrapper">
+                                <div class="post_header grid">
+                                    <a href="/Home/ChooseYourPath" title="Duis vestibulum quis quam"><h6>Caribbean</h6></a>
+                                    <div class="post_detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post type-post hentry status-publish">
+                        <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/Germany.jpeg');">
+                            <div class="parallax_overlay_header"></div>
+                            <div class="grid_wrapper">
+                                <div class="post_header grid">
+                                    <a href="/Home/ChooseYourPath" title="Vimeo Video Post"><h6>Germany</h6></a>
+                                    <div class="post_detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post type-post hentry status-publish">
+                        <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/Greece.jpeg');">
+                            <div class="parallax_overlay_header"></div>
+                            <div class="grid_wrapper">
+                                <div class="post_header grid">
+                                    <a href="/Home/ChooseYourPath" title="Link Post2"><h6>Greece</h6></a>
+                                    <div class="post_detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post type-post hentry status-publish">
+                        <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/Patagonia2.jpg');">
+                            <div class="parallax_overlay_header"></div>
+                            <div class="grid_wrapper">
+                                <div class="post_header grid">
+                                    <a href="/Home/ChooseYourPath" title="Standard Blog Post With Image"><h6>Patagonia</h6></a>
+                                    <div class="post_detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post type-post hentry status-publish">
+                        <div class="post_wrapper grid_layout" style="background-image: url('/images/1024x768/Rome.jpeg');">
+                            <div class="parallax_overlay_header"></div>
+                            <div class="grid_wrapper">
+                                <div class="post_header grid">
+                                    <a href="/Home/ChooseYourPath" title="Amazing Fullwidth Post"><h6>Italy</h6></a>
+                                    <div class="post_detail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br class="clear">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

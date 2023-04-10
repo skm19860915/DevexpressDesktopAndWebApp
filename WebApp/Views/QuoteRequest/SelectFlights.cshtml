@@ -1,0 +1,46 @@
+﻿@model List<BlitzerCore.Models.UI.UIFlight>
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+
+<div class="content-container">
+    <h1>Select Fights</h1>
+
+    <p>
+        <a asp-action="Create" asp-controller="Company">Create New</a>
+    </p>
+</div>
+<div style="padding-left:10%;padding-right:10%">
+    @(Html.DevExtreme().DataGrid<UIFlight>()
+                    .DataSource(Model)
+                    .RemoteOperations(false)
+                    .Selection(s => s.Mode(SelectionMode.Single))
+                    .ShowRowLines(true)
+                    .HoverStateEnabled(true)
+                    .RowAlternationEnabled(true)
+                    .ShowBorders(true)
+                    .Columns(columns =>
+                    {
+                        columns.AddFor(m => m.Out_Carrier);
+                        columns.AddFor(m => m.Out_DepartTime);
+                        columns.AddFor(m => m.Out_ConnectionAirport);
+                        columns.AddFor(m => m.Out_ArriveTime);
+                        columns.AddFor(m => m.In_Carrier);
+                        columns.AddFor(m => m.In_DepartTime);
+                        columns.AddFor(m => m.In_ConnectionAirport);
+                        columns.AddFor(m => m.In_ArriveTime);
+                        columns.AddFor(m => m.ExtraCost);
+                    })
+                    .Paging(p => p.PageSize(40))
+                    .OnSelectionChanged("FlightSelected")
+                )
+</div>
+<script type="text/javascript">
+    function FlightSelected(selectedItems) {
+        var lObject = selectedItems.selectedRowsData[0];
+        var lId = lObject.Id;
+        document.location.href = "/QuoteRequest/FlightSelected?id=" + lId + "&aCarrier=1";
+    }
+</script>

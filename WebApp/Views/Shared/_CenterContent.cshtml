@@ -1,0 +1,37 @@
+﻿@model BlitzerCore.Models.UI.Page
+
+
+<div style="text-align:center">
+    <h2 class="ppb_title">@Model.CenterContent.Header</h2>
+    <div class="page_caption_desc">@Model.CenterContent.Caption</div>
+</div>
+<p class="ResortSummary">@Model.CenterContent.Summary</p>
+<p >
+    @if (Model.CenterContent.Video != null && Model.CenterContent.Video.Location != null && Model.CenterContent.Video.Location.Length > 0)
+        {
+    <video class="ResortVideo" controls>
+        <source src="@Model.CenterContent.Video.Location" type="video/mp4">
+    </video>
+        }
+        else @if (@Model.CenterContent.Photo != null && @Model.CenterContent.Photo.Location != null)
+        {
+    <img width="960" height="540" src="@Model.CenterContent.Photo.Location" />
+        }
+    </p>
+
+    <div style="text-align:center;font-weight:500;font-size:30px;padding-bottom:20px">
+        @Model.BlockTitle
+    </div>
+    <div >
+        @if ( Model.Blocks != null )
+         {
+        @foreach ( var lPToBMap in Model.Blocks.OrderBy(x=>x.Block.OrderId ))
+            {
+                await Html.RenderPartialAsync ("_Block", lPToBMap.Block);
+            }
+        }
+    </div>
+
+
+    <div class="ResortDetail">@Html.Raw(Model.CenterContent.p1)</div>
+

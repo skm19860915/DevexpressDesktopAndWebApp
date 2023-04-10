@@ -1,0 +1,113 @@
+
+
+
+
+
+(function(App) {
+App.domload(function() {
+App.Profile.start('Client Script: arc_process.js');
+try {
+/* begin client script */
+
+(function () {
+    'use strict';
+
+    var c2 = $('C2');
+    var mixAndMatchElem = $$('.airMixAndMatchContainer');
+    if (c2 && mixAndMatchElem.length === 0) {
+        c2.setStyle({
+            width: '785px'
+        });
+    }
+})();
+
+//alert("start - arc_process.js - please ignore - testing");
+if(s) {
+    var query = location.href.toQueryParams();
+
+    var hotelChoices = function(){
+        var hotels = App.Availability.numHotels;
+        s.pageName = "EzRez Select Hotel Property";
+        s.events = "event4";
+        s.prop24 = s.pageName;
+        s.prop14 = App.Helpers.getRange(hotels);
+        s.eVar14 = s.prop14;    
+    };    
+    
+    var airChoices = function(){
+        var airOptions = App.Availability.numAirOptions;
+        s.pageName = "EzRez Select Flight";
+        s.events = "event5";
+        s.prop15 = App.Helpers.getRange(airOptions); // the number air itins returned
+        s.prop24=s.pageName;
+        s.eVar15=s.prop15;    
+    };    
+
+    var carChoices = function(){
+        var cars = App.Availability.getCars();
+        var companies = cars.pluck('companyCode').uniq();
+        s.pageName = "EzRez Select Car";
+        s.events = "event8";
+        //s.prop16 = App.Helpers.getRange(companies.length); // the number of car companies  returned e.g. Avis, Alamo etc
+        s.prop16 = companies.length;
+        s.prop24 = s.pageName;
+        s.eVar16 = s.prop16;    
+    };
+
+    var roomChoices = function(){
+        var hotel = App.Availability.getHotel(query.hotelKey);
+        s.pageName = "EzRez Select Room or Car Type";
+        s.prop29 = App.WebContext.cobrandName;
+        s.events = "event6";
+        s.prop24 = s.pageName;
+        if(hotel) {
+            s.eVar36 = hotel.name;
+            s.eVar37 = hotel.chainName;
+            s.eVar38 = hotel.brandCode;
+        }    
+    };
+
+    var activityChoices = function(){
+        var activities = App.Availability.numActivities;
+        s.prop17 = App.Helpers.getRange(activities); // the number of activities returned
+        s.pageName = "EzRez Select Activities (1)";			//Differentiate between activities on this page and on itinerary.cfm
+        s.prop29 = App.WebContext.cobrandName;
+        s.events = "event7";
+        s.prop24 = s.pageName;
+        s.prop17 = "0";
+        s.prop17 = App.Helpers.getRange(activities); // the number of activities returned
+        s.eVar17 = s.prop17;
+    };
+
+    s.prop29 = App.WebContext.cobrandName;
+    s.channel = "Booking Path";
+
+    if( query.hotelKey ) {
+        roomChoices();
+    } else if (App.Availability.products.hasRoom){
+        hotelChoices();
+    } else if (App.Availability.products.hasAir){
+        airChoices();
+    } else if (App.Availability.products.hasCar){
+        carChoices();
+    } else if (App.Availability.products.hasActivity){
+        activityChoices();
+    }
+
+    // Send Omniture web beacon
+    var span = App.Profile.start("Omniture.transmit");
+    App.Omniture.transmit();
+    span.stop();
+
+    //alert("end - arc_process.js - please ignore - testing");    
+}
+
+/* end client script */
+} catch(e) {
+App.Debug.error('Client script error in arc_process.js', e);
+throw new EzRez.Util.Exception({message: "Client JS error on arc_process.js.", remoteLog: true}, e);
+}
+App.Profile.stop('Client Script: arc_process.js');
+});
+})(EzRez.Application);
+

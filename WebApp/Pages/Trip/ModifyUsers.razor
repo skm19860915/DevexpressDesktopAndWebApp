@@ -1,0 +1,178 @@
+﻿@page "/Trip/ModifyUsers/{TripId}"
+
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@inject IBlazorService BlazorSrv
+@inject HttpClient Http
+
+@code {
+    [Parameter]
+    public int TripId { get; set; }
+
+    private UITrip CurrentTrip { get; set; }
+    private bool isRendering { get; set; }
+    public string lFName { get; set; }
+    public string lMName { get; set; }
+    public string lLName { get; set; }
+    private bool StateChanged { get; set; }
+
+    private List<UIContactCore> SearchResults { get; set; }
+
+    protected override System.Threading.Tasks.Task OnAfterRenderAsync(bool firstRender)
+    {
+        var lVal = base.OnAfterRenderAsync(firstRender);
+        isRendering = false;
+        return lVal;
+    }
+
+    protected override void OnInitialized()
+    {
+        isRendering = true;
+        Logger.LogInfo($"ModifyUsers::OnInitializedAsync - Enter with {TripId}");
+        CurrentTrip = BlazorSrv.GetTrip(TripId);
+    }
+
+    private void AddContact(int aTripId, string aUserId)
+    {
+        if (isRendering)
+            return;
+
+        var lQueryString = "/api/ApiTrip/AddContact?aTripId=" + aTripId + "&aContactId=" + aUserId;
+        Logger.LogInfo("AddContact Called " + lQueryString);
+        var TripContacts = BlazorSrv.AddContact(aTripId, aUserId);
+        var lTarget = SearchResults.FirstOrDefault(x => x.Id == aUserId);
+        SearchResults.Remove(lTarget);
+        Logger.LogInfo("AddContact: Line 2");
+        CurrentTrip = BlazorSrv.GetTrip(aTripId);
+        Logger.LogInfo("AddContact: Line 3");
+        StateHasChanged();
+        Logger.LogInfo("AddContact: Line 4");
+    }
+
+    private async System.Threading.Tasks.Task RemoveContact(int aTripId, string aUserId)
+    {
+        if (isRendering)
+            return;
+
+        var lQueryString = "/api/ApiTrip/RemoveContact?aTripId=" + aTripId + "&aContactId=" + aUserId;
+        Logger.LogInfo("RemoveContact Called " + lQueryString);
+        var TripContacts = BlazorSrv.RemoveContact(aTripId, aUserId);
+        CurrentTrip = await Http.GetFromJsonAsync<UITrip>("/api/ApiTrip/Get?id=" + TripId);
+        StateHasChanged();
+    }
+
+    private async System.Threading.Tasks.Task FindContacts()
+    {
+        if (isRendering)
+            return;
+
+        Logger.LogInfo($"ModifyUsers::FindContacts - Clicked");
+
+        if (lFName == null && lMName == null && lLName == null)
+            return;
+
+        if ((lFName == null || lFName.Length == 0 )
+            && (lMName == null || lMName.Length == 0) 
+            && (lLName == null || lLName.Length == 0))
+            return;
+
+        var lQString = $"/api/ApiContact/FindContacts?aFName={lFName}&aMName={lMName}&aLName={lLName}";
+        Logger.LogInfo($"ModifyUsers::FindContacts - Query = " + lQString);
+        SearchResults = await Http.GetFromJsonAsync<List<UIContactCore>>(lQString);
+        lFName = "";
+        lMName = "";
+        lLName = "";
+        //StateHasChanged();
+    }
+
+}
+
+@if (CurrentTrip == null)
+{
+    <h1>Loading</h1>
+}
+else
+{
+    <div class="offset-2 col-8">
+        <h3>Modify @CurrentTrip.Name Travelers</h3>
+        <hr />
+        <div style="font-size:24px;font-weight:600">Find Users</div>
+        <div>
+            <div class="row">
+                <div class="Traveler1">First</div>
+                <div class="Traveler2">Middle</div>
+                <div class="Traveler3">Last</div>
+            </div>
+            <div class="row">
+                <input type="text" @bind="@lFName" id="fname" />
+                <input type="text" @bind="@lMName" id="mname" />
+                <input type="text" @bind="@lLName" id="lname" />
+                <button class="btn btn-primary" type="button" @onclick="FindContacts">Find Contacts</button>
+            </div>
+        </div>
+        <div style="font-size:24px;padding-top:20px">Search Results</div>
+        @if (SearchResults == null || SearchResults.Count() == 0)
+        {
+            <div>
+                There are no matching Contacts
+            </div>
+        }
+        else
+        {
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First</th>
+                            <th>Middle</th>
+                            <th>Last</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var lContact in SearchResults)
+                        {
+                            <tr class="TripAddRow">
+                                <td class="TripAddCell">@lContact.First</td>
+                                <td class="TripAddCell">@lContact.Middle</td>
+                                <td class="TripAddCell">@lContact.Last</td>
+                                <td><button class="btn" type="button" @onclick="() => AddContact(CurrentTrip.Id, lContact.Id)"><i class="fa fa-plus"></i></button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        <div style="font-size:24px;padding-top:20px;padding-top:50px;">Current Travelers</div>
+        <div style="padding-bottom:100px">
+            <table>
+                <tbody>
+                    @if (CurrentTrip.Travelers != null && CurrentTrip.Travelers.Count > 0)
+                    {
+                        foreach (var lTraveler in CurrentTrip.Travelers)
+                        {
+                            <tr class="TripRemoveRow">
+                                <td class="TripAddCell">@lTraveler.First</td>
+                                <td class="TripAddCell">@lTraveler.Middle</td>
+                                <td class="TripAddCell">@lTraveler.Last</td>
+                                <td><button class="btn" type="button" @onclick="() => RemoveContact(CurrentTrip.Id, lTraveler.Id)"><i class="fa fa-minus"></i></button></td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>There are no travelers with this trip</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+
+

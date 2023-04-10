@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonDLLs", "CommonDLLs", "{11D32FBD-1A4F-4C87-87D6-37E6DC6B378B}"
+	ProjectSection(SolutionItems) = preProject
+		CommonDlls\DevExpress.Charts.v19.1.Core.dll = CommonDlls\DevExpress.Charts.v19.1.Core.dll
+		CommonDlls\DevExpress.CodeParser.v19.1.dll = CommonDlls\DevExpress.CodeParser.v19.1.dll
+		CommonDlls\DevExpress.Data.v19.1.dll = CommonDlls\DevExpress.Data.v19.1.dll
+		CommonDlls\DevExpress.DataAccess.v19.1.dll = CommonDlls\DevExpress.DataAccess.v19.1.dll
+		CommonDlls\DevExpress.Office.v19.1.Core.dll = CommonDlls\DevExpress.Office.v19.1.Core.dll
+		CommonDlls\DevExpress.Pdf.v19.1.Core.dll = CommonDlls\DevExpress.Pdf.v19.1.Core.dll
+		CommonDlls\DevExpress.PivotGrid.v19.1.Core.dll = CommonDlls\DevExpress.PivotGrid.v19.1.Core.dll
+		CommonDlls\DevExpress.Printing.v19.1.Core.dll = CommonDlls\DevExpress.Printing.v19.1.Core.dll
+		CommonDlls\DevExpress.RichEdit.v19.1.Core.dll = CommonDlls\DevExpress.RichEdit.v19.1.Core.dll
+		CommonDlls\DevExpress.RichEdit.v19.1.Export.dll = CommonDlls\DevExpress.RichEdit.v19.1.Export.dll
+		CommonDlls\DevExpress.Sparkline.v19.1.Core.dll = CommonDlls\DevExpress.Sparkline.v19.1.Core.dll
+		CommonDlls\DevExpress.Utils.v19.1.dll = CommonDlls\DevExpress.Utils.v19.1.dll
+		CommonDlls\DevExpress.Web.ASPxHtmlEditor.v19.1.dll = CommonDlls\DevExpress.Web.ASPxHtmlEditor.v19.1.dll
+		CommonDlls\DevExpress.Web.ASPxRichEdit.v19.1.dll = CommonDlls\DevExpress.Web.ASPxRichEdit.v19.1.dll
+		CommonDlls\DevExpress.Web.ASPxScheduler.v19.1.dll = CommonDlls\DevExpress.Web.ASPxScheduler.v19.1.dll
+		CommonDlls\DevExpress.Web.ASPxThemes.v19.1.dll = CommonDlls\DevExpress.Web.ASPxThemes.v19.1.dll
+		CommonDlls\DevExpress.Web.ASPxTreeList.v19.1.dll = CommonDlls\DevExpress.Web.ASPxTreeList.v19.1.dll
+		CommonDlls\DevExpress.Web.Mvc5.v19.1.dll = CommonDlls\DevExpress.Web.Mvc5.v19.1.dll
+		CommonDlls\DevExpress.Web.Resources.v19.1.dll = CommonDlls\DevExpress.Web.Resources.v19.1.dll
+		CommonDlls\DevExpress.Web.v19.1.dll = CommonDlls\DevExpress.Web.v19.1.dll
+		CommonDlls\DevExpress.Xpo.v19.1.dll = CommonDlls\DevExpress.Xpo.v19.1.dll
+		CommonDlls\DevExpress.XtraCharts.v19.1.dll = CommonDlls\DevExpress.XtraCharts.v19.1.dll
+		CommonDlls\DevExpress.XtraCharts.v19.1.Extensions.dll = CommonDlls\DevExpress.XtraCharts.v19.1.Extensions.dll
+		CommonDlls\DevExpress.XtraCharts.v19.1.UI.dll = CommonDlls\DevExpress.XtraCharts.v19.1.UI.dll
+		CommonDlls\DevExpress.XtraCharts.v19.1.Web.dll = CommonDlls\DevExpress.XtraCharts.v19.1.Web.dll
+		CommonDlls\DevExpress.XtraCharts.v19.1.Wizard.dll = CommonDlls\DevExpress.XtraCharts.v19.1.Wizard.dll
+		CommonDlls\DevExpress.XtraGauges.v19.1.Core.dll = CommonDlls\DevExpress.XtraGauges.v19.1.Core.dll
+		CommonDlls\DevExpress.XtraGrid.v19.1.dll = CommonDlls\DevExpress.XtraGrid.v19.1.dll
+		CommonDlls\DevExpress.XtraReports.v19.1.dll = CommonDlls\DevExpress.XtraReports.v19.1.dll
+		CommonDlls\DevExpress.XtraReports.v19.1.Extensions.dll = CommonDlls\DevExpress.XtraReports.v19.1.Extensions.dll
+		CommonDlls\DevExpress.XtraReports.v19.1.Service.dll = CommonDlls\DevExpress.XtraReports.v19.1.Service.dll
+		CommonDlls\DevExpress.XtraReports.v19.1.Web.Azure.dll = CommonDlls\DevExpress.XtraReports.v19.1.Web.Azure.dll
+		CommonDlls\DevExpress.XtraReports.v19.1.Web.dll = CommonDlls\DevExpress.XtraReports.v19.1.Web.dll
+		CommonDlls\DevExpress.XtraReports.v19.1.Web.WebForms.dll = CommonDlls\DevExpress.XtraReports.v19.1.Web.WebForms.dll
+		CommonDlls\DevExpress.XtraScheduler.v19.1.Core.dll = CommonDlls\DevExpress.XtraScheduler.v19.1.Core.dll
+		CommonDlls\DevExpress.XtraScheduler.v19.1.dll = CommonDlls\DevExpress.XtraScheduler.v19.1.dll
+		CommonDlls\Gurock.SmartInspect.dll = CommonDlls\Gurock.SmartInspect.dll
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlitzerCore", "Core\BlitzerCore.csproj", "{9F2441E0-B819-4CC3-BFAA-872A8A8880BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{6FB10311-EC11-4138-81ED-034C62D00076}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{185C7991-6289-43A1-A5C6-0E0FDEF40565}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTests", "NUnitTests\NUnitTests.csproj", "{8A0058E9-CDC4-4D88-AC2B-54006692B94D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomatedTests", "AutomatedTests\AutomatedTests.csproj", "{D3F5E352-9ED8-452F-926B-3BE03CA8FBBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F2441E0-B819-4CC3-BFAA-872A8A8880BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2441E0-B819-4CC3-BFAA-872A8A8880BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2441E0-B819-4CC3-BFAA-872A8A8880BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9F2441E0-B819-4CC3-BFAA-872A8A8880BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{9F2441E0-B819-4CC3-BFAA-872A8A8880BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2441E0-B819-4CC3-BFAA-872A8A8880BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2441E0-B819-4CC3-BFAA-872A8A8880BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{9F2441E0-B819-4CC3-BFAA-872A8A8880BB}.Release|x86.Build.0 = Release|Any CPU
+		{6FB10311-EC11-4138-81ED-034C62D00076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB10311-EC11-4138-81ED-034C62D00076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB10311-EC11-4138-81ED-034C62D00076}.Debug|x86.ActiveCfg = Debug|x86
+		{6FB10311-EC11-4138-81ED-034C62D00076}.Debug|x86.Build.0 = Debug|x86
+		{6FB10311-EC11-4138-81ED-034C62D00076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB10311-EC11-4138-81ED-034C62D00076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB10311-EC11-4138-81ED-034C62D00076}.Release|x86.ActiveCfg = Release|x86
+		{6FB10311-EC11-4138-81ED-034C62D00076}.Release|x86.Build.0 = Release|x86
+		{8A0058E9-CDC4-4D88-AC2B-54006692B94D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A0058E9-CDC4-4D88-AC2B-54006692B94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A0058E9-CDC4-4D88-AC2B-54006692B94D}.Debug|x86.ActiveCfg = Debug|x86
+		{8A0058E9-CDC4-4D88-AC2B-54006692B94D}.Debug|x86.Build.0 = Debug|x86
+		{8A0058E9-CDC4-4D88-AC2B-54006692B94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A0058E9-CDC4-4D88-AC2B-54006692B94D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A0058E9-CDC4-4D88-AC2B-54006692B94D}.Release|x86.ActiveCfg = Release|x86
+		{8A0058E9-CDC4-4D88-AC2B-54006692B94D}.Release|x86.Build.0 = Release|x86
+		{D3F5E352-9ED8-452F-926B-3BE03CA8FBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F5E352-9ED8-452F-926B-3BE03CA8FBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F5E352-9ED8-452F-926B-3BE03CA8FBBF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D3F5E352-9ED8-452F-926B-3BE03CA8FBBF}.Debug|x86.Build.0 = Debug|Any CPU
+		{D3F5E352-9ED8-452F-926B-3BE03CA8FBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F5E352-9ED8-452F-926B-3BE03CA8FBBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F5E352-9ED8-452F-926B-3BE03CA8FBBF}.Release|x86.ActiveCfg = Release|Any CPU
+		{D3F5E352-9ED8-452F-926B-3BE03CA8FBBF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CEDAC86-09EC-49D1-83AA-E5102F569D5C}
+	EndGlobalSection
+EndGlobal

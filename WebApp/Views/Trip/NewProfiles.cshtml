@@ -1,0 +1,27 @@
+﻿@model BlitzerCore.Models.UI.UIUserProfilesTabsModel
+@{
+    ViewData["Title"] = "Profiles";
+}
+
+<h2>Traveler Profiles</h2>
+
+<ul class="nav nav-tabs">
+    @foreach (var lUserID in Model.TravelerIDs)
+    {
+        int lIndex = Model.TravelerIDs.IndexOf(lUserID);
+        <li role="presentation" class="@(Model.ActiveClient == lUserID ? "active" : string.Empty)"><a href="?id=@Model.TripID&aUserID=@lUserID">@Model.TravelerNames[lIndex]</a></li>
+    }
+</ul>
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="NewProfiles">
+            @Html.HiddenFor(m=>m.TravelerIDs)
+            @Html.HiddenFor(m=>m.TripID)
+            <div class="form-group">
+                @await Component.InvokeAsync("UserProfile", Model.ActiveClient)
+                <input type="submit" value="Next" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

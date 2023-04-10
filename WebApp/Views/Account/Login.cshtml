@@ -1,0 +1,57 @@
+﻿@model BlitzerCore.Models.UI.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "_MarketingLayout";
+}
+<div class="">
+    <div class="leftHalf">
+    </div>
+    <!-- First Half -->
+    <div class="rightHalf">
+        <div class="text-white d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
+            <div class="logoarea pt-5 pb-5">
+                @using (Html.BeginForm())
+                {
+                @Html.AntiForgeryToken()
+
+                <img src="~/images/logowhite-293x300.png" style="height:300px;" />
+                <div class="LoginBox">
+                    <div class="form-horizontal">
+                        @if (Model.ErrorMsgs.Count() > 0)
+                        {
+                            <div class="ErrorMsg form-group">
+                                <div><strong>@Model.ErrorMsgs[0].Header</strong></div>
+                                <div>@Model.ErrorMsgs[0].Description</div>
+                            </div>
+                        }
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" class="form-control" type="password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn btn-primary" />
+                        </div>
+                    </div>
+                    <a href="@Url.Action("ForgotPassword")"><small>Forgot password?</small></a>
+                    <a href="@Url.Action("Register")"><small>Don't have an account?</small></a>
+                </div>
+                }
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong>@ViewBag.Message
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

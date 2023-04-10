@@ -1,0 +1,161 @@
+﻿@model BlitzerCore.Models.UI.UIHotel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AppLayout.cshtml";
+}
+<div>
+    <h1 class="title-header">Edit Company</h1>
+    <div class="content-container">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs-link" href="/Portal">Portal</a>/
+            <a class="breadcrumbs-link current" href="/Company">Company</a>
+        </div>
+    </div>
+</div>
+<hr class="title-hr mt-0" />
+<!-- Tab links -->
+<div class="content-container">
+    <form asp-action="Edit">
+        @Html.HiddenFor(m=>m.PageId)
+        <div class="bans-3d">
+            <div class="b_tab">
+                <button class="b_tablinks header-ban-text ban-btn active"  type="button" onclick="b_openPanel(event, 'b_Primary')" id="defaultOpen">Detail</button>
+                <button class="b_tablinks header-ban-text ban-btn" type="button" onclick="b_openPanel(event, 'b_Memo')">Memo</button>
+            </div>
+            <div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                @Html.HiddenFor(m => m.returnUrl)
+
+                <div>
+                    <div id="b_Primary" class="b_tabPanel" style="display:block">
+                        <div class="row">
+                            <div class="col-md-4 offset-2">
+                                <div class="form-group">
+                                    <label asp-for="Name" class="control-label"></label>
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="AirportDistance" class="control-label"></label>
+                                    <input asp-for="AirportDistance" class="form-control" />
+                                    <span asp-validation-for="AirportDistance" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Location" class="control-label"></label>
+                                    <input asp-for="Location" class="form-control" />
+                                    <span asp-validation-for="Location" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Address1" class="control-label"></label>
+                                    <input asp-for="Address1" class="form-control" />
+                                    <span asp-validation-for="Address1" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="City" class="control-label"></label>
+                                    <input asp-for="City" class="form-control" />
+                                    <span asp-validation-for="City" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="State" class="control-label"></label>
+                                    <input asp-for="State" class="form-control" />
+                                    <span asp-validation-for="State" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ZipCode" class="control-label"></label>
+                                    <input asp-for="ZipCode" class="form-control" />
+                                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="AdultsOnly" class="control-label"></label>
+                                    <input type="checkbox" asp-for="AdultsOnly" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Rating" class="control-label"></label>
+                                    <input asp-for="Rating" class="form-control" />
+                                    <span asp-validation-for="Rating" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Closest Airport</label>
+                                    <div><select class="form-control" asp-for="AirPortCode" asp-items="ViewBag.AirPortCodes"></select></div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PrimaryPhone" class="control-label"></label>
+                                    <input asp-for="PrimaryPhone" class="form-control" />
+                                    <span asp-validation-for="PrimaryPhone" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PrimaryEmail" class="control-label"></label>
+                                    <input asp-for="PrimaryEmail" class="form-control" />
+                                    <span asp-validation-for="PrimaryEmail" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="WebSite" class="control-label"></label>
+                                    <input asp-for="WebSite" class="form-control" />
+                                    <span asp-validation-for="WebSite" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Business Type</label>
+                                    <div><select class="form-control" asp-for="BusinessTypeID" asp-items="ViewBag.BusinessTypes"></select></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Visiblity</label>
+                                    <div><select class="form-control" asp-for="Visibility" asp-items="@Html.GetEnumSelectList<Visibility>()"></select></div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="AllInclusive" class="control-label"></label>
+                                    <input type="checkbox" asp-for="AllInclusive" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8 offset-2">
+                                <label class="control-label">Description</label>
+                                <textarea asp-for="Description" rows="5" class="form-control w-100"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="b_Memo" class="b_tabPanel">
+                        <div class="col-12">
+                            <textarea asp-for="Memo" rows="10" class="form-control w-100"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-clearence">
+            <input type="submit" value="Save" class="btn-command" />
+        </div>
+    </form>
+</div>
+<script>
+    //document.getElementById("defaultOpen").click();
+
+    function b_openPanel(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("b_tabPanel");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("b_tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function AddFF() {
+        alert("Clicked Add FF");
+    }
+</script>

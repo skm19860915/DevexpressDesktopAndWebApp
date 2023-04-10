@@ -1,0 +1,80 @@
+@using DevExtreme.AspNet.Mvc
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<div class="col-8 offset-2">
+    <h2 class="TableTitle col-8">Page List</h2>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    @(Html.DevExtreme().DataGrid<Page>()
+    .ID("grid-container")
+    .Selection(s => s.Mode(SelectionMode.Single))
+    .RemoteOperations(false)
+    .FilterRow(filterRow => filterRow
+        .Visible(true)
+        .ApplyFilter(GridApplyFilterMode.Auto)
+    )
+    .SearchPanel(searchPanel => searchPanel
+        .Visible(true)
+        .Width(240)
+        .Placeholder("Search...")
+    )
+    .DataSource(d => d.WebApi()
+        .Controller("Pages")
+        .LoadAction("Get")
+        .Key("Id")
+    )
+    .ShowColumnLines(false)
+    .ShowRowLines(true)
+    .HoverStateEnabled(true)
+    .RowAlternationEnabled(true)
+    .ShowBorders(true)
+    .Columns(columns => {
+        columns.AddFor(m => m.Id)
+            .Visible(false);
+        columns.AddFor(m => m.Title);
+        columns.AddFor(m => m.PageTypeId)
+            .Caption("Page Type")
+            .Lookup(lookup => lookup
+                .DataSource(d => d.Mvc().Controller("PageTypes").LoadAction("Get").Key("Id"))
+                .DisplayExpr("Name")
+                .ValueExpr("Id")
+            );
+
+    })
+    .Paging(p => p.PageSize(15))
+    .OnSelectionChanged("SelectionChanged")
+
+)
+</div>
+
+<script>
+    function SelectionChanged(selectedItems) {
+        var data = selectedItems.selectedRowsData[0];
+        if (data) {
+            var PageTypeId = data.PageTypeId;
+            switch (PageTypeId) {
+                case 1:
+                    document.location.href = "/Resort/Edit/" + data.Id;
+                    break;
+                case 2:
+                    document.location.href = "/Country/Edit/" + data.Id;
+                    break;
+                case 3:
+                    document.location.href = "/Ranking/Edit/" + data.Id;
+                    break;
+                case 4:
+                    document.location.href = "/Gallery/Edit/" + data.Id;
+                    break;
+            }
+        }
+    }
+</script>
+
+
+
+
